@@ -229,7 +229,8 @@ function compute(pull, record, area) {
       }
     : null;
 
-  const years = [...r.rows.map((x) => x[4]), ...mf.rows.map((x) => x[6])].filter((y) => typeof y === "number" && y > 1700 && y <= 2027);
+  // In ranks mode r.rows is only a 25-row sample (lowest ListingIds), too biased for a year built.
+  const years = pull.res.mode === "ranks" ? [] : [...r.rows.map((x) => x[4]), ...mf.rows.map((x) => x[6])].filter((y) => typeof y === "number" && y > 1700 && y <= 2027);
   const zips = [...new Set([...r.rows.map((x) => x[6]), ...mf.rows.map((x) => x[5])].filter(Boolean))].sort();
   const cityFromMls = mode(r.rows.map((x) => x[7]));
 

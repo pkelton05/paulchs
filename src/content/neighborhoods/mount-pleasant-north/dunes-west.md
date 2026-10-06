@@ -18,6 +18,6 @@ watch_outs:
 draft: true
 ---
 
-Dunes West is the busiest market in this area by a wide margin. It had far more home sales over the past year than Hamlin Plantation, The Meridian or Crown Pointe. The stock is a mix, about two-thirds detached houses and one-third attached homes, built mostly in the early 2000s. Prices stretch a long way from the low end to the high end, so a single median hides a lot. Look at the range, then at the type of home you would actually buy. Nothing multifamily trades here.
+Dunes West is the busiest market in this area by a wide margin. It had far more home sales over the past year than Hamlin Plantation, The Meridian or Crown Pointe. The stock is a mix, about two-thirds detached houses and one-third attached homes. Prices stretch a long way from the low end to the high end, so a single median hides a lot. Look at the range, then at the type of home you would actually buy. Nothing multifamily trades here.
 
 Three-bedroom rents rest on the deepest set of leases, so that is the number to trust. The two-bedroom row is thinner, and the four-bedroom-and-up row is high and swings with the individual house, so treat it as a ballpark. Hamlin Plantation posts a lower four-bedroom-and-up rent on its own small set of leases. For one-bedrooms, the figure shown comes from the wider area.

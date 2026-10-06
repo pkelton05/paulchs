@@ -174,6 +174,7 @@ Last updated: 2026-10-06 (Session 4, Step 3 – Area 52 drafts waiting for Paul)
 - Area 71 drafted (4 pages, draft: true): Belvedere Estates, Bowen, Otranto, Tanner Plantation (Areas 71 + 72 combined). Claims checked against the data.
 - Area 73 drafted (2 pages, draft: true): Persimmon Hill Townhouses, Berkeley Commons Townhomes. Claims checked against the data. All Tier A areas done.
 - Area 41 drafted (4 pages, draft: true): Crown Pointe, Dunes West, Hamlin Plantation, The Meridian. No Area 41 hub page yet (Tier B), so the breadcrumb shows the area name without a link.
+- Area 63 drafted (3 pages, draft: true): Summers Corner, White Gables, Rose Hill (no comps). Typical year built is now left blank for the three ranks-mode neighborhoods (Summers Corner, Dunes West, Daniel Island) – it came from a biased 25-sale sample; Dunes West copy updated.
 
 ### Neighborhood data – for Paul to look at
 - [ ] Wild Dunes area (45) has no MLS lease comps at all, so Beachwood and Wild Dunes Yacht Harbor will show no rents. All 9 Yacht Harbor sales are sub-type "Other" (likely marina condos).

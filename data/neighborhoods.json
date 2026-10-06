@@ -3403,7 +3403,7 @@
         "multifamily_pct": 0,
         "sales_counted": 310
       },
-      "typical_year_built": 2003,
+      "typical_year_built": null,
       "hoa_share_pct": null,
       "zips": [
         "29466"
@@ -5883,7 +5883,7 @@
         "multifamily_pct": 0,
         "sales_counted": 1123
       },
-      "typical_year_built": 2024,
+      "typical_year_built": null,
       "hoa_share_pct": null,
       "zips": [
         "29472",
@@ -7338,7 +7338,7 @@
         "multifamily_pct": 0,
         "sales_counted": 306
       },
-      "typical_year_built": 2015,
+      "typical_year_built": null,
       "hoa_share_pct": null,
       "zips": [
         "29492"

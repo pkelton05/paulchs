@@ -156,7 +156,7 @@ Follow the frontend-design guidance for craft. Direction for this brand:
 Three subagents live in `.claude/agents/`. Use them for repetitive page work so the main session stays focused:
 
 - **`area-data-puller`** (Haiku) – pulls FlexMLS sales, MLS lease comps, and RentCast numbers into `data/areas.json`. Fast and cheap; it only moves data, never writes copy.
-- **`neighborhood-indexer`** (Haiku) – builds and refreshes `data/neighborhoods.json` from Paul's closed MLS listings, with cleaned names, market stats, and page types.
+- **`neighborhood-indexer`** (Sonnet) – pulls raw MLS data for each neighborhood into `data/raw/`; `scripts/compute-neighborhoods.mjs` turns it into the numbers and page types in `data/neighborhoods.json`. Moved from Haiku after a Haiku run invented rows (Paul, 2026-10-06).
 - **`neighborhood-page-writer`** (Sonnet) – writes the neighborhood pages for one MLS area per run.
 - **`area-page-writer`** (Sonnet) – writes one area or neighborhood page at a time from `docs/AREAS.md` and the data file.
 - **`question-page-writer`** (Sonnet) – writes one question page at a time from `docs/SITE-CONTENT.md` section 12.

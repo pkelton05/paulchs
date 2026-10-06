@@ -165,7 +165,7 @@ Last updated: 2026-10-06 (Session 4, Step 3 – Area 52 drafts waiting for Paul)
 ### Neighborhood data – for Paul to look at
 - [ ] Wild Dunes area (45) has no MLS lease comps at all, so Beachwood and Wild Dunes Yacht Harbor will show no rents. All 9 Yacht Harbor sales are sub-type "Other" (likely marina condos).
 - [ ] Russelldale is "full" only because of 3 multifamily sales (rule: 3+ multifamily); there are not enough sales for a neighborhood median, so its page will lean on area numbers anyway.
-- [ ] CLAUDE.md §12 still lists the neighborhood-indexer as Haiku; the agent file now says Sonnet. OK to update CLAUDE.md?
+- [x] CLAUDE.md §12 updated: neighborhood-indexer runs on Sonnet (Paul, 2026-10-06).
 - [ ] Rent oddities from small samples: North Central 2BR ($3,225, n=10) above 3BR ($3,000, n=7); Cannonborough-Elliotborough 4BR+ ($3,900, n=5) below 3BR; Wagener Terrace 4BR+ $6,500 (n=7); Dunes West 4BR+ $5,500 (n=13). Folly Beach area 3BR ($5,300) rests on 4 leases incl. $7,500 and $9,000; Daniel Island area 4BR+ $6,975.
 - [ ] Area 52 drafts – Paul to review: the copy compares the neighborhoods to each other; North Central and Westside rent oddities (2BR above 3BR, 4BR+ on 3 leases) are called out as thin; "late 1940s" / "mid-1930s" come from the median year built of homes sold. Every watch-out is VERIFY (HOA rental language, flood zones, zoning for a second unit, City of Charleston STR rules).
 - [ ] Wording of the closings line on every neighborhood page, e.g. "I've closed 3 listings here since 2021: one multifamily building and two homes." / "I've closed a listing here (2020)." (counts only).

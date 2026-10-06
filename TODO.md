@@ -168,6 +168,7 @@ Last updated: 2026-10-06 (Session 4, Step 3 – Area 52 drafts waiting for Paul)
 - Area 21 drafted (5 pages, draft: true): Crosscreek, Lynwood Villas, Mira Vista, Oakcrest, Regatta On James Island. Claims checked against the data.
 - Area 23 drafted (2 pages, draft: true): Kiawah River, Oakfield. Claims checked against the data.
 - Area 32 drafted (4 pages, draft: true): Brookdale, Buckshire, Fetteressa, Pt Dowling Tract (no comps). Claims checked against the data. [Paul: Buckshire sales show City Summerville, ZIP 29485 – which may be Dorchester County, while the page breadcrumb says Charleston County (from the MLS area). Confirm.]
+- Area 42 drafted (3 pages, draft: true): Belle Hall, Snee Farm, Marsh Grass Condominiums. Claims checked against the data.
 
 ### Neighborhood data – for Paul to look at
 - [ ] Wild Dunes area (45) has no MLS lease comps at all, so Beachwood and Wild Dunes Yacht Harbor will show no rents. All 9 Yacht Harbor sales are sub-type "Other" (likely marina condos).

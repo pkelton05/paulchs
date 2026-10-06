@@ -24,7 +24,7 @@
   "stats": {
     "stat_deals": { "value": "200+", "label": "investor deals" },
     "stat_doors": { "value": "300+", "label": "doors managed through Tide" },
-    "stat_rank": { "value": null, "label": "Top 5 multifamily agent in Charleston" }
+    "stat_rank": { "value": "#1", "label": "in 2–4 unit sales among individual Charleston agents, each of the last 3 years" }
   },
 
   "next_event": null,
@@ -61,7 +61,7 @@
     "license_line": "VERIFY with broker-in-charge",
     "stats.stat_deals": "VERIFY wording before launch",
     "stats.stat_doors": "VERIFY current door count",
-    "stats.stat_rank": "VERIFY source and basis to cite",
+    "stats.stat_rank": "CONFIRMED by Paul 2026-10-06: sells more 2–4 unit properties than any other single agent in Charleston every year for the last 3 years. Keep the MLS report that backs it on file.",
     "response_time": "VERIFY the response time Paul wants to promise",
     "mls_attribution": "VERIFY with CTAR / Charleston Trident MLS",
     "mls_display.aggregates_approved": "VERIFY with CTAR before any MLS number is published",

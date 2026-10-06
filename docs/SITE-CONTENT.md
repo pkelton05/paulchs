@@ -86,7 +86,7 @@ Driven by `data/site.json → next_event`. Pattern:
 **Proof strip** (three stats from site.json)
 - {{site.stat_deals}} investor deals [VERIFY]
 - {{site.stat_doors}} doors managed through Tide [VERIFY]
-- {{site.stat_rank}} – e.g. "Top 5 multifamily agent in Charleston" [VERIFY source]
+- {{site.stat_rank}} – #1 in 2–4 unit sales among individual Charleston agents, each of the last 3 years (confirmed by Paul 2026-10-06)
 
 **Client words** – three short testimonials, real names or initials, with deal type. [NEED from Paul]
 

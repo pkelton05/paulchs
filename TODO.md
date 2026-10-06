@@ -38,7 +38,7 @@ Last updated: 2026-10-06 (Session 2)
 ### Paul
 - [ ] "200+ investor deals" – wording (CLAUDE.md §2).
 - [ ] "300+ doors" under management at Tide – current count.
-- [ ] "Top five for multifamily sales in Charleston" – source/basis to cite. `stats.stat_rank.value` is null until then.
+- [ ] #1 in 2–4 unit sales among individual Charleston agents, each of the last 3 years (confirmed by Paul 2026-10-06). Keep the MLS report behind it on file; consider naming the years (e.g. 2023–2025) so the claim doesn't go stale, and confirm with broker-in-charge that the wording meets SC advertising rules.
 - [ ] BiggerPockets Elite Agent – current status.
 - [ ] Response time to promise on the form ("one business day" for now).
 - [ ] "I've closed N listings here" wording on neighborhood pages (NEIGHBORHOODS.md §6).

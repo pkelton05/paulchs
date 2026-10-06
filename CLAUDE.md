@@ -26,7 +26,7 @@ A personal brand site for Paul Kelton, an investment property agent in Charlesto
 ### Proof points (use these exact claims, nothing stronger)
 - 200+ investor deals [VERIFY wording before launch]
 - Founder of Tide Property Management – 300+ doors under management in Charleston [VERIFY current door count]
-- Consistently ranked top five for multifamily sales in Charleston [VERIFY source/basis to cite]
+- Sells more 2–4 unit properties than any other single agent in Charleston, every year for the last 3 years (confirmed by Paul 2026-10-06; keep the MLS report that backs it on file)
 - BiggerPockets Elite Agent for Charleston [VERIFY current status]
 - Host of GRID Charleston – monthly investor community and podcast
 

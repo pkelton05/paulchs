@@ -127,9 +127,9 @@ const noindex = d.draft || !hoodPagesApproved;
                     {change !== null && (
                       <NumberBlock
                         value={fmt.pct(change)}
-                        label="median sale price, 1-year change"
+                        label="detached-home median price, 1-year change"
                         size="compact"
-                        source={sourceLine(h, `Last 12 months vs. the 12 months before · ${res.sales_12mo} and ${res.prior_year_sales} sales`)}
+                        source={sourceLine(h, `Single-family detached sales, last 12 months vs. the 12 months before · ${res.sfd_sales_12mo} and ${res.sfd_prior_year_sales} sales`)}
                       />
                     )}
                   </div>
@@ -239,7 +239,7 @@ const noindex = d.draft || !hoodPagesApproved;
             <p class="block-source">
               {attribution} Medians of closed MLS sales and leases filed under the {h.name} subdivision name. Rents marked with the area
               name come from the whole {areaName} MLS area because there were fewer than 3 leases of that size here.
-              {change !== null && <> The 1-year change shows only when both years have {MIN_CHANGE_SAMPLE} or more sales.</>}
+              {change !== null && <> The 1-year change compares detached homes only and shows only when both years have {MIN_CHANGE_SAMPLE} or more detached sales.</>}
             </p>
           </div>
         </section>

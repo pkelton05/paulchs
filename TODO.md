@@ -161,6 +161,8 @@ Last updated: 2026-10-06 (Session 4, Step 3 – Area 52 drafts waiting for Paul)
 - Step 3: Area 52 drafted (Westside, North Central, Wagener Terrace, Garden Hill – `draft: true`). Facts in the copy checked against the data; copy check, links, build pass. The Upper Peninsula hub now links all four.
 - Area 52 approved by Paul and published (draft: false) 2026-10-06 – still noindex and out of the sitemap until `neighborhood_pages_approved`.
 - Step 4, Area 31 drafted (6 pages, draft: true): Dorchester Terrace, Waylyn, Russelldale, Accabee, Buckfield, Admiral Apartments. Claims checked against the data; copy check passes. Buckfield and Admiral Apartments have no city in the MLS (H1 shows just the name + SC).
+- Area 51 drafted (4 pages, draft: true): Ansonborough, Cannonborough-Elliotborough, Eastside, Wraggborough. Claims checked against the data.
+- The 1-year price change on neighborhood pages now compares detached homes only (same basis as the area pages). Mixing houses and townhomes made Ansonborough read -28% and Dunes West +29%. This changed three figures on the approved Area 52 pages, so their copy was updated: North Central "detached-home prices dipped" (was "barely moved"), Westside "detached-home prices fell" (was "slipped"), Wagener Terrace now compares with both dipping. [Paul: please re-read those three sentences.]
 
 ### Neighborhood data – for Paul to look at
 - [ ] Wild Dunes area (45) has no MLS lease comps at all, so Beachwood and Wild Dunes Yacht Harbor will show no rents. All 9 Yacht Harbor sales are sub-type "Other" (likely marina condos).

@@ -18,6 +18,6 @@ watch_outs:
 draft: false
 ---
 
-North Central is a house market first. It logged almost as many home sales as Wagener Terrace over two years, houses go quickly, and the median price has barely moved from a year ago. Most of the stock dates to the mid-1930s. Multifamily is a small slice of what trades, and it behaves differently from the houses. Buildings here sit for weeks longer than in Westside and far longer than in Wagener Terrace. That gives you time to inspect and negotiate. Price per door falls between the two.
+North Central is a house market first. It logged almost as many home sales as Wagener Terrace over two years, houses go quickly, and detached-home prices dipped from a year ago. Most of the stock dates to the mid-1930s. Multifamily is a small slice of what trades, and it behaves differently from the houses. Buildings here sit for weeks longer than in Westside and far longer than in Wagener Terrace. That gives you time to inspect and negotiate. Price per door falls between the two.
 
 On rents, the two-bedroom figure comes out above the three-bedroom. That is a small sample, and I would not lean on it. The four-bedroom and up row is the strongest of the four, but it also rests on a handful of leases. The one-bedroom number on this page is the area figure, not a North Central lease.

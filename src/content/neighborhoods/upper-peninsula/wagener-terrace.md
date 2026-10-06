@@ -20,6 +20,6 @@ watch_outs:
 draft: false
 ---
 
-Wagener Terrace is the priciest of the neighborhoods here with enough sales to measure. Houses sell faster than in North Central or Westside, and prices have kept climbing while North Central held flat and Westside slipped. Most of what sells is a detached house from the late 1940s. Small buildings are scarce, and the few that trade go in days at prices bunched close together. That tells me buyers are competing for the same product.
+Wagener Terrace is the priciest of the neighborhoods here with enough sales to measure. Houses sell faster than in North Central or Westside, and prices have kept climbing while North Central and Westside dipped. Most of what sells is a detached house from the late 1940s. Small buildings are scarce, and the few that trade go in days at prices bunched close together. That tells me buyers are competing for the same product.
 
 That competition shows up per door. You pay more per unit here than in North Central or Westside, so the rent has to carry a higher basis. The good news is that there are plenty of lease comps, more than in the others, so a rent case can rest on real neighborhood leases. Two-bedrooms rent for less here than in North Central. The jump comes at four bedrooms and up, a small group of leases that pulls the top of the range. If you are buying a duplex, underwrite off the two- and three-bedroom rows.

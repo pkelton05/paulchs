@@ -36,7 +36,10 @@
         "sales_12mo": 19,
         "prior_year_sales": 28,
         "median_dom": 9,
-        "change_1yr_pct": -2.1
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 0,
+        "sfd_prior_year_sales": 0
       },
       "mf": {
         "median_price": null,
@@ -137,7 +140,10 @@
         "sales_12mo": 16,
         "prior_year_sales": 8,
         "median_dom": 8,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 16,
+        "sfd_prior_year_sales": 7
       },
       "mf": {
         "median_price": null,
@@ -240,7 +246,10 @@
         "sales_12mo": 4,
         "prior_year_sales": 13,
         "median_dom": 35,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 4,
+        "sfd_prior_year_sales": 13
       },
       "mf": {
         "median_price": null,
@@ -341,7 +350,10 @@
         "sales_12mo": 11,
         "prior_year_sales": 8,
         "median_dom": 8,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 11,
+        "sfd_prior_year_sales": 8
       },
       "mf": {
         "median_price": null,
@@ -443,7 +455,10 @@
         "sales_12mo": 2,
         "prior_year_sales": 1,
         "median_dom": null,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 2,
+        "sfd_prior_year_sales": 1
       },
       "mf": {
         "median_price": null,
@@ -547,7 +562,10 @@
         "sales_12mo": 2,
         "prior_year_sales": 3,
         "median_dom": 34,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 2,
+        "sfd_prior_year_sales": 3
       },
       "mf": {
         "median_price": null,
@@ -650,7 +668,10 @@
         "sales_12mo": 15,
         "prior_year_sales": 13,
         "median_dom": 52,
-        "change_1yr_pct": 0.9
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 1,
+        "sfd_prior_year_sales": 0
       },
       "mf": {
         "median_price": null,
@@ -752,7 +773,10 @@
         "sales_12mo": 9,
         "prior_year_sales": 4,
         "median_dom": 23,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 0,
+        "sfd_prior_year_sales": 0
       },
       "mf": {
         "median_price": null,
@@ -853,7 +877,10 @@
         "sales_12mo": 2,
         "prior_year_sales": 4,
         "median_dom": 57,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 2,
+        "sfd_prior_year_sales": 4
       },
       "mf": {
         "median_price": null,
@@ -957,7 +984,10 @@
         "sales_12mo": 7,
         "prior_year_sales": 5,
         "median_dom": 24,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 1,
+        "sfd_prior_year_sales": 0
       },
       "mf": {
         "median_price": null,
@@ -1060,7 +1090,10 @@
         "sales_12mo": 0,
         "prior_year_sales": 0,
         "median_dom": null,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 0,
+        "sfd_prior_year_sales": 0
       },
       "mf": {
         "median_price": null,
@@ -1147,7 +1180,10 @@
         "sales_12mo": 78,
         "prior_year_sales": 51,
         "median_dom": 30,
-        "change_1yr_pct": 1.4
+        "change_1yr_pct": -2.1,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 64,
+        "sfd_prior_year_sales": 47
       },
       "mf": {
         "median_price": null,
@@ -1248,7 +1284,10 @@
         "sales_12mo": 13,
         "prior_year_sales": 14,
         "median_dom": 29,
-        "change_1yr_pct": 4.5
+        "change_1yr_pct": 4.5,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 13,
+        "sfd_prior_year_sales": 14
       },
       "mf": {
         "median_price": null,
@@ -1351,7 +1390,10 @@
         "sales_12mo": 6,
         "prior_year_sales": 4,
         "median_dom": 34,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 5,
+        "sfd_prior_year_sales": 2
       },
       "mf": {
         "median_price": null,
@@ -1452,7 +1494,10 @@
         "sales_12mo": 0,
         "prior_year_sales": 3,
         "median_dom": null,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 0,
+        "sfd_prior_year_sales": 0
       },
       "mf": {
         "median_price": null,
@@ -1555,7 +1600,10 @@
         "sales_12mo": 18,
         "prior_year_sales": 18,
         "median_dom": 18,
-        "change_1yr_pct": -3.6
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 0,
+        "sfd_prior_year_sales": 0
       },
       "mf": {
         "median_price": null,
@@ -1656,7 +1704,10 @@
         "sales_12mo": 6,
         "prior_year_sales": 8,
         "median_dom": 18,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 6,
+        "sfd_prior_year_sales": 8
       },
       "mf": {
         "median_price": null,
@@ -1759,7 +1810,10 @@
         "sales_12mo": 12,
         "prior_year_sales": 14,
         "median_dom": 18,
-        "change_1yr_pct": 9.9
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 0,
+        "sfd_prior_year_sales": 0
       },
       "mf": {
         "median_price": null,
@@ -1860,7 +1914,10 @@
         "sales_12mo": 0,
         "prior_year_sales": 0,
         "median_dom": null,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 0,
+        "sfd_prior_year_sales": 0
       },
       "mf": {
         "median_price": null,
@@ -1947,7 +2004,10 @@
         "sales_12mo": 46,
         "prior_year_sales": 34,
         "median_dom": 61,
-        "change_1yr_pct": 0.6
+        "change_1yr_pct": 2.7,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 41,
+        "sfd_prior_year_sales": 32
       },
       "mf": {
         "median_price": null,
@@ -2048,7 +2108,10 @@
         "sales_12mo": 46,
         "prior_year_sales": 39,
         "median_dom": 38,
-        "change_1yr_pct": 3.8
+        "change_1yr_pct": 3.8,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 46,
+        "sfd_prior_year_sales": 39
       },
       "mf": {
         "median_price": null,
@@ -2148,7 +2211,10 @@
         "sales_12mo": 1,
         "prior_year_sales": 6,
         "median_dom": 133,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 1,
+        "sfd_prior_year_sales": 6
       },
       "mf": {
         "median_price": null,
@@ -2251,7 +2317,10 @@
         "sales_12mo": 0,
         "prior_year_sales": 0,
         "median_dom": null,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 0,
+        "sfd_prior_year_sales": 0
       },
       "mf": {
         "median_price": null,
@@ -2354,7 +2423,10 @@
         "sales_12mo": 0,
         "prior_year_sales": 0,
         "median_dom": null,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 0,
+        "sfd_prior_year_sales": 0
       },
       "mf": {
         "median_price": null,
@@ -2457,7 +2529,10 @@
         "sales_12mo": 38,
         "prior_year_sales": 52,
         "median_dom": 29,
-        "change_1yr_pct": 4.5
+        "change_1yr_pct": 3.7,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 38,
+        "sfd_prior_year_sales": 51
       },
       "mf": {
         "median_price": 238000,
@@ -2556,7 +2631,10 @@
         "sales_12mo": 2,
         "prior_year_sales": 1,
         "median_dom": null,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 2,
+        "sfd_prior_year_sales": 1
       },
       "mf": {
         "median_price": null,
@@ -2659,7 +2737,10 @@
         "sales_12mo": 46,
         "prior_year_sales": 40,
         "median_dom": 24,
-        "change_1yr_pct": -1.1
+        "change_1yr_pct": -1.1,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 46,
+        "sfd_prior_year_sales": 40
       },
       "mf": {
         "median_price": null,
@@ -2760,7 +2841,10 @@
         "sales_12mo": 7,
         "prior_year_sales": 8,
         "median_dom": 32,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 7,
+        "sfd_prior_year_sales": 8
       },
       "mf": {
         "median_price": null,
@@ -2862,7 +2946,10 @@
         "sales_12mo": 18,
         "prior_year_sales": 14,
         "median_dom": 19,
-        "change_1yr_pct": -1
+        "change_1yr_pct": -3.3,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 17,
+        "sfd_prior_year_sales": 13
       },
       "mf": {
         "median_price": null,
@@ -2964,7 +3051,10 @@
         "sales_12mo": 0,
         "prior_year_sales": 0,
         "median_dom": null,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 0,
+        "sfd_prior_year_sales": 0
       },
       "mf": {
         "median_price": null,
@@ -3066,7 +3156,10 @@
         "sales_12mo": 0,
         "prior_year_sales": 0,
         "median_dom": null,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 0,
+        "sfd_prior_year_sales": 0
       },
       "mf": {
         "median_price": null,
@@ -3153,7 +3246,10 @@
         "sales_12mo": 5,
         "prior_year_sales": 3,
         "median_dom": 27,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 5,
+        "sfd_prior_year_sales": 3
       },
       "mf": {
         "median_price": null,
@@ -3256,7 +3352,10 @@
         "sales_12mo": 174,
         "prior_year_sales": 136,
         "median_dom": 31,
-        "change_1yr_pct": 28.6
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": null,
+        "sfd_prior_year_sales": null
       },
       "mf": {
         "median_price": null,
@@ -3356,7 +3455,10 @@
         "sales_12mo": 40,
         "prior_year_sales": 45,
         "median_dom": 27,
-        "change_1yr_pct": 6.8
+        "change_1yr_pct": -6.2,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 27,
+        "sfd_prior_year_sales": 27
       },
       "mf": {
         "median_price": null,
@@ -3459,7 +3561,10 @@
         "sales_12mo": 13,
         "prior_year_sales": 15,
         "median_dom": 48,
-        "change_1yr_pct": -5.3
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 0,
+        "sfd_prior_year_sales": 0
       },
       "mf": {
         "median_price": null,
@@ -3563,7 +3668,10 @@
         "sales_12mo": 40,
         "prior_year_sales": 40,
         "median_dom": 26,
-        "change_1yr_pct": -3.1
+        "change_1yr_pct": -3.1,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 40,
+        "sfd_prior_year_sales": 40
       },
       "mf": {
         "median_price": null,
@@ -3665,7 +3773,10 @@
         "sales_12mo": 1,
         "prior_year_sales": 0,
         "median_dom": null,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 0,
+        "sfd_prior_year_sales": 0
       },
       "mf": {
         "median_price": null,
@@ -3768,7 +3879,10 @@
         "sales_12mo": 48,
         "prior_year_sales": 52,
         "median_dom": 34,
-        "change_1yr_pct": -4.7
+        "change_1yr_pct": -5.7,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 39,
+        "sfd_prior_year_sales": 41
       },
       "mf": {
         "median_price": null,
@@ -3868,7 +3982,10 @@
         "sales_12mo": 1,
         "prior_year_sales": 2,
         "median_dom": null,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 1,
+        "sfd_prior_year_sales": 2
       },
       "mf": {
         "median_price": null,
@@ -3963,7 +4080,10 @@
         "sales_12mo": 4,
         "prior_year_sales": 5,
         "median_dom": 50,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 0,
+        "sfd_prior_year_sales": 0
       },
       "mf": {
         "median_price": null,
@@ -4058,7 +4178,10 @@
         "sales_12mo": 29,
         "prior_year_sales": 25,
         "median_dom": 53,
-        "change_1yr_pct": -28.4
+        "change_1yr_pct": -15.7,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 14,
+        "sfd_prior_year_sales": 14
       },
       "mf": {
         "median_price": null,
@@ -4162,7 +4285,10 @@
         "sales_12mo": 21,
         "prior_year_sales": 26,
         "median_dom": 23,
-        "change_1yr_pct": -6.5
+        "change_1yr_pct": -7,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 16,
+        "sfd_prior_year_sales": 20
       },
       "mf": {
         "median_price": 1450000,
@@ -4261,7 +4387,10 @@
         "sales_12mo": 19,
         "prior_year_sales": 14,
         "median_dom": 53,
-        "change_1yr_pct": -12.3
+        "change_1yr_pct": -9.4,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 17,
+        "sfd_prior_year_sales": 13
       },
       "mf": {
         "median_price": 905000,
@@ -4360,7 +4489,10 @@
         "sales_12mo": 7,
         "prior_year_sales": 6,
         "median_dom": 21,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 7,
+        "sfd_prior_year_sales": 5
       },
       "mf": {
         "median_price": null,
@@ -4460,7 +4592,10 @@
         "sales_12mo": 1,
         "prior_year_sales": 0,
         "median_dom": null,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 1,
+        "sfd_prior_year_sales": 0
       },
       "mf": {
         "median_price": null,
@@ -4563,7 +4698,10 @@
         "sales_12mo": 54,
         "prior_year_sales": 47,
         "median_dom": 16,
-        "change_1yr_pct": -0.3
+        "change_1yr_pct": -5.1,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 50,
+        "sfd_prior_year_sales": 42
       },
       "mf": {
         "median_price": 1000000,
@@ -4664,7 +4802,10 @@
         "sales_12mo": 54,
         "prior_year_sales": 51,
         "median_dom": 11,
-        "change_1yr_pct": 10.1
+        "change_1yr_pct": 15.6,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 45,
+        "sfd_prior_year_sales": 45
       },
       "mf": {
         "median_price": 1215000,
@@ -4765,7 +4906,10 @@
         "sales_12mo": 23,
         "prior_year_sales": 19,
         "median_dom": 23,
-        "change_1yr_pct": -7.2
+        "change_1yr_pct": -15.8,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 22,
+        "sfd_prior_year_sales": 18
       },
       "mf": {
         "median_price": 925000,
@@ -4866,7 +5010,10 @@
         "sales_12mo": 15,
         "prior_year_sales": 7,
         "median_dom": 6,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 15,
+        "sfd_prior_year_sales": 7
       },
       "mf": {
         "median_price": null,
@@ -4968,7 +5115,10 @@
         "sales_12mo": 10,
         "prior_year_sales": 7,
         "median_dom": 74,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 10,
+        "sfd_prior_year_sales": 6
       },
       "mf": {
         "median_price": 625000,
@@ -5068,7 +5218,10 @@
         "sales_12mo": 6,
         "prior_year_sales": 4,
         "median_dom": 9,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 6,
+        "sfd_prior_year_sales": 4
       },
       "mf": {
         "median_price": null,
@@ -5170,7 +5323,10 @@
         "sales_12mo": 8,
         "prior_year_sales": 7,
         "median_dom": 22,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 8,
+        "sfd_prior_year_sales": 7
       },
       "mf": {
         "median_price": null,
@@ -5271,7 +5427,10 @@
         "sales_12mo": 44,
         "prior_year_sales": 36,
         "median_dom": 22,
-        "change_1yr_pct": -6.4
+        "change_1yr_pct": -6.4,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 44,
+        "sfd_prior_year_sales": 36
       },
       "mf": {
         "median_price": null,
@@ -5372,7 +5531,10 @@
         "sales_12mo": 0,
         "prior_year_sales": 0,
         "median_dom": null,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 0,
+        "sfd_prior_year_sales": 0
       },
       "mf": {
         "median_price": null,
@@ -5474,7 +5636,10 @@
         "sales_12mo": 5,
         "prior_year_sales": 11,
         "median_dom": 53,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 0,
+        "sfd_prior_year_sales": 0
       },
       "mf": {
         "median_price": null,
@@ -5576,7 +5741,10 @@
         "sales_12mo": 0,
         "prior_year_sales": 0,
         "median_dom": null,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 0,
+        "sfd_prior_year_sales": 0
       },
       "mf": {
         "median_price": null,
@@ -5663,7 +5831,10 @@
         "sales_12mo": 589,
         "prior_year_sales": 534,
         "median_dom": 32,
-        "change_1yr_pct": 2.2
+        "change_1yr_pct": 2.2,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 589,
+        "sfd_prior_year_sales": 534
       },
       "mf": {
         "median_price": null,
@@ -5765,7 +5936,10 @@
         "sales_12mo": 54,
         "prior_year_sales": 47,
         "median_dom": 44,
-        "change_1yr_pct": -3.2
+        "change_1yr_pct": -3.2,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 54,
+        "sfd_prior_year_sales": 47
       },
       "mf": {
         "median_price": null,
@@ -5866,7 +6040,10 @@
         "sales_12mo": 9,
         "prior_year_sales": 15,
         "median_dom": 19,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 9,
+        "sfd_prior_year_sales": 15
       },
       "mf": {
         "median_price": null,
@@ -5967,7 +6144,10 @@
         "sales_12mo": 11,
         "prior_year_sales": 41,
         "median_dom": 8,
-        "change_1yr_pct": -4.7
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 8,
+        "sfd_prior_year_sales": 35
       },
       "mf": {
         "median_price": null,
@@ -6067,7 +6247,10 @@
         "sales_12mo": 22,
         "prior_year_sales": 18,
         "median_dom": 28,
-        "change_1yr_pct": 9
+        "change_1yr_pct": 9.5,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 21,
+        "sfd_prior_year_sales": 18
       },
       "mf": {
         "median_price": null,
@@ -6174,7 +6357,10 @@
         "sales_12mo": 80,
         "prior_year_sales": 80,
         "median_dom": 21,
-        "change_1yr_pct": 2.9
+        "change_1yr_pct": 8.4,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 67,
+        "sfd_prior_year_sales": 74
       },
       "mf": {
         "median_price": null,
@@ -6272,7 +6458,10 @@
         "sales_12mo": 4,
         "prior_year_sales": 3,
         "median_dom": 12,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 4,
+        "sfd_prior_year_sales": 3
       },
       "mf": {
         "median_price": null,
@@ -6372,7 +6561,10 @@
         "sales_12mo": 36,
         "prior_year_sales": 50,
         "median_dom": 27,
-        "change_1yr_pct": 7.1
+        "change_1yr_pct": 2.1,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 35,
+        "sfd_prior_year_sales": 37
       },
       "mf": {
         "median_price": null,
@@ -6470,7 +6662,10 @@
         "sales_12mo": 11,
         "prior_year_sales": 18,
         "median_dom": 24,
-        "change_1yr_pct": 8
+        "change_1yr_pct": 8,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 11,
+        "sfd_prior_year_sales": 18
       },
       "mf": {
         "median_price": null,
@@ -6570,7 +6765,10 @@
         "sales_12mo": 0,
         "prior_year_sales": 2,
         "median_dom": null,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 0,
+        "sfd_prior_year_sales": 0
       },
       "mf": {
         "median_price": null,
@@ -6671,7 +6869,10 @@
         "sales_12mo": 14,
         "prior_year_sales": 22,
         "median_dom": 61,
-        "change_1yr_pct": 4.7
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 0,
+        "sfd_prior_year_sales": 0
       },
       "mf": {
         "median_price": null,
@@ -6770,7 +6971,10 @@
         "sales_12mo": 5,
         "prior_year_sales": 6,
         "median_dom": 45,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 5,
+        "sfd_prior_year_sales": 6
       },
       "mf": {
         "median_price": null,
@@ -6873,7 +7077,10 @@
         "sales_12mo": 26,
         "prior_year_sales": 34,
         "median_dom": 17,
-        "change_1yr_pct": -7.7
+        "change_1yr_pct": -7.7,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 26,
+        "sfd_prior_year_sales": 34
       },
       "mf": {
         "median_price": null,
@@ -6975,7 +7182,10 @@
         "sales_12mo": 4,
         "prior_year_sales": 1,
         "median_dom": 4,
-        "change_1yr_pct": null
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": 2,
+        "sfd_prior_year_sales": 1
       },
       "mf": {
         "median_price": null,
@@ -7078,7 +7288,10 @@
         "sales_12mo": 194,
         "prior_year_sales": 112,
         "median_dom": 9,
-        "change_1yr_pct": -0.2
+        "change_1yr_pct": null,
+        "change_basis": "Single Family Detached",
+        "sfd_sales_12mo": null,
+        "sfd_prior_year_sales": null
       },
       "mf": {
         "median_price": null,

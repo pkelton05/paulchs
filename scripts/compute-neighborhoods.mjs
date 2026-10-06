@@ -59,6 +59,13 @@ function checkRows(pull, key, notes) {
   if (ids.size !== p.rows.length) notes.push(`${key}: duplicate ListingIds`);
 }
 
+const isSfd = (r) => r[3] === "Single Family Detached";
+function sfdChange(c12, p12) {
+  const a = c12.filter(isSfd).map((r) => r[1]);
+  const b = p12.filter(isSfd).map((r) => r[1]);
+  return a.length >= MIN_CHANGE && b.length >= MIN_CHANGE ? pct(median(a), median(b)) : null;
+}
+
 function computeRes(pull, notes) {
   const { cur12, prev12 } = pull.windows;
   const where = `${pull.area_slug}/${pull.slug} res`;
@@ -70,6 +77,7 @@ function computeRes(pull, notes) {
     const prevMed = r.prev12.n >= MIN_SAMPLE ? fromRanks(r.prev12.rank_rows, "ClosePrice", r.prev12.n, 0.5, where) : null;
     const sfd = r.subtype_counts?.["Single Family Detached"] ?? 0;
     const sfa = r.subtype_counts?.["Single Family Attached"] ?? 0;
+    if (sfd + sfa !== r.total_entries && sfa === 0) notes.push("res: ranks mode with non-detached sales; no change shown");
     return {
       res: {
         median_price: val(0.5),
@@ -81,7 +89,11 @@ function computeRes(pull, notes) {
         sales_12mo: r.cur12.n,
         prior_year_sales: r.prev12.n,
         median_dom: use12 ? Math.round(fromRanks(r.cur12.rank_rows, "CumulativeDaysOnMarket", r.cur12.n, 0.5, where)) : null,
-        change_1yr_pct: med && prevMed && r.cur12.n >= MIN_CHANGE && r.prev12.n >= MIN_CHANGE ? pct(med, prevMed) : null,
+        // Ranks mode has no per-subtype medians, so show a change only when every sale is detached.
+        change_1yr_pct: med && prevMed && sfa === 0 && r.cur12.n >= MIN_CHANGE && r.prev12.n >= MIN_CHANGE ? pct(med, prevMed) : null,
+        change_basis: "Single Family Detached",
+        sfd_sales_12mo: sfa === 0 ? r.cur12.n : null,
+        sfd_prior_year_sales: sfa === 0 ? r.prev12.n : null,
       },
       mix: { sfd, sfa, other: Math.max(0, r.total_entries - sfd - sfa), n: r.total_entries },
       yearBuilt: null,
@@ -115,7 +127,12 @@ function computeRes(pull, notes) {
       sales_12mo: c12.length,
       prior_year_sales: p12.length,
       median_dom: doms.length >= MIN_SAMPLE ? Math.round(median(doms)) : null,
-      change_1yr_pct: c12.length >= MIN_CHANGE && p12.length >= MIN_CHANGE ? pct(median(c12.map((r) => r[1])), median(p12.map((r) => r[1]))) : null,
+      // Detached homes only, like the area pages: a shift between houses and townhomes
+      // would otherwise read as a price change.
+      change_1yr_pct: sfdChange(c12, p12),
+      change_basis: "Single Family Detached",
+      sfd_sales_12mo: c12.filter(isSfd).length,
+      sfd_prior_year_sales: p12.filter(isSfd).length,
     },
     mix: {
       sfd: all.filter((r) => r[3] === "Single Family Detached").length,

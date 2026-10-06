@@ -1,0 +1,19 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "(www\\.)?charlestoninvestoragent\\.com" }],
+      "destination": "https://paulchs.com/investor-friendly-agent-charleston",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "(www\\.)?paulkelton\\.com" }],
+      "destination": "https://paulchs.com/",
+      "statusCode": 301
+    }
+  ]
+}

@@ -15,6 +15,7 @@ import {
   sourceLine,
   changeShown,
   countySlug,
+  attribution,
   MIN_CHANGE_SAMPLE,
 } from "../lib/areas";
 
@@ -41,9 +42,9 @@ const cards = {
 };
 const lead = leadLine(area, d.name);
 
-const mf = area.mf ?? {};
-const sfr = area.sfr ?? {};
-const rents = area.rents ?? {};
+const mf: Record<string, any> = area.mf ?? {};
+const sfr: Record<string, any> = area.sfr ?? {};
+const rents: Record<string, any> = area.rents ?? {};
 const n = (v: unknown) => (typeof v === "number" ? v : null);
 const money = (v: unknown) => (typeof v === "number" ? fmt.money(v) : null);
 const period = "last 12 months";
@@ -58,9 +59,8 @@ const rentBeds = [
 ] as const;
 const rentSourceFor = (key: string) => {
   const s = rents.source_by_bed?.[key];
-  return s ? `${s.source} · ${s.n} leases` : "MLS lease comps · fewer than 3 leases";
+  return sourceLine(area, s ? `MLS lease comps, ${period} · ${s.n} leases` : "MLS lease comps · fewer than 3 leases");
 };
-const rentsAsOf = sourceLine(area, `Median monthly rent from leases closed in the ${period}`);
 
 const changes = [
   { label: "2–4 unit median price, 1-year change", v: changeShown(area, "mf", "1yr"), n: mf.sample?.prior_year_sales },
@@ -132,7 +132,7 @@ const hoods = hoodsInArea(entry.id);
             source={mfSource}
           />
           <NumberBlock
-            value={(mf.sales_12mo ?? 0) >= 5 && n(mf.p25) && n(mf.p75) ? `${money(mf.p25)}–${money(mf.p75)}` : null}
+            value={(mf.sales_12mo ?? 0) >= 5 && n(mf.p25) && n(mf.p75) ? `${money(mf.p25)}–\u200b${money(mf.p75)}` : null}
             label="middle half of sales"
             missing="Not enough sales"
             size="compact"
@@ -160,7 +160,6 @@ const hoods = hoodsInArea(entry.id);
             ))
           }
         </div>
-        <p class="block-source">{rentsAsOf}</p>
 
         <h3>How fast it moves</h3>
         <div class="grid grid-2">
@@ -194,6 +193,7 @@ const hoods = hoodsInArea(entry.id);
             ))
           }
         </div>
+        <p class="block-source">{attribution} Medians of closed MLS sales and leases. Changes compare the same 12-month window a year and five years earlier, shown only when both periods have {MIN_CHANGE_SAMPLE} or more sales.</p>
       </div>
     </section>
 
@@ -305,18 +305,21 @@ const hoods = hoodsInArea(entry.id);
     display: grid;
     gap: 2px;
   }
+  .grid > :global(*) {
+    min-width: 0;
+  }
   @media (min-width: 48rem) {
-    .grid-2 { grid-template-columns: repeat(2, 1fr); }
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
-    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
   @media (min-width: 60rem) {
-    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   }
   .block-source {
     font-size: var(--text-small);
     color: var(--pluff-soft);
-    margin-top: 0.5rem;
+    margin-top: var(--space-2);
     max-width: none;
   }
   .watch li + li {

@@ -82,6 +82,8 @@ Last updated: 2026-10-06 (Session 2)
 - [ ] How lenders treat a dependency / carriage house unit (Phase 2).
 
 ### Area and neighborhood watch-outs (check per page as each is built)
+- [ ] **Upper Peninsula (Area 52) page:** rent drivers (downtown jobs, the hospitals and medical university on the lower peninsula, I-26 and Morrison Drive to North Charleston employers); watch-outs: flood exposure near the marsh and tidal creeks, City of Charleston STR rules, zoning for adding a unit and whether BAR applies, insurance on older frame buildings.
+- [ ] **North Charleston inside I-526 (Area 31) page:** rent drivers (port terminals, Boeing, old Navy Base redevelopment, I-26); watch-outs: North Charleston rental registration or inspection rules, flood zones near the Ashley River and Filbin Creek, City of North Charleston vs. unincorporated county parcels, older-building systems.
 - [ ] Every "Watch-outs" line in AREAS.md is VERIFY: STR rules by jurisdiction (City of Charleston, Mount Pleasant, Folly Beach, Isle of Palms, James Island, county), Board of Architectural Review, flood zones, HOA leasing restrictions, rental registration in North Charleston, zoning for added units, well/septic, resort rental program terms, county millage.
 - [ ] Mount Pleasant "slowed new multifamily approvals" claim (SITE-CONTENT §12.6).
 - [ ] Any employer or growth statistic on `/is-charleston-a-good-place-to-buy-rental-property`.
@@ -133,6 +135,13 @@ Last updated: 2026-10-06 (Session 2)
 - Placeholder homepage with Call and Text links and `RealEstateAgent` schema.
 - `vercel.json` with 301 redirects: paulkelton.com → homepage, charlestoninvestoragent.com → `/investor-friendly-agent-charleston`.
 - Checks: build passes, internal link check passes, no em dashes in `src/`.
+
+## Session 3 progress (2026-10-06)
+
+- Pilot data for Areas 52 and 31 pulled from FlexMLS (MLS only, no RentCast), checked against raw rows, approved by Paul. Change figures hide when either window has under 10 sales (Paul, 2026-10-06).
+- Area page layout (`src/layouts/AreaLayout.astro`), `/charleston` index, and `src/lib/areas.ts` (token filling, formatting, sample rules). Build fails if copy references missing data or types a number into the body.
+- Draft pages for Upper Peninsula and North Charleston inside I-526 (`draft: true` – noindex, out of sitemap) waiting for Paul's review.
+- Next: Paul reviews the two pages; then pull and write the other 11 Tier A areas (51, 11, 21, 32, 61, 62, 71, 12, 42, 73, 23).
 
 ## Next session (Session 3 – area hub pages, Tier A pilot)
 

@@ -56,10 +56,14 @@ export function asOfLabel(asOf: string | null | undefined): string | null {
   return new Date(Date.UTC(y, m - 1, 1)).toLocaleString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
 }
 
+/** Per-block source line: what it is, sample size, and the as-of stamp. */
 export function sourceLine(area: AreaRecord, detail: string): string {
   const asOf = asOfLabel(area.as_of);
-  return [detail, asOf ? `Data as of ${asOf}` : null, site.mls_attribution].filter(Boolean).join(" · ");
+  return [detail, asOf ? `Data as of ${asOf}` : null].filter(Boolean).join(" · ");
 }
+
+/** The MLS attribution, shown once under each set of number blocks. */
+export const attribution = site.mls_attribution;
 
 export function changeShown(area: AreaRecord, kind: "mf" | "sfr", which: "1yr" | "5yr"): number | null {
   const block = area[kind];

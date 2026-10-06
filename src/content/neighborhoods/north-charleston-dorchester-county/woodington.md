@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Flood risk differs by lot. Order a flood determination for the address you are considering."
     verify: true
-draft: true
+draft: false
 ---
 
 Woodington sells one kind of product: a detached house from the late 1980s, nearly always in an HOA. Prices cluster closely, so a listing far from the pack tells you something about its condition or its terms. Sales picked up slightly in the latest year compared with the year before. Houses typically sold within a few weeks, so you will have time to see one, though not a lot of time to think.

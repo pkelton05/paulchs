@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Flood zone and elevation vary by lot on this island. Pull the zone for the exact address and get an insurance quote early."
     verify: true
-draft: true
+draft: false
 ---
 
 Crosscreek has the most mixed stock of the five James Island neighborhoods here. Most sales are detached houses, with a smaller share of attached homes and a couple of small multifamily buildings, and the homes are mostly from the early 1980s. Prices spread wide, with the cheaper sales far below the middle. Houses took longer to sell than in Mira Vista, Oakcrest or Regatta, and the latest year saw more sales than the year before.

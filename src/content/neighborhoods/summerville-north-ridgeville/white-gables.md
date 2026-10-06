@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Short-term rental rules come from the town or county and from the HOA. Confirm both for the address."
     verify: true
-draft: true
+draft: false
 ---
 
 White Gables is all detached houses, and the typical one dates to the mid-2000s. Prices have eased on detached homes over the past year, and the typical sale sits below the Summers Corner median. Homes take longer to sell here, about a dozen days more than in Summers Corner, which gives a buyer some room to negotiate and inspect.

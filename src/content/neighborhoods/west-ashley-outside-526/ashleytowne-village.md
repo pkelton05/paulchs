@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Find out whether the city allows short stays at this address before any nightly-rental income goes in your budget."
     verify: true
-draft: true
+draft: false
 ---
 
 Ashleytowne Village is a townhome neighborhood. Nearly every sale is an attached unit, the typical build date is early 1980s, and all of them come with an HOA. That makes the association the first document to request, ahead of the inspection. Prices run well under Shadowmoss and Springfield, and just under Carolina Cove's, which puts this at the cheaper end of the neighborhoods here with a sale median.

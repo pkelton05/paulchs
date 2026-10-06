@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Ask whether the parcel sits in the city or unincorporated Dorchester County, since permits and the tax bill follow that answer."
     verify: true
-draft: true
+draft: false
 ---
 
 Pepperidge stands alone among these four as a place to buy a building with more than one door. Over two years the MLS shows a handful of small multifamily sales, alongside a larger run of detached houses and an occasional attached home. Those small buildings sold quickly. The houses, by contrast, took far longer to sell than they do in Appian Landing, which uses the same twelve-month measure. Typical build year is the mid-1980s, and most sales sit in an HOA.

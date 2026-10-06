@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Houses from the early 1950s may have old sewer laterals and original wiring. Ask for a sewer scope and an electrical review."
     verify: true
-draft: true
+draft: false
 ---
 
 Parkwood Estates has the highest median sale of the five neighborhoods here, and it is a single-product market: detached houses, mostly built in the early 1950s. Sales prices spread out more than in Concord West or Maryville, so the median says less about any one house. Someone buying here should compare a house against the closest matches by size and finish. Homes sell as quickly as in Maryville and Concord West.

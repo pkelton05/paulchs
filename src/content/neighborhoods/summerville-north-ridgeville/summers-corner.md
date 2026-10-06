@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Flood and drainage conditions differ lot to lot. Pull the FEMA zone and get an insurance quote for the specific house."
     verify: true
-draft: true
+draft: false
 ---
 
 Volume is what sets Summers Corner apart. Over the past year this community sold roughly ten times as many homes as White Gables, and every sale was a detached house. Detached-home prices ticked up from the year before, while White Gables slipped. A typical sale lands well above the White Gables median, and the typical home spent fewer days on the market. A buyer has plenty of recent sales to price against.

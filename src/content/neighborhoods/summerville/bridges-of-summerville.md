@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "A Summerville mailing address does not settle whether the lot is inside town limits. Ask which jurisdiction sets the zoning, permit and short-term rental rules."
     verify: true
-draft: true
+draft: false
 ---
 
 Bridges of Summerville is a single-family-house neighborhood, and the sales say so: every home that sold was a detached house, and the typical one was built around 2003. There is no small multifamily here to chase. The play is a house you rent out, so the HOA matters as much as the price. Every sale in the neighborhood falls under one, and the rules on leasing are the first thing I would read.

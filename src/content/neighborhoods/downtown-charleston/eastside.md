@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Part of the Eastside sits north of the Crosstown, in a different MLS area. Check which side a property is on before you lean on these comps."
     verify: true
-draft: true
+draft: false
 ---
 
 Eastside is the least expensive neighborhood in this group when it comes to houses, and its small buildings cost the least per door as well. Prices for houses sit in a tight band instead of a wide spread, so the median is a fair guide here. Duplexes through fourplexes trade a number of times a year, and they sold quickly, faster than the houses did. Homes sold more often than a year earlier even as detached-home prices fell.

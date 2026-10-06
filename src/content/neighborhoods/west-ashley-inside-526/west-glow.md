@@ -13,7 +13,7 @@ watch_outs:
     verify: true
   - text: "Ask the City of Charleston about zoning and nightly-rental status for the building in question."
     verify: true
-draft: true
+draft: false
 ---
 
 West Glow barely registers in recent MLS records. A few house sales and a single small multifamily sale turned up, with only a pair of leases, which is too little to publish a median price or a neighborhood rent. Every rent row is an area-wide figure for West Ashley inside I-526, so use it as background for the whole part of town. Have a property here? Send it over and I will build comps from the streets around it.

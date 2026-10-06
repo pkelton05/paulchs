@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "The City of Charleston writes the nightly rental rules, so confirm what applies at your address."
     verify: true
-draft: true
+draft: false
 ---
 
 Center Park is a small pocket where only a handful of homes sold in two years, so one or two sales can move the picture. Six in ten were detached and four in ten were attached, the typical home dates to the early 2000s, and the ones that sold went fast. There were no small multifamily sales. The bedroom rents shown here are Daniel Island area figures from the last year, not Center Park leases, because the neighborhood has almost none of its own. Sales filed under the separate Daniel Island subdivision name are a much bigger sample if you want more to compare.

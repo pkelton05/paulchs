@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Lots near the marsh and creeks can differ in flood zone and elevation. Order a determination and an insurance bid before your due diligence period ends."
     verify: true
-draft: true
+draft: false
 ---
 
 Belle Hall is a single-family market. Every sale in the record was a detached house, and the typical house went up in the late 1990s. No small multifamily building has sold here in the past two years, so this is a place to buy one house and rent it, not to look for a duplex. Sale volume held level against the year before, detached-home prices slipped a little, and a typical listing found a buyer faster than one in Snee Farm.

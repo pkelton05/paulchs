@@ -13,7 +13,7 @@ watch_outs:
     verify: true
   - text: "With no MLS history under this name, check the flood zone and the zoning for the address, including any limit on adding a second unit."
     verify: true
-draft: true
+draft: false
 ---
 
 Pt Dowling Tract is filed under the North Charleston area outside I-526 in Charleston County, but nothing has sold or leased under that label in the last two years. I have no market numbers to give you for it, and I won't guess. If you are looking at a property here, send me the address and I will build comps from the surrounding subdivisions.

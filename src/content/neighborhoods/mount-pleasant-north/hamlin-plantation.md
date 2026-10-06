@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Low-lying lots near marsh edges can carry a flood designation. Look up the mapped zone for that lot, then price a policy on it."
     verify: true
-draft: true
+draft: false
 ---
 
 Hamlin Plantation sits above Dunes West on price. Sales split roughly two-to-one between detached and attached homes, and most were built in the mid-2000s. Sales were down from the prior year, and detached-home prices slipped over the same stretch. Homes typically sold a few days faster than in Dunes West. The range between cheaper and pricier sales is wide, so check which part of it you are shopping in. No multifamily buildings traded in two years.

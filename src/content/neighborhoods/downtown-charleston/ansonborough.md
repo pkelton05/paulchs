@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Nightly rental permission downtown comes from city rules that may differ lot to lot. Get a written answer for the property you are eyeing."
     verify: true
-draft: true
+draft: false
 ---
 
 Ansonborough is mostly a market for houses and townhomes, split about evenly between the two. Prices run from moderate to very high, and the top end pulls the middle upward, so a typical sale here says little about any one property. Detached-home prices fell from a year ago, though more homes changed hands than the year before. Small multifamily is rare. Only a few buildings of two to four units sold in two years, too few for a median or a price per door, so I would not underwrite one from this page.

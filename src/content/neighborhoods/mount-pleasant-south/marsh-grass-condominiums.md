@@ -13,7 +13,7 @@ watch_outs:
     verify: true
   - text: "Find out whether this unit could ever be a nightly rental under Mount Pleasant rules, and check its flood zone."
     verify: true
-draft: true
+draft: false
 ---
 
 Marsh Grass Condominiums has barely traded in the MLS lately. Two years produced one attached-home sale and one lease under this name, too little for a median or a rent of its own. Every rent listed for Marsh Grass is from the wider Mount Pleasant south area, not from leases in the complex. Thinking about a unit? Text me the address and I will look at what Belle Hall and Snee Farm are doing.

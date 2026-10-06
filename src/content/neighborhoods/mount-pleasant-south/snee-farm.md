@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Some lots back onto water or low ground. Confirm the mapped flood zone, then price coverage for that property."
     verify: true
-draft: true
+draft: false
 ---
 
 Snee Farm is the older of the two big house-heavy neighborhoods in this area, with a typical build year in the early 1980s. Most sales are detached houses, and about one in five is an attached home. There were slightly fewer sales than the year before, and detached-home prices fell by a bit more than they did in Belle Hall. A typical sale took longer to close than in Belle Hall. Nothing multifamily has traded under this name in two years.

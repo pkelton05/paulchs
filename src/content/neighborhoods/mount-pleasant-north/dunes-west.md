@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "The Town of Mount Pleasant sets the rules on nightly stays. Confirm what is allowed at the address, and check whether the association adds its own limit."
     verify: true
-draft: true
+draft: false
 ---
 
 Dunes West is the busiest market in this area by a wide margin. It had far more home sales over the past year than Hamlin Plantation, The Meridian or Crown Pointe. The stock is a mix, about two-thirds detached houses and one-third attached homes. Prices stretch a long way from the low end to the high end, so a single median hides a lot. Look at the range, then at the type of home you would actually buy. Nothing multifamily trades here.

@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Confirm the flood zone for the exact address before you rely on any insurance estimate."
     verify: true
-draft: true
+draft: false
 ---
 
 Russelldale is a small mix of houses and small buildings, split about evenly between the two in what sold over the last two years. Most of it dates to around 1960. Only a handful of each sold, so this page has no median and no Russelldale rent. The two leases under this name are too few to use, so the rents shown come from the whole MLS area.

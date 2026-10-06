@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Confirm whether the parcel sits in the City of Goose Creek or unincorporated Berkeley County, because rental registration and fees can differ."
     verify: true
-draft: true
+draft: false
 ---
 
 Liberty Hall is the busiest of the three neighborhoods in this area. The bulk of what sells is detached, with some attached homes too, and a typical house dates to about 2008. Closings dropped from one year to the next, yet detached-home prices still edged up. A typical sale took about a month to close. There are no duplexes or fourplexes in the sales record, so you buy one house and one lease at a time.

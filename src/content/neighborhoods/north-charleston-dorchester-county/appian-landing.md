@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Flood zone and drainage vary lot to lot. Pull the elevation certificate or a flood determination for the exact address."
     verify: true
-draft: true
+draft: false
 ---
 
 Appian Landing is a houses-only neighborhood as far as the sales go. Every recent sale was a detached home, and I see no duplexes or other small buildings trading under this name. The homes are mostly from around 1990, and almost all sit inside an HOA. Compared with Pepperidge, which is also measured over the last twelve months, the typical price here is higher and homes go under contract far faster. Pepperidge houses sat for weeks; these move in days.

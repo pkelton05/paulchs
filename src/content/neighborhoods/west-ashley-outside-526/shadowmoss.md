@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Confirm City of Charleston short-term rental rules and any restriction in the covenants for the specific address."
     verify: true
-draft: true
+draft: false
 ---
 
 Shadowmoss is the busiest neighborhood in this area by a wide margin, with far more sales than any of its neighbors. It is mostly detached houses from around 1990, with a minority of townhomes mixed in. Prices have the widest spread of any neighborhood here, and the median is the highest of the group. Detached-home prices slipped a little over the latest twelve months, while the number of sales rose well above the year before.

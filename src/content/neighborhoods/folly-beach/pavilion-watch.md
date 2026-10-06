@@ -13,7 +13,7 @@ watch_outs:
     verify: true
   - text: "Flood exposure on a barrier island varies lot by lot. Ask for the flood zone, the elevation certificate, and a wind and flood insurance quote before you make an offer."
     verify: true
-draft: true
+draft: false
 ---
 
 The MLS files Pavilion Watch under the Folly Beach area, yet no closed sale or rented lease carries the name for the past couple of years. That leaves me nothing recent to quote. For an island address you are weighing, I would build comps from the closest Folly Beach streets and subdivisions. Tell me the address and I will pull them.

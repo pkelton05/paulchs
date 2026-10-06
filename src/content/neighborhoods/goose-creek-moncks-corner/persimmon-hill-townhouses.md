@@ -17,7 +17,7 @@ watch_outs:
     verify: true
   - text: "Confirm that the City of Goose Creek, not unincorporated Berkeley County, governs the address, and what that means for rental registration."
     verify: true
-draft: true
+draft: false
 ---
 
 Persimmon Hill is a townhome neighborhood, start to finish. Every recent sale was an attached unit, the typical building went up in the early 2000s, and the association covers all of them. That makes this a one-door-per-purchase market with no duplex or fourplex inventory to chase. Fewer units changed hands over the most recent year than the one prior, and a unit that did sell took a little over two months to close out. Plan on patience.

@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "The address falls under City of Charleston rules for short-term rentals. Confirm the status before modeling anything but a long lease."
     verify: true
-draft: true
+draft: false
 ---
 
 Of the four neighborhoods here with enough sales for a median, this is the least expensive, and the product explains a lot of it. Every sale in the recent record was an attached home, mostly built around the end of the 1990s, and no small multifamily building has traded under this name. For an investor, that makes Concord West a townhome-rental play, not a duplex play. Homes also move quickly here, about as fast as in Maryville and Parkwood Estates and far faster than in Orange Grove Estates.

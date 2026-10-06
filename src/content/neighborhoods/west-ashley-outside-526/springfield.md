@@ -13,7 +13,7 @@ watch_outs:
     verify: true
   - text: "A typical 1960s build means checking the sewer lateral, wiring and roof. Confirm flood zone and insurance cost for the address."
     verify: true
-draft: true
+draft: false
 ---
 
 Springfield is a block of older detached houses, typically 1960s, and every recent sale was a house with no HOA attached. It sits above Castlewood, its closest match on age and ownership setup, and well above the townhome neighborhoods. Of the neighborhoods here with a detached-home price trend, Springfield is the one where prices rose over the latest twelve months, though the number of sales was a touch lower than the year before.

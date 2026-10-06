@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Get flood and wind insurance quotes early. On a barrier island they can move the numbers more than the purchase price does."
     verify: true
-draft: true
+draft: false
 ---
 
 Beachwood has only a few sales in the MLS over the last two years, and every one was a detached single-family home. That is too few to call a typical price, so I will not put one on it. I cannot quote a rent for Beachwood: the MLS has no leases here or elsewhere in this area. It sits on Isle of Palms in the 29451 ZIP. Looking at a home in Beachwood? Pass me the address and we will go through the math together.

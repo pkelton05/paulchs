@@ -13,7 +13,7 @@ watch_outs:
     verify: true
   - text: "Pull the flood zone and price insurance for your particular lot, since low spots in this part of West Ashley behave differently from their neighbors."
     verify: true
-draft: true
+draft: false
 ---
 
 Asheford Place is a small, steady pocket of detached houses, mostly late 1990s construction. Only a handful sold in two years, and their prices landed in a very narrow band, so one median tells you most of what there is to know. Most lots have no HOA, which keeps the leasing rules simple, though a minority do.

@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Flood exposure varies by lot. Look up the FEMA zone and price a policy for the building you are buying."
     verify: true
-draft: true
+draft: false
 ---
 
 Millbrook is where this part of the area turns to small multifamily. Nobody sold a single-family home here in the last two years, but a few small buildings traded, and the typical building was put up in the mid-1980s. Roughly two or three a year is not a deep market. One of those sales was outside the two-to-four-unit range or lacked a unit count, so I would not try to pin a price per door on a handful of deals. Look at the specific building and the sales closest to it in size.

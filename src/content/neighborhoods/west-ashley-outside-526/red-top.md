@@ -13,7 +13,7 @@ watch_outs:
     verify: true
   - text: "Zoning and rental rules, including any allowance for a second dwelling, depend on the parcel. Check them before you underwrite an addition."
     verify: true
-draft: true
+draft: false
 ---
 
 Red Top is listed in the MLS as part of West Ashley outside I-526, but the MLS has no sales or leases filed under that name in the last two years, so I have no numbers for it. Rather than guess, I would pull comps from nearby streets and nearby subdivisions for any property you are considering. Send me the address and I will do that.

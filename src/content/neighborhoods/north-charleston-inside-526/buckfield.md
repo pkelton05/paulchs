@@ -13,7 +13,7 @@ watch_outs:
     verify: true
   - text: "Look up the flood zone and any rental registration rules for the exact address."
     verify: true
-draft: true
+draft: false
 ---
 
 Buckfield barely shows up in the MLS. Over two years there was a single small-building sale, a single lease and no home sales under this name. With so little to go on, the page skips the median, and the rents here describe the wider MLS area. Don't price a building here off this page. Give me the address and I will work from comps on the nearby streets instead.

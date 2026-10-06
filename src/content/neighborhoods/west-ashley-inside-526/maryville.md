@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Confirm City of Charleston rules on short-term rentals and on adding a second dwelling before you price either one into a deal."
     verify: true
-draft: true
+draft: false
 ---
 
 Maryville is a detached-house market and a newer one by this area's standards, built mostly in the 2000s. Very few of the sales sit in an HOA, so most lots come without the leasing restrictions you find in Concord West. Houses have turned over fast, and the number sold in the latest 12 months was more than double the year before. I would not read a cause into that, but it does mean there are plenty of recent comps to check an offer against.

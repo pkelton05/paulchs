@@ -13,7 +13,7 @@ watch_outs:
     verify: true
   - text: "These are 1960s houses. Ask about the sewer line, the electrical panel and the age of the roof, and check the flood zone for the lot."
     verify: true
-draft: true
+draft: false
 ---
 
 Castlewood is a neighborhood of older detached houses, typically from around 1960, and none of the recent sales sit in an HOA. Nobody will cap your leases, but the buildings are the thing to inspect. It trades at a price between Springfield and the cheaper townhome neighborhoods, and the few sales took longer to close than most nearby. Lease evidence is limited to a couple of 3-bedroom leases, so every rent shown here is an area-level number, not a Castlewood rent.

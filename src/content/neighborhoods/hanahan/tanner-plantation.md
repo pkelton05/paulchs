@@ -17,7 +17,7 @@ watch_outs:
     verify: true
   - text: "The community crosses an MLS area line but has a Hanahan address. Confirm the taxing district and any city or county rules for the specific lot."
     verify: true
-draft: true
+draft: false
 ---
 
 Tanner Plantation is one community that an MLS area line cuts in two, with Hanahan addresses on both sides. It trades more often than Belvedere Estates, Bowen or Otranto. The typical home dates to the mid-2000s, and some sales are new construction. Most are detached houses, with a share of attached homes, and almost all sit in an HOA. Detached-home prices climbed year over year here too, even as the count of detached sales dipped a little.

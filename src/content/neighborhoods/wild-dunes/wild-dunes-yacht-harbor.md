@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Price flood and wind coverage, and ask what the association's master policy covers, before you run your cash flow."
     verify: true
-draft: true
+draft: false
 ---
 
 Wild Dunes Yacht Harbor is a place where something sells every few months, not every few weeks. Recent sales are tightly bunched in price, and the typical building here dates to the early 1990s. The MLS lists all of these sales under the sub-type "Other", so I will only say that homes and units have sold, not what kind. The latest twelve months were a little slower on count than the twelve before, and a typical listing sat around seven weeks. Rent is the gap: nothing has leased through the MLS under this name or in the rest of Wild Dunes, so I cannot quote a lease figure.

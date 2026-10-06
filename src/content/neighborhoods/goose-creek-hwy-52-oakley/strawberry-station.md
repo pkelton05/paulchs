@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Flood exposure varies by lot and by distance to nearby creeks. Look up the zone and price the insurance for the specific lot."
     verify: true
-draft: true
+draft: false
 ---
 
 Strawberry Station is a newer neighborhood. Every recent sale was a detached house, and the typical year built is 2021, so you are mostly buying homes only a few years old. Closings were lower over the past year than the year prior, while detached-home prices rose. The median sale price is above Liberty Hall Plantation's, and the houses are much newer there, which is part of the difference.

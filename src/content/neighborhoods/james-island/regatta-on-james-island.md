@@ -17,7 +17,7 @@ watch_outs:
     verify: true
   - text: "Flood zones along the creeks and marsh differ by building. Confirm the zone and price coverage before you commit."
     verify: true
-draft: true
+draft: false
 ---
 
 Regatta is the lowest-priced neighborhood among the James Island pages with a home price, and it is entirely attached homes built in the mid-2000s. It also rents more than it sells. The MLS logged more leases than sales over two years, which is unusual and makes the lease comps here some of the most reliable on the island. Sales slipped a little from the prior year, and homes sold about as quickly as in Mira Vista and Oakcrest.

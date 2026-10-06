@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Low spots can carry a different flood rating than the lot next door. Pull the FEMA map for this parcel before you offer."
     verify: true
-draft: true
+draft: false
 ---
 
 Carlton Place is a detached-home neighborhood with an association over all of it, and the houses date to around 2009. Sales run slowly, a handful across two years, and the ones that closed moved fast, with a median of under two weeks on market. Only the 3-bedroom rent comes from leases in the neighborhood itself, and there are just a few of those, so read it as a rough guide. The 2-bedroom and 4-bedroom rents are Area 72 numbers, not Carlton Place leases. There is no duplex or small multifamily here, so a purchase is one house, one door.

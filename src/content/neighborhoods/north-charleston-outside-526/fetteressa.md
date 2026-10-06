@@ -13,7 +13,7 @@ watch_outs:
     verify: true
   - text: "Flood exposure varies by parcel. Pull the FEMA zone for the lot you are considering, then ask an agent for a coverage bid."
     verify: true
-draft: true
+draft: false
 ---
 
 Fetteressa is a rental story, not a sales story. No houses sold under this name in two years, and the one building sale was either larger than a fourplex or had no unit count, so there is no per-door price to anchor on. A handful of leases did sign, and most were two-bedroom units, which is why that rent comes from Fetteressa itself and rests on only a few leases. The one-bedroom, three-bedroom and four-bedroom and up rents are for the wider MLS area. Send me an address and I will pull comps from the nearby blocks.

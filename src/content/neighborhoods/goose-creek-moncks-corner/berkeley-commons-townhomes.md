@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Check short-term rental rules for the exact address before modeling anything but a standard lease."
     verify: true
-draft: true
+draft: false
 ---
 
 Berkeley Commons is a small townhome community with a Summerville mailing address, and it is attached units only. Resales are rare. Both recent sales closed in the earlier of the last two years, and none have closed in the latest twelve months, so there is no neighborhood price level I can stand behind. The rents here are for the whole Goose Creek and Moncks Corner MLS area, not Berkeley Commons leases, and the neighborhood has almost no lease history of its own. For a price check on a unit, I would lean on Persimmon Hill, the other townhome community in this area, and send me the address so I can pull current comps.

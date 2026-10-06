@@ -13,7 +13,7 @@ watch_outs:
     verify: true
   - text: "Crown Pointe is in the Town of Mount Pleasant. Check the town's current rules on nightly rentals before modeling anything shorter than a standard lease."
     verify: true
-draft: true
+draft: false
 ---
 
 Crown Pointe is a small, uniform pocket of detached houses. Sales here are modest in number, they cluster in a fairly tight price band, and typical construction is from the late 1980s. The MLS shows no leases under this name in two years, so the rents on this page are area figures for the whole of north Mount Pleasant. Thinking about renting out a house on one of these streets? Send me the address and I will pull lease comps from nearby streets and from the larger neighborhoods around it.

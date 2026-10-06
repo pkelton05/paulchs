@@ -17,7 +17,7 @@ watch_outs:
     verify: true
   - text: "Zoning may limit adding a unit to an older lot. Get the city's answer before planning a conversion."
     verify: true
-draft: true
+draft: false
 ---
 
 Small buildings trade often enough in Dorchester Terrace to show a pattern. Duplexes through fourplexes change hands several times a year, and the typical building sells for less than the typical house. That is unusual, and it is why the price per door is low. The middle half of building sales is narrow at the bottom and stretches out at the top, so the cheap end looks tightly bunched and the upper end is where condition and unit count start to matter.

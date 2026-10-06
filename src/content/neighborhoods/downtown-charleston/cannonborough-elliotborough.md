@@ -17,7 +17,7 @@ watch_outs:
     verify: true
   - text: "Some lower lots may fall in a mapped flood area. Pull the map and an insurance quote for the exact address."
     verify: true
-draft: true
+draft: false
 ---
 
 If you want to study how small buildings trade on the lower peninsula, start here. Cannonborough-Elliotborough had the largest number of two- to four-unit sales of any neighborhood on this list, and a good share of the homes that sold were multifamily. Those buildings sold for more than the typical house, and they took far longer to sell. Homes moved much faster, in a few weeks. Compare a building to other buildings, using price per door, and set the single-family numbers aside.

@@ -13,7 +13,7 @@ watch_outs:
     verify: true
   - text: "The Meridian is in the Town of Mount Pleasant. Confirm current nightly rental rules, and whether the association bans shorter stays on its own."
     verify: true
-draft: true
+draft: false
 ---
 
 The Meridian is the entry-priced corner of this area. Sales sit far below Dunes West and Hamlin Plantation, almost all of them are attached homes, and construction dates mostly to the early 1990s. Homes took longer to sell than in either of those two, and the count of sales dipped a little from the prior year. The single multifamily entry is a one-unit listing, not a small building, so there is no real duplex or fourplex market here.

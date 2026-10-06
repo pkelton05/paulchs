@@ -13,7 +13,7 @@ watch_outs:
     verify: true
   - text: "If the lot is on a well or septic system, get those inspected and ask what the county requires before any added unit."
     verify: true
-draft: true
+draft: false
 ---
 
 Rose Hill sits in Dorchester County, in the same MLS area as Summers Corner and White Gables. There are no MLS sales or leases under this name in the past two years, so I cannot give you prices or rents for it. Have an address in Rose Hill in mind? Send it to me and we can price it off the nearest neighborhoods that do have recent sales.

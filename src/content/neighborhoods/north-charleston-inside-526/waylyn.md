@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Parts of this area may sit in flood zones. Price flood coverage for the specific parcel before you offer."
     verify: true
-draft: true
+draft: false
 ---
 
 Waylyn is a single-family market. Almost every sale is a detached house, most were built in the 1940s, and only one small building has sold here in the last two years. If you want a duplex, look next door. If you want a rental house, this is the place to compare. Houses here sold for a bit less than in Dorchester Terrace, and the middle half of prices runs wide, so condition sets the price more than the street does.

@@ -17,7 +17,7 @@ watch_outs:
     verify: true
   - text: "Zoning for a duplex or an added unit depends on the City of Charleston's rules for the lot. Confirm with the zoning office."
     verify: true
-draft: true
+draft: false
 ---
 
 Orange Grove Estates is the one neighborhood in this group where small multifamily buildings show up alongside houses. Most sales are still detached homes, built around the early 1960s, but a slice of what sold was two- to four-unit property. There were too few of those sales to publish a price per door, so treat any multifamily figure you hear for this name as anecdotal. Houses sit on the market much longer here than in Concord West, Maryville, or Parkwood Estates, and sales in the latest 12 months were well below the year before.

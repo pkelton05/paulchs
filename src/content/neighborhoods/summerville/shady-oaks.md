@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Confirm whether the address is in town limits or the county, which decides who handles permits and any short-term rental rule."
     verify: true
-draft: true
+draft: false
 ---
 
 Shady Oaks is attached housing, and nearly all of it is new: the sales were all townhome-style homes, and the typical one was built around 2020. Prices cluster tightly, so the middle half of sales sits in a narrow band. That makes it easy to tell a fair price from a stretch. Because there are few sales a year, the price shown is a two-year median, not a one-year read.

@@ -13,7 +13,7 @@ watch_outs:
     verify: true
   - text: "Ask your insurer how the association's coverage and your own policy divide up on an attached unit before you finalize a budget."
     verify: true
-draft: true
+draft: false
 ---
 
 Parsonage Point is the cheapest neighborhood here with a sale median, a townhome pocket of early 1980s units where almost every sale carries an HOA. Homes sell quickly, and the latest twelve months had more closings than the year before. A couple of leases turned up in the MLS, too few to publish a neighborhood rent, so every rent on this page is the area figure. Ask me for comps from the neighboring townhome communities before you set a number.

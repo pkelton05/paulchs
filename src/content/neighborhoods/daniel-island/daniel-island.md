@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "The City of Charleston decides whether nightly stays are allowed at a given address. Confirm that permission directly rather than relying on a listing remark."
     verify: true
-draft: true
+draft: false
 ---
 
 This page covers sales filed under the Daniel Island subdivision name in MLS Area 77, not every sale on the island. Under that name the activity is almost entirely homes. About six in ten were detached houses and the rest were attached homes such as townhomes. No small multifamily building sold under this name, so a duplex or fourplex strategy has nothing to price against here. The latest year saw clearly more closings than the year before it, and the typical home sold in under two weeks. Prices run wide. The upper end of the middle half of sales is about double the lower end.

@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Verify city or county jurisdiction for the address, and what Hanahan allows for short-term rentals or an added unit on the lot."
     verify: true
-draft: true
+draft: false
 ---
 
 Otranto is almost all detached houses, with a typical build year in the late 1970s. Across the last year, detached-home prices climbed and more homes sold than in the year before. Days on the market run longer here than in Bowen or Tanner Plantation. Prices spread widely from one house to the next, so the median alone will not tell you what a given street costs.

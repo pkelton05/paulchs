@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Confirm the address falls inside Hanahan and not unincorporated Berkeley County, and ask about short-term rental limits under both the city and the HOA."
     verify: true
-draft: true
+draft: false
 ---
 
 Bowen is recent construction. The typical house was built in the early 2020s, most sales are detached homes, and a smaller share are attached. Every one of them sits in an HOA, so what the association's leasing rules decide whether a house works as a rental at all. Prices run below Otranto and Tanner Plantation, and houses here sell faster than in either of them. Sales over the past twelve months were far fewer than in the twelve before.

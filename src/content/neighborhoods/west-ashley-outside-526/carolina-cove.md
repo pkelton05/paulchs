@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Check the flood zone for the specific unit and get an insurance quote before relying on a rent estimate."
     verify: true
-draft: true
+draft: false
 ---
 
 Carolina Cove is the oldest townhome neighborhood in this area's data, with a typical build date in the early 1970s. Every sale was an attached unit, and almost all are in an HOA. Prices sit in the same low range as Ashleytowne Village, well below the detached-home neighborhoods like Shadowmoss and Springfield.

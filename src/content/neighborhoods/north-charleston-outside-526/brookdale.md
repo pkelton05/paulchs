@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Check the flood zone for the specific lot and get an insurance quote early."
     verify: true
-draft: true
+draft: false
 ---
 
 Brookdale is a detached-house neighborhood. Every sale in the last two years was a single-family home, and the typical house was built in the 2010s, which makes it newer than the stock in Buckshire. No small buildings sold under this name, so the realistic purchase is one house and one rent. Nearly all of these sales sit inside an HOA, and prices bunch in a tight band, so one house tends to look much like the next.

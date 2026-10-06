@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Look up the flood zone for the specific unit before you price insurance."
     verify: true
-draft: true
+draft: false
 ---
 
 Lynwood Villas is a thin record. The sales in the MLS are all attached homes, and all of them closed more than a year ago, so there is no recent median price to show. Only one lease turned up. The rents shown below belong to the whole island, not to this community. Got a unit here in mind? Pass it along and I will borrow comps from Mira Vista and Regatta, which see more activity.

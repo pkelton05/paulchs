@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Peninsula short-term rental rules come from the City of Charleston and can vary by address. Get the answer for the specific property."
     verify: true
-draft: true
+draft: false
 ---
 
 Wraggborough is a small market with high prices. Not many homes sold, so the numbers here cover two years instead of one, and there is no one-year price change to show. The homes that did sell cost more than in Ansonborough, Cannonborough-Elliotborough or Eastside, and they sold in a fairly narrow price band. Most are detached houses, with a smaller group of multifamily and attached homes.

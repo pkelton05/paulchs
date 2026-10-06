@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Look up the flood zone for the lot and price coverage before you commit."
     verify: true
-draft: true
+draft: false
 ---
 
 Buckshire has the most home sales of any neighborhood in this area, and activity picked up in the past year. Nearly every sale is a detached house, with a few attached homes mixed in, and the typical house was built around 2010. No small buildings sold here, so this is a one-house-at-a-time market. Houses sell in under three weeks at the median, quicker than in Brookdale, and the middle half of prices is narrow.

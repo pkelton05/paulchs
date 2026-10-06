@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Ask for the flood zone and elevation of the specific lot. Marsh-side parcels on this island can differ from higher ones nearby."
     verify: true
-draft: true
+draft: false
 ---
 
 Every sale in Oakcrest was a detached house, mostly from the late 1960s, the same era as much of James Island's older housing. Homes sold in a couple of weeks, but a few fewer sold in the latest year than the year before. The MLS shows no leases under the Oakcrest name in two years and nothing multifamily traded, so the rents below are island-wide figures. To price a house here as a rental, build comps from the neighborhoods around it.

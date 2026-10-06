@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Flood exposure and insurance cost differ from one building to the next. Ask for the zone and a quote before pricing a purchase."
     verify: true
-draft: true
+draft: false
 ---
 
 Every sale counted here was an attached home, none a detached house, and the buildings date from around the turn of the century. Mira Vista is an attached-home market, not a place for duplexes or fourplexes, and none of those sold in the last two years. Homes move fast. Sales were level from one year to the next, and the typical listing went under contract in about the same time as in Oakcrest and Regatta.

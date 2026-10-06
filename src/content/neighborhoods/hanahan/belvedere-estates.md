@@ -15,7 +15,7 @@ watch_outs:
     verify: true
   - text: "Confirm whether the address is inside Hanahan city limits or unincorporated Berkeley County, since that changes the tax bill and who handles permits."
     verify: true
-draft: true
+draft: false
 ---
 
 Belvedere Estates is a neighborhood of detached houses, and the typical one went up in the mid-1960s. That makes it older stock, so the roof, the HVAC and the sewer line deserve a hard look. Houses here have gone under contract in about three weeks. Hardly any of them carry an HOA, which keeps the leasing rules simple.

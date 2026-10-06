@@ -10,6 +10,7 @@ const read = async (p) => JSON.parse(await readFile(new URL(p, root), "utf8"));
 
 const MIN_SAMPLE = 5; // medians need 5+ sales (AREAS.md)
 const MIN_LEASES = 3; // NEIGHBORHOODS.md §5: 3 leases per bedroom count
+const MIN_RENT = 500; // lease rows below this are dropped as errors
 const MIN_CHANGE = 10; // change figures need 10+ sales in both windows (Paul, 2026-10-06)
 const MIN_12MO = 10; // use the 12-month window for sale medians when it has 10+ sales, else 24 months
 // NEIGHBORHOODS.md §4: full page if any of these hold over 24 months, whole MLS
@@ -159,10 +160,13 @@ function computeRents(pull, area, notes) {
     }
   } else {
     // [ListingId, ClosePrice, CloseDate, BedsTotal, PropertySubType]
-    neighborhoodLeases = pull.leases.rows.length;
-    for (const r of pull.leases.rows) if (r[1] > 8000) notes.push(`leases: rent over $8,000 (${r[0]}: ${r[1]})`);
+    // Under $500 a month is a data-entry error (e.g. a $420 "rent"), not a lease comp.
+    const rows = pull.leases.rows.filter((r) => r[1] >= MIN_RENT);
+    if (rows.length !== pull.leases.rows.length) notes.push(`leases: ${pull.leases.rows.length - rows.length} row(s) under $${MIN_RENT} dropped`);
+    neighborhoodLeases = rows.length;
+    for (const r of rows) if (r[1] > 8000) notes.push(`leases: rent over $8,000 (${r[0]}: ${r[1]})`);
     for (const b of BEDS) {
-      const rents = pull.leases.rows.filter((r) => bedKey(r[3]) === b).map((r) => r[1]);
+      const rents = rows.filter((r) => bedKey(r[3]) === b).map((r) => r[1]);
       bucket[b] = { n: rents.length, median: rents.length >= MIN_LEASES ? median(rents) : null };
     }
   }

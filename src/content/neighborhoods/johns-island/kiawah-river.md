@@ -15,6 +15,7 @@ watch_outs:
     verify: true
   - text: "Confirm whether a given address falls in the City of Charleston or unincorporated county, since taxes and short-term rental rules follow that line."
     verify: true
+draft: true
 ---
 
 Kiawah River sits at the top of the price range for the Johns Island neighborhoods I cover. Homes here trade at well over twice the price of Oakfield's, and the top of the middle range stretches further above the median than the bottom falls below it. The stock is almost all detached houses, with a small share of attached homes, and it is very new. Sales moved at a slower pace than in Oakfield, and detached-home prices edged up from a year ago.

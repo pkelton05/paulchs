@@ -15,6 +15,7 @@ watch_outs:
     verify: true
   - text: "Check the mapped flood zone on the specific parcel, and get an insurance quote before you finalize your underwriting."
     verify: true
+draft: true
 ---
 
 Briddleford Ridge is a detached-house street pattern, not a place for small multifamily. Across two years of MLS sales, the buyers were all picking up single-family detached homes. No duplex or fourplex shows up. The typical house went up around the turn of the millennium, so you are looking at roof, HVAC and water heater ages more than structural surprises. Sales ran a little slower in the latest year than in the year before. Leasing under this name is nearly absent, so the rents shown for each bedroom count are Area 74 figures and not Briddleford Ridge rents. If you are weighing a rental here, I will pull leases from nearby streets and give you a real comparison.

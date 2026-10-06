@@ -15,6 +15,7 @@ watch_outs:
     verify: true
   - text: "Older, lower-lying lots may sit in a mapped flood zone. Pull the zone and ask for an insurance quote before you offer."
     verify: true
+draft: true
 ---
 
 College Park is a volume neighborhood for houses. Sales here ran well past a dozen a quarter over two years, all detached, and nothing in the MLS shows a duplex or fourplex trading. Houses move fast: the typical listing found a buyer in a few weeks. Detached-home prices slipped from the year before, and fewer homes sold in the latest 12 months than in the 12 before that. The homes were mostly built in the late 1970s, so budget for older systems and ask about the roof and sewer line.

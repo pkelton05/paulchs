@@ -3,7 +3,7 @@
 What Claude Code needs from Paul, grouped by who resolves it. Updated at the end of every session.
 **VERIFY** = Paul (or the person named) confirms before publishing. **NEED** = Paul supplies it.
 
-Last updated: 2026-10-06 (Session 4, Step 3 – Area 52 drafts waiting for Paul)
+Last updated: 2026-10-06 (Session 4 – all 71 neighborhood pages built; 67 drafts waiting for Paul)
 
 ---
 
@@ -179,6 +179,9 @@ Last updated: 2026-10-06 (Session 4, Step 3 – Area 52 drafts waiting for Paul)
 - Area 74 drafted (2 pages, draft: true): Briddleford Ridge, College Park (MLS city Ladson for both).
 - Area 77 drafted (2 pages, draft: true): Daniel Island (the MLS subdivision of that name, not the whole island), Center Park.
 - Area 22 drafted (1 page, draft: true): Pavilion Watch (no comps).
+- Area 45 drafted (2 pages, draft: true): Beachwood, Wild Dunes Yacht Harbor (no lease comps anywhere in the area).
+- **All 71 neighborhood pages exist.** Area 52 published; the other 67 are drafts waiting for Paul. Final batch check: build, 1,841 internal links, copy check (84 files: no repeated sentences or 8-word runs, no fair-housing words, no em dashes), no neighborhood URLs in the sitemap.
+- Next: Paul reviews the drafts by area and flips `draft: false`; then sets `neighborhood_pages_approved: true` in `data/site.json` once the MLS display rules are confirmed (pages then join the sitemap and drop noindex). Area hub pages for 22, 41, 45, 63, 72, 74, 77 don't exist yet – their neighborhoods show the area name without a link until they do.
 
 ### Neighborhood data – for Paul to look at
 - [ ] Wild Dunes area (45) has no MLS lease comps at all, so Beachwood and Wild Dunes Yacht Harbor will show no rents. All 9 Yacht Harbor sales are sub-type "Other" (likely marina condos).

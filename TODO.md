@@ -30,14 +30,13 @@ Last updated: 2026-10-06 (Session 2)
 - [ ] Affiliated business disclosure wording for Tide (Paul has an ownership interest). Placeholder in `data/site.json → tide_disclosure`.
 
 ### CTAR / Charleston Trident MLS
-- [ ] **Blocking for area and neighborhood pages:** may aggregated statistics (medians, counts, ranges) from closed sales and leases be published on an agent website? Until yes, `data/site.json → mls_display.aggregates_approved` stays `false`, and any page showing MLS numbers is kept out of the sitemap.
-- [ ] Exact required attribution line (placeholder in `data/site.json → mls_attribution`).
+- [x] Aggregated MLS statistics (medians, counts, ranges) may be published – confirmed by Paul 2026-10-06. `mls_display.aggregates_approved` is now `true`.
+- [ ] Exact required attribution line. Using the standard "Source: Charleston Trident MLS. Information deemed reliable but not guaranteed." until CTAR gives other wording.
 - [ ] Rules for showing individual sold or leased listings (default: never shown).
 - [ ] Any disclaimer or refresh-frequency requirements.
 
 ### Paul
-- [ ] "200+ investor deals" – wording (CLAUDE.md §2).
-- [ ] "300+ doors" under management at Tide – current count.
+- [x] "200+ investor deals" and "300+ doors" confirmed by Paul 2026-10-06.
 - [ ] #1 in 2–4 unit sales among individual Charleston agents, each of the last 3 years (confirmed by Paul 2026-10-06). Keep the MLS report behind it on file; consider naming the years (e.g. 2023–2025) so the claim doesn't go stale, and confirm with broker-in-charge that the wording meets SC advertising rules.
 - [ ] BiggerPockets Elite Agent – current status.
 - [ ] Response time to promise on the form ("one business day" for now).
@@ -99,7 +98,7 @@ Last updated: 2026-10-06 (Session 2)
 - [ ] Origin story for the homepage and `/about` (how you started, first deal, building Tide, starting GRID, why investors).
 - [ ] 6–10 client testimonials with permission, tagged by type (investor buyer, first building, seller, out-of-state).
 - [ ] 3–6 recent deals to feature (area, unit count, what happened – no client names without permission).
-- [ ] RentCast API key: needed for Session 3. In this cloud setup, add it as an environment secret (`RENTCAST_API_KEY`), not a committed file.
+- [ ] Later (Paul chose to wait): RentCast API key. Until then, rents come from MLS lease comps only; bedroom counts with fewer than 3 leases show "not enough data". In this cloud setup, add it as an environment secret (`RENTCAST_API_KEY`), not a committed file.
 - [ ] Optional: export of buyer-side closings to `data/raw/buyer-side-closed.csv` to add more neighborhoods (NEIGHBORHOODS.md §3).
 - [ ] Optional: notes on neighborhoods you know well in `data/paul-notes.json` (see README).
 

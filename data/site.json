@@ -30,9 +30,9 @@
   "next_event": null,
   "response_time": "one business day",
 
-  "mls_attribution": "[PLACEHOLDER – exact attribution line required by CTAR / Charleston Trident MLS]",
+  "mls_attribution": "Source: Charleston Trident MLS. Information deemed reliable but not guaranteed.",
   "mls_display": {
-    "aggregates_approved": false,
+    "aggregates_approved": true,
     "individual_listings_approved": false,
     "paul_closing_counts_approved": true,
     "paul_closing_counts_scope": "counts only – never addresses or prices of Paul's sales"
@@ -59,12 +59,12 @@
     "brokerage_line": "VERIFY exact wording and format with broker-in-charge",
     "brokerage_phone": "CONFIRMED by Paul 2026-10-06 (same as Paul's number); VERIFY with broker-in-charge that this satisfies the brokerage phone requirement",
     "license_line": "VERIFY with broker-in-charge",
-    "stats.stat_deals": "VERIFY wording before launch",
-    "stats.stat_doors": "VERIFY current door count",
+    "stats.stat_deals": "CONFIRMED by Paul 2026-10-06",
+    "stats.stat_doors": "CONFIRMED by Paul 2026-10-06",
     "stats.stat_rank": "CONFIRMED by Paul 2026-10-06: sells more 2–4 unit properties than any other single agent in Charleston every year for the last 3 years. Keep the MLS report that backs it on file.",
     "response_time": "VERIFY the response time Paul wants to promise",
-    "mls_attribution": "VERIFY with CTAR / Charleston Trident MLS",
-    "mls_display.aggregates_approved": "VERIFY with CTAR before any MLS number is published",
+    "mls_attribution": "VERIFY exact wording with CTAR (standard line used until confirmed)",
+    "mls_display.aggregates_approved": "CONFIRMED by Paul 2026-10-06: aggregated MLS statistics may be published. Individual sold/leased listings still not approved.",
     "tide_disclosure": "VERIFY wording",
     "social": "NEED LinkedIn, YouTube, BiggerPockets, GRID podcast links; VERIFY Instagram and Threads URLs",
     "analytics.provider": "NEED – Plausible or GA4"

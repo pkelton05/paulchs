@@ -10,7 +10,7 @@ Read `CLAUDE.md`, `docs/NEIGHBORHOODS.md`, the area's entry in `docs/AREAS.md`, 
 
 Rules:
 - Write a page for every neighborhood in the area with `page_type` `full` or `short` (merges applied only if Paul approved them). Follow the template in NEIGHBORHOODS.md section 6.
-- The layout prints the closed-listings badge ("Paul-verified closed listings in this neighborhood: N"). Don't restate Paul's closing count in the body. "Paul's take": 2 short paragraphs for full pages, 1 for short pages. Base it on the actual numbers and property mix, and on any note Paul left for that neighborhood in `data/paul-notes.json`. Every page must say something specific to that neighborhood. If you can't, keep it to one plain paragraph rather than padding.
+- The layout prints "I've closed listings in this neighborhood." Never mention how many listings Paul closed, or their property types, anywhere on the page. "Paul's take": 2 short paragraphs for full pages, 1 for short pages. Base it on the actual numbers and property mix, and on any note Paul left for that neighborhood in `data/paul-notes.json`. Every page must say something specific to that neighborhood. If you can't, keep it to one plain paragraph rather than padding.
 - Never repeat a sentence across pages in the batch. Vary structure, not just words.
 - Numbers only through template tokens from the data files. Name the source of each rent figure.
 - No individual sold or leased addresses or prices unless `data/site.json` says MLS display of individual listings is approved.
@@ -20,7 +20,7 @@ Rules:
 
 ## How the page is built (read before writing)
 
-`src/layouts/NeighborhoodLayout.astro` renders everything that carries a number, from `data/neighborhoods.json`: the H1, the lead line, the closed-listings badge, every number block with its source line, the no-comps message, nearby links, and the CTA. You write only the frontmatter and "Paul's take" (the markdown body).
+`src/layouts/NeighborhoodLayout.astro` renders everything that carries a number, from `data/neighborhoods.json`: the H1, the lead line, the closed-listings line, every number block with its source line, the no-comps message, nearby links, and the CTA. You write only the frontmatter and "Paul's take" (the markdown body).
 
 - **Body (Paul's take): no numbers and no tokens.** The build fails on a `$` amount, a percent, or a number with thousands commas. Describe what the numbers mean in words ("duplexes trade here a few times a year", "most leases are 2-bedrooms", "the homes are mostly pre-war"). Read the record so what you say is true, but don't restate the figures.
 - **Description (meta):** NEIGHBORHOODS.md §6 pattern; may use tokens filled at build time, e.g. `{{res.median_price}}`, `{{mf.median_price}}`, `{{mf.price_per_door}}`. Use a token only if that value is not null in the record – a null token fails the build.

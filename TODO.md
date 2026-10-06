@@ -167,7 +167,7 @@ Last updated: 2026-10-06 (Session 4, Step 3 – Area 52 drafts waiting for Paul)
 - [x] CLAUDE.md §12 updated: neighborhood-indexer runs on Sonnet (Paul, 2026-10-06).
 - [ ] Rent oddities from small samples: North Central 2BR ($3,225, n=10) above 3BR ($3,000, n=7); Cannonborough-Elliotborough 4BR+ ($3,900, n=5) below 3BR; Wagener Terrace 4BR+ $6,500 (n=7); Dunes West 4BR+ $5,500 (n=13). Folly Beach area 3BR ($5,300) rests on 4 leases incl. $7,500 and $9,000; Daniel Island area 4BR+ $6,975.
 - [ ] Area 52 drafts – Paul to review: the copy compares the neighborhoods to each other; North Central and Westside rent oddities (2BR above 3BR, 4BR+ on 3 leases) are called out as thin; "late 1940s" / "mid-1930s" come from the median year built of homes sold. Every watch-out is VERIFY (HOA rental language, flood zones, zoning for a second unit, City of Charleston STR rules).
-- [x] Closings line wording: "Paul-verified closed listings in this neighborhood: N" (Paul, 2026-10-06).
+- [x] Closings line wording: "I've closed listings in this neighborhood." – no counts anywhere, including area pages (Paul, 2026-10-06).
 - [ ] City still unknown (no MLS sales rows) for Red Top, Admiral Apartments, Buckfield, Fetteressa, Pt Dowling Tract, Millbrook, Rose Hill.
 
 ## Session 3 progress (2026-10-06)

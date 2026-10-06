@@ -226,9 +226,6 @@ const hoods = hoodsInArea(entry.id);
                 return (
                   <li>
                     {hoodPages.has(id) ? <a href={`/charleston/${id}`}>{h.name}</a> : <span>{h.name}</span>}
-                    <span class="count">
-                      {h.paul_closings.count === 1 ? "1 closed listing" : `${h.paul_closings.count} closed listings`}
-                    </span>
                   </li>
                 );
               })}
@@ -332,10 +329,5 @@ const hoods = hoodsInArea(entry.id);
     gap: var(--space-2);
     padding-block: 0.6rem;
     border-bottom: 1px solid var(--rule);
-  }
-  .count {
-    color: var(--pluff-soft);
-    font-size: var(--text-small);
-    white-space: nowrap;
   }
 </style>

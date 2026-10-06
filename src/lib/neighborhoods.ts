@@ -61,12 +61,11 @@ export function leadLine(h: HoodRecord): string | null {
   return parts.length ? parts.join(" ") : null;
 }
 
-/** Closed-listings badge (§6 item 5). Counts only – never addresses or prices.
- *  Wording set by Paul, 2026-10-06. */
+/** Closed-listings line (§6 item 5). No count, addresses, or prices – wording set by Paul, 2026-10-06. */
 export function closingsLine(h: HoodRecord): string | null {
   const c = h.paul_closings;
   if (!site.mls_display.paul_closing_counts_approved || !c?.count) return null;
-  return `Paul-verified closed listings in this neighborhood: ${c.count}`;
+  return "I've closed listings in this neighborhood.";
 }
 
 /** Source line for a block. */

@@ -88,7 +88,7 @@ All numbers come from `data/neighborhoods.json` and `data/areas.json`. Every blo
 
 Never blend sources in one number. Tide data is not used anywhere on the site.
 
-**Paul's closings (counts only):** number of listings Paul closed in the neighborhood since 2020, and the property types (single-family, multifamily, land). Never show addresses or prices of Paul's sales unless MLS display rules and the client allow it (section 8).
+**Paul's closings:** the page says only that Paul has closed listings in the neighborhood – no count (Paul, 2026-10-06). The counts stay in `data/neighborhoods.json` for internal use. Never show addresses or prices of Paul's sales unless MLS display rules and the client allow it (section 8).
 
 **Property mix:** share of sales that were single-family, townhome, condo, and multifamily; typical year built.
 
@@ -102,7 +102,7 @@ URL: `/charleston/[area-slug]/[neighborhood-slug]`
 2. H1: [Neighborhood] – [City], SC
 3. Lead line (data): "Homes in [Neighborhood] sold for a median of $X over the last 12 months (n sales). A 2-bedroom typically leases for $Y." Use the strongest available numbers and skip nulls.
 4. **Snapshot block** with the numbers from section 5.
-5. **Closed-listings badge:** "Paul-verified closed listings in this neighborhood: N" (wording set by Paul, 2026-10-06). Counts only – these are listings closed under his MLS account.
+5. **Closed-listings line:** "I've closed listings in this neighborhood." No count, year, or property types (Paul, 2026-10-06). Area pages list these neighborhoods without counts.
 6. **Paul's take:** 2 short paragraphs on full pages, 1 on short pages. Must say something specific to this neighborhood, based on the data, the property mix, and any note Paul left in `data/paul-notes.json`. If nothing specific can be said, write one plain paragraph rather than padding.
 7. **Watch-outs:** HOA rental restrictions (if the MLS shows an HOA), flood exposure, municipality, short-term rental rules – all [VERIFY].
 8. **Nearby neighborhoods:** 3–5 in the same MLS area from the seed list, then link to the area hub.

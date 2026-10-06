@@ -20,7 +20,7 @@ watch_outs:
   - text: "Insurance on older frame buildings. Get a quote before you go under contract."
     verify: true
 nearby: [downtown-charleston, north-charleston-inside-526, west-ashley-inside-526, daniel-island]
-draft: true
+draft: false
 ---
 
 This is where most of the duplex action on the peninsula happens. If you want a small building on the peninsula and you are not buying below the Crosstown, you will probably end up here. The stock is a mix of old cottages that were split into two units, frame houses from the early 1900s, and newer buildings put up as duplexes from day one. Lots are small, and a lot of the older streets now have new infill next to the original homes.

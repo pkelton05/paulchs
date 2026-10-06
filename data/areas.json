@@ -40,10 +40,10 @@
     },
     {
       "area_number": 52,
-      "name": "Upper Peninsula (outside the Crosstown)",
-      "county": "Charleston",
-      "mls_area": "52 - Peninsula Charleston Outside of Crosstown",
       "slug": "upper-peninsula",
+      "name": "Upper Peninsula (outside the Crosstown)",
+      "mls_area": "52 - Peninsula Charleston Outside of Crosstown",
+      "county": "Charleston",
       "tier": "A",
       "mf": {
         "median_price": 1091000,
@@ -60,7 +60,7 @@
           "five_years_ago_sales": 33
         },
         "unit_range": "2–4 units",
-        "excluded": "1 sale of a 6-unit building"
+        "excluded": "1 sale outside 2–4 units or with no unit count"
       },
       "sfr": {
         "median_price": 970000,
@@ -75,10 +75,6 @@
         }
       },
       "rents": {
-        "1br": 1550,
-        "2br": 2825,
-        "3br": 3275,
-        "4br_plus": 3300,
         "source_by_bed": {
           "1br": {
             "source": "Charleston Trident MLS lease comps",
@@ -90,37 +86,39 @@
           },
           "3br": {
             "source": "Charleston Trident MLS lease comps",
-            "n": 38,
-            "note": "1 lease recorded at $0 excluded"
+            "n": 38
           },
           "4br_plus": {
             "source": "Charleston Trident MLS lease comps",
-            "n": 12,
-            "note": "wide spread, $2,000 to $9,000"
+            "n": 12
           }
         },
-        "lease_sample": 103
+        "lease_sample": 103,
+        "1br": 1550,
+        "2br": 2825,
+        "3br": 3275,
+        "4br_plus": 3300
       },
       "months_inventory": 6.9,
+      "inventory_detail": {
+        "active_2_4_unit": 8,
+        "sales_per_month": 1.17
+      },
       "zips": [
         "29403"
       ],
       "as_of": "2026-10",
+      "window": {
+        "from": "2025-10-06",
+        "to": "2026-10-05"
+      },
       "sources": [
         "Charleston Trident MLS (FlexMLS) closed sales, property type B (multifamily), CloseDate in window, 2–4 units by NumberOfUnitsTotal",
         "Charleston Trident MLS (FlexMLS) closed sales, property type A, sub-type Single Family Detached",
         "Charleston Trident MLS (FlexMLS) lease comps, property type D, status Rented, CloseDate in window; ClosePrice = monthly rent; grouped by BedsTotal",
         "Charleston Trident MLS (FlexMLS) active 2–4 unit listings on 2026-10-06 for months of inventory",
         "Comparison windows: 2024-10-06 to 2025-10-05 (1-year) and 2020-10-06 to 2021-10-05 (5-year)"
-      ],
-      "inventory_detail": {
-        "active_2_4_unit": 8,
-        "sales_per_month": 1.17
-      },
-      "window": {
-        "from": "2025-10-06",
-        "to": "2026-10-05"
-      }
+      ]
     },
     {
       "area_number": 11,
@@ -494,10 +492,10 @@
     },
     {
       "area_number": 31,
-      "name": "North Charleston inside I-526",
-      "county": "Charleston",
-      "mls_area": "31 - North Charleston Inside I-526",
       "slug": "north-charleston-inside-526",
+      "name": "North Charleston inside I-526",
+      "mls_area": "31 - North Charleston Inside I-526",
+      "county": "Charleston",
       "tier": "A",
       "mf": {
         "median_price": 385000,
@@ -514,7 +512,7 @@
           "five_years_ago_sales": 28
         },
         "unit_range": "2–4 units",
-        "excluded": "3 sales of 6-, 6-, and 16-unit buildings"
+        "excluded": "3 sales outside 2–4 units or with no unit count"
       },
       "sfr": {
         "median_price": 397000,
@@ -529,10 +527,6 @@
         }
       },
       "rents": {
-        "1br": 1300,
-        "2br": 1700,
-        "3br": 2300,
-        "4br_plus": 2875,
         "source_by_bed": {
           "1br": {
             "source": "Charleston Trident MLS lease comps",
@@ -551,29 +545,33 @@
             "n": 10
           }
         },
-        "lease_sample": 158
+        "lease_sample": 158,
+        "1br": 1300,
+        "2br": 1700,
+        "3br": 2300,
+        "4br_plus": 2875
       },
       "months_inventory": 9.6,
+      "inventory_detail": {
+        "active_2_4_unit": 12,
+        "sales_per_month": 1.25
+      },
       "zips": [
         "29405",
         "29406"
       ],
       "as_of": "2026-10",
+      "window": {
+        "from": "2025-10-06",
+        "to": "2026-10-05"
+      },
       "sources": [
         "Charleston Trident MLS (FlexMLS) closed sales, property type B (multifamily), CloseDate in window, 2–4 units by NumberOfUnitsTotal",
         "Charleston Trident MLS (FlexMLS) closed sales, property type A, sub-type Single Family Detached",
         "Charleston Trident MLS (FlexMLS) lease comps, property type D, status Rented, CloseDate in window; ClosePrice = monthly rent; grouped by BedsTotal",
         "Charleston Trident MLS (FlexMLS) active 2–4 unit listings on 2026-10-06 for months of inventory",
         "Comparison windows: 2024-10-06 to 2025-10-05 (1-year) and 2020-10-06 to 2021-10-05 (5-year)"
-      ],
-      "inventory_detail": {
-        "active_2_4_unit": 12,
-        "sales_per_month": 1.25
-      },
-      "window": {
-        "from": "2025-10-06",
-        "to": "2026-10-05"
-      }
+      ]
     },
     {
       "area_number": 32,

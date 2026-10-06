@@ -8,6 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "seed:data": "node scripts/seed-data.mjs",
+    "compute:areas": "node scripts/compute-areas.mjs",
     "check:emdash": "! grep -rn \"—\" src/",
     "check:links": "node scripts/check-links.mjs"
   },

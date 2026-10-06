@@ -20,7 +20,7 @@ watch_outs:
   - text: "Older buildings can hide wiring, plumbing, and roof costs. Get inspections and price the repairs before you set your offer."
     verify: true
 nearby: [upper-peninsula, north-charleston-outside-526, hanahan, north-charleston-dorchester-county]
-draft: true
+draft: false
 ---
 
 This is where a lot of first-time investors should start looking. The price of each door is far below what you pay on the peninsula. A duplex here costs about what a house costs, so you can buy two units for the price of one.

@@ -166,6 +166,7 @@ Last updated: 2026-10-06 (Session 4, Step 3 – Area 52 drafts waiting for Paul)
 - Area 11 drafted (5 pages, draft: true): Concord West of The Ashley, Maryville, Orange Grove Estates, Parkwood Estates, West Glow. Claims checked against the data.
 - Area 12 drafted (8 pages, draft: true): Asheford Place, Ashleytowne Village, Carolina Cove, Castlewood, Parsonage Point, Red Top (no comps), Shadowmoss, Springfield. Claims checked against the data.
 - Area 21 drafted (5 pages, draft: true): Crosscreek, Lynwood Villas, Mira Vista, Oakcrest, Regatta On James Island. Claims checked against the data.
+- Area 23 drafted (2 pages, draft: true): Kiawah River, Oakfield. Claims checked against the data.
 
 ### Neighborhood data – for Paul to look at
 - [ ] Wild Dunes area (45) has no MLS lease comps at all, so Beachwood and Wild Dunes Yacht Harbor will show no rents. All 9 Yacht Harbor sales are sub-type "Other" (likely marina condos).

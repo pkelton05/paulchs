@@ -3,40 +3,86 @@
   "areas": [
     {
       "area_number": 51,
-      "name": "Downtown Charleston (Peninsula inside the Crosstown)",
-      "county": "Charleston",
-      "mls_area": "51 - Peninsula Charleston Inside of Crosstown",
       "slug": "downtown-charleston",
+      "name": "Downtown Charleston (Peninsula inside the Crosstown)",
+      "mls_area": "51 - Peninsula Charleston Inside of Crosstown",
+      "county": "Charleston",
       "tier": "A",
       "mf": {
-        "median_price": null,
-        "p25": null,
-        "p75": null,
-        "price_per_door": null,
-        "sales_12mo": null,
-        "median_dom": null,
-        "change_1yr_pct": null,
-        "change_5yr_pct": null
+        "median_price": 1281000,
+        "p25": 888000,
+        "p75": 1892000,
+        "price_per_door": 549000,
+        "sales_12mo": 36,
+        "median_dom": 22,
+        "change_1yr_pct": -8.8,
+        "change_5yr_pct": 58.2,
+        "sample": {
+          "sales_12mo": 36,
+          "prior_year_sales": 34,
+          "five_years_ago_sales": 64
+        },
+        "unit_range": "2–4 units",
+        "excluded": "11 sales outside 2–4 units or with no unit count"
       },
       "sfr": {
-        "median_price": null,
-        "sales_12mo": null,
-        "median_dom": null,
-        "change_1yr_pct": null,
-        "change_5yr_pct": null
+        "median_price": 2333000,
+        "sales_12mo": 234,
+        "median_dom": 26,
+        "change_1yr_pct": 29.6,
+        "change_5yr_pct": 135.1,
+        "subtype_filter": "Single Family Detached",
+        "sample": {
+          "prior_year_sales": 196,
+          "five_years_ago_sales": 382
+        }
       },
       "rents": {
-        "1br": null,
-        "2br": null,
-        "3br": null,
-        "4br_plus": null,
-        "source_by_bed": {},
-        "lease_sample": null
+        "source_by_bed": {
+          "1br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 70
+          },
+          "2br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 104
+          },
+          "3br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 79
+          },
+          "4br_plus": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 21
+          }
+        },
+        "lease_sample": 274,
+        "1br": 1975,
+        "2br": 3025,
+        "3br": 4300,
+        "4br_plus": 5225
       },
-      "months_inventory": null,
-      "zips": [],
-      "as_of": null,
-      "sources": []
+      "months_inventory": 6,
+      "inventory_detail": {
+        "active_2_4_unit": 18,
+        "sales_per_month": 3
+      },
+      "zips": [
+        "29401",
+        "29403"
+      ],
+      "as_of": "2026-10",
+      "window": {
+        "from": "2025-10-06",
+        "to": "2026-10-05"
+      },
+      "sources": [
+        "Charleston Trident MLS (FlexMLS) closed sales, property type B (multifamily), CloseDate in window, 2–4 units by NumberOfUnitsTotal",
+        "Charleston Trident MLS (FlexMLS) closed sales, property type A, sub-type Single Family Detached",
+        "Charleston Trident MLS (FlexMLS) lease comps, property type D, status Rented, CloseDate in window; ClosePrice = monthly rent; grouped by BedsTotal",
+        "Charleston Trident MLS (FlexMLS) active 2–4 unit listings on 2026-10-06 for months of inventory",
+        "Comparison windows: 2024-10-06 to 2025-10-05 (1-year) and 2020-10-06 to 2021-10-05 (5-year)"
+      ]
     },
     {
       "area_number": 52,
@@ -122,77 +168,167 @@
     },
     {
       "area_number": 11,
-      "name": "West Ashley inside I-526",
-      "county": "Charleston",
-      "mls_area": "11 - West of the Ashley Inside I-526",
       "slug": "west-ashley-inside-526",
+      "name": "West Ashley inside I-526",
+      "mls_area": "11 - West of the Ashley Inside I-526",
+      "county": "Charleston",
       "tier": "A",
       "mf": {
-        "median_price": null,
-        "p25": null,
-        "p75": null,
-        "price_per_door": null,
-        "sales_12mo": null,
-        "median_dom": null,
-        "change_1yr_pct": null,
-        "change_5yr_pct": null
+        "median_price": 474000,
+        "p25": 369000,
+        "p75": 663000,
+        "price_per_door": 198000,
+        "sales_12mo": 7,
+        "median_dom": 34,
+        "change_1yr_pct": -5.1,
+        "change_5yr_pct": 4.3,
+        "sample": {
+          "sales_12mo": 7,
+          "prior_year_sales": 9,
+          "five_years_ago_sales": 12
+        },
+        "unit_range": "2–4 units",
+        "excluded": "1 sale outside 2–4 units or with no unit count"
       },
       "sfr": {
-        "median_price": null,
-        "sales_12mo": null,
-        "median_dom": null,
-        "change_1yr_pct": null,
-        "change_5yr_pct": null
+        "median_price": 620000,
+        "sales_12mo": 408,
+        "median_dom": 23,
+        "change_1yr_pct": -0.4,
+        "change_5yr_pct": 54.6,
+        "subtype_filter": "Single Family Detached",
+        "sample": {
+          "prior_year_sales": 406,
+          "five_years_ago_sales": 653
+        }
       },
       "rents": {
-        "1br": null,
-        "2br": null,
-        "3br": null,
-        "4br_plus": null,
-        "source_by_bed": {},
-        "lease_sample": null
+        "source_by_bed": {
+          "1br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 18
+          },
+          "2br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 61
+          },
+          "3br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 65
+          },
+          "4br_plus": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 13
+          }
+        },
+        "lease_sample": 157,
+        "1br": 1575,
+        "2br": 1900,
+        "3br": 2750,
+        "4br_plus": 2900
       },
-      "months_inventory": null,
-      "zips": [],
-      "as_of": null,
-      "sources": []
+      "months_inventory": 5.1,
+      "inventory_detail": {
+        "active_2_4_unit": 3,
+        "sales_per_month": 0.58
+      },
+      "zips": [
+        "29407"
+      ],
+      "as_of": "2026-10",
+      "window": {
+        "from": "2025-10-06",
+        "to": "2026-10-05"
+      },
+      "sources": [
+        "Charleston Trident MLS (FlexMLS) closed sales, property type B (multifamily), CloseDate in window, 2–4 units by NumberOfUnitsTotal",
+        "Charleston Trident MLS (FlexMLS) closed sales, property type A, sub-type Single Family Detached",
+        "Charleston Trident MLS (FlexMLS) lease comps, property type D, status Rented, CloseDate in window; ClosePrice = monthly rent; grouped by BedsTotal",
+        "Charleston Trident MLS (FlexMLS) active 2–4 unit listings on 2026-10-06 for months of inventory",
+        "Comparison windows: 2024-10-06 to 2025-10-05 (1-year) and 2020-10-06 to 2021-10-05 (5-year)"
+      ]
     },
     {
       "area_number": 12,
-      "name": "West Ashley outside I-526",
-      "county": "Charleston",
-      "mls_area": "12 - West of the Ashley Outside I-526",
       "slug": "west-ashley-outside-526",
+      "name": "West Ashley outside I-526",
+      "mls_area": "12 - West of the Ashley Outside I-526",
+      "county": "Charleston",
       "tier": "A",
       "mf": {
         "median_price": null,
         "p25": null,
         "p75": null,
         "price_per_door": null,
-        "sales_12mo": null,
+        "sales_12mo": 2,
         "median_dom": null,
         "change_1yr_pct": null,
-        "change_5yr_pct": null
+        "change_5yr_pct": null,
+        "sample": {
+          "sales_12mo": 2,
+          "prior_year_sales": 1,
+          "five_years_ago_sales": 2
+        },
+        "unit_range": "2–4 units",
+        "excluded": null
       },
       "sfr": {
-        "median_price": null,
-        "sales_12mo": null,
-        "median_dom": null,
-        "change_1yr_pct": null,
-        "change_5yr_pct": null
+        "median_price": 530000,
+        "sales_12mo": 553,
+        "median_dom": 21,
+        "change_1yr_pct": 0.1,
+        "change_5yr_pct": 47.2,
+        "subtype_filter": "Single Family Detached",
+        "sample": {
+          "prior_year_sales": 520,
+          "five_years_ago_sales": 786
+        }
       },
       "rents": {
-        "1br": null,
-        "2br": null,
-        "3br": null,
-        "4br_plus": null,
-        "source_by_bed": {},
-        "lease_sample": null
+        "source_by_bed": {
+          "1br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 18
+          },
+          "2br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 26
+          },
+          "3br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 76
+          },
+          "4br_plus": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 31
+          }
+        },
+        "lease_sample": 151,
+        "1br": 1200,
+        "2br": 1825,
+        "3br": 2425,
+        "4br_plus": 3150
       },
       "months_inventory": null,
-      "zips": [],
-      "as_of": null,
-      "sources": []
+      "inventory_detail": {
+        "active_2_4_unit": 2,
+        "sales_per_month": 0.17
+      },
+      "zips": [
+        "29414"
+      ],
+      "as_of": "2026-10",
+      "window": {
+        "from": "2025-10-06",
+        "to": "2026-10-05"
+      },
+      "sources": [
+        "Charleston Trident MLS (FlexMLS) closed sales, property type B (multifamily), CloseDate in window, 2–4 units by NumberOfUnitsTotal",
+        "Charleston Trident MLS (FlexMLS) closed sales, property type A, sub-type Single Family Detached",
+        "Charleston Trident MLS (FlexMLS) lease comps, property type D, status Rented, CloseDate in window; ClosePrice = monthly rent; grouped by BedsTotal",
+        "Charleston Trident MLS (FlexMLS) active 2–4 unit listings on 2026-10-06 for months of inventory",
+        "Comparison windows: 2024-10-06 to 2025-10-05 (1-year) and 2020-10-06 to 2021-10-05 (5-year)"
+      ]
     },
     {
       "area_number": 13,
@@ -233,40 +369,85 @@
     },
     {
       "area_number": 21,
-      "name": "James Island",
-      "county": "Charleston",
-      "mls_area": "21 - James Island",
       "slug": "james-island",
+      "name": "James Island",
+      "mls_area": "21 - James Island",
+      "county": "Charleston",
       "tier": "A",
       "mf": {
-        "median_price": null,
-        "p25": null,
-        "p75": null,
-        "price_per_door": null,
-        "sales_12mo": null,
-        "median_dom": null,
-        "change_1yr_pct": null,
-        "change_5yr_pct": null
+        "median_price": 775000,
+        "p25": 550000,
+        "p75": 950000,
+        "price_per_door": 244000,
+        "sales_12mo": 13,
+        "median_dom": 20,
+        "change_1yr_pct": 17.6,
+        "change_5yr_pct": 28.7,
+        "sample": {
+          "sales_12mo": 13,
+          "prior_year_sales": 7,
+          "five_years_ago_sales": 10
+        },
+        "unit_range": "2–4 units",
+        "excluded": null
       },
       "sfr": {
-        "median_price": null,
-        "sales_12mo": null,
-        "median_dom": null,
-        "change_1yr_pct": null,
-        "change_5yr_pct": null
+        "median_price": 700000,
+        "sales_12mo": 490,
+        "median_dom": 16,
+        "change_1yr_pct": 2.2,
+        "change_5yr_pct": 57.3,
+        "subtype_filter": "Single Family Detached",
+        "sample": {
+          "prior_year_sales": 476,
+          "five_years_ago_sales": 731
+        }
       },
       "rents": {
-        "1br": null,
-        "2br": null,
-        "3br": null,
-        "4br_plus": null,
-        "source_by_bed": {},
-        "lease_sample": null
+        "source_by_bed": {
+          "1br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 33
+          },
+          "2br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 64
+          },
+          "3br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 90
+          },
+          "4br_plus": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 17
+          }
+        },
+        "lease_sample": 204,
+        "1br": 1650,
+        "2br": 2050,
+        "3br": 3025,
+        "4br_plus": 3900
       },
-      "months_inventory": null,
-      "zips": [],
-      "as_of": null,
-      "sources": []
+      "months_inventory": 3.7,
+      "inventory_detail": {
+        "active_2_4_unit": 4,
+        "sales_per_month": 1.08
+      },
+      "zips": [
+        "29412"
+      ],
+      "as_of": "2026-10",
+      "window": {
+        "from": "2025-10-06",
+        "to": "2026-10-05"
+      },
+      "sources": [
+        "Charleston Trident MLS (FlexMLS) closed sales, property type B (multifamily), CloseDate in window, 2–4 units by NumberOfUnitsTotal",
+        "Charleston Trident MLS (FlexMLS) closed sales, property type A, sub-type Single Family Detached",
+        "Charleston Trident MLS (FlexMLS) lease comps, property type D, status Rented, CloseDate in window; ClosePrice = monthly rent; grouped by BedsTotal",
+        "Charleston Trident MLS (FlexMLS) active 2–4 unit listings on 2026-10-06 for months of inventory",
+        "Comparison windows: 2024-10-06 to 2025-10-05 (1-year) and 2020-10-06 to 2021-10-05 (5-year)"
+      ]
     },
     {
       "area_number": 22,
@@ -307,40 +488,83 @@
     },
     {
       "area_number": 23,
-      "name": "Johns Island",
-      "county": "Charleston",
-      "mls_area": "23 - Johns Island",
       "slug": "johns-island",
+      "name": "Johns Island",
+      "mls_area": "23 - Johns Island",
+      "county": "Charleston",
       "tier": "A",
       "mf": {
         "median_price": null,
         "p25": null,
         "p75": null,
         "price_per_door": null,
-        "sales_12mo": null,
+        "sales_12mo": 0,
         "median_dom": null,
         "change_1yr_pct": null,
-        "change_5yr_pct": null
+        "change_5yr_pct": null,
+        "sample": {
+          "sales_12mo": 0,
+          "prior_year_sales": 1,
+          "five_years_ago_sales": 0
+        },
+        "unit_range": "2–4 units",
+        "excluded": null
       },
       "sfr": {
-        "median_price": null,
-        "sales_12mo": null,
-        "median_dom": null,
-        "change_1yr_pct": null,
-        "change_5yr_pct": null
+        "median_price": 722000,
+        "sales_12mo": 654,
+        "median_dom": 35,
+        "change_1yr_pct": 1.8,
+        "change_5yr_pct": 76,
+        "subtype_filter": "Single Family Detached",
+        "sample": {
+          "prior_year_sales": 631,
+          "five_years_ago_sales": 991
+        }
       },
       "rents": {
+        "source_by_bed": {
+          "1br": {
+            "source": "MLS leases < 3 – RentCast pending",
+            "n": 2
+          },
+          "2br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 6
+          },
+          "3br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 36
+          },
+          "4br_plus": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 24
+          }
+        },
+        "lease_sample": 68,
         "1br": null,
-        "2br": null,
-        "3br": null,
-        "4br_plus": null,
-        "source_by_bed": {},
-        "lease_sample": null
+        "2br": 2375,
+        "3br": 2750,
+        "4br_plus": 3600
       },
       "months_inventory": null,
+      "inventory_detail": {
+        "active_2_4_unit": 1,
+        "sales_per_month": 0
+      },
       "zips": [],
-      "as_of": null,
-      "sources": []
+      "as_of": "2026-10",
+      "window": {
+        "from": "2025-10-06",
+        "to": "2026-10-05"
+      },
+      "sources": [
+        "Charleston Trident MLS (FlexMLS) closed sales, property type B (multifamily), CloseDate in window, 2–4 units by NumberOfUnitsTotal",
+        "Charleston Trident MLS (FlexMLS) closed sales, property type A, sub-type Single Family Detached",
+        "Charleston Trident MLS (FlexMLS) lease comps, property type D, status Rented, CloseDate in window; ClosePrice = monthly rent; grouped by BedsTotal",
+        "Charleston Trident MLS (FlexMLS) active 2–4 unit listings on 2026-10-06 for months of inventory",
+        "Comparison windows: 2024-10-06 to 2025-10-05 (1-year) and 2020-10-06 to 2021-10-05 (5-year)"
+      ]
     },
     {
       "area_number": 24,
@@ -575,40 +799,87 @@
     },
     {
       "area_number": 32,
-      "name": "North Charleston outside I-526 (Charleston County)",
-      "county": "Charleston",
-      "mls_area": "32 - N.Charleston, Summerville, Ladson, Outside I-526",
       "slug": "north-charleston-outside-526",
+      "name": "North Charleston outside I-526 (Charleston County)",
+      "mls_area": "32 - N.Charleston, Summerville, Ladson, Outside I-526",
+      "county": "Charleston",
       "tier": "A",
       "mf": {
         "median_price": null,
         "p25": null,
         "p75": null,
         "price_per_door": null,
-        "sales_12mo": null,
+        "sales_12mo": 4,
         "median_dom": null,
         "change_1yr_pct": null,
-        "change_5yr_pct": null
+        "change_5yr_pct": null,
+        "sample": {
+          "sales_12mo": 4,
+          "prior_year_sales": 5,
+          "five_years_ago_sales": 11
+        },
+        "unit_range": "2–4 units",
+        "excluded": "2 sales outside 2–4 units or with no unit count"
       },
       "sfr": {
-        "median_price": null,
-        "sales_12mo": null,
-        "median_dom": null,
-        "change_1yr_pct": null,
-        "change_5yr_pct": null
+        "median_price": 340000,
+        "sales_12mo": 566,
+        "median_dom": 28,
+        "change_1yr_pct": -2.9,
+        "change_5yr_pct": 38.8,
+        "subtype_filter": "Single Family Detached",
+        "sample": {
+          "prior_year_sales": 612,
+          "five_years_ago_sales": 783
+        }
       },
       "rents": {
-        "1br": null,
-        "2br": null,
-        "3br": null,
-        "4br_plus": null,
-        "source_by_bed": {},
-        "lease_sample": null
+        "source_by_bed": {
+          "1br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 4
+          },
+          "2br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 57
+          },
+          "3br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 107
+          },
+          "4br_plus": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 28
+          }
+        },
+        "lease_sample": 196,
+        "1br": 975,
+        "2br": 1500,
+        "3br": 2100,
+        "4br_plus": 2400
       },
       "months_inventory": null,
-      "zips": [],
-      "as_of": null,
-      "sources": []
+      "inventory_detail": {
+        "active_2_4_unit": 3,
+        "sales_per_month": 0.33
+      },
+      "zips": [
+        "29406",
+        "29418",
+        "29485"
+      ],
+      "as_of": "2026-10",
+      "window": {
+        "from": "2025-10-06",
+        "to": "2026-10-05"
+      },
+      "sources": [
+        "Charleston Trident MLS (FlexMLS) closed sales, property type B (multifamily), CloseDate in window, 2–4 units by NumberOfUnitsTotal",
+        "Charleston Trident MLS (FlexMLS) closed sales, property type A, sub-type Single Family Detached",
+        "Charleston Trident MLS (FlexMLS) lease comps, property type D, status Rented, CloseDate in window; ClosePrice = monthly rent; grouped by BedsTotal",
+        "Charleston Trident MLS (FlexMLS) active 2–4 unit listings on 2026-10-06 for months of inventory",
+        "Comparison windows: 2024-10-06 to 2025-10-05 (1-year) and 2020-10-06 to 2021-10-05 (5-year)"
+      ]
     },
     {
       "area_number": 41,
@@ -649,40 +920,85 @@
     },
     {
       "area_number": 42,
-      "name": "Mount Pleasant south of the IOP Connector",
-      "county": "Charleston",
-      "mls_area": "42 - Mt Pleasant S of IOP Connector",
       "slug": "mount-pleasant-south",
+      "name": "Mount Pleasant south of the IOP Connector",
+      "mls_area": "42 - Mt Pleasant S of IOP Connector",
+      "county": "Charleston",
       "tier": "A",
       "mf": {
         "median_price": null,
         "p25": null,
         "p75": null,
         "price_per_door": null,
-        "sales_12mo": null,
+        "sales_12mo": 3,
         "median_dom": null,
         "change_1yr_pct": null,
-        "change_5yr_pct": null
+        "change_5yr_pct": null,
+        "sample": {
+          "sales_12mo": 3,
+          "prior_year_sales": 2,
+          "five_years_ago_sales": 3
+        },
+        "unit_range": "2–4 units",
+        "excluded": null
       },
       "sfr": {
-        "median_price": null,
-        "sales_12mo": null,
-        "median_dom": null,
-        "change_1yr_pct": null,
-        "change_5yr_pct": null
+        "median_price": 1273000,
+        "sales_12mo": 654,
+        "median_dom": 20,
+        "change_1yr_pct": 6.1,
+        "change_5yr_pct": 75.5,
+        "subtype_filter": "Single Family Detached",
+        "sample": {
+          "prior_year_sales": 591,
+          "five_years_ago_sales": 987
+        }
       },
       "rents": {
-        "1br": null,
-        "2br": null,
-        "3br": null,
-        "4br_plus": null,
-        "source_by_bed": {},
-        "lease_sample": null
+        "source_by_bed": {
+          "1br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 24
+          },
+          "2br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 95
+          },
+          "3br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 140
+          },
+          "4br_plus": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 55
+          }
+        },
+        "lease_sample": 314,
+        "1br": 2000,
+        "2br": 2300,
+        "3br": 3450,
+        "4br_plus": 5200
       },
       "months_inventory": null,
-      "zips": [],
-      "as_of": null,
-      "sources": []
+      "inventory_detail": {
+        "active_2_4_unit": 1,
+        "sales_per_month": 0.25
+      },
+      "zips": [
+        "29464"
+      ],
+      "as_of": "2026-10",
+      "window": {
+        "from": "2025-10-06",
+        "to": "2026-10-05"
+      },
+      "sources": [
+        "Charleston Trident MLS (FlexMLS) closed sales, property type B (multifamily), CloseDate in window, 2–4 units by NumberOfUnitsTotal",
+        "Charleston Trident MLS (FlexMLS) closed sales, property type A, sub-type Single Family Detached",
+        "Charleston Trident MLS (FlexMLS) lease comps, property type D, status Rented, CloseDate in window; ClosePrice = monthly rent; grouped by BedsTotal",
+        "Charleston Trident MLS (FlexMLS) active 2–4 unit listings on 2026-10-06 for months of inventory",
+        "Comparison windows: 2024-10-06 to 2025-10-05 (1-year) and 2020-10-06 to 2021-10-05 (5-year)"
+      ]
     },
     {
       "area_number": 43,
@@ -871,77 +1187,168 @@
     },
     {
       "area_number": 61,
-      "name": "North Charleston / Summerville / Ladson (Dorchester County)",
-      "county": "Dorchester",
-      "mls_area": "61 - N. Chas/Summerville/Ladson-Dor",
       "slug": "north-charleston-dorchester-county",
+      "name": "North Charleston / Summerville / Ladson (Dorchester County)",
+      "mls_area": "61 - N. Chas/Summerville/Ladson-Dor",
+      "county": "Dorchester",
       "tier": "A",
       "mf": {
-        "median_price": null,
-        "p25": null,
-        "p75": null,
-        "price_per_door": null,
-        "sales_12mo": null,
-        "median_dom": null,
-        "change_1yr_pct": null,
-        "change_5yr_pct": null
+        "median_price": 355000,
+        "p25": 345000,
+        "p75": 395000,
+        "price_per_door": 175000,
+        "sales_12mo": 13,
+        "median_dom": 12,
+        "change_1yr_pct": -27.6,
+        "change_5yr_pct": 54.3,
+        "sample": {
+          "sales_12mo": 13,
+          "prior_year_sales": 8,
+          "five_years_ago_sales": 17
+        },
+        "unit_range": "2–4 units",
+        "excluded": null
       },
       "sfr": {
-        "median_price": null,
-        "sales_12mo": null,
-        "median_dom": null,
-        "change_1yr_pct": null,
-        "change_5yr_pct": null
+        "median_price": 384000,
+        "sales_12mo": 543,
+        "median_dom": 27,
+        "change_1yr_pct": 1.1,
+        "change_5yr_pct": 30.2,
+        "subtype_filter": "Single Family Detached",
+        "sample": {
+          "prior_year_sales": 532,
+          "five_years_ago_sales": 973
+        }
       },
       "rents": {
+        "source_by_bed": {
+          "1br": {
+            "source": "MLS leases < 3 – RentCast pending",
+            "n": 0
+          },
+          "2br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 20
+          },
+          "3br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 97
+          },
+          "4br_plus": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 42
+          }
+        },
+        "lease_sample": 159,
         "1br": null,
-        "2br": null,
-        "3br": null,
-        "4br_plus": null,
-        "source_by_bed": {},
-        "lease_sample": null
+        "2br": 1400,
+        "3br": 2100,
+        "4br_plus": 2500
       },
-      "months_inventory": null,
-      "zips": [],
-      "as_of": null,
-      "sources": []
+      "months_inventory": 1.8,
+      "inventory_detail": {
+        "active_2_4_unit": 2,
+        "sales_per_month": 1.08
+      },
+      "zips": [
+        "29420",
+        "29456"
+      ],
+      "as_of": "2026-10",
+      "window": {
+        "from": "2025-10-06",
+        "to": "2026-10-05"
+      },
+      "sources": [
+        "Charleston Trident MLS (FlexMLS) closed sales, property type B (multifamily), CloseDate in window, 2–4 units by NumberOfUnitsTotal",
+        "Charleston Trident MLS (FlexMLS) closed sales, property type A, sub-type Single Family Detached",
+        "Charleston Trident MLS (FlexMLS) lease comps, property type D, status Rented, CloseDate in window; ClosePrice = monthly rent; grouped by BedsTotal",
+        "Charleston Trident MLS (FlexMLS) active 2–4 unit listings on 2026-10-06 for months of inventory",
+        "Comparison windows: 2024-10-06 to 2025-10-05 (1-year) and 2020-10-06 to 2021-10-05 (5-year)"
+      ]
     },
     {
       "area_number": 62,
-      "name": "Summerville / Ladson / Ravenel to Highway 165",
-      "county": "Dorchester",
-      "mls_area": "62 - Summerville/Ladson/Ravenel to Hwy 165",
       "slug": "summerville",
+      "name": "Summerville / Ladson / Ravenel to Highway 165",
+      "mls_area": "62 - Summerville/Ladson/Ravenel to Hwy 165",
+      "county": "Dorchester",
       "tier": "A",
       "mf": {
-        "median_price": null,
-        "p25": null,
-        "p75": null,
-        "price_per_door": null,
-        "sales_12mo": null,
-        "median_dom": null,
-        "change_1yr_pct": null,
-        "change_5yr_pct": null
+        "median_price": 558000,
+        "p25": 288000,
+        "p75": 589000,
+        "price_per_door": 144000,
+        "sales_12mo": 5,
+        "median_dom": 162,
+        "change_1yr_pct": 71.5,
+        "change_5yr_pct": 198.1,
+        "sample": {
+          "sales_12mo": 5,
+          "prior_year_sales": 10,
+          "five_years_ago_sales": 13
+        },
+        "unit_range": "2–4 units",
+        "excluded": "1 sale outside 2–4 units or with no unit count"
       },
       "sfr": {
-        "median_price": null,
-        "sales_12mo": null,
-        "median_dom": null,
-        "change_1yr_pct": null,
-        "change_5yr_pct": null
+        "median_price": 380000,
+        "sales_12mo": 525,
+        "median_dom": 32,
+        "change_1yr_pct": 5.6,
+        "change_5yr_pct": 38.2,
+        "subtype_filter": "Single Family Detached",
+        "sample": {
+          "prior_year_sales": 407,
+          "five_years_ago_sales": 647
+        }
       },
       "rents": {
-        "1br": null,
-        "2br": null,
-        "3br": null,
-        "4br_plus": null,
-        "source_by_bed": {},
-        "lease_sample": null
+        "source_by_bed": {
+          "1br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 3
+          },
+          "2br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 22
+          },
+          "3br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 56
+          },
+          "4br_plus": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 21
+          }
+        },
+        "lease_sample": 102,
+        "1br": 1175,
+        "2br": 1450,
+        "3br": 2000,
+        "4br_plus": 2650
       },
       "months_inventory": null,
-      "zips": [],
-      "as_of": null,
-      "sources": []
+      "inventory_detail": {
+        "active_2_4_unit": 0,
+        "sales_per_month": 0.42
+      },
+      "zips": [
+        "29485"
+      ],
+      "as_of": "2026-10",
+      "window": {
+        "from": "2025-10-06",
+        "to": "2026-10-05"
+      },
+      "sources": [
+        "Charleston Trident MLS (FlexMLS) closed sales, property type B (multifamily), CloseDate in window, 2–4 units by NumberOfUnitsTotal",
+        "Charleston Trident MLS (FlexMLS) closed sales, property type A, sub-type Single Family Detached",
+        "Charleston Trident MLS (FlexMLS) lease comps, property type D, status Rented, CloseDate in window; ClosePrice = monthly rent; grouped by BedsTotal",
+        "Charleston Trident MLS (FlexMLS) active 2–4 unit listings on 2026-10-06 for months of inventory",
+        "Comparison windows: 2024-10-06 to 2025-10-05 (1-year) and 2020-10-06 to 2021-10-05 (5-year)"
+      ]
     },
     {
       "area_number": 63,
@@ -1019,40 +1426,85 @@
     },
     {
       "area_number": 71,
-      "name": "Hanahan",
-      "county": "Berkeley",
-      "mls_area": "71 - Hanahan",
       "slug": "hanahan",
+      "name": "Hanahan",
+      "mls_area": "71 - Hanahan",
+      "county": "Berkeley",
       "tier": "A",
       "mf": {
         "median_price": null,
         "p25": null,
         "p75": null,
         "price_per_door": null,
-        "sales_12mo": null,
+        "sales_12mo": 1,
         "median_dom": null,
         "change_1yr_pct": null,
-        "change_5yr_pct": null
+        "change_5yr_pct": null,
+        "sample": {
+          "sales_12mo": 1,
+          "prior_year_sales": 2,
+          "five_years_ago_sales": 3
+        },
+        "unit_range": "2–4 units",
+        "excluded": "1 sale outside 2–4 units or with no unit count"
       },
       "sfr": {
-        "median_price": null,
-        "sales_12mo": null,
-        "median_dom": null,
-        "change_1yr_pct": null,
-        "change_5yr_pct": null
+        "median_price": 445000,
+        "sales_12mo": 186,
+        "median_dom": 12,
+        "change_1yr_pct": 4.7,
+        "change_5yr_pct": 37.8,
+        "subtype_filter": "Single Family Detached",
+        "sample": {
+          "prior_year_sales": 252,
+          "five_years_ago_sales": 298
+        }
       },
       "rents": {
+        "source_by_bed": {
+          "1br": {
+            "source": "MLS leases < 3 – RentCast pending",
+            "n": 0
+          },
+          "2br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 11
+          },
+          "3br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 21
+          },
+          "4br_plus": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 6
+          }
+        },
+        "lease_sample": 38,
         "1br": null,
-        "2br": null,
-        "3br": null,
-        "4br_plus": null,
-        "source_by_bed": {},
-        "lease_sample": null
+        "2br": 1500,
+        "3br": 2400,
+        "4br_plus": 2950
       },
       "months_inventory": null,
-      "zips": [],
-      "as_of": null,
-      "sources": []
+      "inventory_detail": {
+        "active_2_4_unit": 1,
+        "sales_per_month": 0.08
+      },
+      "zips": [
+        "29410"
+      ],
+      "as_of": "2026-10",
+      "window": {
+        "from": "2025-10-06",
+        "to": "2026-10-05"
+      },
+      "sources": [
+        "Charleston Trident MLS (FlexMLS) closed sales, property type B (multifamily), CloseDate in window, 2–4 units by NumberOfUnitsTotal",
+        "Charleston Trident MLS (FlexMLS) closed sales, property type A, sub-type Single Family Detached",
+        "Charleston Trident MLS (FlexMLS) lease comps, property type D, status Rented, CloseDate in window; ClosePrice = monthly rent; grouped by BedsTotal",
+        "Charleston Trident MLS (FlexMLS) active 2–4 unit listings on 2026-10-06 for months of inventory",
+        "Comparison windows: 2024-10-06 to 2025-10-05 (1-year) and 2020-10-06 to 2021-10-05 (5-year)"
+      ]
     },
     {
       "area_number": 72,
@@ -1093,40 +1545,85 @@
     },
     {
       "area_number": 73,
-      "name": "Goose Creek / Moncks Corner (Hwy 17A, Oakley, Hwy 52)",
-      "county": "Berkeley",
-      "mls_area": "73 - G. Cr./M. Cor. Hwy 17A-Oakley-Hwy 52",
       "slug": "goose-creek-moncks-corner",
+      "name": "Goose Creek / Moncks Corner (Hwy 17A, Oakley, Hwy 52)",
+      "mls_area": "73 - G. Cr./M. Cor. Hwy 17A-Oakley-Hwy 52",
+      "county": "Berkeley",
       "tier": "A",
       "mf": {
         "median_price": null,
         "p25": null,
         "p75": null,
         "price_per_door": null,
-        "sales_12mo": null,
+        "sales_12mo": 1,
         "median_dom": null,
         "change_1yr_pct": null,
-        "change_5yr_pct": null
+        "change_5yr_pct": null,
+        "sample": {
+          "sales_12mo": 1,
+          "prior_year_sales": 1,
+          "five_years_ago_sales": 0
+        },
+        "unit_range": "2–4 units",
+        "excluded": null
       },
       "sfr": {
-        "median_price": null,
-        "sales_12mo": null,
-        "median_dom": null,
-        "change_1yr_pct": null,
-        "change_5yr_pct": null
+        "median_price": 365000,
+        "sales_12mo": 436,
+        "median_dom": 31,
+        "change_1yr_pct": -2.7,
+        "change_5yr_pct": 23.3,
+        "subtype_filter": "Single Family Detached",
+        "sample": {
+          "prior_year_sales": 441,
+          "five_years_ago_sales": 801
+        }
       },
       "rents": {
+        "source_by_bed": {
+          "1br": {
+            "source": "MLS leases < 3 – RentCast pending",
+            "n": 0
+          },
+          "2br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 8
+          },
+          "3br": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 53
+          },
+          "4br_plus": {
+            "source": "Charleston Trident MLS lease comps",
+            "n": 25
+          }
+        },
+        "lease_sample": 86,
         "1br": null,
-        "2br": null,
-        "3br": null,
-        "4br_plus": null,
-        "source_by_bed": {},
-        "lease_sample": null
+        "2br": 1600,
+        "3br": 2000,
+        "4br_plus": 2475
       },
       "months_inventory": null,
-      "zips": [],
-      "as_of": null,
-      "sources": []
+      "inventory_detail": {
+        "active_2_4_unit": 0,
+        "sales_per_month": 0.08
+      },
+      "zips": [
+        "29456"
+      ],
+      "as_of": "2026-10",
+      "window": {
+        "from": "2025-10-06",
+        "to": "2026-10-05"
+      },
+      "sources": [
+        "Charleston Trident MLS (FlexMLS) closed sales, property type B (multifamily), CloseDate in window, 2–4 units by NumberOfUnitsTotal",
+        "Charleston Trident MLS (FlexMLS) closed sales, property type A, sub-type Single Family Detached",
+        "Charleston Trident MLS (FlexMLS) lease comps, property type D, status Rented, CloseDate in window; ClosePrice = monthly rent; grouped by BedsTotal",
+        "Charleston Trident MLS (FlexMLS) active 2–4 unit listings on 2026-10-06 for months of inventory",
+        "Comparison windows: 2024-10-06 to 2025-10-05 (1-year) and 2020-10-06 to 2021-10-05 (5-year)"
+      ]
     },
     {
       "area_number": 74,

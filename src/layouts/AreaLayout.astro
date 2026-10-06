@@ -173,7 +173,7 @@ const hoods = hoodsInArea(entry.id);
           <NumberBlock
             value={typeof area.months_inventory === "number" ? area.months_inventory.toFixed(1) : null}
             label="months of inventory, 2–4 unit buildings"
-            missing="Not enough sales"
+            missing={(mf.sales_12mo ?? 0) >= 5 && area.inventory_detail?.active_2_4_unit === 0 ? "None listed right now" : "Not enough sales"}
             size="compact"
             source={sourceLine(area, `Active 2–4 unit listings divided by monthly sales · ${area.inventory_detail?.active_2_4_unit ?? "–"} active`)}
           />

@@ -77,7 +77,8 @@ function computeArea(pull) {
   }
 
   const salesPerMonth = cur.length / 12;
-  const months_inventory = ok && salesPerMonth > 0 ? Math.round((pull.active_2_4 / salesPerMonth) * 10) / 10 : null;
+  // No active listings reads as "0.0 months", which looks like an error; the page says "none listed" instead.
+  const months_inventory = ok && salesPerMonth > 0 && pull.active_2_4 > 0 ? Math.round((pull.active_2_4 / salesPerMonth) * 10) / 10 : null;
   const zips = [...new Set(pull.mf.cur.rows.map((r) => r[4]).filter(Boolean))].sort();
   const [from, to] = pull.windows.cur;
   const asOf = pull.pulled_on.slice(0, 7);

@@ -48,7 +48,7 @@ const latest = areas.map((a) => a.as_of).filter(Boolean).sort().at(-1) ?? null;
                     {a.as_of ? (
                       mfOk ? (
                         <>
-                          <span class="value">{fmt.money(a.mf.median_price)}</span>
+                          <span class="value">{fmt.money(a.mf.median_price as number)}</span>
                           <span class="label">median 2–4 unit sale</span>
                         </>
                       ) : (

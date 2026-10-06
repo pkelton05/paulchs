@@ -9,9 +9,10 @@
     "preview": "astro preview",
     "seed:data": "node scripts/seed-data.mjs",
     "compute:areas": "node scripts/compute-areas.mjs",
-    "check:emdash": "! grep -rn \"—\" src/",
+    "check:emdash": "! grep -rn \"\u2014\" src/",
     "check:links": "node scripts/check-links.mjs",
-    "check:copy": "node scripts/check-copy.mjs"
+    "check:copy": "node scripts/check-copy.mjs",
+    "verify": "npm run build && npm run check:links && npm run check:emdash && npm run check:copy"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

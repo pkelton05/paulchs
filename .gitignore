@@ -1,0 +1,6 @@
+.env
+data/raw/
+data/cache/
+node_modules/
+dist/
+.astro/

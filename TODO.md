@@ -82,6 +82,20 @@ Last updated: 2026-10-06 (Session 2)
 - [ ] How lenders treat a dependency / carriage house unit (Phase 2).
 
 ### Area and neighborhood watch-outs (check per page as each is built)
+- [ ] **Tier A batch (11 pages, drafted 2026-10-06)** – every watch-out on each page is tagged VERIFY. Highlights to check:
+  - Downtown (51): City of Charleston STR rules on the peninsula; BAR review; flood zones on the low edges; insurance on older frame buildings. Card claims: employers (hospitals, medical university, College of Charleston, hotels, King and Meeting Street offices).
+  - West Ashley inside 526 (11): flood zones near Church Creek and the Ashley; older sewer laterals; HOA rules; city vs. county.
+  - West Ashley outside 526 (12): HOA rental caps and minimum lease terms; Church Creek basin flooding; city vs. county.
+  - James Island (21): Town of James Island / City of Charleston / county split; flood zones near the marsh; STR rules by jurisdiction.
+  - Johns Island (23): road projects; flood zones; well and septic; HOA leasing rules; City of Charleston vs. county.
+  - Mount Pleasant south (42): Town rules on new multifamily and adding units; Town STR rules; flood zones near Shem Creek and the harbor; HOA rules. Card claim: Wando terminal nearby.
+  - North Charleston outside 526 (32): HOA rental caps; city vs. county; flood zones near creeks; rental registration.
+  - North Charleston, Dorchester County (61): Dorchester County millage and rental assessment; HOA leasing rules; North Charleston / Summerville / county jurisdiction.
+  - Summerville (62): Town zoning for adding units; Sawmill Branch flood zones; HOA rules; addresses with a Summerville mailing address outside town limits.
+  - Hanahan (71): HOA leasing limits; flood zones near the Goose Creek reservoir; Berkeley County millage and city limits.
+  - Goose Creek / Moncks Corner (73): HOA leasing rules; Goose Creek / Moncks Corner / county jurisdiction; Berkeley County millage. Card claim: Moncks Corner "county seat and nearby industrial sites".
+- [ ] Six Tier A areas had fewer than 5 small multifamily sales in 12 months (12, 23, 32, 42, 71, 73). Their pages say small multifamily rarely trades there and lead with single-family prices and rents. AREAS.md's "Paul's angle" for Area 73 (duplexes are most of the stock) and Area 71 (some duplexes) is not supported by MLS sales – Paul to confirm the pages' framing.
+- [ ] Data to eyeball before publishing: Downtown single-family median up about 30% in a year (234 sales; likely mix of high-end sales); Downtown 3BR and 4BR+ and Mount Pleasant south 4BR+ rent medians are high (probably include furnished or by-the-room leases).
 - [ ] **Upper Peninsula (Area 52) page:** rent drivers (downtown jobs, the hospitals and medical university on the lower peninsula, I-26 and Morrison Drive to North Charleston employers); watch-outs: flood exposure near the marsh and tidal creeks, City of Charleston STR rules, zoning for adding a unit and whether BAR applies, insurance on older frame buildings.
 - [ ] **North Charleston inside I-526 (Area 31) page:** rent drivers (port terminals, Boeing, old Navy Base redevelopment, I-26); watch-outs: North Charleston rental registration or inspection rules, flood zones near the Ashley River and Filbin Creek, City of North Charleston vs. unincorporated county parcels, older-building systems.
 - [ ] Every "Watch-outs" line in AREAS.md is VERIFY: STR rules by jurisdiction (City of Charleston, Mount Pleasant, Folly Beach, Isle of Palms, James Island, county), Board of Architectural Review, flood zones, HOA leasing restrictions, rental registration in North Charleston, zoning for added units, well/septic, resort rental program terms, county millage.
@@ -141,7 +155,10 @@ Last updated: 2026-10-06 (Session 2)
 - Pilot data for Areas 52 and 31 pulled from FlexMLS (MLS only, no RentCast), checked against raw rows, approved by Paul. Change figures hide when either window has under 10 sales (Paul, 2026-10-06).
 - Area page layout (`src/layouts/AreaLayout.astro`), `/charleston` index, and `src/lib/areas.ts` (token filling, formatting, sample rules). Build fails if copy references missing data or types a number into the body.
 - Draft pages for Upper Peninsula and North Charleston inside I-526 (`draft: true` – noindex, out of sitemap) waiting for Paul's review.
-- Next: Paul reviews the two pages; then pull and write the other 11 Tier A areas (51, 11, 21, 32, 61, 62, 71, 12, 42, 73, 23).
+- Paul approved the two pilot pages; they are published (draft: false).
+- Data pulled for the other 11 Tier A areas with a rewritten area-data-puller (stable paging, rank-lookup medians, raw files in data/raw/) and computed with scripts/compute-areas.mjs; spot checks against FlexMLS matched.
+- 11 Tier A pages drafted (draft: true), reviewed for repetition, fair housing, invented claims, and em dashes. `npm run verify` (build, links, em dash, copy check) passes. Waiting for Paul's approval to publish.
+- Next: Tier B areas, or Session 4 (neighborhoods).
 
 ## Next session (Session 3 – area hub pages, Tier A pilot)
 

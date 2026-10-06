@@ -14,6 +14,7 @@ const areas = defineCollection({
     title: z.string(), // <title> tag
     description: z.string(), // meta description, tokens allowed
     name: z.string(), // short area name used in H1, breadcrumb, and copy, e.g. "Upper Peninsula"
+    place_phrase: z.string().optional(), // how the lead line says "in X", e.g. "on James Island"; default "in <name>"
     summary: z.string(), // one line for the /charleston index card, no numbers
     mls_area: z.string(), // exact FlexMLS MLSAreaMajor value
     county,

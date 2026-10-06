@@ -2,6 +2,7 @@
 title: "James Island Charleston Duplexes and Small Multifamily"
 description: "James Island duplexes and fourplexes near Charleston sold at a {{mf.median_price}} median. See cost per door, lease comps, and the rules that change by address."
 name: "James Island"
+place_phrase: "on James Island"
 summary: "Ranches, duplexes, and small apartment buildings along Folly Road and Camp Road, close to downtown and the beach."
 mls_area: "21 - James Island"
 county: Charleston

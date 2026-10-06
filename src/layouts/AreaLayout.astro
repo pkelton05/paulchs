@@ -40,7 +40,7 @@ const cards = {
   rent_drivers: fill(d.cards.rent_drivers, area, where),
   numbers: fill(d.cards.numbers, area, where),
 };
-const lead = leadLine(area, d.name);
+const lead = leadLine(area, d.name, d.place_phrase);
 
 const mf: Record<string, any> = area.mf ?? {};
 const sfr: Record<string, any> = area.sfr ?? {};

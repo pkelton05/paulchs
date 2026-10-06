@@ -75,16 +75,16 @@ export function changeShown(area: AreaRecord, kind: "mf" | "sfr", which: "1yr" |
 }
 
 /** Data-driven lead line per AREAS.md template item 3. */
-export function leadLine(area: AreaRecord, name: string): string | null {
+export function leadLine(area: AreaRecord, name: string, place = `in ${name}`): string | null {
   const mf = area.mf ?? {};
   if (typeof mf.median_price === "number" && (mf.sales_12mo ?? 0) >= MIN_MF_SALES) {
-    return `Small multifamily in ${name} sold for about ${money(mf.median_price)} in the last 12 months (${mf.sales_12mo} sales).`;
+    return `Small multifamily ${place} sold for about ${money(mf.median_price)} in the last 12 months (${mf.sales_12mo} sales).`;
   }
   const sfr = area.sfr ?? {};
   const rent2 = area.rents?.["2br"];
   if (typeof sfr.median_price === "number") {
     const rent = typeof rent2 === "number" ? ` A 2-bedroom typically leases for ${money(rent2)} a month.` : "";
-    return `Small multifamily rarely trades in ${name}. Single-family homes sold for a median of ${money(sfr.median_price)} in the last 12 months (${sfr.sales_12mo} sales).${rent}`;
+    return `Small multifamily rarely trades ${place}. Single-family homes sold for a median of ${money(sfr.median_price)} in the last 12 months (${sfr.sales_12mo} sales).${rent}`;
   }
   return null;
 }

@@ -2,6 +2,7 @@
 title: "Upper Peninsula Charleston duplexes and small multifamily"
 description: "Duplexes and small multifamily in Upper Peninsula Charleston: median price {{mf.median_price}}, about {{mf.price_per_door}} per door, rents from MLS comps."
 name: "Upper Peninsula"
+place_phrase: "on the Upper Peninsula"
 summary: "Peninsula duplexes and small apartment buildings north of the Crosstown, priced per door."
 mls_area: "52 - Peninsula Charleston Outside of Crosstown"
 county: Charleston

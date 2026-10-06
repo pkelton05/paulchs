@@ -25,6 +25,6 @@ This is a different kind of market than most of what I cover. Two- to four-unit 
 
 What you will find is newer housing. Subdivisions, townhomes, and some duplexes built from the eighties on. Most of the rentals are single-family homes and townhomes, which makes this closer to a single-family rental market than a small apartment building market. The leases lean toward three bedrooms, and that is where the rent data is deepest.
 
-The first question on any deal is the HOA. Some communities cap how many homes can be rented. Others set a minimum lease length or ask for approval. I have seen a deal look great on paper and die on one page of covenants, so read them before anything else. After that, check the flood zone and price the insurance.
+The first question on any deal is the HOA. Some communities cap how many homes can be rented. Others set a minimum lease length or ask for approval. A deal can look great on paper and die on one page of covenants, so read them before anything else. After that, check the flood zone and price the insurance.
 
 If you want a lower-maintenance rental and a simple lease, this can work. If you want to add doors with a single closing, look at West Ashley inside the interstate or at the peninsula instead. Got an address in mind? Send it over and we can go through it together.

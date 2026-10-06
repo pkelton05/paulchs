@@ -27,6 +27,6 @@ Summerville is a good example of a market where the number of sales matters as m
 
 Here is why the median can mislead. A couple of larger buildings pulled it up, and the spread between the low and high ends of the middle half is wide. Price per door tames some of that, so it is the number I would lean on. If a seller quotes you a sticker price, divide it by the doors first.
 
-The stock tells you where to hunt. Near the historic center there are older cottages and a few duplexes. Out toward the edges it is mostly newer houses. When I look for a buyer here, the real choice is often between a single-family rental and a rare small building. The house is easier to find and easier to sell later. The building gives you more doors under one roof.
+The stock tells you where to hunt. Near the historic center there are older cottages and a few duplexes. Out toward the edges it is mostly newer houses. When I help a buyer here, the real choice is often between a single-family rental and a rare small building. The house is easier to find and easier to sell later. The building gives you more doors under one roof.
 
-When nothing is listed, it is still worth talking. Small buildings in Summerville often trade quietly before they ever hit the MLS. Tell me what you want, and I will keep an eye out. Before you get excited about adding a unit to a lot, check the town's zoning rules first. That one check can save you a lot of money.
+When nothing is listed, it is still worth talking. Tell me what you want, and I will keep an eye out. Before you get excited about adding a unit to a lot, check the town's zoning rules first. That one check can save you a lot of money.

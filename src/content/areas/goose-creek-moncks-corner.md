@@ -21,7 +21,7 @@ nearby: [goose-creek-hwy-52-oakley, moncks-corner, hanahan, summerville-berkeley
 draft: true
 ---
 
-If you came here looking for a duplex, I need to be straight with you. Only one small multifamily building sold in this area in the last year. The old line that duplexes make up most of the stock does not hold up in the MLS. What this area really offers is single-family rentals, and a lot of them.
+If you came here looking for a duplex, I need to be straight with you. Only one small multifamily building sold in this area in the last year. You may hear that duplexes make up most of the rental stock here, but the MLS sales don't back that up. What this area really offers is single-family rentals, and a lot of them.
 
 That is not a bad thing. Houses are easy to underwrite, because there are plenty of lease comps for a three-bedroom and the rents are well documented. They are also easier to sell later, since you are not limited to investor buyers. The trade is that you get one door per purchase, so building a portfolio takes more deals.
 

@@ -164,6 +164,7 @@ Last updated: 2026-10-06 (Session 4, Step 3 – Area 52 drafts waiting for Paul)
 - Area 51 drafted (4 pages, draft: true): Ansonborough, Cannonborough-Elliotborough, Eastside, Wraggborough. Claims checked against the data.
 - The 1-year price change on neighborhood pages now compares detached homes only (same basis as the area pages). Mixing houses and townhomes made Ansonborough read -28% and Dunes West +29%. This changed three figures on the approved Area 52 pages, so their copy was updated: North Central "detached-home prices dipped" (was "barely moved"), Westside "detached-home prices fell" (was "slipped"), Wagener Terrace now compares with both dipping. [Paul: please re-read those three sentences.]
 - Area 11 drafted (5 pages, draft: true): Concord West of The Ashley, Maryville, Orange Grove Estates, Parkwood Estates, West Glow. Claims checked against the data.
+- Area 12 drafted (8 pages, draft: true): Asheford Place, Ashleytowne Village, Carolina Cove, Castlewood, Parsonage Point, Red Top (no comps), Shadowmoss, Springfield. Claims checked against the data.
 
 ### Neighborhood data – for Paul to look at
 - [ ] Wild Dunes area (45) has no MLS lease comps at all, so Beachwood and Wild Dunes Yacht Harbor will show no rents. All 9 Yacht Harbor sales are sub-type "Other" (likely marina condos).

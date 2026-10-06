@@ -16,6 +16,8 @@ const readJson = async (p, fallback) => {
     return fallback;
   }
 };
+const omit = (obj, keys) => Object.fromEntries(Object.entries(obj).filter(([k]) => !keys.includes(k)));
+const IDENTITY_KEYS = ["name", "slug", "area_slug", "mls_area", "mls_subdivisions", "county", "city", "tier", "paul_closings"];
 const write = (p, obj) => writeFile(new URL(p, root), JSON.stringify(obj, null, 2) + "\n");
 
 // ---------- Areas ----------
@@ -140,9 +142,8 @@ async function main() {
   const prevAreaBySlug = new Map((prevAreas.areas || []).map((a) => [a.slug, a]));
   const areasOut = areas.map((a) => {
     const prev = prevAreaBySlug.get(a.slug) || {};
-    const numbers = emptyAreaNumbers();
-    for (const k of Object.keys(numbers)) if (k in prev) numbers[k] = prev[k];
-    return { ...a, ...numbers };
+    // Keep everything the data pull wrote (numbers, samples, sources); refresh identity fields from the doc.
+    return { ...a, ...emptyAreaNumbers(), ...omit(prev, Object.keys(a)) };
   });
   await write("data/areas.json", {
     _comment:
@@ -197,8 +198,7 @@ async function main() {
       if (seen.has(key)) throw new Error(`Duplicate neighborhood slug in area: ${key}`);
       seen.add(key);
       const prev = prevHoodByKey.get(key) || {};
-      const numbers = emptyNeighborhoodNumbers();
-      for (const k of Object.keys(numbers)) if (k in prev) numbers[k] = prev[k];
+      const numbers = { ...emptyNeighborhoodNumbers(), ...omit(prev, IDENTITY_KEYS) };
       return {
         name: g.name,
         slug,

@@ -13,7 +13,7 @@ watch_outs:
     verify: true
   - text: "Every recent sale sat under an association. Get the covenants and look for leasing caps, minimum lease terms, and tenant registration before you offer."
     verify: true
-  - text: "Before you write an offer, look up the flood zone for the specific lot and get an insurance quote to match."
+  - text: "Low spots can carry a different flood rating than the lot next door. Pull the FEMA map for this parcel before you offer."
     verify: true
 draft: true
 ---

@@ -121,15 +121,19 @@ const CITY_BY_AREA = {
   71: "Hanahan",
 };
 
+// Shape written by scripts/compute-neighborhoods.mjs.
 const emptyNeighborhoodNumbers = () => ({
   page_type: null,
-  sfr: { median_price: null, p25: null, p75: null, sales_24mo: null, median_dom: null, change_1yr_pct: null },
-  mf: { median_price: null, p25: null, p75: null, price_per_door: null, sales_24mo: null, median_dom: null },
-  rents: { "1br": null, "2br": null, "3br": null, "4br_plus": null, source_by_bed: {}, lease_sample: null },
+  page_type_basis: null,
+  res: { median_price: null, p25: null, p75: null, window_months: null, n: 0, sales_24mo: null, sales_12mo: null, prior_year_sales: null, median_dom: null, change_1yr_pct: null },
+  mf: { median_price: null, p25: null, p75: null, price_per_door: null, median_dom: null, window_months: 24, n: 0, sales_24mo: null, unit_range: "2–4 units", excluded: null },
+  rents: { "1br": null, "2br": null, "3br": null, "4br_plus": null },
   property_mix: null,
   typical_year_built: null,
+  hoa_share_pct: null,
   zips: [],
   as_of: null,
+  window: null,
   sources: [],
 });
 

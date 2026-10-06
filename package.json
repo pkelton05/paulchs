@@ -9,6 +9,7 @@
     "preview": "astro preview",
     "seed:data": "node scripts/seed-data.mjs",
     "compute:areas": "node scripts/compute-areas.mjs",
+    "compute:neighborhoods": "node scripts/compute-neighborhoods.mjs",
     "check:emdash": "! grep -rn \"\u2014\" src/",
     "check:links": "node scripts/check-links.mjs",
     "check:copy": "node scripts/check-copy.mjs",

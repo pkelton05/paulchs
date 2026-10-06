@@ -20,6 +20,7 @@ Last updated: 2026-10-06 (Session 1)
 ## Open VERIFY items
 
 ### Broker-in-charge
+- [ ] Footer brokerage phone is 843-460-3173, the same as Paul's own number. Confirm that satisfies the brokerage phone requirement, or supply the office line.
 - [ ] Exact brokerage identification wording and format for the footer (currently "Real estate services through Matt O'Neill Real Estate") and SC advertising requirements (CLAUDE.md §9).
 - [ ] Office address to use: 1349 Old Georgetown Road, Mount Pleasant, SC 29464.
 - [ ] REALTOR® designation in the footer, and any license line required.
@@ -87,10 +88,8 @@ Last updated: 2026-10-06 (Session 1)
 
 ## Open NEED items from Paul
 
-- [ ] Email address for the site (`data/site.json → email`).
-- [ ] Brokerage phone number for the footer.
-- [ ] Analytics choice: Plausible or GA4 (needed in Session 2 for call, text, and form events).
-- [ ] Zapier (or other) webhook for the contact form – set as `ZAPIER_WEBHOOK_URL` in the host's environment variables, never in the repo (Session 2).
+- [ ] Analytics choice: Plausible or GA4 (later – Session 2 builds the call, text, and form events so either can be plugged in).
+- [ ] Later: Zapier (or other) webhook for the contact form – set as `ZAPIER_WEBHOOK_URL` in the host's environment variables, never in the repo (Session 2).
 - [ ] Social links: LinkedIn, YouTube, BiggerPockets profile, GRID podcast.
 - [ ] Next GRID event details (`data/site.json → next_event`) and event sign-up platform.
 - [ ] Photos: headshot, Paul on a property, any GRID podcast clip.
@@ -104,6 +103,8 @@ Last updated: 2026-10-06 (Session 1)
 ---
 
 ## Done this session (Session 1 – 2026-10-06)
+
+- Site email set to pkelton@mattoneillteam.com and footer brokerage phone set to 843-460-3173 (Paul, 2026-10-06).
 
 - Committed the starter files and `.gitignore`.
 - Scaffolded Astro 7 (static output, TypeScript strict) alongside the docs. No hosting adapter yet.

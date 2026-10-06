@@ -12,10 +12,10 @@ Last updated: 2026-10-06 (Session 1)
 - Project `paulchs` on team `paul-chs`, linked to `pkelton05/paulchs`. Every push to `main` deploys to production. Other branches get preview links.
 - **paulchs.com** – live. DNS is on Vercel nameservers. `www.paulchs.com` 301s to `paulchs.com`.
 - **paulkelton.com** and **charlestoninvestoragent.com** (plus `www`) – added to the project, but their DNS is at GoDaddy and doesn't point to Vercel yet. Until it does, the 301 redirects in `vercel.json` can't fire.
-- [ ] **Paul (GoDaddy):** for each of the two domains, set an A record for `@` → `76.76.21.21` and a CNAME for `www` → `cname.vercel-dns.com`, removing any existing A record for `@` or "forwarding" setting. If the Vercel dashboard (Project → Settings → Domains) shows different values, use those.
-- [ ] **Paul:** upgrade the Vercel team to Pro. It's on Hobby, which Vercel limits to non-commercial use.
-- [ ] **Paul:** delete the Vercel token pasted in chat on 2026-10-06 (Account Settings → Tokens). The connector is used instead.
-- [ ] Set the GitHub repo's default branch to `main` (GitHub → Settings → General → Default branch).
+- [ ] **Paul (GoDaddy), later:** for each of the two domains, set an A record for `@` → `76.76.21.21` and a CNAME for `www` → `cname.vercel-dns.com`, removing any existing A record for `@` or "forwarding" setting. If the Vercel dashboard (Project → Settings → Domains) shows different values, use those.
+- [x] Vercel team upgraded to Pro (2026-10-06).
+- [x] Vercel token pasted in chat deleted (2026-10-06). The Vercel connector is used instead.
+- [ ] Later, no rush: set the GitHub repo's default branch to `main` (GitHub → Settings → General → Default branch). Vercel already deploys from `main` regardless.
 
 ## Open VERIFY items
 

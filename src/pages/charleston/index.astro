@@ -1,0 +1,129 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import CtaBlock from "../../components/CtaBlock.astro";
+import { areas, COUNTIES, countySlug, fmt, asOfLabel, MIN_MF_SALES } from "../../lib/areas";
+import site from "../../../data/site.json";
+
+const entries = await getCollection("areas");
+const pageFor = (slug: string) => entries.find((e) => e.id === slug);
+
+const byCounty = COUNTIES.map((county) => ({
+  county,
+  areas: areas
+    .filter((a) => a.county === county)
+    .sort((a, b) => a.area_number - b.area_number),
+}));
+const latest = areas.map((a) => a.as_of).filter(Boolean).sort().at(-1) ?? null;
+---
+
+<BaseLayout
+  title="Charleston Investment Property by Area | Prices and Rents | Paul Kelton"
+  description="Every Charleston, Dorchester, and Berkeley County MLS area with small multifamily prices, rents, and price per door."
+>
+  <section class="wrap head">
+    <Breadcrumb items={[{ label: "Charleston" }]} />
+    <h1>Charleston, area by area.</h1>
+    <p class="lead">Prices, rents, and what to check before you buy, for every MLS area in the tri-county. Updated monthly.</p>
+  </section>
+
+  {
+    byCounty.map(({ county, areas: list }) => (
+      <section class="section" id={countySlug(county)} aria-labelledby={`${countySlug(county)}-h`}>
+        <div class="wrap">
+          <h2 id={`${countySlug(county)}-h`}>{county} County</h2>
+          <ul role="list" class="area-list">
+            {list.map((a) => {
+              const page = pageFor(a.slug);
+              const mfOk = typeof a.mf?.median_price === "number" && (a.mf?.sales_12mo ?? 0) >= MIN_MF_SALES;
+              return (
+                <li>
+                  <div class="name">
+                    <span class="num">{a.area_number}</span>
+                    {page ? <a href={`/charleston/${a.slug}`}>{page.data.name}</a> : <span>{a.name}</span>}
+                  </div>
+                  <p class="summary">{page ? page.data.summary : "Guide coming soon."}</p>
+                  <p class="figure">
+                    {a.as_of ? (
+                      mfOk ? (
+                        <>
+                          <span class="value">{fmt.money(a.mf.median_price)}</span>
+                          <span class="label">median 2–4 unit sale</span>
+                        </>
+                      ) : (
+                        <span class="label">2–4 unit buildings rarely trade here</span>
+                      )
+                    ) : null}
+                  </p>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+    ))
+  }
+
+  {latest && (
+    <p class="wrap source">Last 12 months of MLS closed sales · Data as of {asOfLabel(latest)} · {site.mls_attribution}</p>
+  )}
+
+  <CtaBlock heading="Looking at a building somewhere in the tri-county?" line="Send me the address. I'll tell you what it rents for and what I'd check first." withCall where="charleston_index" />
+</BaseLayout>
+
+<style>
+  .head {
+    padding-block: var(--space-4) var(--space-2);
+  }
+  .area-list li {
+    display: grid;
+    gap: 0.25rem var(--space-3);
+    padding-block: var(--space-2);
+    border-top: 1px solid var(--rule);
+  }
+  @media (min-width: 60rem) {
+    .area-list li {
+      grid-template-columns: 22rem 1fr 14rem;
+      align-items: baseline;
+    }
+  }
+  .name {
+    font-weight: 700;
+    display: flex;
+    gap: 0.75rem;
+    align-items: baseline;
+  }
+  .num {
+    font-family: var(--font-num);
+    font-weight: 600;
+    color: var(--pluff-soft);
+    min-width: 1.75rem;
+  }
+  .summary {
+    margin: 0;
+    color: var(--pluff-soft);
+  }
+  .figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .figure .value {
+    font-family: var(--font-num);
+    font-weight: 600;
+    font-size: 1.5rem;
+    background: var(--haint);
+    padding: 0.1rem 0.5rem;
+    align-self: flex-start;
+  }
+  .figure .label {
+    font-size: var(--text-small);
+    color: var(--pluff-soft);
+  }
+  .source {
+    font-size: var(--text-small);
+    color: var(--pluff-soft);
+    margin-top: var(--space-3);
+  }
+</style>

@@ -6,7 +6,7 @@ export const mainNav: NavItem[] = [
   { label: "Investing", href: "/investing", live: false },
   { label: "First building", href: "/first-building", live: false },
   { label: "Selling", href: "/selling", live: false },
-  { label: "Charleston areas", href: "/charleston", live: false },
+  { label: "Charleston areas", href: "/charleston", live: true },
   { label: "About", href: "/about", live: false },
 ];
 
@@ -29,6 +29,6 @@ export const pageLinks = {
   investing: { label: "Investing", href: "/investing", live: false },
   firstBuilding: { label: "Your first building", href: "/first-building", live: false },
   selling: { label: "Selling", href: "/selling", live: false },
-  areas: { label: "See the areas", href: "/charleston", live: false },
+  areas: { label: "See the areas", href: "/charleston", live: true },
   grid: { label: "Next event", href: "/grid", live: false },
 } satisfies Record<string, NavItem>;

@@ -193,9 +193,12 @@ function compute(pull, record, area) {
   for (const k of ["res", "mf", "leases"]) checkRows(pull, k, notes);
   const r = computeRes(pull, notes);
   const mf = computeMf(pull, notes);
-  const { rents, leases } = computeRents(pull, area, notes);
-
-  const basis = { res_sales_24mo: r.res.sales_24mo, mf_sales_24mo: mf.sales_24mo, leases_24mo: leases };
+  const basis = { res_sales_24mo: r.res.sales_24mo, mf_sales_24mo: mf.sales_24mo, leases_24mo: pull.leases.total_entries };
+  // No MLS sales or leases at all: the page says there aren't any comps and shows no numbers,
+  // not even area-level fallbacks (Paul, 2026-10-06).
+  const no_comps = basis.res_sales_24mo + basis.mf_sales_24mo + basis.leases_24mo === 0;
+  const { rents, leases } = computeRents(pull, no_comps ? null : area, notes);
+  basis.leases_24mo = leases;
   const page_type = basis.res_sales_24mo >= FULL.res || basis.mf_sales_24mo >= FULL.mf || basis.leases_24mo >= FULL.leases ? "full" : "short";
 
   const mixN = r.mix.n + mf.sales_24mo;
@@ -219,6 +222,7 @@ function compute(pull, record, area) {
       ...record,
       city: record.city ?? cityFromMls,
       page_type,
+      no_comps,
       page_type_basis: basis,
       res: r.res,
       mf: mfOut,
@@ -230,7 +234,7 @@ function compute(pull, record, area) {
       as_of: pull.pulled_on.slice(0, 7),
       window: { from: pull.windows.w24[0], to: pull.windows.w24[1] },
       sources: [
-        `Charleston Trident MLS (FlexMLS) closed residential sales (property type A), subdivision ${pull.mls_subdivisions.map((s) => `'${s}'`).join(" or ")} in ${pull.mls_area}, ${pull.windows.w24.join(" to ")}`,
+        `Charleston Trident MLS (FlexMLS) closed residential sales (property type A), subdivision ${pull.mls_subdivisions.map((s) => `'${s}'`).join(" or ")} in ${pull.mls_area_label ?? pull.mls_area}, ${pull.windows.w24.join(" to ")}`,
         "Charleston Trident MLS (FlexMLS) closed multifamily sales (property type B), same subdivision and window; prices use 2–4 units by NumberOfUnitsTotal",
         "Charleston Trident MLS (FlexMLS) lease comps (property type D, status Rented), same subdivision and window; ClosePrice = monthly rent; grouped by BedsTotal",
         "Where a bedroom count has fewer than 3 neighborhood leases, the MLS area's 12-month rent is shown and labeled as area-level (data/areas.json)",
@@ -242,33 +246,52 @@ function compute(pull, record, area) {
 }
 
 const wanted = process.argv.slice(2);
-const files = (await readdir(new URL("data/raw/", root))).filter((f) => /^nbhd-.+\.json$/.test(f)).sort();
 const data = await read("data/neighborhoods.json");
 const { areas } = await read("data/areas.json");
-const seen = new Set();
-for (const file of files) {
-  const pull = await read(`data/raw/${file}`);
-  if (wanted.length && !wanted.includes(pull.area_slug)) continue;
-  const i = data.neighborhoods.findIndex((n) => n.area_slug === pull.area_slug && n.slug === pull.slug);
-  if (i < 0) throw new Error(`${file}: no neighborhood ${pull.area_slug}/${pull.slug}`);
-  const rec = data.neighborhoods[i];
+const rawFiles = new Set(await readdir(new URL("data/raw/", root)));
+const slugify = (t) => t.toLowerCase().replace(/&/g, " and ").replace(/['’]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const rawName = (areaSlug, slug) => `nbhd-${areaSlug}--${slug}.json`;
+
+/** A merged record (mls_also) adds the other area's pull rows to its own. Rows mode only. */
+async function withAlso(pull, rec) {
+  for (const also of rec.mls_also ?? []) {
+    const area = areas.find((a) => a.mls_area === also.mls_area);
+    const file = rawName(area.slug, slugify(also.subdivision));
+    if (!rawFiles.has(file)) throw new Error(`${rec.slug}: missing ${file} for mls_also`);
+    const extra = await read(`data/raw/${file}`);
+    for (const k of ["res", "mf", "leases"]) {
+      if (pull[k].mode !== "rows" || extra[k].mode !== "rows") throw new Error(`${rec.slug}: mls_also merge needs rows mode (${k})`);
+      pull[k] = { mode: "rows", total_entries: pull[k].total_entries + extra[k].total_entries, rows: [...pull[k].rows, ...extra[k].rows] };
+    }
+    pull.notes = [...(pull.notes ?? []), `merged with ${also.subdivision} in ${also.mls_area} (${file})`];
+    pull.mls_area_label = `${pull.mls_area} and ${also.mls_area}`;
+  }
+  return pull;
+}
+
+for (const [i, rec] of data.neighborhoods.entries()) {
+  if (wanted.length && !wanted.includes(rec.area_slug)) continue;
+  const file = rawName(rec.area_slug, rec.slug);
+  if (!rawFiles.has(file)) {
+    console.log(`MISSING pull: ${rec.area_slug}/${rec.slug}`);
+    continue;
+  }
+  const pull = await withAlso(await read(`data/raw/${file}`), rec);
   if (rec.mls_area !== pull.mls_area) throw new Error(`${file}: mls_area mismatch`);
   if (JSON.stringify(rec.mls_subdivisions) !== JSON.stringify(pull.mls_subdivisions)) throw new Error(`${file}: mls_subdivisions mismatch`);
   const identity = {
     name: rec.name, slug: rec.slug, area_slug: rec.area_slug, mls_area: rec.mls_area, mls_subdivisions: rec.mls_subdivisions,
+    ...(rec.mls_also ? { mls_also: rec.mls_also } : {}),
     county: rec.county, city: rec.city, tier: rec.tier, paul_closings: rec.paul_closings,
   };
-  const { record, notes, cityFromMls } = compute(pull, identity, areas.find((a) => a.slug === pull.area_slug));
+  const { record, notes, cityFromMls } = compute(pull, identity, areas.find((a) => a.slug === rec.area_slug));
   data.neighborhoods[i] = record;
-  seen.add(`${pull.area_slug}/${pull.slug}`);
   const b = record.page_type_basis;
   const rentStr = BEDS.map((k) => `${k}:${record.rents[k].value ?? "-"}${record.rents[k].level === "area" ? "(area)" : record.rents[k].level ? `(n${record.rents[k].n})` : ""}`).join(" ");
   console.log(
-    `${pull.area_slug}/${pull.slug} [${record.page_type}] res24=${b.res_sales_24mo} mf24=${b.mf_sales_24mo} leases24=${b.leases_24mo} | res median=${record.res.median_price} (${record.res.window_months}mo n=${record.res.n}) | mf 2–4 n=${record.mf.n} median=${record.mf.median_price} | ${rentStr}`,
+    `${rec.area_slug}/${rec.slug} [${record.page_type}${record.no_comps ? ", no comps" : ""}] res24=${b.res_sales_24mo} mf24=${b.mf_sales_24mo} leases24=${b.leases_24mo} | res median=${record.res.median_price} (${record.res.window_months}mo n=${record.res.n}) | mf 2–4 n=${record.mf.n} median=${record.mf.median_price} | ${rentStr}`,
   );
   if (rec.city && cityFromMls && rec.city !== cityFromMls) notes.push(`city: record says ${rec.city}, MLS mode is ${cityFromMls}`);
   for (const n of notes) console.log(`   note: ${n}`);
 }
-const missing = data.neighborhoods.filter((n) => !seen.has(`${n.area_slug}/${n.slug}`) && (!wanted.length || wanted.includes(n.area_slug)));
-for (const n of missing) console.log(`MISSING pull: ${n.area_slug}/${n.slug}`);
 await writeFile(new URL("data/neighborhoods.json", root), JSON.stringify(data, null, 2) + "\n");

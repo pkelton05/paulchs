@@ -40,7 +40,7 @@ export async function mlsDisplay() {
 }
 
 export async function sitemapExclusions() {
-  const { aggregates_approved } = await mlsDisplay();
+  const { aggregates_approved, neighborhood_pages_approved } = await mlsDisplay();
   const excluded = new Set();
   for (const c of collections) {
     const base = join(root, c.dir);
@@ -50,7 +50,9 @@ export async function sitemapExclusions() {
       const id = relative(base, file).replace(/\.md$/, "");
       const draft = flag(fm, "draft", true);
       const showsNumbers = flag(fm, "shows_mls_numbers", c.dir.includes("areas") || c.dir.includes("neighborhoods"));
-      if (draft || (showsNumbers && !aggregates_approved)) excluded.add(c.url(id));
+      // Neighborhood pages wait for Paul to confirm the MLS display rules (data/site.json).
+      const gatedHood = c.dir.includes("neighborhoods") && !neighborhood_pages_approved;
+      if (draft || gatedHood || (showsNumbers && !aggregates_approved)) excluded.add(c.url(id));
     }
   }
   return excluded;

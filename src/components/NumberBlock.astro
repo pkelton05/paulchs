@@ -30,6 +30,8 @@ const { value, label, source, verify = false, missing = "Not enough data yet", s
     color: var(--pluff);
     padding: 1.75rem var(--space-3) var(--space-3);
     position: relative;
+    /* Lets the figure shrink to fit narrow boxes instead of wrapping mid-number. */
+    container-type: inline-size;
   }
   /* tide-gauge tick ruler */
   .number-block::before {
@@ -51,14 +53,14 @@ const { value, label, source, verify = false, missing = "Not enough data yet", s
   .value {
     font-family: var(--font-num);
     font-weight: 600;
-    font-size: var(--text-num);
+    font-size: min(var(--text-num), 13cqi);
     line-height: 1;
     letter-spacing: -0.03em;
     font-variant-numeric: tabular-nums;
     overflow-wrap: anywhere;
   }
   .compact .value {
-    font-size: clamp(2.25rem, 1.8rem + 2vw, 3rem);
+    font-size: min(clamp(2.25rem, 1.8rem + 2vw, 3rem), 13cqi);
   }
   .missing {
     font-weight: 700;

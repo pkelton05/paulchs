@@ -45,6 +45,7 @@ const neighborhoods = defineCollection({
     tier,
     type: z.enum(["full", "short"]),
     nearby: z.array(z.string()).default([]), // neighborhood slugs in the same area
+    watch_outs: z.array(z.object({ text: z.string(), verify: z.boolean().default(true) })).default([]),
     shows_mls_numbers: z.boolean().default(true),
     draft: z.boolean().default(true),
   }),

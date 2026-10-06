@@ -35,7 +35,8 @@
     "aggregates_approved": true,
     "individual_listings_approved": false,
     "paul_closing_counts_approved": true,
-    "paul_closing_counts_scope": "counts only – never addresses or prices of Paul's sales"
+    "paul_closing_counts_scope": "counts only – never addresses or prices of Paul's sales",
+    "neighborhood_pages_approved": false
   },
 
   "tide_disclosure": "[PLACEHOLDER – affiliated business disclosure: Paul Kelton has an ownership interest in Tide Property Management. Exact wording to be confirmed.]",

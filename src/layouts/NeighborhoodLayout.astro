@@ -1,0 +1,352 @@
+---
+// Neighborhood page – docs/NEIGHBORHOODS.md §6, items 1–9.
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import NumberBlock from "../components/NumberBlock.astro";
+import CtaBlock from "../components/CtaBlock.astro";
+import { areaBySlug, countySlug, fill, attribution, fmt, MIN_CHANGE_SAMPLE } from "../lib/areas";
+import {
+  hoodById,
+  hoodPagesApproved,
+  heading,
+  areaShortName,
+  leadLine,
+  closingsLine,
+  sourceLine,
+  rentSource,
+  mixLine,
+  money,
+  BEDS,
+  type RentCell,
+} from "../lib/neighborhoods";
+
+interface Props {
+  entry: CollectionEntry<"neighborhoods">;
+}
+
+const { entry } = Astro.props;
+const d = entry.data;
+const where = `neighborhoods/${entry.id}.md`;
+const h = hoodById(entry.id);
+if (!h) throw new Error(`${where}: no data/neighborhoods.json record for ${entry.id}`);
+if (h.mls_area !== d.mls_area || h.area_slug !== d.area_slug) throw new Error(`${where}: mls_area or area_slug does not match data/neighborhoods.json`);
+if (h.page_type !== d.type) throw new Error(`${where}: type is ${d.type} but data says ${h.page_type}. Rerun the writer or fix the frontmatter.`);
+if (/\{\{/.test(entry.body ?? "")) throw new Error(`${where}: tokens are not allowed in the body (Paul's take).`);
+if (/\$\s?\d|\d+%|\b\d{1,3}(,\d{3})+\b/.test(entry.body ?? "")) throw new Error(`${where}: a number is typed into the body. Numbers come from data only.`);
+
+const area = areaBySlug(h.area_slug);
+const areaName = areaShortName(h);
+const allAreas = await getCollection("areas");
+const hubBuilt = allAreas.some((a) => a.id === h.area_slug);
+const hubHref = `/charleston/${h.area_slug}`;
+
+const description = fill(d.description, h as any, where);
+const lead = leadLine(h);
+const closings = closingsLine(h);
+
+const res: Record<string, any> = h.res ?? {};
+const mf: Record<string, any> = h.mf ?? {};
+const rents = (h.rents ?? {}) as Record<string, RentCell>;
+const resWindow = res.window_months === 12 ? "last 12 months" : "last 24 months";
+const resSource = sourceLine(h, `MLS closed residential sales in ${h.name}, ${resWindow} · ${res.n ?? 0} sales`);
+const mfSource = sourceLine(h, `MLS closed sales of 2–4 unit buildings in ${h.name}, last 24 months · ${mf.n ?? 0} sales`);
+const change = typeof res.change_1yr_pct === "number" ? res.change_1yr_pct : null;
+const mix = mixLine(h);
+const anyRentShown = BEDS.some(([k]) => rents[k]?.value != null);
+
+const allHoods = await getCollection("neighborhoods");
+const built = new Set(allHoods.map((x) => x.id));
+const nearby = d.nearby
+  .map((slug) => ({ id: `${h.area_slug}/${slug}`, rec: hoodById(`${h.area_slug}/${slug}`) }))
+  .filter((x) => x.rec);
+
+const noindex = d.draft || !hoodPagesApproved;
+---
+
+<BaseLayout title={d.title} description={description} noindex={noindex}>
+  <article>
+    <header class="wrap hood-head">
+      <Breadcrumb
+        items={[
+          { label: "Charleston", href: "/charleston" },
+          { label: `${h.county} County`, href: `/charleston#${countySlug(h.county)}` },
+          { label: areaName, href: hubBuilt ? hubHref : undefined },
+          { label: h.name },
+        ]}
+      />
+      <h1>{heading(h)}</h1>
+      {lead && <p class="lead">{lead}</p>}
+      {closings && <p class="closings">{closings}</p>}
+    </header>
+
+    {
+      h.no_comps ? (
+        <section class="section" aria-labelledby="numbers">
+          <div class="wrap narrow">
+            <h2 id="numbers">No comps here yet</h2>
+            <p>
+              There aren't any MLS sales or leases recorded under the {h.name} name in the last 24 months, so there are no comps to show
+              on this page.
+              {hubBuilt && (
+                <>
+                  {" "}For prices and rents across the wider area, see <a href={hubHref}>{areaName}</a>.
+                </>
+              )}
+            </p>
+          </div>
+        </section>
+      ) : (
+        <section class="section" aria-labelledby="numbers">
+          <div class="wrap">
+            <h2 id="numbers">{h.name} by the numbers</h2>
+
+            <h3>Home sales</h3>
+            {
+              typeof res.median_price === "number" ? (
+                <>
+                  <div class="grid grid-2">
+                    <NumberBlock value={money(res.median_price)} label={`median sale price, ${resWindow}`} source={resSource} />
+                    <NumberBlock
+                      value={typeof res.p25 === "number" && typeof res.p75 === "number" ? `${money(res.p25)}–\u200b${money(res.p75)}` : null}
+                      label="middle half of sales"
+                      missing="Not enough sales"
+                      size="compact"
+                      source={resSource}
+                    />
+                  </div>
+                  <div class="grid grid-2 after">
+                    <NumberBlock
+                      value={typeof res.median_dom === "number" ? String(res.median_dom) : null}
+                      label="median days on market"
+                      missing="Not enough sales"
+                      size="compact"
+                      source={resSource}
+                    />
+                    {change !== null && (
+                      <NumberBlock
+                        value={fmt.pct(change)}
+                        label="median sale price, 1-year change"
+                        size="compact"
+                        source={sourceLine(h, `Last 12 months vs. the 12 months before · ${res.sales_12mo} and ${res.prior_year_sales} sales`)}
+                      />
+                    )}
+                  </div>
+                </>
+              ) : (
+                <div class="grid grid-2">
+                  <NumberBlock
+                    value={String(res.sales_24mo ?? 0)}
+                    label={`home ${res.sales_24mo === 1 ? "sale" : "sales"} in the last 24 months – too few for a median`}
+                    size="compact"
+                    source={sourceLine(h, `MLS closed residential sales in ${h.name}, last 24 months`)}
+                  />
+                </div>
+              )
+            }
+
+            {
+              (mf.sales_24mo ?? 0) > 0 && (
+                <>
+                  <h3>Small multifamily</h3>
+                  {(mf.n ?? 0) >= 5 ? (
+                    <>
+                      <div class="grid grid-2">
+                        <NumberBlock value={money(mf.median_price)} label="median sale price, 2–4 units" source={mfSource} />
+                        <NumberBlock value={money(mf.price_per_door)} label="median price per door" source={mfSource} />
+                      </div>
+                      <div class="grid grid-2 after">
+                        <NumberBlock
+                          value={typeof mf.p25 === "number" && typeof mf.p75 === "number" ? `${money(mf.p25)}–\u200b${money(mf.p75)}` : null}
+                          label="middle half of sales"
+                          missing="Not enough sales"
+                          size="compact"
+                          source={mfSource}
+                        />
+                        <NumberBlock
+                          value={typeof mf.median_dom === "number" ? String(mf.median_dom) : null}
+                          label="median days on market, 2–4 units"
+                          missing="Not enough sales"
+                          size="compact"
+                          source={mfSource}
+                        />
+                      </div>
+                    </>
+                  ) : (
+                    <div class="grid grid-2">
+                      <NumberBlock
+                        value={String(mf.sales_24mo)}
+                        label={`multifamily ${mf.sales_24mo === 1 ? "sale" : "sales"} in the last 24 months – too few for a median`}
+                        size="compact"
+                        source={sourceLine(h, `MLS closed multifamily sales in ${h.name}, last 24 months`)}
+                      />
+                    </div>
+                  )}
+                </>
+              )
+            }
+
+            <h3>Rent by bedroom count</h3>
+            {
+              anyRentShown ? (
+                <div class="grid grid-4">
+                  {BEDS.map(([key, label]) => {
+                    const cell = rents[key] ?? { value: null, level: null, n: 0 };
+                    return (
+                      <NumberBlock
+                        value={money(cell.value)}
+                        label={`${label}, per month${cell.level === "area" ? ` (${areaName} area)` : ""}`}
+                        missing="Too few leases"
+                        size="compact"
+                        source={rentSource(h, cell)}
+                      />
+                    );
+                  })}
+                </div>
+              ) : (
+                <p>There aren't enough MLS lease comps here or in the wider {areaName} area to show rents.</p>
+              )
+            }
+
+            {
+              (mix || h.typical_year_built) && (
+                <>
+                  <h3>What gets built and sold here</h3>
+                  {mix && <p class="mix">Of the sales in the last 24 months: {mix}.</p>}
+                  <div class="grid grid-2">
+                    {h.typical_year_built && (
+                      <NumberBlock
+                        value={String(h.typical_year_built)}
+                        label="typical year built (median of homes sold)"
+                        size="compact"
+                        source={sourceLine(h, `MLS closed sales in ${h.name}, last 24 months`)}
+                      />
+                    )}
+                    {typeof h.hoa_share_pct === "number" && (
+                      <NumberBlock
+                        value={`${h.hoa_share_pct}%`}
+                        label="of home sales listed with an HOA"
+                        size="compact"
+                        source={sourceLine(h, `MLS HOA field on closed sales in ${h.name}, last 24 months`)}
+                      />
+                    )}
+                  </div>
+                </>
+              )
+            }
+
+            <p class="block-source">
+              {attribution} Medians of closed MLS sales and leases filed under the {h.name} subdivision name. Rents marked with the area
+              name come from the whole {areaName} MLS area because there were fewer than 3 leases of that size here.
+              {change !== null && <> The 1-year change shows only when both years have {MIN_CHANGE_SAMPLE} or more sales.</>}
+            </p>
+          </div>
+        </section>
+      )
+    }
+
+    <section class="section" aria-labelledby="take">
+      <div class="wrap take">
+        <h2 id="take">My take on {h.name}</h2>
+        <slot />
+      </div>
+    </section>
+
+    {
+      d.watch_outs.length > 0 && (
+        <section class="section" aria-labelledby="watch">
+          <div class="wrap narrow">
+            <h2 id="watch">What to check before you buy here</h2>
+            <ul class="watch">
+              {d.watch_outs.map((w) => (
+                <li>
+                  {w.text}
+                  {w.verify && <> <span class="verify">VERIFY</span></>}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )
+    }
+
+    <section class="section" aria-labelledby="nearby">
+      <div class="wrap narrow">
+        <h2 id="nearby">Nearby neighborhoods</h2>
+        {
+          nearby.length > 0 && (
+            <ul class="nearby" role="list">
+              {nearby.map((x) => (
+                <li>{built.has(x.id) ? <a href={`/charleston/${x.id}`}>{x.rec!.name}</a> : <span>{x.rec!.name}</span>}</li>
+              ))}
+            </ul>
+          )
+        }
+        <p class="hub">
+          {hubBuilt ? <a href={hubHref}>All of {area?.name ?? areaName}</a> : <span>All of {area?.name ?? areaName}</span>}
+        </p>
+      </div>
+    </section>
+  </article>
+
+  <CtaBlock heading={`Looking at a property in ${h.name}? Send me the deal.`} withCall where={`neighborhood_${entry.id}`} />
+</BaseLayout>
+
+<style>
+  .hood-head {
+    padding-block: var(--space-4) var(--space-3);
+  }
+  .hood-head .lead {
+    max-width: 44rem;
+  }
+  .closings {
+    font-weight: 700;
+    border-left: 3px solid var(--pluff);
+    padding-left: var(--space-2);
+  }
+  .take :global(p) {
+    max-width: var(--measure);
+  }
+  .narrow {
+    max-width: 48rem;
+  }
+  h3 {
+    margin-top: var(--space-4);
+  }
+  .grid {
+    display: grid;
+    gap: 2px;
+  }
+  .grid.after {
+    margin-top: 2px;
+  }
+  .grid > :global(*) {
+    min-width: 0;
+  }
+  @media (min-width: 48rem) {
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (min-width: 60rem) {
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+  .block-source {
+    font-size: var(--text-small);
+    color: var(--pluff-soft);
+    margin-top: var(--space-2);
+    max-width: none;
+  }
+  .watch li + li {
+    margin-top: 0.6rem;
+  }
+  .nearby li {
+    padding-block: 0.6rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hub {
+    margin-top: var(--space-3);
+    font-weight: 700;
+  }
+</style>

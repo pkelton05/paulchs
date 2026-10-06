@@ -17,7 +17,7 @@ const readJson = async (p, fallback) => {
   }
 };
 const omit = (obj, keys) => Object.fromEntries(Object.entries(obj).filter(([k]) => !keys.includes(k)));
-const IDENTITY_KEYS = ["name", "slug", "area_slug", "mls_area", "mls_subdivisions", "county", "city", "tier", "paul_closings"];
+const IDENTITY_KEYS = ["name", "slug", "area_slug", "mls_area", "mls_subdivisions", "mls_also", "county", "city", "tier", "paul_closings"];
 const write = (p, obj) => writeFile(new URL(p, root), JSON.stringify(obj, null, 2) + "\n");
 
 // ---------- Areas ----------
@@ -164,8 +164,19 @@ async function main() {
     return m ? m.into : sub;
   };
 
+  // Cross-area merges: one community split by an MLS area line becomes one page in
+  // the `into` area; the other area's (mls_area, subdivision) pairs go in mls_also.
+  const crossArea = (aliases.cross_area_merges || []).filter((m) => m.status === "approved");
+  const crossFor = (mls, sub) => crossArea.find((m) => m.into.mls_area !== mls && m.from.some((f) => f.mls_area === mls && f.subdivision === sub));
+
   const groups = new Map();
   for (const row of seed) {
+    const cross = crossFor(row.mls_area, row.subdivision);
+    const also = cross ? { mls_area: row.mls_area, subdivision: row.subdivision } : null;
+    if (cross) {
+      row.mls_area = cross.into.mls_area;
+      row.subdivision = cross.into.name;
+    }
     const area = byMls.get(row.mls_area);
     if (!area) {
       console.warn(`Skipping row outside the tri-county area list: ${row.mls_area} / ${row.subdivision}`);
@@ -181,8 +192,10 @@ async function main() {
       types: {},
       first_close: row.first_close,
       last_close: row.last_close,
+      mls_also: [],
     };
-    g.mls_subdivisions.push(row.subdivision);
+    if (also) g.mls_also.push(also);
+    else g.mls_subdivisions.push(row.subdivision);
     g.closed += Number(row.closed_listings);
     for (const [t, n] of Object.entries(parseTypes(row.property_types))) g.types[t] = (g.types[t] || 0) + n;
     if (row.first_close < g.first_close) g.first_close = row.first_close;
@@ -209,6 +222,7 @@ async function main() {
         area_slug: g.area.slug,
         mls_area: g.area.mls_area,
         mls_subdivisions: g.mls_subdivisions,
+        ...(g.mls_also.length ? { mls_also: g.mls_also } : {}),
         county: g.area.county,
         city: prev.city ?? CITY_BY_AREA[g.area.area_number] ?? null,
         tier: g.area.tier,

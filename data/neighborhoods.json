@@ -20,6 +20,7 @@
         "first_close": "2021-03-12"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 47,
         "mf_sales_24mo": 0,
@@ -120,6 +121,7 @@
         "first_close": "2023-06-08"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 24,
         "mf_sales_24mo": 0,
@@ -222,6 +224,7 @@
         "first_close": "2026-09-01"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 17,
         "mf_sales_24mo": 4,
@@ -322,6 +325,7 @@
         "first_close": "2021-01-12"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 19,
         "mf_sales_24mo": 0,
@@ -423,6 +427,7 @@
         "first_close": "2022-06-03"
       },
       "page_type": "short",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 3,
         "mf_sales_24mo": 1,
@@ -526,6 +531,7 @@
         "first_close": "2021-12-28"
       },
       "page_type": "short",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 5,
         "mf_sales_24mo": 0,
@@ -628,6 +634,7 @@
         "first_close": "2021-04-29"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 28,
         "mf_sales_24mo": 0,
@@ -729,6 +736,7 @@
         "first_close": "2022-06-22"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 13,
         "mf_sales_24mo": 0,
@@ -829,6 +837,7 @@
         "first_close": "2022-05-27"
       },
       "page_type": "short",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 6,
         "mf_sales_24mo": 0,
@@ -932,6 +941,7 @@
         "first_close": "2020-08-31"
       },
       "page_type": "short",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 12,
         "mf_sales_24mo": 0,
@@ -1034,6 +1044,7 @@
         "first_close": "2020-10-23"
       },
       "page_type": "short",
+      "no_comps": true,
       "page_type_basis": {
         "res_sales_24mo": 0,
         "mf_sales_24mo": 0,
@@ -1065,32 +1076,24 @@
       },
       "rents": {
         "1br": {
-          "value": 1200,
-          "level": "area",
-          "n": 18,
-          "window_months": 12,
-          "neighborhood_n": 0
+          "value": null,
+          "level": null,
+          "n": 0
         },
         "2br": {
-          "value": 1825,
-          "level": "area",
-          "n": 26,
-          "window_months": 12,
-          "neighborhood_n": 0
+          "value": null,
+          "level": null,
+          "n": 0
         },
         "3br": {
-          "value": 2425,
-          "level": "area",
-          "n": 76,
-          "window_months": 12,
-          "neighborhood_n": 0
+          "value": null,
+          "level": null,
+          "n": 0
         },
         "4br_plus": {
-          "value": 3150,
-          "level": "area",
-          "n": 31,
-          "window_months": 12,
-          "neighborhood_n": 0
+          "value": null,
+          "level": null,
+          "n": 0
         }
       },
       "property_mix": null,
@@ -1128,6 +1131,7 @@
         "first_close": "2021-03-26"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 129,
         "mf_sales_24mo": 0,
@@ -1228,6 +1232,7 @@
         "first_close": "2021-12-29"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 27,
         "mf_sales_24mo": 0,
@@ -1330,6 +1335,7 @@
         "first_close": "2025-05-19"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 10,
         "mf_sales_24mo": 2,
@@ -1430,6 +1436,7 @@
         "first_close": "2025-08-12"
       },
       "page_type": "short",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 3,
         "mf_sales_24mo": 0,
@@ -1532,6 +1539,7 @@
         "first_close": "2021-11-15"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 36,
         "mf_sales_24mo": 0,
@@ -1632,6 +1640,7 @@
         "first_close": "2026-07-02"
       },
       "page_type": "short",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 14,
         "mf_sales_24mo": 0,
@@ -1734,6 +1743,7 @@
         "first_close": "2020-12-14"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 26,
         "mf_sales_24mo": 0,
@@ -1834,6 +1844,7 @@
         "first_close": "2022-07-22"
       },
       "page_type": "short",
+      "no_comps": true,
       "page_type_basis": {
         "res_sales_24mo": 0,
         "mf_sales_24mo": 0,
@@ -1870,18 +1881,14 @@
           "n": 0
         },
         "2br": {
-          "value": 2950,
-          "level": "area",
-          "n": 4,
-          "window_months": 12,
-          "neighborhood_n": 0
+          "value": null,
+          "level": null,
+          "n": 0
         },
         "3br": {
-          "value": 5300,
-          "level": "area",
-          "n": 4,
-          "window_months": 12,
-          "neighborhood_n": 0
+          "value": null,
+          "level": null,
+          "n": 0
         },
         "4br_plus": {
           "value": null,
@@ -1924,6 +1931,7 @@
         "first_close": "2022-04-27"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 80,
         "mf_sales_24mo": 0,
@@ -2024,6 +2032,7 @@
         "first_close": "2023-07-14"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 85,
         "mf_sales_24mo": 0,
@@ -2123,6 +2132,7 @@
         "first_close": "2022-05-02"
       },
       "page_type": "short",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 7,
         "mf_sales_24mo": 0,
@@ -2225,6 +2235,7 @@
         "first_close": "2026-01-12"
       },
       "page_type": "short",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 0,
         "mf_sales_24mo": 1,
@@ -2327,6 +2338,7 @@
         "first_close": "2021-08-27"
       },
       "page_type": "short",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 0,
         "mf_sales_24mo": 1,
@@ -2429,6 +2441,7 @@
         "first_close": "2025-05-23"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 90,
         "mf_sales_24mo": 7,
@@ -2527,6 +2540,7 @@
         "first_close": "2025-05-23"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 3,
         "mf_sales_24mo": 3,
@@ -2629,6 +2643,7 @@
         "first_close": "2023-08-07"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 86,
         "mf_sales_24mo": 1,
@@ -2729,6 +2744,7 @@
         "first_close": "2020-09-25"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 15,
         "mf_sales_24mo": 0,
@@ -2830,6 +2846,7 @@
         "first_close": "2021-01-15"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 32,
         "mf_sales_24mo": 0,
@@ -2931,6 +2948,7 @@
         "first_close": "2022-05-13"
       },
       "page_type": "short",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 0,
         "mf_sales_24mo": 1,
@@ -3032,6 +3050,7 @@
         "first_close": "2022-08-25"
       },
       "page_type": "short",
+      "no_comps": true,
       "page_type_basis": {
         "res_sales_24mo": 0,
         "mf_sales_24mo": 0,
@@ -3063,32 +3082,24 @@
       },
       "rents": {
         "1br": {
-          "value": 975,
-          "level": "area",
-          "n": 4,
-          "window_months": 12,
-          "neighborhood_n": 0
+          "value": null,
+          "level": null,
+          "n": 0
         },
         "2br": {
-          "value": 1500,
-          "level": "area",
-          "n": 57,
-          "window_months": 12,
-          "neighborhood_n": 0
+          "value": null,
+          "level": null,
+          "n": 0
         },
         "3br": {
-          "value": 2100,
-          "level": "area",
-          "n": 107,
-          "window_months": 12,
-          "neighborhood_n": 0
+          "value": null,
+          "level": null,
+          "n": 0
         },
         "4br_plus": {
-          "value": 2400,
-          "level": "area",
-          "n": 28,
-          "window_months": 12,
-          "neighborhood_n": 0
+          "value": null,
+          "level": null,
+          "n": 0
         }
       },
       "property_mix": null,
@@ -3126,6 +3137,7 @@
         "first_close": "2026-05-15"
       },
       "page_type": "short",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 8,
         "mf_sales_24mo": 0,
@@ -3228,6 +3240,7 @@
         "first_close": "2021-04-09"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 310,
         "mf_sales_24mo": 0,
@@ -3327,6 +3340,7 @@
         "first_close": "2023-03-03"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 85,
         "mf_sales_24mo": 0,
@@ -3429,6 +3443,7 @@
         "first_close": "2020-11-25"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 28,
         "mf_sales_24mo": 1,
@@ -3532,6 +3547,7 @@
         "first_close": "2022-07-27"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 80,
         "mf_sales_24mo": 0,
@@ -3633,6 +3649,7 @@
         "first_close": "2022-10-03"
       },
       "page_type": "short",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 1,
         "mf_sales_24mo": 0,
@@ -3735,6 +3752,7 @@
         "first_close": "2022-07-21"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 100,
         "mf_sales_24mo": 0,
@@ -3834,6 +3852,7 @@
         "first_close": "2021-12-31"
       },
       "page_type": "short",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 3,
         "mf_sales_24mo": 0,
@@ -3928,6 +3947,7 @@
         "first_close": "2024-12-30"
       },
       "page_type": "short",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 9,
         "mf_sales_24mo": 0,
@@ -4022,6 +4042,7 @@
         "first_close": "2022-03-02"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 54,
         "mf_sales_24mo": 3,
@@ -4125,6 +4146,7 @@
         "first_close": "2023-07-24"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 47,
         "mf_sales_24mo": 19,
@@ -4223,6 +4245,7 @@
         "first_close": "2023-11-01"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 33,
         "mf_sales_24mo": 14,
@@ -4321,6 +4344,7 @@
         "first_close": "2021-03-09"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 13,
         "mf_sales_24mo": 4,
@@ -4420,6 +4444,7 @@
         "first_close": "2021-06-14"
       },
       "page_type": "short",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 1,
         "mf_sales_24mo": 1,
@@ -4522,6 +4547,7 @@
         "first_close": "2020-10-09"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 101,
         "mf_sales_24mo": 11,
@@ -4622,6 +4648,7 @@
         "first_close": "2021-03-10"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 105,
         "mf_sales_24mo": 7,
@@ -4722,6 +4749,7 @@
         "first_close": "2022-03-18"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 42,
         "mf_sales_24mo": 10,
@@ -4822,6 +4850,7 @@
         "first_close": "2020-08-05"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 22,
         "mf_sales_24mo": 0,
@@ -4923,6 +4952,7 @@
         "first_close": "2025-05-14"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 17,
         "mf_sales_24mo": 5,
@@ -5022,6 +5052,7 @@
         "first_close": "2026-03-06"
       },
       "page_type": "short",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 10,
         "mf_sales_24mo": 0,
@@ -5123,6 +5154,7 @@
         "first_close": "2021-09-02"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 15,
         "mf_sales_24mo": 0,
@@ -5223,6 +5255,7 @@
         "first_close": "2021-10-13"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 80,
         "mf_sales_24mo": 0,
@@ -5323,6 +5356,7 @@
         "first_close": "2026-05-07"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 0,
         "mf_sales_24mo": 5,
@@ -5424,6 +5458,7 @@
         "first_close": "2021-07-16"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 16,
         "mf_sales_24mo": 0,
@@ -5525,6 +5560,7 @@
         "first_close": "2023-02-16"
       },
       "page_type": "short",
+      "no_comps": true,
       "page_type_basis": {
         "res_sales_24mo": 0,
         "mf_sales_24mo": 0,
@@ -5556,32 +5592,24 @@
       },
       "rents": {
         "1br": {
-          "value": 1500,
-          "level": "area",
-          "n": 8,
-          "window_months": 12,
-          "neighborhood_n": 0
+          "value": null,
+          "level": null,
+          "n": 0
         },
         "2br": {
-          "value": 1625,
-          "level": "area",
-          "n": 34,
-          "window_months": 12,
-          "neighborhood_n": 0
+          "value": null,
+          "level": null,
+          "n": 0
         },
         "3br": {
-          "value": 2100,
-          "level": "area",
-          "n": 81,
-          "window_months": 12,
-          "neighborhood_n": 0
+          "value": null,
+          "level": null,
+          "n": 0
         },
         "4br_plus": {
-          "value": 2700,
-          "level": "area",
-          "n": 79,
-          "window_months": 12,
-          "neighborhood_n": 0
+          "value": null,
+          "level": null,
+          "n": 0
         }
       },
       "property_mix": null,
@@ -5619,6 +5647,7 @@
         "first_close": "2021-06-18"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 1123,
         "mf_sales_24mo": 0,
@@ -5720,6 +5749,7 @@
         "first_close": "2026-04-13"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 101,
         "mf_sales_24mo": 0,
@@ -5820,6 +5850,7 @@
         "first_close": "2021-11-30"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 24,
         "mf_sales_24mo": 0,
@@ -5920,6 +5951,7 @@
         "first_close": "2020-11-02"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 52,
         "mf_sales_24mo": 0,
@@ -6019,6 +6051,7 @@
         "first_close": "2021-05-26"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 40,
         "mf_sales_24mo": 0,
@@ -6108,33 +6141,40 @@
       "mls_subdivisions": [
         "Tanner Plantation"
       ],
+      "mls_also": [
+        {
+          "mls_area": "72 - G.Cr/M. Cor. Hwy 52-Oakley-Cooper River",
+          "subdivision": "Tanner Plantation"
+        }
+      ],
       "county": "Berkeley",
       "city": "Hanahan",
       "tier": "A",
       "paul_closings": {
-        "count": 1,
+        "count": 2,
         "by_property_type": {
-          "A": 1
+          "A": 2
         },
-        "first_close": "2022-06-14"
+        "first_close": "2020-10-29"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
-        "res_sales_24mo": 126,
+        "res_sales_24mo": 160,
         "mf_sales_24mo": 0,
-        "leases_24mo": 21
+        "leases_24mo": 30
       },
       "res": {
-        "median_price": 514000,
-        "p25": 410000,
+        "median_price": 512000,
+        "p25": 418000,
         "p75": 610000,
         "window_months": 12,
-        "n": 65,
-        "sales_24mo": 126,
-        "sales_12mo": 65,
-        "prior_year_sales": 61,
-        "median_dom": 14,
-        "change_1yr_pct": 2.8
+        "n": 80,
+        "sales_24mo": 160,
+        "sales_12mo": 80,
+        "prior_year_sales": 80,
+        "median_dom": 21,
+        "change_1yr_pct": 2.9
       },
       "mf": {
         "median_price": null,
@@ -6161,24 +6201,24 @@
           "window_months": 24
         },
         "3br": {
-          "value": 2400,
+          "value": 2350,
           "level": "neighborhood",
-          "n": 13,
+          "n": 14,
           "window_months": 24
         },
         "4br_plus": {
-          "value": 2700,
+          "value": 2950,
           "level": "neighborhood",
-          "n": 4,
+          "n": 12,
           "window_months": 24
         }
       },
       "property_mix": {
-        "single_family_detached_pct": 86,
-        "single_family_attached_pct": 14,
+        "single_family_detached_pct": 88,
+        "single_family_attached_pct": 12,
         "other_residential_pct": 0,
         "multifamily_pct": 0,
-        "sales_counted": 126
+        "sales_counted": 160
       },
       "typical_year_built": 2006,
       "hoa_share_pct": 99,
@@ -6191,7 +6231,7 @@
         "to": "2026-10-05"
       },
       "sources": [
-        "Charleston Trident MLS (FlexMLS) closed residential sales (property type A), subdivision 'Tanner Plantation' in 71 - Hanahan, 2024-10-06 to 2026-10-05",
+        "Charleston Trident MLS (FlexMLS) closed residential sales (property type A), subdivision 'Tanner Plantation' in 71 - Hanahan and 72 - G.Cr/M. Cor. Hwy 52-Oakley-Cooper River, 2024-10-06 to 2026-10-05",
         "Charleston Trident MLS (FlexMLS) closed multifamily sales (property type B), same subdivision and window; prices use 2–4 units by NumberOfUnitsTotal",
         "Charleston Trident MLS (FlexMLS) lease comps (property type D, status Rented), same subdivision and window; ClosePrice = monthly rent; grouped by BedsTotal",
         "Where a bedroom count has fewer than 3 neighborhood leases, the MLS area's 12-month rent is shown and labeled as area-level (data/areas.json)"
@@ -6216,6 +6256,7 @@
         "first_close": "2020-11-30"
       },
       "page_type": "short",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 7,
         "mf_sales_24mo": 0,
@@ -6315,6 +6356,7 @@
         "first_close": "2023-12-26"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 86,
         "mf_sales_24mo": 0,
@@ -6412,6 +6454,7 @@
         "first_close": "2021-12-17"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 29,
         "mf_sales_24mo": 0,
@@ -6493,105 +6536,6 @@
       ]
     },
     {
-      "name": "Tanner Plantation",
-      "slug": "tanner-plantation",
-      "area_slug": "goose-creek-hwy-52-oakley",
-      "mls_area": "72 - G.Cr/M. Cor. Hwy 52-Oakley-Cooper River",
-      "mls_subdivisions": [
-        "Tanner Plantation"
-      ],
-      "county": "Berkeley",
-      "city": "Hanahan",
-      "tier": "B",
-      "paul_closings": {
-        "count": 1,
-        "by_property_type": {
-          "A": 1
-        },
-        "first_close": "2020-10-29"
-      },
-      "page_type": "full",
-      "page_type_basis": {
-        "res_sales_24mo": 34,
-        "mf_sales_24mo": 0,
-        "leases_24mo": 9
-      },
-      "res": {
-        "median_price": 499000,
-        "p25": 436000,
-        "p75": 593000,
-        "window_months": 12,
-        "n": 15,
-        "sales_24mo": 34,
-        "sales_12mo": 15,
-        "prior_year_sales": 19,
-        "median_dom": 34,
-        "change_1yr_pct": 4
-      },
-      "mf": {
-        "median_price": null,
-        "p25": null,
-        "p75": null,
-        "price_per_door": null,
-        "median_dom": null,
-        "window_months": 24,
-        "n": 0,
-        "sales_24mo": 0,
-        "unit_range": "2–4 units",
-        "excluded": null
-      },
-      "rents": {
-        "1br": {
-          "value": null,
-          "level": null,
-          "n": 0
-        },
-        "2br": {
-          "value": 1800,
-          "level": "area",
-          "n": 14,
-          "window_months": 12,
-          "neighborhood_n": 0
-        },
-        "3br": {
-          "value": 2050,
-          "level": "area",
-          "n": 89,
-          "window_months": 12,
-          "neighborhood_n": 1
-        },
-        "4br_plus": {
-          "value": 2950,
-          "level": "neighborhood",
-          "n": 8,
-          "window_months": 24
-        }
-      },
-      "property_mix": {
-        "single_family_detached_pct": 97,
-        "single_family_attached_pct": 3,
-        "other_residential_pct": 0,
-        "multifamily_pct": 0,
-        "sales_counted": 34
-      },
-      "typical_year_built": 2008,
-      "hoa_share_pct": 100,
-      "zips": [
-        "29410"
-      ],
-      "as_of": "2026-10",
-      "window": {
-        "from": "2024-10-06",
-        "to": "2026-10-05"
-      },
-      "sources": [
-        "Charleston Trident MLS (FlexMLS) closed residential sales (property type A), subdivision 'Tanner Plantation' in 72 - G.Cr/M. Cor. Hwy 52-Oakley-Cooper River, 2024-10-06 to 2026-10-05",
-        "Charleston Trident MLS (FlexMLS) closed multifamily sales (property type B), same subdivision and window; prices use 2–4 units by NumberOfUnitsTotal",
-        "Charleston Trident MLS (FlexMLS) lease comps (property type D, status Rented), same subdivision and window; ClosePrice = monthly rent; grouped by BedsTotal",
-        "Where a bedroom count has fewer than 3 neighborhood leases, the MLS area's 12-month rent is shown and labeled as area-level (data/areas.json)"
-      ]
-    },
-    {
       "name": "Berkeley Commons Townhomes",
       "slug": "berkeley-commons-townhomes",
       "area_slug": "goose-creek-moncks-corner",
@@ -6610,6 +6554,7 @@
         "first_close": "2021-10-25"
       },
       "page_type": "short",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 2,
         "mf_sales_24mo": 0,
@@ -6710,6 +6655,7 @@
         "first_close": "2020-07-31"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 36,
         "mf_sales_24mo": 0,
@@ -6808,6 +6754,7 @@
         "first_close": "2021-01-29"
       },
       "page_type": "short",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 11,
         "mf_sales_24mo": 0,
@@ -6910,6 +6857,7 @@
         "first_close": "2020-10-05"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 60,
         "mf_sales_24mo": 0,
@@ -7011,6 +6959,7 @@
         "first_close": "2021-08-13"
       },
       "page_type": "short",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 5,
         "mf_sales_24mo": 0,
@@ -7113,6 +7062,7 @@
         "first_close": "2023-05-01"
       },
       "page_type": "full",
+      "no_comps": false,
       "page_type_basis": {
         "res_sales_24mo": 306,
         "mf_sales_24mo": 0,

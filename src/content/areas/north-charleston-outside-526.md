@@ -20,7 +20,7 @@ watch_outs:
   - text: "Rental registration or inspection rules may apply depending on the city or county. Check before you list a unit."
     verify: true
 nearby: [north-charleston-inside-526, north-charleston-dorchester-county, hanahan, summerville]
-draft: true
+draft: false
 ---
 
 This is the part of North Charleston that sits past the interstate loop, and it reads like a suburb. Think of rows of subdivisions with single-family homes and townhomes, plus some duplexes, built over several decades. Entry prices are lower than inside I-526, and that is the main reason investors look here.

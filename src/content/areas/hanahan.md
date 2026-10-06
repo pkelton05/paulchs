@@ -18,7 +18,7 @@ watch_outs:
   - text: "Hanahan is in Berkeley County, which has its own millage and tax setup. Check the tax bill for the specific parcel and whether the home is inside the city limits."
     verify: true
 nearby: [north-charleston-inside-526, north-charleston-outside-526, goose-creek-hwy-52-oakley, goose-creek-moncks-corner]
-draft: true
+draft: false
 ---
 
 Hanahan is a small city wedged between North Charleston and Goose Creek. It is easy to drive through and miss. For an investor, the draw is location. The Naval Weapons Station, the port, and I-26 are all close, and that is where the rent demand comes from.

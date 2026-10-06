@@ -157,7 +157,7 @@ Last updated: 2026-10-06 (Session 2)
 - Draft pages for Upper Peninsula and North Charleston inside I-526 (`draft: true` – noindex, out of sitemap) waiting for Paul's review.
 - Paul approved the two pilot pages; they are published (draft: false).
 - Data pulled for the other 11 Tier A areas with a rewritten area-data-puller (stable paging, rank-lookup medians, raw files in data/raw/) and computed with scripts/compute-areas.mjs; spot checks against FlexMLS matched.
-- 11 Tier A pages drafted (draft: true), reviewed for repetition, fair housing, invented claims, and em dashes. `npm run verify` (build, links, em dash, copy check) passes. Waiting for Paul's approval to publish.
+- 11 Tier A pages drafted (draft: true), reviewed for repetition, fair housing, invented claims, and em dashes. `npm run verify` (build, links, em dash, copy check) passes. Approved by Paul and published (draft: false) 2026-10-06.
 - Next: Tier B areas, or Session 4 (neighborhoods).
 
 ## Next session (Session 3 – area hub pages, Tier A pilot)

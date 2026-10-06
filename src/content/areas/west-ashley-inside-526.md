@@ -20,7 +20,7 @@ watch_outs:
   - text: "West Ashley is split between the City of Charleston and unincorporated county land, and taxes and rules can differ. Look up which applies to the parcel."
     verify: true
 nearby: [downtown-charleston, upper-peninsula, west-ashley-outside-526, james-island]
-draft: true
+draft: false
 ---
 
 If the peninsula is out of reach, West Ashley inside the interstate is where I send people to look next. It sits just across the river from downtown. The housing is mostly brick ranches from the middle of the last century, with duplexes and small apartment buildings mixed in along the big roads.

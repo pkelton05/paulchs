@@ -19,7 +19,7 @@ watch_outs:
   - text: "Short-term rental rules differ by jurisdiction. Find out which ones cover your building before you count on nightly income."
     verify: true
 nearby: [downtown-charleston, west-ashley-inside-526, folly-beach, johns-island]
-draft: true
+draft: false
 ---
 
 James Island is close to downtown and close to the beach, and that shows up in how fast things sell. Inventory is tight. When a duplex or fourplex is listed, it does not sit long, so you want your lender and inspector lined up before you go see it.

@@ -20,7 +20,7 @@ watch_outs:
   - text: "Town versus county jurisdiction. Some addresses with a Summerville mailing address may be outside town limits, which changes the rules and the tax bill."
     verify: true
 nearby: [north-charleston-dorchester-county, summerville-north-ridgeville, summerville-berkeley-county, hanahan]
-draft: true
+draft: false
 ---
 
 Summerville is a good example of a market where the number of sales matters as much as the price. In the past year only a few small multifamily buildings changed hands. That is too few to call a trend. Treat the figures on this page as a rough guide and look at the individual sales, not just the median.

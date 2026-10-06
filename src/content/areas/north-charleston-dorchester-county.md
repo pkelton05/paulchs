@@ -18,7 +18,7 @@ watch_outs:
   - text: "City versus county jurisdiction. Parts of this area may sit inside the City of North Charleston or the Town of Summerville, and parts in unincorporated Dorchester County. Confirm which one applies to each parcel."
     verify: true
 nearby: [north-charleston-inside-526, north-charleston-outside-526, summerville, hanahan]
-draft: true
+draft: false
 ---
 
 Think of this area as the Dorchester County side of the North Charleston job market. A short ride down I-26 puts you at Boeing, the airport, and the rest of the employers around them. That is the reason rental houses here fill, and it is why I look at it as a commuter location first and a neighborhood second.

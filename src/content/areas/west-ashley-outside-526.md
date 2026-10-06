@@ -18,7 +18,7 @@ watch_outs:
   - text: "The area may include both City of Charleston land and unincorporated county land. Look up the parcel, because rules and taxes can differ."
     verify: true
 nearby: [west-ashley-inside-526, rantowles-hollywood-ravenel, johns-island, james-island]
-draft: true
+draft: false
 ---
 
 This is a different kind of market than most of what I cover. Two- to four-unit buildings rarely come up for sale here. When one does, it is a one-off. So I would not plan a search around finding a fourplex in this area.

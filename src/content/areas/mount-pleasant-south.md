@@ -20,7 +20,7 @@ watch_outs:
   - text: "Some neighborhoods have HOA rules on leasing. Read them before you price a rental."
     verify: true
 nearby: [mount-pleasant-north, downtown-charleston, daniel-island, sullivans-island]
-draft: true
+draft: false
 ---
 
 I'll be straight about this one. Mount Pleasant south of the Connector is not a small-multifamily market. Only a handful of small buildings changed hands in the last year, and that is not enough to put a typical price on one. If you want a duplex or a fourplex here, plan to wait, and plan to move fast when one shows up.

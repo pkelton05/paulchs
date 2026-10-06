@@ -20,7 +20,7 @@ watch_outs:
   - text: "Insurance on buildings this old can be costly or hard to place. Ask an agent for a real quote while you are still in due diligence."
     verify: true
 nearby: [upper-peninsula, west-ashley-inside-526, james-island, mount-pleasant-south]
-draft: true
+draft: false
 ---
 
 Downtown is the deepest small multifamily market in the region, and also the priciest per door. More buildings change hands here than anywhere else I work. That is the good news. The price of getting in is the other half of the story, and it shapes how I look at every deal below the Crosstown.

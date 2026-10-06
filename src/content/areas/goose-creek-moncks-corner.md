@@ -18,7 +18,7 @@ watch_outs:
   - text: "Berkeley County millage and the rental assessment rate. Pull the current numbers for the exact address before you run cash flow."
     verify: true
 nearby: [goose-creek-hwy-52-oakley, moncks-corner, hanahan, summerville-berkeley-county]
-draft: true
+draft: false
 ---
 
 If you came here looking for a duplex, I need to be straight with you. Only one small multifamily building sold in this area in the last year. You may hear that duplexes make up most of the rental stock here, but the MLS sales don't back that up. What this area really offers is single-family rentals, and a lot of them.

@@ -23,7 +23,7 @@ watch_outs:
   - text: "Jurisdiction can be the City of Charleston or unincorporated Charleston County, depending on the parcel. That changes taxes and rules, so confirm it for each address."
     verify: true
 nearby: [james-island, west-ashley-outside-526, rantowles-hollywood-ravenel, wadmalaw-island]
-draft: true
+draft: false
 ---
 
 Johns Island is a different kind of market from the peninsula. Don't come here looking for a stack of duplexes. In the last year, no duplex or fourplex closed on the island. What you find is newer construction, mostly single-family homes and townhomes, with a smaller amount of older rental stock tucked in between.

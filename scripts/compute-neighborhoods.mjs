@@ -90,14 +90,19 @@ function computeRes(pull, notes) {
     };
   }
   // rows mode: [ListingId, ClosePrice, CloseDate, PropertySubType, YearBuilt, DOM, PostalCode, City, AssociationYN]
-  const all = pull.res.rows.filter((r) => r[1] > 10000 && r[3] !== "Fractional Ownership");
-  if (all.length !== pull.res.rows.length) notes.push(`res: ${pull.res.rows.length - all.length} rows dropped (fractional or price under $10k)`);
+  // A building listed as both residential and multifamily shows up twice; count it once, as multifamily.
+  const mfKeys = new Set((pull.mf.rows ?? []).map((r) => `${r[1]}|${r[2]}`));
+  const dual = pull.res.rows.filter((r) => mfKeys.has(`${r[1]}|${r[2]}`));
+  if (dual.length) notes.push(`res: ${dual.length} row(s) also listed as multifamily (same price and close date) counted as multifamily only`);
+  const all = pull.res.rows.filter((r) => r[1] > 10000 && r[3] !== "Fractional Ownership" && !mfKeys.has(`${r[1]}|${r[2]}`));
+  const dropped = pull.res.rows.length - all.length - dual.length;
+  if (dropped) notes.push(`res: ${dropped} rows dropped (fractional or price under $10k)`);
   const c12 = all.filter((r) => inWin(r[2], cur12));
   const p12 = all.filter((r) => inWin(r[2], prev12));
   const set = c12.length >= MIN_12MO ? c12 : all.length >= MIN_SAMPLE ? all : null;
   const prices = set?.map((r) => r[1]) ?? [];
   const doms = set?.map((r) => r[5]).filter((d) => typeof d === "number") ?? [];
-  const years = all.map((r) => r[4]).filter((y) => typeof y === "number" && y > 1700);
+  const years = all.map((r) => r[4]).filter((y) => typeof y === "number" && y > 1700 && y <= 2027);
   const hoaKnown = all.filter((r) => typeof r[8] === "boolean");
   return {
     res: {
@@ -204,7 +209,7 @@ function compute(pull, record, area) {
       }
     : null;
 
-  const years = [...r.rows.map((x) => x[4]), ...mf.rows.map((x) => x[6])].filter((y) => typeof y === "number" && y > 1700);
+  const years = [...r.rows.map((x) => x[4]), ...mf.rows.map((x) => x[6])].filter((y) => typeof y === "number" && y > 1700 && y <= 2027);
   const zips = [...new Set([...r.rows.map((x) => x[6]), ...mf.rows.map((x) => x[5])].filter(Boolean))].sort();
   const cityFromMls = mode(r.rows.map((x) => x[7]));
 

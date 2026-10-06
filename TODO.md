@@ -3,7 +3,7 @@
 What Claude Code needs from Paul, grouped by who resolves it. Updated at the end of every session.
 **VERIFY** = Paul (or the person named) confirms before publishing. **NEED** = Paul supplies it.
 
-Last updated: 2026-10-06 (Session 2)
+Last updated: 2026-10-06 (Session 4, Step 1)
 
 ---
 
@@ -149,6 +149,23 @@ Last updated: 2026-10-06 (Session 2)
 - Placeholder homepage with Call and Text links and `RealEstateAgent` schema.
 - `vercel.json` with 301 redirects: paulkelton.com → homepage, charlestoninvestoragent.com → `/investor-friendly-agent-charleston`.
 - Checks: build passes, internal link check passes, no em dashes in `src/`.
+
+## Session 4 progress (2026-10-06) – neighborhood data
+
+- Step 1 done: whole-MLS data pulled for all 72 neighborhoods (24 months, 2024-10-06 to 2026-10-05), MLS lease comps only (RentCast skipped). Raw files in `data/raw/nbhd-*.json`, numbers and page types computed by `scripts/compute-neighborhoods.mjs` into `data/neighborhoods.json`. 48 full pages, 24 short. Rents under 3 neighborhood leases per bedroom fall back to the MLS area's 12-month rent, labeled area-level.
+- Area data also pulled and computed for the 7 non-Tier-A areas that have neighborhoods (22, 41, 45, 63, 72, 74, 77) so their neighborhoods have an area-level fallback. Those area pages are not built yet.
+- Data checks: 138 random rows looked up in FlexMLS by ListingId (price, close date, subdivision) – all matched; total_entries re-checked on 9 pulls including all ranks-mode medians – all matched.
+- The first pull ran on Haiku and produced invented rows (fake ListingIds), one neighborhood filled with another's sales, and skipped pulls. All Haiku files were discarded and every neighborhood re-pulled on Sonnet. `.claude/agents/neighborhood-indexer.md` now defaults to Sonnet. [Paul: CLAUDE.md §12 still says Haiku for this agent – OK to update it?]
+- Compute rules added: lease rows under $500 dropped as errors; a building listed as both residential and multifamily (same price and close date) counted once, as multifamily; sale medians use the last 12 months when there are 10+ sales, otherwise 24 months (labeled).
+- Next: Step 2 (neighborhood layout and template) after Paul confirms the data.
+
+### Neighborhood data – for Paul to look at
+- [ ] Four neighborhoods have zero MLS sales or leases under their exact subdivision name in 24 months: Red Top (12), Pavilion Watch (22), Pt Dowling Tract (32), Rose Hill (63). Their pages would be area numbers only. Keep, skip for now, or point them at a different MLS name?
+- [ ] Wild Dunes area (45) has no MLS lease comps at all, so Beachwood and Wild Dunes Yacht Harbor will show no rents. All 9 Yacht Harbor sales are sub-type "Other" (likely marina condos).
+- [ ] Russelldale is "full" only because of 3 multifamily sales (rule: 3+ multifamily); there are not enough sales for a neighborhood median, so its page will lean on area numbers anyway.
+- [ ] Rent oddities from small samples: North Central 2BR ($3,225, n=10) above 3BR ($3,000, n=7); Cannonborough-Elliotborough 4BR+ ($3,900, n=5) below 3BR; Wagener Terrace 4BR+ $6,500 (n=7); Dunes West 4BR+ $5,500 (n=13). Folly Beach area 3BR ($5,300) rests on 4 leases incl. $7,500 and $9,000; Daniel Island area 4BR+ $6,975.
+- [ ] Tanner Plantation: the Area 72 sales all show City Hanahan, ZIP 29410 – looks like one community split by the MLS area line (Area 71 has 126 sales, Area 72 has 34). One page under Hanahan?
+- [ ] City still unknown (no MLS sales rows) for Red Top, Admiral Apartments, Buckfield, Fetteressa, Pt Dowling Tract, Millbrook, Rose Hill.
 
 ## Session 3 progress (2026-10-06)
 

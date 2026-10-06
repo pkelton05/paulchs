@@ -1,9 +1,11 @@
-// Internal link check over the built site in dist/. Fails if any internal
+// Internal link check over the built site (.vercel/output/static, or dist/). Fails if any internal
 // href or src points at a file that wasn't built.
 import { readdir, readFile, stat } from "node:fs/promises";
 import { join } from "node:path";
+import { existsSync } from "node:fs";
 
-const dist = new URL("../dist/", import.meta.url).pathname;
+const vercelOut = new URL("../.vercel/output/static/", import.meta.url).pathname;
+const dist = existsSync(vercelOut) ? vercelOut : new URL("../dist/", import.meta.url).pathname;
 
 async function walk(dir) {
   const out = [];

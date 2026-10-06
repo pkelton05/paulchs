@@ -1,0 +1,48 @@
+---
+// Mobile only: Call / Text / Send me the deal, always in reach.
+import { telHref, smsHref } from "../lib/site";
+import { sendTheDeal } from "../lib/nav";
+---
+
+<nav class="sticky-bar" aria-label="Contact Paul">
+  <a href={telHref} data-event="call_tap" data-where="sticky_bar">Call</a>
+  <a href={smsHref} data-event="text_tap" data-where="sticky_bar">Text</a>
+  {sendTheDeal.live && <a href={sendTheDeal.href} class="primary">Send me the deal</a>}
+</nav>
+
+<style>
+  .sticky-bar {
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 30;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    min-height: var(--sticky-bar-h);
+    padding-bottom: env(safe-area-inset-bottom);
+    background: var(--piling);
+    border-top: 3px solid var(--spartina);
+  }
+  .sticky-bar a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--oyster);
+    font-weight: 700;
+    font-size: 1.0625rem;
+    text-decoration: none;
+  }
+  .sticky-bar a + a {
+    border-left: 1px solid rgba(238, 240, 235, 0.25);
+  }
+  .sticky-bar a.primary {
+    background: var(--marsh);
+    color: var(--white);
+  }
+  .sticky-bar a:focus-visible {
+    outline: 3px solid var(--spartina);
+    outline-offset: -3px;
+  }
+  @media (min-width: 60rem) {
+    .sticky-bar { display: none; }
+  }
+</style>

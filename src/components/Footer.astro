@@ -1,6 +1,7 @@
 ---
-// Compliance footer – CLAUDE.md section 9. Every [bracketed] value is a placeholder
+// Compliance footer – CLAUDE.md section 9. Bracketed values are placeholders
 // Paul or the broker-in-charge must confirm before launch (see TODO.md).
+import Wordmark from "./Wordmark.astro";
 import { site, telHref, officeAddressLine, placeholder } from "../lib/site";
 import { mainNav, footerQuestions, privacyLink, live } from "../lib/nav";
 
@@ -23,68 +24,111 @@ const socials = Object.entries({
 }).filter((entry): entry is [string, string] => Boolean(entry[1]));
 ---
 
-<footer>
-  <p><strong>{site.handle}</strong></p>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <Wordmark tone="light" />
+        <address>
+          <p>{site.name}, {site.designation}<br />{site.brokerage_line}</p>
+          <p>{officeAddressLine}</p>
+          <p>
+            <a href={telHref} data-event="call_tap" data-where="footer">{site.phone}</a>
+            {site.email ? <><br /><a href={`mailto:${site.email}`}>{site.email}</a></> : <><br />{placeholder("NEED: email")}</>}
+            <br />Brokerage phone: {site.brokerage_phone ?? placeholder("NEED: brokerage phone")}
+          </p>
+          {site.license_line && <p>{site.license_line}</p>}
+        </address>
+      </div>
 
-  <address>
-    <p>
-      {site.name}, {site.designation} · {site.brokerage_line}
+      {
+        nav.length > 0 && (
+          <nav aria-label="Footer">
+            <ul role="list">
+              {nav.map((item) => (
+                <li><a href={item.href}>{item.label}</a></li>
+              ))}
+            </ul>
+          </nav>
+        )
+      }
+
+      {
+        questions.length > 0 && (
+          <nav aria-labelledby="footer-questions">
+            <p id="footer-questions" class="heading">Questions I get a lot</p>
+            <ul role="list">
+              {questions.map((item) => (
+                <li><a href={item.href}>{item.label}</a></li>
+              ))}
+            </ul>
+          </nav>
+        )
+      }
+
+      {
+        socials.length > 0 && (
+          <ul role="list" aria-label="Paul on social media" class="social">
+            {socials.map(([label, href]) => (
+              <li><a href={href} rel="me noopener">{label}</a></li>
+            ))}
+          </ul>
+        )
+      }
+    </div>
+
+    {mentionsTide && <p class="disclosure">{site.tide_disclosure}</p>}
+
+    <p class="legal">
+      © {year} {site.name} · <span class="eho">Equal Housing Opportunity</span>
+      {privacyLink.live && <> · <a href={privacyLink.href}>{privacyLink.label}</a></>}
     </p>
-    <p>
-      {officeAddressLine} · Brokerage phone: {site.brokerage_phone ?? placeholder("NEED: brokerage phone")}
-    </p>
-    <p>
-      <a href={telHref} data-event="call_tap">{site.phone}</a> ·
-      {site.email ? <a href={`mailto:${site.email}`}>{site.email}</a> : placeholder("NEED: email")}
-    </p>
-    {site.license_line && <p>{site.license_line}</p>}
-  </address>
-
-  {
-    nav.length > 0 && (
-      <nav aria-label="Footer">
-        <ul>
-          {nav.map((item) => (
-            <li>
-              <a href={item.href}>{item.label}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    )
-  }
-
-  {
-    questions.length > 0 && (
-      <nav aria-label="Questions I get a lot">
-        <p>Questions I get a lot</p>
-        <ul>
-          {questions.map((item) => (
-            <li>
-              <a href={item.href}>{item.label}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    )
-  }
-
-  {
-    socials.length > 0 && (
-      <ul aria-label="Social">
-        {socials.map(([label, href]) => (
-          <li>
-            <a href={href} rel="me noopener">{label}</a>
-          </li>
-        ))}
-      </ul>
-    )
-  }
-
-  {mentionsTide && <p>{site.tide_disclosure}</p>}
-
-  <p>
-    © {year} {site.name} · Equal Housing Opportunity
-    {privacyLink.live && <> · <a href={privacyLink.href}>{privacyLink.label}</a></>}
-  </p>
+  </div>
 </footer>
+
+<style>
+  .site-footer {
+    background: var(--piling);
+    color: var(--oyster);
+    font-size: var(--text-small);
+    padding-block: var(--space-4) var(--space-3);
+    margin-top: var(--space-4);
+  }
+  .top {
+    display: grid;
+    gap: var(--space-3);
+  }
+  @media (min-width: 48rem) {
+    .top {
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+  }
+  address {
+    font-style: normal;
+    margin-top: var(--space-2);
+  }
+  address p {
+    margin-bottom: 0.75rem;
+  }
+  a {
+    color: var(--oyster);
+    text-decoration-color: var(--spartina);
+  }
+  li + li {
+    margin-top: 0.4rem;
+  }
+  .heading {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .disclosure,
+  .legal {
+    max-width: none;
+    margin-top: var(--space-3);
+    padding-top: var(--space-2);
+    border-top: 1px solid rgba(238, 240, 235, 0.2);
+  }
+  .site-footer :focus-visible {
+    outline-color: var(--spartina);
+  }
+</style>

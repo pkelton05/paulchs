@@ -3,11 +3,13 @@
 What Claude Code needs from Paul, grouped by who resolves it. Updated at the end of every session.
 **VERIFY** = Paul (or the person named) confirms before publishing. **NEED** = Paul supplies it.
 
-Last updated: 2026-10-06 (Session 1)
+Last updated: 2026-10-06 (Session 2)
 
 ---
 
 ## Hosting status (Vercel)
+
+- `npm audit` reports 3 high-severity advisories inside `@astrojs/vercel` (via `@vercel/routing-utils`), used at build time only. Recheck when a new adapter release is out; don't `audit fix --force`.
 
 - Project `paulchs` on team `paul-chs`, linked to `pkelton05/paulchs`. Every push to `main` deploys to production. Other branches get preview links.
 - **paulchs.com** – live. DNS is on Vercel nameservers. `www.paulchs.com` 301s to `paulchs.com`.
@@ -68,6 +70,7 @@ Last updated: 2026-10-06 (Session 1)
 - [ ] Area 72 tier: its AREAS.md entry says Tier B, but the build-priority list puts it in Tier C. `data/areas.json` uses B.
 
 ### Attorney or CPA (all question-page facts are VERIFY by default – CLAUDE.md §5)
+- [ ] `/privacy` draft (Session 2): form data, Zapier routing, Vercel hosting logs, no analytics yet, deletion requests, record retention period. Needs legal review before launch. Update the analytics section the day a provider is added.
 - [ ] SC 4% vs. 6% assessment ratios, legal residence definition, school operating millage exemption, how it applies to an owner-occupied 2–4 unit building, how and when to apply (Charleston, Dorchester, Berkeley assessors).
 - [ ] Worked property tax example checked against a current Charleston County bill.
 - [ ] Millage source per tax district (deal analyzer).
@@ -88,11 +91,11 @@ Last updated: 2026-10-06 (Session 1)
 
 ## Open NEED items from Paul
 
-- [ ] Analytics choice: Plausible or GA4 (later – Session 2 builds the call, text, and form events so either can be plugged in).
-- [ ] Later: Zapier (or other) webhook for the contact form – set as `ZAPIER_WEBHOOK_URL` in the host's environment variables, never in the repo (Session 2).
+- [ ] Later: analytics choice, Plausible (simpler, no cookies, about $9/month – recommended) or GA4 (free, uses cookies). Events are already tagged; set `data/site.json → analytics.provider` and update `/privacy`.
+- [ ] Later: Zapier webhook for the contact form. In Zapier, create a Zap with "Webhooks by Zapier → Catch Hook", copy the URL, and add it in Vercel → Project → Settings → Environment Variables as `ZAPIER_WEBHOOK_URL` (Production). Then redeploy. Fields sent: name, contact, contact_type, address_or_area, units, notes, source, submitted_at, photo_1..3. [VERIFY that photos arrive as files in Zapier on the first real test]
 - [ ] Social links: LinkedIn, YouTube, BiggerPockets profile, GRID podcast.
 - [ ] Next GRID event details (`data/site.json → next_event`) and event sign-up platform.
-- [ ] Photos: headshot, Paul on a property, any GRID podcast clip.
+- [ ] Photos: headshot, Paul on a property, any GRID podcast still (homepage hero placeholder is waiting for one).
 - [ ] Origin story for the homepage and `/about` (how you started, first deal, building Tide, starting GRID, why investors).
 - [ ] 6–10 client testimonials with permission, tagged by type (investor buyer, first building, seller, out-of-state).
 - [ ] 3–6 recent deals to feature (area, unit count, what happened – no client names without permission).
@@ -101,6 +104,18 @@ Last updated: 2026-10-06 (Session 1)
 - [ ] Optional: notes on neighborhoods you know well in `data/paul-notes.json` (see README).
 
 ---
+
+## Done in Session 2 (2026-10-06) – design, homepage, send the deal
+
+- Design system approved and built: "haint blue means a number". Tokens in `src/styles/tokens.css` (Oyster, Pluff mud, Haint blue, Marsh, Piling, Spartina). Atkinson Hyperlegible Next + Mono, self-hosted, 3 files, about 35 KB.
+- Shared components: header (desktop nav + no-JS mobile menu), footer (compliance, Piling), sticky mobile bar (Call / Text / Send me the deal), event strip (hidden while `next_event` is null), number block + proof strip, testimonial, CTA block, breadcrumb (with BreadcrumbList schema), analytics hook.
+- Homepage from SITE-CONTENT §3 with visible placeholders for photo, origin story, testimonials, and the ranking stat. Proof stats show a VERIFY marker until confirmed.
+- `/send-the-deal`: 5 fields + up to 3 photos, honeypot, server-side validation (`src/lib/lead.ts`), serverless endpoint `/api/send-the-deal` forwarding multipart to `ZAPIER_WEBHOOK_URL`. With no webhook set, visitors are told to call or text instead of losing their message. Tested: valid, with photo, honeypot, bad contact, missing name, bad unit count, non-image file, GET, and no-webhook.
+- `/send-the-deal/sent` confirmation (noindex, out of sitemap) fires the `form_submit` event.
+- Call taps, text taps, and form submits are tagged (`data-event`) and ready for Plausible or GA4 – set `data/site.json → analytics.provider`.
+- `/privacy` draft (VERIFY for legal review).
+- Checks: build passes; internal link check passes (54 links); no em dashes in `src/`; axe accessibility scan 0 violations on every page at 390px and 1440px; no horizontal scroll on mobile; Lighthouse mobile 100/100/100/100 on `/`, `/send-the-deal`, `/privacy`.
+- Pushed to the working branch only (Vercel preview). The live site still shows the coming-soon page until Paul says publish.
 
 ## Done this session (Session 1 – 2026-10-06)
 
@@ -120,7 +135,14 @@ Last updated: 2026-10-06 (Session 1)
 - `vercel.json` with 301 redirects: paulkelton.com → homepage, charlestoninvestoragent.com → `/investor-friendly-agent-charleston`.
 - Checks: build passes, internal link check passes, no em dashes in `src/`.
 
-## Next session (Session 2 – design, homepage, send the deal)
+## Next session (Session 3 – area hub pages, Tier A pilot)
+
+- Before starting: `RENTCAST_API_KEY` as an environment secret, and `api.rentcast.io` allowed under Network access.
+- Pilot Areas 52 and 31 with area-data-puller, review numbers, then area-page-writer.
+- Use `NumberBlock` for every data block, `Breadcrumb` for the area breadcrumb.
+- Flip `pageLinks.areas` and the Charleston areas nav item to `live: true` once `/charleston` exists.
+
+## Carried over from Session 1 notes
 
 - Design plan first (palette, type, wireframes) for Paul's approval.
 - Add the Vercel adapter for the form endpoint (`/send-the-deal` posts to a serverless function that forwards to `ZAPIER_WEBHOOK_URL`).

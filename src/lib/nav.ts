@@ -10,7 +10,7 @@ export const mainNav: NavItem[] = [
   { label: "About", href: "/about", live: false },
 ];
 
-export const sendTheDeal: NavItem = { label: "Send me the deal", href: "/send-the-deal", live: false };
+export const sendTheDeal: NavItem = { label: "Send me the deal", href: "/send-the-deal", live: true };
 
 export const footerQuestions: NavItem[] = [
   { label: "Investor-friendly agent in Charleston", href: "/investor-friendly-agent-charleston", live: false },
@@ -20,6 +20,15 @@ export const footerQuestions: NavItem[] = [
   { label: "Buying from out of state", href: "/buying-charleston-rental-property-from-out-of-state", live: false },
 ];
 
-export const privacyLink: NavItem = { label: "Privacy", href: "/privacy", live: false };
+export const privacyLink: NavItem = { label: "Privacy", href: "/privacy", live: true };
 
 export const live = (items: NavItem[]) => items.filter((i) => i.live);
+
+// Pages linked from inside page copy (homepage sections, CTAs). Same rule: no link until the page exists.
+export const pageLinks = {
+  investing: { label: "Investing", href: "/investing", live: false },
+  firstBuilding: { label: "Your first building", href: "/first-building", live: false },
+  selling: { label: "Selling", href: "/selling", live: false },
+  areas: { label: "See the areas", href: "/charleston", live: false },
+  grid: { label: "Next event", href: "/grid", live: false },
+} satisfies Record<string, NavItem>;

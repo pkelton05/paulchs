@@ -61,21 +61,12 @@ export function leadLine(h: HoodRecord): string | null {
   return parts.length ? parts.join(" ") : null;
 }
 
-/** "I've closed N listings here" (§6 item 5). Counts only – never addresses or prices. */
+/** Closed-listings badge (§6 item 5). Counts only – never addresses or prices.
+ *  Wording set by Paul, 2026-10-06. */
 export function closingsLine(h: HoodRecord): string | null {
   const c = h.paul_closings;
   if (!site.mls_display.paul_closing_counts_approved || !c?.count) return null;
-  const year = c.first_close?.slice(0, 4);
-  const types = c.by_property_type ?? {};
-  const kinds: string[] = [];
-  const word = (n: number, one: string, many: string) => `${n === 1 ? "one" : n === 2 ? "two" : n === 3 ? "three" : n === 4 ? "four" : n} ${n === 1 ? one : many}`;
-  if (types.B) kinds.push(word(types.B, "multifamily building", "multifamily buildings"));
-  if (types.A) kinds.push(word(types.A, "home", "homes"));
-  if (types.C) kinds.push(word(types.C, "lot", "lots"));
-  const what = c.count === 1 ? "I've closed a listing here" : `I've closed ${c.count} listings here`;
-  const since = year && c.count > 1 ? ` since ${year}` : year ? ` (${year})` : "";
-  const detail = c.count > 1 && kinds.length ? `: ${kinds.join(" and ")}` : "";
-  return `${what}${since}${detail}.`;
+  return `Paul-verified closed listings in this neighborhood: ${c.count}`;
 }
 
 /** Source line for a block. */

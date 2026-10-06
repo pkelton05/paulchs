@@ -40,7 +40,6 @@ Last updated: 2026-10-06 (Session 4, Step 3 – Area 52 drafts waiting for Paul)
 - [ ] #1 in 2–4 unit sales among individual Charleston agents, each of the last 3 years (confirmed by Paul 2026-10-06). Keep the MLS report behind it on file; consider naming the years (e.g. 2023–2025) so the claim doesn't go stale, and confirm with broker-in-charge that the wording meets SC advertising rules.
 - [ ] BiggerPockets Elite Agent – current status.
 - [ ] Response time to promise on the form ("one business day" for now).
-- [ ] "I've closed N listings here" wording on neighborhood pages (NEIGHBORHOODS.md §6).
 - [ ] Underwriting stance: rent at today's market after a light refresh, not current tenant rent (SITE-CONTENT §4).
 - [ ] Deal analyzer default expenses from aggregated Tide data (Phase 2).
 - [ ] Recommended 2–4 unit groupings on `/which-charleston-area-should-i-buy-in` (Phase 2).
@@ -168,7 +167,7 @@ Last updated: 2026-10-06 (Session 4, Step 3 – Area 52 drafts waiting for Paul)
 - [x] CLAUDE.md §12 updated: neighborhood-indexer runs on Sonnet (Paul, 2026-10-06).
 - [ ] Rent oddities from small samples: North Central 2BR ($3,225, n=10) above 3BR ($3,000, n=7); Cannonborough-Elliotborough 4BR+ ($3,900, n=5) below 3BR; Wagener Terrace 4BR+ $6,500 (n=7); Dunes West 4BR+ $5,500 (n=13). Folly Beach area 3BR ($5,300) rests on 4 leases incl. $7,500 and $9,000; Daniel Island area 4BR+ $6,975.
 - [ ] Area 52 drafts – Paul to review: the copy compares the neighborhoods to each other; North Central and Westside rent oddities (2BR above 3BR, 4BR+ on 3 leases) are called out as thin; "late 1940s" / "mid-1930s" come from the median year built of homes sold. Every watch-out is VERIFY (HOA rental language, flood zones, zoning for a second unit, City of Charleston STR rules).
-- [ ] Wording of the closings line on every neighborhood page, e.g. "I've closed 3 listings here since 2021: one multifamily building and two homes." / "I've closed a listing here (2020)." (counts only).
+- [x] Closings line wording: "Paul-verified closed listings in this neighborhood: N" (Paul, 2026-10-06).
 - [ ] City still unknown (no MLS sales rows) for Red Top, Admiral Apartments, Buckfield, Fetteressa, Pt Dowling Tract, Millbrook, Rose Hill.
 
 ## Session 3 progress (2026-10-06)

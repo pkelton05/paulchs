@@ -102,7 +102,7 @@ URL: `/charleston/[area-slug]/[neighborhood-slug]`
 2. H1: [Neighborhood] – [City], SC
 3. Lead line (data): "Homes in [Neighborhood] sold for a median of $X over the last 12 months (n sales). A 2-bedroom typically leases for $Y." Use the strongest available numbers and skip nulls.
 4. **Snapshot block** with the numbers from section 5.
-5. **"I've closed N listings here"** line, if Paul's count is 2 or more; for 1, say "I've closed a listing here" in plain language. [VERIFY wording with Paul – these are listings closed under his MLS account.]
+5. **Closed-listings badge:** "Paul-verified closed listings in this neighborhood: N" (wording set by Paul, 2026-10-06). Counts only – these are listings closed under his MLS account.
 6. **Paul's take:** 2 short paragraphs on full pages, 1 on short pages. Must say something specific to this neighborhood, based on the data, the property mix, and any note Paul left in `data/paul-notes.json`. If nothing specific can be said, write one plain paragraph rather than padding.
 7. **Watch-outs:** HOA rental restrictions (if the MLS shows an HOA), flood exposure, municipality, short-term rental rules – all [VERIFY].
 8. **Nearby neighborhoods:** 3–5 in the same MLS area from the seed list, then link to the area hub.

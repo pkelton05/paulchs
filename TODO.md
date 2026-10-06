@@ -177,6 +177,7 @@ Last updated: 2026-10-06 (Session 4, Step 3 – Area 52 drafts waiting for Paul)
 - Area 63 drafted (3 pages, draft: true): Summers Corner, White Gables, Rose Hill (no comps). Typical year built is now left blank for the three ranks-mode neighborhoods (Summers Corner, Dunes West, Daniel Island) – it came from a biased 25-sale sample; Dunes West copy updated.
 - Area 72 drafted (3 pages, draft: true): Carlton Place, Liberty Hall Plantation, Strawberry Station. [Paul: Carlton Place sales show a Hanahan address though it sits in MLS Area 72 – confirm the jurisdiction.]
 - Area 74 drafted (2 pages, draft: true): Briddleford Ridge, College Park (MLS city Ladson for both).
+- Area 77 drafted (2 pages, draft: true): Daniel Island (the MLS subdivision of that name, not the whole island), Center Park.
 
 ### Neighborhood data – for Paul to look at
 - [ ] Wild Dunes area (45) has no MLS lease comps at all, so Beachwood and Wild Dunes Yacht Harbor will show no rents. All 9 Yacht Harbor sales are sub-type "Other" (likely marina condos).

@@ -160,6 +160,7 @@ Last updated: 2026-10-06 (Session 4, Step 3 – Area 52 drafts waiting for Paul)
 - Step 2 done: `src/layouts/NeighborhoodLayout.astro`, `src/lib/neighborhoods.ts`, route `/charleston/[area]/[neighborhood]`. All neighborhood pages are noindex and out of the sitemap until `data/site.json → mls_display.neighborhood_pages_approved` is true (Paul to flip after confirming the MLS display rules). Number blocks now shrink big figures to fit instead of wrapping (also fixes the area pages).
 - Step 3: Area 52 drafted (Westside, North Central, Wagener Terrace, Garden Hill – `draft: true`). Facts in the copy checked against the data; copy check, links, build pass. The Upper Peninsula hub now links all four.
 - Area 52 approved by Paul and published (draft: false) 2026-10-06 – still noindex and out of the sitemap until `neighborhood_pages_approved`.
+- Step 4, Area 31 drafted (6 pages, draft: true): Dorchester Terrace, Waylyn, Russelldale, Accabee, Buckfield, Admiral Apartments. Claims checked against the data; copy check passes. Buckfield and Admiral Apartments have no city in the MLS (H1 shows just the name + SC).
 
 ### Neighborhood data – for Paul to look at
 - [ ] Wild Dunes area (45) has no MLS lease comps at all, so Beachwood and Wild Dunes Yacht Harbor will show no rents. All 9 Yacht Harbor sales are sub-type "Other" (likely marina condos).

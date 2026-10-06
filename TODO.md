@@ -3,7 +3,7 @@
 What Claude Code needs from Paul, grouped by who resolves it. Updated at the end of every session.
 **VERIFY** = Paul (or the person named) confirms before publishing. **NEED** = Paul supplies it.
 
-Last updated: 2026-10-06 (Session 4, Step 1)
+Last updated: 2026-10-06 (Session 4, Step 3 – Area 52 drafts waiting for Paul)
 
 ---
 
@@ -157,14 +157,18 @@ Last updated: 2026-10-06 (Session 4, Step 1)
 - Data checks: 138 random rows looked up in FlexMLS by ListingId (price, close date, subdivision) – all matched; total_entries re-checked on 9 pulls including all ranks-mode medians – all matched.
 - The first pull ran on Haiku and produced invented rows (fake ListingIds), one neighborhood filled with another's sales, and skipped pulls. All Haiku files were discarded and every neighborhood re-pulled on Sonnet. `.claude/agents/neighborhood-indexer.md` now defaults to Sonnet. [Paul: CLAUDE.md §12 still says Haiku for this agent – OK to update it?]
 - Compute rules added: lease rows under $500 dropped as errors; a building listed as both residential and multifamily (same price and close date) counted once, as multifamily; sale medians use the last 12 months when there are 10+ sales, otherwise 24 months (labeled).
-- Next: Step 2 (neighborhood layout and template) after Paul confirms the data.
+- Paul decided (2026-10-06): Tanner Plantation is one page under Hanahan (Areas 71 + 72 merged via `cross_area_merges` in `data/neighborhood-aliases.json`; 71 pages now). Neighborhoods with no MLS sales or leases show no numbers, just a "no comps" note (Red Top, Pavilion Watch, Pt Dowling Tract, Rose Hill).
+- Step 2 done: `src/layouts/NeighborhoodLayout.astro`, `src/lib/neighborhoods.ts`, route `/charleston/[area]/[neighborhood]`. All neighborhood pages are noindex and out of the sitemap until `data/site.json → mls_display.neighborhood_pages_approved` is true (Paul to flip after confirming the MLS display rules). Number blocks now shrink big figures to fit instead of wrapping (also fixes the area pages).
+- Step 3: Area 52 drafted (Westside, North Central, Wagener Terrace, Garden Hill – `draft: true`). Facts in the copy checked against the data; copy check, links, build pass. The Upper Peninsula hub now links all four.
+- Next: Paul's feedback on Area 52 and notes in `data/paul-notes.json`, then Area 31, Area 51, and the rest one area at a time.
 
 ### Neighborhood data – for Paul to look at
-- [ ] Four neighborhoods have zero MLS sales or leases under their exact subdivision name in 24 months: Red Top (12), Pavilion Watch (22), Pt Dowling Tract (32), Rose Hill (63). Their pages would be area numbers only. Keep, skip for now, or point them at a different MLS name?
 - [ ] Wild Dunes area (45) has no MLS lease comps at all, so Beachwood and Wild Dunes Yacht Harbor will show no rents. All 9 Yacht Harbor sales are sub-type "Other" (likely marina condos).
 - [ ] Russelldale is "full" only because of 3 multifamily sales (rule: 3+ multifamily); there are not enough sales for a neighborhood median, so its page will lean on area numbers anyway.
+- [ ] CLAUDE.md §12 still lists the neighborhood-indexer as Haiku; the agent file now says Sonnet. OK to update CLAUDE.md?
 - [ ] Rent oddities from small samples: North Central 2BR ($3,225, n=10) above 3BR ($3,000, n=7); Cannonborough-Elliotborough 4BR+ ($3,900, n=5) below 3BR; Wagener Terrace 4BR+ $6,500 (n=7); Dunes West 4BR+ $5,500 (n=13). Folly Beach area 3BR ($5,300) rests on 4 leases incl. $7,500 and $9,000; Daniel Island area 4BR+ $6,975.
-- [ ] Tanner Plantation: the Area 72 sales all show City Hanahan, ZIP 29410 – looks like one community split by the MLS area line (Area 71 has 126 sales, Area 72 has 34). One page under Hanahan?
+- [ ] Area 52 drafts – Paul to review: the copy compares the neighborhoods to each other; North Central and Westside rent oddities (2BR above 3BR, 4BR+ on 3 leases) are called out as thin; "late 1940s" / "mid-1930s" come from the median year built of homes sold. Every watch-out is VERIFY (HOA rental language, flood zones, zoning for a second unit, City of Charleston STR rules).
+- [ ] Wording of the closings line on every neighborhood page, e.g. "I've closed 3 listings here since 2021: one multifamily building and two homes." / "I've closed a listing here (2020)." (counts only).
 - [ ] City still unknown (no MLS sales rows) for Red Top, Admiral Apartments, Buckfield, Fetteressa, Pt Dowling Tract, Millbrook, Rose Hill.
 
 ## Session 3 progress (2026-10-06)

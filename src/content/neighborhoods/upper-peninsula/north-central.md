@@ -15,6 +15,7 @@ watch_outs:
     verify: true
   - text: "Short-term rental permission is set by the City of Charleston and can differ by address. Do not assume it carries over from a prior owner."
     verify: true
+draft: false
 ---
 
 North Central is a house market first. It logged almost as many home sales as Wagener Terrace over two years, houses go quickly, and the median price has barely moved from a year ago. Most of the stock dates to the mid-1930s. Multifamily is a small slice of what trades, and it behaves differently from the houses. Buildings here sit for weeks longer than in Westside and far longer than in Wagener Terrace. That gives you time to inspect and negotiate. Price per door falls between the two.

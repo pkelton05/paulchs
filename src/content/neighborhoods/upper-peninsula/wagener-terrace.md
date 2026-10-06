@@ -17,6 +17,7 @@ watch_outs:
     verify: true
   - text: "Nightly rentals are regulated by the city. Confirm the status of the address in question before you model anything but a long lease."
     verify: true
+draft: false
 ---
 
 Wagener Terrace is the priciest of the neighborhoods here with enough sales to measure. Houses sell faster than in North Central or Westside, and prices have kept climbing while North Central held flat and Westside slipped. Most of what sells is a detached house from the late 1940s. Small buildings are scarce, and the few that trade go in days at prices bunched close together. That tells me buyers are competing for the same product.

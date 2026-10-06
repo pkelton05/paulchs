@@ -17,6 +17,7 @@ watch_outs:
     verify: true
   - text: "Short-term rental rules apply at the city level. Verify the status for the building, not the street."
     verify: true
+draft: false
 ---
 
 Westside is the cheapest way into this part of the peninsula, and it has the most multifamily in its sales mix. Nearly one sale in five here is a small building, a far bigger share than in the neighborhoods around it. Price per door is the lowest of the three with enough sales to compare, which is why investors on a tighter budget look here first. The spread is wide, though. A building at the low end sells for a fraction of one at the high end, and that gap is mostly about condition.

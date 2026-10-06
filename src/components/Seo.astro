@@ -1,0 +1,33 @@
+---
+// Title, description, canonical, Open Graph, and optional JSON-LD for every page.
+import { site } from "../lib/site";
+
+interface Props {
+  title: string;
+  description: string;
+  noindex?: boolean;
+  ogImage?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const { title, description, noindex = false, ogImage, jsonLd } = Astro.props;
+const canonical = new URL(Astro.url.pathname.replace(/\/$/, "") || "/", Astro.site).href;
+const image = ogImage ? new URL(ogImage, Astro.site).href : undefined;
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex, follow" />}
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={site.name} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+{image && <meta property="og:image" content={image} />}
+<meta name="twitter:card" content={image ? "summary_large_image" : "summary"} />
+
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+{jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}

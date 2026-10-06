@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site, telHref, smsHref, officeAddressLine } from "../lib/site";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  name: site.name,
+  url: site.url,
+  telephone: site.phone_e164,
+  ...(site.email ? { email: site.email } : {}),
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: site.office_address.street,
+    addressLocality: site.office_address.city,
+    addressRegion: site.office_address.state,
+    postalCode: site.office_address.zip,
+    addressCountry: "US",
+  },
+  areaServed: "Charleston, SC",
+  sameAs: [site.social.instagram, site.social.threads].filter(Boolean),
+};
+---
+
+<BaseLayout
+  title="Paul Kelton | Investor-Friendly Agent in Charleston, SC"
+  description="Charleston investment property agent for duplexes, small multifamily, and rentals. The full site is on the way. Call or text Paul in the meantime."
+  jsonLd={jsonLd}
+>
+  <h1>Charleston investment property, with real numbers.</h1>
+  <p>The full site is on the way. If you have a building in mind, or just a question, you don't have to wait for it.</p>
+  <ul>
+    <li><a href={telHref} data-event="call_tap">Call Paul at {site.phone}</a></li>
+    <li><a href={smsHref} data-event="text_tap">Text Paul</a></li>
+  </ul>
+  <p>{officeAddressLine}</p>
+</BaseLayout>

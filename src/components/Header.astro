@@ -1,0 +1,33 @@
+---
+import { site, telHref, smsHref } from "../lib/site";
+import { mainNav, sendTheDeal, live } from "../lib/nav";
+
+const nav = live(mainNav);
+---
+
+<header>
+  <a href="/" aria-label={`${site.name}, Charleston – home`}>
+    <strong>{site.handle}</strong>
+    <span>{site.name} · Charleston</span>
+  </a>
+
+  {
+    nav.length > 0 && (
+      <nav aria-label="Main">
+        <ul>
+          {nav.map((item) => (
+            <li>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )
+  }
+
+  <ul aria-label="Contact Paul">
+    <li><a href={telHref} data-event="call_tap">Call</a></li>
+    <li><a href={smsHref} data-event="text_tap">Text</a></li>
+    {sendTheDeal.live && <li><a href={sendTheDeal.href}>{sendTheDeal.label}</a></li>}
+  </ul>
+</header>

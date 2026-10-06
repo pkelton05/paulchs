@@ -1,0 +1,90 @@
+---
+// Compliance footer – CLAUDE.md section 9. Every [bracketed] value is a placeholder
+// Paul or the broker-in-charge must confirm before launch (see TODO.md).
+import { site, telHref, officeAddressLine, placeholder } from "../lib/site";
+import { mainNav, footerQuestions, privacyLink, live } from "../lib/nav";
+
+interface Props {
+  /** Set on any page that mentions or links to Tide Property Management. */
+  mentionsTide?: boolean;
+}
+
+const { mentionsTide = false } = Astro.props;
+const year = new Date().getFullYear();
+const nav = live(mainNav);
+const questions = live(footerQuestions);
+const socials = Object.entries({
+  Instagram: site.social.instagram,
+  Threads: site.social.threads,
+  LinkedIn: site.social.linkedin,
+  YouTube: site.social.youtube,
+  BiggerPockets: site.social.biggerpockets,
+  "GRID podcast": site.social.grid_podcast,
+}).filter((entry): entry is [string, string] => Boolean(entry[1]));
+---
+
+<footer>
+  <p><strong>{site.handle}</strong></p>
+
+  <address>
+    <p>
+      {site.name}, {site.designation} · {site.brokerage_line}
+    </p>
+    <p>
+      {officeAddressLine} · Brokerage phone: {site.brokerage_phone ?? placeholder("NEED: brokerage phone")}
+    </p>
+    <p>
+      <a href={telHref} data-event="call_tap">{site.phone}</a> ·
+      {site.email ? <a href={`mailto:${site.email}`}>{site.email}</a> : placeholder("NEED: email")}
+    </p>
+    {site.license_line && <p>{site.license_line}</p>}
+  </address>
+
+  {
+    nav.length > 0 && (
+      <nav aria-label="Footer">
+        <ul>
+          {nav.map((item) => (
+            <li>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )
+  }
+
+  {
+    questions.length > 0 && (
+      <nav aria-label="Questions I get a lot">
+        <p>Questions I get a lot</p>
+        <ul>
+          {questions.map((item) => (
+            <li>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )
+  }
+
+  {
+    socials.length > 0 && (
+      <ul aria-label="Social">
+        {socials.map(([label, href]) => (
+          <li>
+            <a href={href} rel="me noopener">{label}</a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
+  {mentionsTide && <p>{site.tide_disclosure}</p>}
+
+  <p>
+    © {year} {site.name} · Equal Housing Opportunity
+    {privacyLink.live && <> · <a href={privacyLink.href}>{privacyLink.label}</a></>}
+  </p>
+</footer>

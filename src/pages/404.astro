@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site, telHref, smsHref } from "../lib/site";
+---
+
+<BaseLayout title="Page not found | Paul Kelton, Charleston" description="This page doesn't exist." noindex>
+  <h1>That page isn't here.</h1>
+  <p>It may have moved, or it hasn't been built yet. <a href="/">Go to the homepage</a>, or reach me directly.</p>
+  <ul>
+    <li><a href={telHref} data-event="call_tap">Call Paul at {site.phone}</a></li>
+    <li><a href={smsHref} data-event="text_tap">Text Paul</a></li>
+  </ul>
+</BaseLayout>

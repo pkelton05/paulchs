@@ -1,0 +1,72 @@
+{
+  "_comment": "Site-wide facts. Anything in _status as VERIFY or NEED must be confirmed or supplied by Paul before launch. Pages read these values; never retype them into copy.",
+  "name": "Paul Kelton",
+  "handle": "paul_charleston",
+  "title_line": "Paul Kelton | Investor-Friendly Agent",
+  "positioning_line": "Charleston investment property agent",
+  "url": "https://paulchs.com",
+
+  "phone": "843-460-3173",
+  "phone_e164": "+18434603173",
+  "email": null,
+  "office_address": {
+    "street": "1349 Old Georgetown Road",
+    "city": "Mount Pleasant",
+    "state": "SC",
+    "zip": "29464"
+  },
+  "designation": "REALTOR®",
+  "brokerage_name": "Matt O'Neill Real Estate",
+  "brokerage_line": "Real estate services through Matt O'Neill Real Estate",
+  "brokerage_phone": null,
+  "license_line": null,
+
+  "stats": {
+    "stat_deals": { "value": "200+", "label": "investor deals" },
+    "stat_doors": { "value": "300+", "label": "doors managed through Tide" },
+    "stat_rank": { "value": null, "label": "Top 5 multifamily agent in Charleston" }
+  },
+
+  "next_event": null,
+  "response_time": "one business day",
+
+  "mls_attribution": "[PLACEHOLDER – exact attribution line required by CTAR / Charleston Trident MLS]",
+  "mls_display": {
+    "aggregates_approved": false,
+    "individual_listings_approved": false,
+    "paul_closing_counts_approved": true,
+    "paul_closing_counts_scope": "counts only – never addresses or prices of Paul's sales"
+  },
+
+  "tide_disclosure": "[PLACEHOLDER – affiliated business disclosure: Paul Kelton has an ownership interest in Tide Property Management. Exact wording to be confirmed.]",
+
+  "social": {
+    "instagram": "https://www.instagram.com/paul_charleston",
+    "threads": "https://www.threads.net/@paul_charleston",
+    "linkedin": null,
+    "youtube": null,
+    "biggerpockets": null,
+    "grid_podcast": null
+  },
+
+  "analytics": { "provider": null, "domain": "paulchs.com" },
+
+  "_status": {
+    "phone": "CONFIRMED by Paul 2026-10-06 (note: also the acquisition campaign number in CLAUDE.md section 6)",
+    "email": "NEED",
+    "office_address": "VERIFY this is the address to use",
+    "designation": "VERIFY REALTOR® designation",
+    "brokerage_line": "VERIFY exact wording and format with broker-in-charge",
+    "brokerage_phone": "NEED",
+    "license_line": "VERIFY with broker-in-charge",
+    "stats.stat_deals": "VERIFY wording before launch",
+    "stats.stat_doors": "VERIFY current door count",
+    "stats.stat_rank": "VERIFY source and basis to cite",
+    "response_time": "VERIFY the response time Paul wants to promise",
+    "mls_attribution": "VERIFY with CTAR / Charleston Trident MLS",
+    "mls_display.aggregates_approved": "VERIFY with CTAR before any MLS number is published",
+    "tide_disclosure": "VERIFY wording",
+    "social": "NEED LinkedIn, YouTube, BiggerPockets, GRID podcast links; VERIFY Instagram and Threads URLs",
+    "analytics.provider": "NEED – Plausible or GA4"
+  }
+}

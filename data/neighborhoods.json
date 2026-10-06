@@ -1,0 +1,3540 @@
+{
+  "_comment": "One record per neighborhood (MLS SubdivisionName) where Paul has a closed listing. Identity fields come from scripts/seed-data.mjs (seed CSV + approved merges in neighborhood-aliases.json); numbers and page_type are filled by the neighborhood-indexer subagent. mls_subdivisions lists every exact MLS string to query. paul_closings is counts only – never publish addresses or prices of Paul's sales. Property type codes: A residential, B multifamily, C land.",
+  "neighborhoods": [
+    {
+      "name": "Concord West of The Ashley",
+      "slug": "concord-west-of-the-ashley",
+      "area_slug": "west-ashley-inside-526",
+      "mls_area": "11 - West of the Ashley Inside I-526",
+      "mls_subdivisions": [
+        "Concord West of The Ashley"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2021-03-12"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Maryville",
+      "slug": "maryville",
+      "area_slug": "west-ashley-inside-526",
+      "mls_area": "11 - West of the Ashley Inside I-526",
+      "mls_subdivisions": [
+        "Maryville"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2023-06-08"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Orange Grove Estates",
+      "slug": "orange-grove-estates",
+      "area_slug": "west-ashley-inside-526",
+      "mls_area": "11 - West of the Ashley Inside I-526",
+      "mls_subdivisions": [
+        "Orange Grove Estates"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "B": 1
+        },
+        "first_close": "2026-09-01"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Parkwood Estates",
+      "slug": "parkwood-estates",
+      "area_slug": "west-ashley-inside-526",
+      "mls_area": "11 - West of the Ashley Inside I-526",
+      "mls_subdivisions": [
+        "Parkwood Estates"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2021-01-12"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "West Glow",
+      "slug": "west-glow",
+      "area_slug": "west-ashley-inside-526",
+      "mls_area": "11 - West of the Ashley Inside I-526",
+      "mls_subdivisions": [
+        "West Glow"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "B": 1
+        },
+        "first_close": "2022-06-03"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Asheford Place",
+      "slug": "asheford-place",
+      "area_slug": "west-ashley-outside-526",
+      "mls_area": "12 - West of the Ashley Outside I-526",
+      "mls_subdivisions": [
+        "Asheford Place at Canterbury Place",
+        "Asheford Place at Canterbury Woods"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 2,
+        "by_property_type": {
+          "A": 2
+        },
+        "first_close": "2021-12-28"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Ashleytowne Village",
+      "slug": "ashleytowne-village",
+      "area_slug": "west-ashley-outside-526",
+      "mls_area": "12 - West of the Ashley Outside I-526",
+      "mls_subdivisions": [
+        "Ashleytowne Village"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2021-04-29"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Carolina Cove",
+      "slug": "carolina-cove",
+      "area_slug": "west-ashley-outside-526",
+      "mls_area": "12 - West of the Ashley Outside I-526",
+      "mls_subdivisions": [
+        "Carolina Cove"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 2,
+        "by_property_type": {
+          "A": 2
+        },
+        "first_close": "2022-06-22"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Castlewood",
+      "slug": "castlewood",
+      "area_slug": "west-ashley-outside-526",
+      "mls_area": "12 - West of the Ashley Outside I-526",
+      "mls_subdivisions": [
+        "Castlewood"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2022-05-27"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Parsonage Point",
+      "slug": "parsonage-point",
+      "area_slug": "west-ashley-outside-526",
+      "mls_area": "12 - West of the Ashley Outside I-526",
+      "mls_subdivisions": [
+        "Parsonage Point"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2020-08-31"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Red Top",
+      "slug": "red-top",
+      "area_slug": "west-ashley-outside-526",
+      "mls_area": "12 - West of the Ashley Outside I-526",
+      "mls_subdivisions": [
+        "Red Top"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2020-10-23"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Shadowmoss",
+      "slug": "shadowmoss",
+      "area_slug": "west-ashley-outside-526",
+      "mls_area": "12 - West of the Ashley Outside I-526",
+      "mls_subdivisions": [
+        "Shadowmoss"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 2,
+        "by_property_type": {
+          "A": 2
+        },
+        "first_close": "2021-03-26"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Springfield",
+      "slug": "springfield",
+      "area_slug": "west-ashley-outside-526",
+      "mls_area": "12 - West of the Ashley Outside I-526",
+      "mls_subdivisions": [
+        "Springfield"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2021-12-29"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Crosscreek",
+      "slug": "crosscreek",
+      "area_slug": "james-island",
+      "mls_area": "21 - James Island",
+      "mls_subdivisions": [
+        "Crosscreek"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "B": 1
+        },
+        "first_close": "2025-05-19"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Lynwood Villas",
+      "slug": "lynwood-villas",
+      "area_slug": "james-island",
+      "mls_area": "21 - James Island",
+      "mls_subdivisions": [
+        "Lynwood Villas"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2025-08-12"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Mira Vista",
+      "slug": "mira-vista",
+      "area_slug": "james-island",
+      "mls_area": "21 - James Island",
+      "mls_subdivisions": [
+        "Mira Vista"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 2,
+        "by_property_type": {
+          "A": 2
+        },
+        "first_close": "2021-11-15"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Oakcrest",
+      "slug": "oakcrest",
+      "area_slug": "james-island",
+      "mls_area": "21 - James Island",
+      "mls_subdivisions": [
+        "Oakcrest"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2026-07-02"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Regatta On James Island",
+      "slug": "regatta-on-james-island",
+      "area_slug": "james-island",
+      "mls_area": "21 - James Island",
+      "mls_subdivisions": [
+        "Regatta On James Island"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 2,
+        "by_property_type": {
+          "A": 2
+        },
+        "first_close": "2020-12-14"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Pavilion Watch",
+      "slug": "pavilion-watch",
+      "area_slug": "folly-beach",
+      "mls_area": "22 - Folly Beach to Battery Island",
+      "mls_subdivisions": [
+        "Pavilion Watch"
+      ],
+      "county": "Charleston",
+      "city": "Folly Beach",
+      "tier": "B",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2022-07-22"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Kiawah River",
+      "slug": "kiawah-river",
+      "area_slug": "johns-island",
+      "mls_area": "23 - Johns Island",
+      "mls_subdivisions": [
+        "Kiawah River"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2022-04-27"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Oakfield",
+      "slug": "oakfield",
+      "area_slug": "johns-island",
+      "mls_area": "23 - Johns Island",
+      "mls_subdivisions": [
+        "Oakfield"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2023-07-14"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Accabee",
+      "slug": "accabee",
+      "area_slug": "north-charleston-inside-526",
+      "mls_area": "31 - North Charleston Inside I-526",
+      "mls_subdivisions": [
+        "Accabee"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "C": 1
+        },
+        "first_close": "2022-05-02"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Admiral Apartments",
+      "slug": "admiral-apartments",
+      "area_slug": "north-charleston-inside-526",
+      "mls_area": "31 - North Charleston Inside I-526",
+      "mls_subdivisions": [
+        "Admiral Apartments"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "B": 1
+        },
+        "first_close": "2026-01-12"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Buckfield",
+      "slug": "buckfield",
+      "area_slug": "north-charleston-inside-526",
+      "mls_area": "31 - North Charleston Inside I-526",
+      "mls_subdivisions": [
+        "Buckfield"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 3,
+        "by_property_type": {
+          "B": 3
+        },
+        "first_close": "2021-08-27"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Dorchester Terrace",
+      "slug": "dorchester-terrace",
+      "area_slug": "north-charleston-inside-526",
+      "mls_area": "31 - North Charleston Inside I-526",
+      "mls_subdivisions": [
+        "Dorchester Terrace"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 2,
+        "by_property_type": {
+          "B": 2
+        },
+        "first_close": "2025-05-23"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Russelldale",
+      "slug": "russelldale",
+      "area_slug": "north-charleston-inside-526",
+      "mls_area": "31 - North Charleston Inside I-526",
+      "mls_subdivisions": [
+        "Russelldale"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "B": 1
+        },
+        "first_close": "2025-05-23"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Waylyn",
+      "slug": "waylyn",
+      "area_slug": "north-charleston-inside-526",
+      "mls_area": "31 - North Charleston Inside I-526",
+      "mls_subdivisions": [
+        "Waylyn"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2023-08-07"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Brookdale",
+      "slug": "brookdale",
+      "area_slug": "north-charleston-outside-526",
+      "mls_area": "32 - N.Charleston, Summerville, Ladson, Outside I-526",
+      "mls_subdivisions": [
+        "Brookdale"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2020-09-25"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Buckshire",
+      "slug": "buckshire",
+      "area_slug": "north-charleston-outside-526",
+      "mls_area": "32 - N.Charleston, Summerville, Ladson, Outside I-526",
+      "mls_subdivisions": [
+        "Buckshire"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 2,
+        "by_property_type": {
+          "A": 2
+        },
+        "first_close": "2021-01-15"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Fetteressa",
+      "slug": "fetteressa",
+      "area_slug": "north-charleston-outside-526",
+      "mls_area": "32 - N.Charleston, Summerville, Ladson, Outside I-526",
+      "mls_subdivisions": [
+        "Fetteressa"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 2,
+        "by_property_type": {
+          "B": 2
+        },
+        "first_close": "2022-05-13"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Pt Dowling Tract",
+      "slug": "pt-dowling-tract",
+      "area_slug": "north-charleston-outside-526",
+      "mls_area": "32 - N.Charleston, Summerville, Ladson, Outside I-526",
+      "mls_subdivisions": [
+        "Pt Dowling Tract"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 2,
+        "by_property_type": {
+          "B": 2
+        },
+        "first_close": "2022-08-25"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Crown Pointe",
+      "slug": "crown-pointe",
+      "area_slug": "mount-pleasant-north",
+      "mls_area": "41 - Mt Pleasant N of IOP Connector",
+      "mls_subdivisions": [
+        "Crown Pointe"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "B",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2026-05-15"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Dunes West",
+      "slug": "dunes-west",
+      "area_slug": "mount-pleasant-north",
+      "mls_area": "41 - Mt Pleasant N of IOP Connector",
+      "mls_subdivisions": [
+        "Dunes West"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "B",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2021-04-09"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Hamlin Plantation",
+      "slug": "hamlin-plantation",
+      "area_slug": "mount-pleasant-north",
+      "mls_area": "41 - Mt Pleasant N of IOP Connector",
+      "mls_subdivisions": [
+        "Hamlin Plantation"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "B",
+      "paul_closings": {
+        "count": 2,
+        "by_property_type": {
+          "A": 2
+        },
+        "first_close": "2023-03-03"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "The Meridian",
+      "slug": "the-meridian",
+      "area_slug": "mount-pleasant-north",
+      "mls_area": "41 - Mt Pleasant N of IOP Connector",
+      "mls_subdivisions": [
+        "The Meridian"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "B",
+      "paul_closings": {
+        "count": 3,
+        "by_property_type": {
+          "A": 3
+        },
+        "first_close": "2020-11-25"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Belle Hall",
+      "slug": "belle-hall",
+      "area_slug": "mount-pleasant-south",
+      "mls_area": "42 - Mt Pleasant S of IOP Connector",
+      "mls_subdivisions": [
+        "Belle Hall"
+      ],
+      "county": "Charleston",
+      "city": "Mount Pleasant",
+      "tier": "A",
+      "paul_closings": {
+        "count": 2,
+        "by_property_type": {
+          "A": 1,
+          "C": 1
+        },
+        "first_close": "2022-07-27"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Marsh Grass Condominiums",
+      "slug": "marsh-grass-condominiums",
+      "area_slug": "mount-pleasant-south",
+      "mls_area": "42 - Mt Pleasant S of IOP Connector",
+      "mls_subdivisions": [
+        "Marsh Grass Condominiums"
+      ],
+      "county": "Charleston",
+      "city": "Mount Pleasant",
+      "tier": "A",
+      "paul_closings": {
+        "count": 2,
+        "by_property_type": {
+          "A": 2
+        },
+        "first_close": "2022-10-03"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Snee Farm",
+      "slug": "snee-farm",
+      "area_slug": "mount-pleasant-south",
+      "mls_area": "42 - Mt Pleasant S of IOP Connector",
+      "mls_subdivisions": [
+        "Snee Farm"
+      ],
+      "county": "Charleston",
+      "city": "Mount Pleasant",
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2022-07-21"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Beachwood",
+      "slug": "beachwood",
+      "area_slug": "wild-dunes",
+      "mls_area": "45 - Wild Dunes",
+      "mls_subdivisions": [
+        "Beachwood"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "C",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2021-12-31"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Wild Dunes Yacht Harbor",
+      "slug": "wild-dunes-yacht-harbor",
+      "area_slug": "wild-dunes",
+      "mls_area": "45 - Wild Dunes",
+      "mls_subdivisions": [
+        "Wild Dunes Yacht Harbor"
+      ],
+      "county": "Charleston",
+      "city": null,
+      "tier": "C",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2024-12-30"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Ansonborough",
+      "slug": "ansonborough",
+      "area_slug": "downtown-charleston",
+      "mls_area": "51 - Peninsula Charleston Inside of Crosstown",
+      "mls_subdivisions": [
+        "Ansonborough"
+      ],
+      "county": "Charleston",
+      "city": "Charleston",
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2022-03-02"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Cannonborough-Elliotborough",
+      "slug": "cannonborough-elliotborough",
+      "area_slug": "downtown-charleston",
+      "mls_area": "51 - Peninsula Charleston Inside of Crosstown",
+      "mls_subdivisions": [
+        "Cannonborough",
+        "Cannonborough-Elliotborough"
+      ],
+      "county": "Charleston",
+      "city": "Charleston",
+      "tier": "A",
+      "paul_closings": {
+        "count": 4,
+        "by_property_type": {
+          "A": 2,
+          "B": 2
+        },
+        "first_close": "2023-07-24"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Eastside",
+      "slug": "eastside",
+      "area_slug": "downtown-charleston",
+      "mls_area": "51 - Peninsula Charleston Inside of Crosstown",
+      "mls_subdivisions": [
+        "Eastside"
+      ],
+      "county": "Charleston",
+      "city": "Charleston",
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "B": 1
+        },
+        "first_close": "2023-11-01"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Wraggborough",
+      "slug": "wraggborough",
+      "area_slug": "downtown-charleston",
+      "mls_area": "51 - Peninsula Charleston Inside of Crosstown",
+      "mls_subdivisions": [
+        "Wraggborough"
+      ],
+      "county": "Charleston",
+      "city": "Charleston",
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2021-03-09"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Garden Hill",
+      "slug": "garden-hill",
+      "area_slug": "upper-peninsula",
+      "mls_area": "52 - Peninsula Charleston Outside of Crosstown",
+      "mls_subdivisions": [
+        "Garden Hill"
+      ],
+      "county": "Charleston",
+      "city": "Charleston",
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "B": 1
+        },
+        "first_close": "2021-06-14"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "North Central",
+      "slug": "north-central",
+      "area_slug": "upper-peninsula",
+      "mls_area": "52 - Peninsula Charleston Outside of Crosstown",
+      "mls_subdivisions": [
+        "North Central"
+      ],
+      "county": "Charleston",
+      "city": "Charleston",
+      "tier": "A",
+      "paul_closings": {
+        "count": 3,
+        "by_property_type": {
+          "A": 3
+        },
+        "first_close": "2020-10-09"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Wagener Terrace",
+      "slug": "wagener-terrace",
+      "area_slug": "upper-peninsula",
+      "mls_area": "52 - Peninsula Charleston Outside of Crosstown",
+      "mls_subdivisions": [
+        "Wagener Terrace"
+      ],
+      "county": "Charleston",
+      "city": "Charleston",
+      "tier": "A",
+      "paul_closings": {
+        "count": 3,
+        "by_property_type": {
+          "A": 2,
+          "B": 1
+        },
+        "first_close": "2021-03-10"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Westside",
+      "slug": "westside",
+      "area_slug": "upper-peninsula",
+      "mls_area": "52 - Peninsula Charleston Outside of Crosstown",
+      "mls_subdivisions": [
+        "Westside"
+      ],
+      "county": "Charleston",
+      "city": "Charleston",
+      "tier": "A",
+      "paul_closings": {
+        "count": 3,
+        "by_property_type": {
+          "A": 2,
+          "B": 1
+        },
+        "first_close": "2022-03-18"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Appian Landing",
+      "slug": "appian-landing",
+      "area_slug": "north-charleston-dorchester-county",
+      "mls_area": "61 - N. Chas/Summerville/Ladson-Dor",
+      "mls_subdivisions": [
+        "Appian Landing",
+        "Appian Landing III"
+      ],
+      "county": "Dorchester",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 2,
+        "by_property_type": {
+          "A": 2
+        },
+        "first_close": "2020-08-05"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Pepperidge",
+      "slug": "pepperidge",
+      "area_slug": "north-charleston-dorchester-county",
+      "mls_area": "61 - N. Chas/Summerville/Ladson-Dor",
+      "mls_subdivisions": [
+        "Pepperidge"
+      ],
+      "county": "Dorchester",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "B": 1
+        },
+        "first_close": "2025-05-14"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Stratton Capers",
+      "slug": "stratton-capers",
+      "area_slug": "north-charleston-dorchester-county",
+      "mls_area": "61 - N. Chas/Summerville/Ladson-Dor",
+      "mls_subdivisions": [
+        "Stratton Capers"
+      ],
+      "county": "Dorchester",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2026-03-06"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Woodington",
+      "slug": "woodington",
+      "area_slug": "north-charleston-dorchester-county",
+      "mls_area": "61 - N. Chas/Summerville/Ladson-Dor",
+      "mls_subdivisions": [
+        "Woodington"
+      ],
+      "county": "Dorchester",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2021-09-02"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Bridges of Summerville",
+      "slug": "bridges-of-summerville",
+      "area_slug": "summerville",
+      "mls_area": "62 - Summerville/Ladson/Ravenel to Hwy 165",
+      "mls_subdivisions": [
+        "Bridges of Summerville"
+      ],
+      "county": "Dorchester",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2021-10-13"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Millbrook",
+      "slug": "millbrook",
+      "area_slug": "summerville",
+      "mls_area": "62 - Summerville/Ladson/Ravenel to Hwy 165",
+      "mls_subdivisions": [
+        "Millbrook"
+      ],
+      "county": "Dorchester",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 2,
+        "by_property_type": {
+          "B": 2
+        },
+        "first_close": "2026-05-07"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Shady Oaks",
+      "slug": "shady-oaks",
+      "area_slug": "summerville",
+      "mls_area": "62 - Summerville/Ladson/Ravenel to Hwy 165",
+      "mls_subdivisions": [
+        "Shady Oaks"
+      ],
+      "county": "Dorchester",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2021-07-16"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Rose Hill",
+      "slug": "rose-hill",
+      "area_slug": "summerville-north-ridgeville",
+      "mls_area": "63 - Summerville/Ridgeville",
+      "mls_subdivisions": [
+        "Rose Hill"
+      ],
+      "county": "Dorchester",
+      "city": null,
+      "tier": "B",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2023-02-16"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Summers Corner",
+      "slug": "summers-corner",
+      "area_slug": "summerville-north-ridgeville",
+      "mls_area": "63 - Summerville/Ridgeville",
+      "mls_subdivisions": [
+        "Summers Corner"
+      ],
+      "county": "Dorchester",
+      "city": null,
+      "tier": "B",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2021-06-18"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "White Gables",
+      "slug": "white-gables",
+      "area_slug": "summerville-north-ridgeville",
+      "mls_area": "63 - Summerville/Ridgeville",
+      "mls_subdivisions": [
+        "White Gables"
+      ],
+      "county": "Dorchester",
+      "city": null,
+      "tier": "B",
+      "paul_closings": {
+        "count": 2,
+        "by_property_type": {
+          "A": 2
+        },
+        "first_close": "2026-04-13"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Belvedere Estates",
+      "slug": "belvedere-estates",
+      "area_slug": "hanahan",
+      "mls_area": "71 - Hanahan",
+      "mls_subdivisions": [
+        "Belvedere Estates"
+      ],
+      "county": "Berkeley",
+      "city": "Hanahan",
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2021-11-30"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Bowen",
+      "slug": "bowen",
+      "area_slug": "hanahan",
+      "mls_area": "71 - Hanahan",
+      "mls_subdivisions": [
+        "Bowen"
+      ],
+      "county": "Berkeley",
+      "city": "Hanahan",
+      "tier": "A",
+      "paul_closings": {
+        "count": 4,
+        "by_property_type": {
+          "A": 4
+        },
+        "first_close": "2020-11-02"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Otranto",
+      "slug": "otranto",
+      "area_slug": "hanahan",
+      "mls_area": "71 - Hanahan",
+      "mls_subdivisions": [
+        "Otranto"
+      ],
+      "county": "Berkeley",
+      "city": "Hanahan",
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2021-05-26"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Tanner Plantation",
+      "slug": "tanner-plantation",
+      "area_slug": "hanahan",
+      "mls_area": "71 - Hanahan",
+      "mls_subdivisions": [
+        "Tanner Plantation"
+      ],
+      "county": "Berkeley",
+      "city": "Hanahan",
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2022-06-14"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Carlton Place",
+      "slug": "carlton-place",
+      "area_slug": "goose-creek-hwy-52-oakley",
+      "mls_area": "72 - G.Cr/M. Cor. Hwy 52-Oakley-Cooper River",
+      "mls_subdivisions": [
+        "Carlton Place"
+      ],
+      "county": "Berkeley",
+      "city": null,
+      "tier": "B",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2020-11-30"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Liberty Hall Plantation",
+      "slug": "liberty-hall-plantation",
+      "area_slug": "goose-creek-hwy-52-oakley",
+      "mls_area": "72 - G.Cr/M. Cor. Hwy 52-Oakley-Cooper River",
+      "mls_subdivisions": [
+        "Liberty Hall Plantation"
+      ],
+      "county": "Berkeley",
+      "city": null,
+      "tier": "B",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2023-12-26"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Strawberry Station",
+      "slug": "strawberry-station",
+      "area_slug": "goose-creek-hwy-52-oakley",
+      "mls_area": "72 - G.Cr/M. Cor. Hwy 52-Oakley-Cooper River",
+      "mls_subdivisions": [
+        "Strawberry Station"
+      ],
+      "county": "Berkeley",
+      "city": null,
+      "tier": "B",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2021-12-17"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Tanner Plantation",
+      "slug": "tanner-plantation",
+      "area_slug": "goose-creek-hwy-52-oakley",
+      "mls_area": "72 - G.Cr/M. Cor. Hwy 52-Oakley-Cooper River",
+      "mls_subdivisions": [
+        "Tanner Plantation"
+      ],
+      "county": "Berkeley",
+      "city": null,
+      "tier": "B",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2020-10-29"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Berkeley Commons Townhomes",
+      "slug": "berkeley-commons-townhomes",
+      "area_slug": "goose-creek-moncks-corner",
+      "mls_area": "73 - G. Cr./M. Cor. Hwy 17A-Oakley-Hwy 52",
+      "mls_subdivisions": [
+        "Berkeley Commons Townhomes"
+      ],
+      "county": "Berkeley",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2021-10-25"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Persimmon Hill Townhouses",
+      "slug": "persimmon-hill-townhouses",
+      "area_slug": "goose-creek-moncks-corner",
+      "mls_area": "73 - G. Cr./M. Cor. Hwy 17A-Oakley-Hwy 52",
+      "mls_subdivisions": [
+        "Persimmon Hill Townhouses"
+      ],
+      "county": "Berkeley",
+      "city": null,
+      "tier": "A",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2020-07-31"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Briddleford Ridge",
+      "slug": "briddleford-ridge",
+      "area_slug": "summerville-berkeley-county",
+      "mls_area": "74 - Summerville, Ladson, Berkeley Cty",
+      "mls_subdivisions": [
+        "Briddleford Ridge"
+      ],
+      "county": "Berkeley",
+      "city": null,
+      "tier": "B",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2021-01-29"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "College Park",
+      "slug": "college-park",
+      "area_slug": "summerville-berkeley-county",
+      "mls_area": "74 - Summerville, Ladson, Berkeley Cty",
+      "mls_subdivisions": [
+        "College Park"
+      ],
+      "county": "Berkeley",
+      "city": null,
+      "tier": "B",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2020-10-05"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Center Park",
+      "slug": "center-park",
+      "area_slug": "daniel-island",
+      "mls_area": "77 - Daniel Island",
+      "mls_subdivisions": [
+        "Center Park"
+      ],
+      "county": "Berkeley",
+      "city": "Charleston",
+      "tier": "B",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2021-08-13"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "name": "Daniel Island",
+      "slug": "daniel-island",
+      "area_slug": "daniel-island",
+      "mls_area": "77 - Daniel Island",
+      "mls_subdivisions": [
+        "Daniel Island"
+      ],
+      "county": "Berkeley",
+      "city": "Charleston",
+      "tier": "B",
+      "paul_closings": {
+        "count": 1,
+        "by_property_type": {
+          "A": 1
+        },
+        "first_close": "2023-05-01"
+      },
+      "page_type": null,
+      "sfr": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "sales_24mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null
+      },
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_24mo": null,
+        "median_dom": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "property_mix": null,
+      "typical_year_built": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    }
+  ]
+}

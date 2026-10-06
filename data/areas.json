@@ -1,0 +1,1226 @@
+{
+  "_comment": "One record per Charleston Trident MLS area (docs/AREAS.md). Identity fields come from scripts/seed-data.mjs; numbers are filled by the area-data-puller subagent. Every number needs as_of, source, and sample_size; samples under 5 stay null. Never hand-edit numbers.",
+  "areas": [
+    {
+      "area_number": 51,
+      "name": "Downtown Charleston (Peninsula inside the Crosstown)",
+      "county": "Charleston",
+      "mls_area": "51 - Peninsula Charleston Inside of Crosstown",
+      "slug": "downtown-charleston",
+      "tier": "A",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 52,
+      "name": "Upper Peninsula (outside the Crosstown)",
+      "county": "Charleston",
+      "mls_area": "52 - Peninsula Charleston Outside of Crosstown",
+      "slug": "upper-peninsula",
+      "tier": "A",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 11,
+      "name": "West Ashley inside I-526",
+      "county": "Charleston",
+      "mls_area": "11 - West of the Ashley Inside I-526",
+      "slug": "west-ashley-inside-526",
+      "tier": "A",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 12,
+      "name": "West Ashley outside I-526",
+      "county": "Charleston",
+      "mls_area": "12 - West of the Ashley Outside I-526",
+      "slug": "west-ashley-outside-526",
+      "tier": "A",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 13,
+      "name": "West of the Ashley beyond Rantowles Creek",
+      "county": "Charleston",
+      "mls_area": "13 - West of the Ashley beyond Rantowles Creek",
+      "slug": "rantowles-hollywood-ravenel",
+      "tier": "B",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 21,
+      "name": "James Island",
+      "county": "Charleston",
+      "mls_area": "21 - James Island",
+      "slug": "james-island",
+      "tier": "A",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 22,
+      "name": "Folly Beach",
+      "county": "Charleston",
+      "mls_area": "22 - Folly Beach to Battery Island",
+      "slug": "folly-beach",
+      "tier": "B",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 23,
+      "name": "Johns Island",
+      "county": "Charleston",
+      "mls_area": "23 - Johns Island",
+      "slug": "johns-island",
+      "tier": "A",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 24,
+      "name": "Wadmalaw Island",
+      "county": "Charleston",
+      "mls_area": "24 - Wadmalaw Island",
+      "slug": "wadmalaw-island",
+      "tier": "C",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 25,
+      "name": "Kiawah Island",
+      "county": "Charleston",
+      "mls_area": "25 - Kiawah",
+      "slug": "kiawah-island",
+      "tier": "C",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 26,
+      "name": "Edisto Island (Charleston County)",
+      "county": "Charleston",
+      "mls_area": "26 - Edisto Island",
+      "slug": "edisto-island",
+      "tier": "C",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 30,
+      "name": "Seabrook Island",
+      "county": "Charleston",
+      "mls_area": "30 - Seabrook",
+      "slug": "seabrook-island",
+      "tier": "C",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 31,
+      "name": "North Charleston inside I-526",
+      "county": "Charleston",
+      "mls_area": "31 - North Charleston Inside I-526",
+      "slug": "north-charleston-inside-526",
+      "tier": "A",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 32,
+      "name": "North Charleston outside I-526 (Charleston County)",
+      "county": "Charleston",
+      "mls_area": "32 - N.Charleston, Summerville, Ladson, Outside I-526",
+      "slug": "north-charleston-outside-526",
+      "tier": "A",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 41,
+      "name": "Mount Pleasant north of the IOP Connector",
+      "county": "Charleston",
+      "mls_area": "41 - Mt Pleasant N of IOP Connector",
+      "slug": "mount-pleasant-north",
+      "tier": "B",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 42,
+      "name": "Mount Pleasant south of the IOP Connector",
+      "county": "Charleston",
+      "mls_area": "42 - Mt Pleasant S of IOP Connector",
+      "slug": "mount-pleasant-south",
+      "tier": "A",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 43,
+      "name": "Sullivan's Island",
+      "county": "Charleston",
+      "mls_area": "43 - Sullivan's Island",
+      "slug": "sullivans-island",
+      "tier": "C",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 44,
+      "name": "Isle of Palms",
+      "county": "Charleston",
+      "mls_area": "44 - Isle of Palms",
+      "slug": "isle-of-palms",
+      "tier": "C",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 45,
+      "name": "Wild Dunes",
+      "county": "Charleston",
+      "mls_area": "45 - Wild Dunes",
+      "slug": "wild-dunes",
+      "tier": "C",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 46,
+      "name": "Dewees Island",
+      "county": "Charleston",
+      "mls_area": "46 - Dewees Island",
+      "slug": "dewees-island",
+      "tier": "C",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 47,
+      "name": "Awendaw / McClellanville",
+      "county": "Charleston",
+      "mls_area": "47 - Awendaw/McClellanville",
+      "slug": "awendaw-mcclellanville",
+      "tier": "C",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 61,
+      "name": "North Charleston / Summerville / Ladson (Dorchester County)",
+      "county": "Dorchester",
+      "mls_area": "61 - N. Chas/Summerville/Ladson-Dor",
+      "slug": "north-charleston-dorchester-county",
+      "tier": "A",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 62,
+      "name": "Summerville / Ladson / Ravenel to Highway 165",
+      "county": "Dorchester",
+      "mls_area": "62 - Summerville/Ladson/Ravenel to Hwy 165",
+      "slug": "summerville",
+      "tier": "A",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 63,
+      "name": "Summerville north / Ridgeville",
+      "county": "Dorchester",
+      "mls_area": "63 - Summerville/Ridgeville",
+      "slug": "summerville-north-ridgeville",
+      "tier": "B",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 64,
+      "name": "St. George / Harleyville / Reevesville",
+      "county": "Dorchester",
+      "mls_area": "64 - St. George, Harleyville, Reevesville, Dorchester",
+      "slug": "st-george-harleyville",
+      "tier": "C",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 71,
+      "name": "Hanahan",
+      "county": "Berkeley",
+      "mls_area": "71 - Hanahan",
+      "slug": "hanahan",
+      "tier": "A",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 72,
+      "name": "Goose Creek / Moncks Corner (Hwy 52, Oakley, Cooper River)",
+      "county": "Berkeley",
+      "mls_area": "72 - G.Cr/M. Cor. Hwy 52-Oakley-Cooper River",
+      "slug": "goose-creek-hwy-52-oakley",
+      "tier": "B",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 73,
+      "name": "Goose Creek / Moncks Corner (Hwy 17A, Oakley, Hwy 52)",
+      "county": "Berkeley",
+      "mls_area": "73 - G. Cr./M. Cor. Hwy 17A-Oakley-Hwy 52",
+      "slug": "goose-creek-moncks-corner",
+      "tier": "A",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 74,
+      "name": "Summerville / Ladson (Berkeley County)",
+      "county": "Berkeley",
+      "mls_area": "74 - Summerville, Ladson, Berkeley Cty",
+      "slug": "summerville-berkeley-county",
+      "tier": "B",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 75,
+      "name": "Cross / St. Stephen / Bonneau / rural Berkeley County",
+      "county": "Berkeley",
+      "mls_area": "75 - Cross, St.Stephen, Bonneau, Rural Berkeley Cty",
+      "slug": "rural-berkeley-county",
+      "tier": "C",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 76,
+      "name": "Moncks Corner above Oakley Road",
+      "county": "Berkeley",
+      "mls_area": "76 - Moncks Corner Above Oakley Rd",
+      "slug": "moncks-corner",
+      "tier": "C",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 77,
+      "name": "Daniel Island",
+      "county": "Berkeley",
+      "mls_area": "77 - Daniel Island",
+      "slug": "daniel-island",
+      "tier": "B",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    },
+    {
+      "area_number": 78,
+      "name": "Wando / Cainhoy",
+      "county": "Berkeley",
+      "mls_area": "78 - Wando/Cainhoy",
+      "slug": "cainhoy-wando",
+      "tier": "B",
+      "mf": {
+        "median_price": null,
+        "p25": null,
+        "p75": null,
+        "price_per_door": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "sfr": {
+        "median_price": null,
+        "sales_12mo": null,
+        "median_dom": null,
+        "change_1yr_pct": null,
+        "change_5yr_pct": null
+      },
+      "rents": {
+        "1br": null,
+        "2br": null,
+        "3br": null,
+        "4br_plus": null,
+        "source_by_bed": {},
+        "lease_sample": null
+      },
+      "months_inventory": null,
+      "zips": [],
+      "as_of": null,
+      "sources": []
+    }
+  ]
+}

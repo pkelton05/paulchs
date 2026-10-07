@@ -39,7 +39,7 @@
     "neighborhood_pages_approved": false
   },
 
-  "tide_disclosure": "[PLACEHOLDER – affiliated business disclosure: Paul Kelton has an ownership interest in Tide Property Management. Exact wording to be confirmed.]",
+  "tide_disclosure": "Affiliated business disclosure: Paul Kelton has an ownership interest in Tide Property Management.",
 
   "social": {
     "instagram": "https://www.instagram.com/paul_charleston",
@@ -66,7 +66,7 @@
     "response_time": "VERIFY the response time Paul wants to promise",
     "mls_attribution": "VERIFY exact wording with CTAR (standard line used until confirmed)",
     "mls_display.aggregates_approved": "CONFIRMED by Paul 2026-10-06: aggregated MLS statistics may be published. Individual sold/leased listings still not approved.",
-    "tide_disclosure": "VERIFY wording",
+    "tide_disclosure": "VERIFY wording – interim text states only the ownership interest (CLAUDE.md §9); replace with broker-approved wording",
     "social": "NEED LinkedIn, YouTube, BiggerPockets, GRID podcast links; VERIFY Instagram and Threads URLs",
     "analytics.provider": "NEED – Plausible or GA4"
   }

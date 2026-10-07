@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ProofStrip from "../components/ProofStrip.astro";
 import Testimonial from "../components/Testimonial.astro";
 import CtaBlock from "../components/CtaBlock.astro";
-import { site, smsHref } from "../lib/site";
+import { site, smsHref, reviewMode } from "../lib/site";
 import { sendTheDeal, pageLinks } from "../lib/nav";
 
 const doors = site.stats.stat_doors.value;
@@ -53,7 +53,7 @@ const ways = [
   mentionsTide
 >
   <section class="hero">
-    <div class="wrap hero-grid">
+    <div class:list={["wrap", "hero-grid", { "has-media": reviewMode }]}>
       <div>
         <h1>Charleston investment property, with real numbers.</h1>
         <p class="lead">I help investors buy, sell, and hold duplexes, small multifamily, and rental property across the tri-county.</p>
@@ -68,9 +68,13 @@ const ways = [
           }
         </div>
       </div>
-      <div class="hero-media">
-        <span class="placeholder">[PHOTO – need from Paul: Paul on a property, or a GRID podcast still. Real photo, no stock.]</span>
-      </div>
+      {
+        reviewMode && (
+          <div class="hero-media">
+            <span class="placeholder">[PHOTO – need from Paul: Paul on a property, or a GRID podcast still. Real photo, no stock.]</span>
+          </div>
+        )
+      }
     </div>
   </section>
 
@@ -91,7 +95,7 @@ const ways = [
           my math.
         </p>
         <p>That's how I work with investors. Plain talk, real numbers, and no pressure to buy anything that doesn't pencil.</p>
-        <p class="placeholder">[NEED from Paul: your own origin story – how you started, your first deal – to replace or extend the first sentence.]</p>
+        {reviewMode && <p class="placeholder">[NEED from Paul: your own origin story – how you started, your first deal – to replace or extend the first sentence.]</p>}
       </div>
 
       <div>
@@ -110,6 +114,8 @@ const ways = [
     </div>
   </section>
 
+  {/* No real testimonials yet: the section shows placeholders in review mode and is left out of production. */}
+  {reviewMode && (
   <section class="section" aria-labelledby="words">
     <div class="wrap">
       <h2 id="words">In their words</h2>
@@ -120,6 +126,7 @@ const ways = [
       </div>
     </div>
   </section>
+  )}
 
   <section class="section" aria-labelledby="areas">
     <div class="wrap split">
@@ -177,7 +184,7 @@ const ways = [
     .hero {
       padding-block: var(--space-5) var(--space-4);
     }
-    .hero-grid {
+    .hero-grid.has-media {
       grid-template-columns: 3fr 2fr;
     }
   }

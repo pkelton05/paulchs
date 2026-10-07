@@ -3,7 +3,7 @@
 What Claude Code needs from Paul, grouped by who resolves it. Updated at the end of every session.
 **VERIFY** = Paul (or the person named) confirms before publishing. **NEED** = Paul supplies it.
 
-Last updated: 2026-10-06 (Session 4 – all 71 neighborhood pages approved and published, still gated)
+Last updated: 2026-10-07 (Session 5 – engagement plan, Priority 0 started)
 
 ---
 
@@ -18,6 +18,22 @@ Last updated: 2026-10-06 (Session 4 – all 71 neighborhood pages approved and p
 - [x] Vercel team upgraded to Pro (2026-10-06).
 - [x] Vercel token pasted in chat deleted (2026-10-06). The Vercel connector is used instead.
 - [ ] Later, no rush: set the GitHub repo's default branch to `main` (GitHub → Settings → General → Default branch). Vercel already deploys from `main` regardless.
+
+## Engagement plan (Paul, 2026-10-07) – `docs/ENGAGEMENT-PLAN.md`
+
+Working through it in its build order. Priority 0 so far:
+- [x] P0 #1 VERIFY tags no longer render on the production site. Review mode (`src/lib/site.ts → reviewMode`) keeps them on local and Vercel preview builds so Paul still sees what needs checking; production builds (`VERCEL_ENV=production`) drop them. The flags stay in source.
+- [x] P0 #2 Placeholders hidden in production: hero photo slot (hero goes full width), origin-story note, the testimonials section, privacy-policy review notes. `npm run check:launch` (now part of `npm run verify`) builds in production mode and fails if any VERIFY tag or bracketed placeholder would render.
+- [x] P0 #3 Tide disclosure now in the shared footer on every page. Interim text states only the ownership interest ("Affiliated business disclosure: Paul Kelton has an ownership interest in Tide Property Management.") – [VERIFY: replace with broker-approved wording in `data/site.json → tide_disclosure`].
+- [ ] P0 #4 Source line under the #1 claim – NEED from Paul: data source, years, and how "individual agent" is defined.
+- [ ] P0 #5 Brokerage phone – broker-in-charge to confirm.
+- [ ] P0 #6 End-to-end form test – needs `ZAPIER_WEBHOOK_URL` set in Vercel first.
+- [ ] P0 #7 SMS consent on the form – NEED: confirm Paul texts leads back, and the consent wording his texting provider requires for A2P 10DLC.
+
+Decisions for Paul (plan vs. CLAUDE.md):
+- [ ] Deal analyzer gating: the plan says gate the full breakdown behind email; CLAUDE.md §7 says "No email gate." Which wins?
+- [ ] Nav: the plan says `/buying`; CLAUDE.md and SITE-CONTENT use `/first-building`. Rename, or keep `/first-building` labeled "Buying"?
+- [ ] Analyzer defaults: the plan wants Tide-informed expense ranges by area – NEED the numbers from Paul (CLAUDE.md §7 [VERIFY]).
 
 ## Open VERIFY items
 

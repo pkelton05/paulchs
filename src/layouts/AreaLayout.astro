@@ -6,6 +6,7 @@ import BaseLayout from "./BaseLayout.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
 import NumberBlock from "../components/NumberBlock.astro";
 import CtaBlock from "../components/CtaBlock.astro";
+import { reviewMode } from "../lib/site";
 import {
   areaBySlug,
   hoodsInArea,
@@ -206,7 +207,7 @@ const hoods = hoodsInArea(entry.id);
               {d.watch_outs.map((w) => (
                 <li>
                   {w.text}
-                  {w.verify && <> <span class="verify">VERIFY</span></>}
+                  {w.verify && reviewMode && <> <span class="verify">VERIFY</span></>}
                 </li>
               ))}
             </ul>

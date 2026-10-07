@@ -3,7 +3,7 @@
 // built: a contact form forwarded through Zapier, Vercel hosting, no analytics
 // yet. Update the analytics section the day a provider is added.
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { site, officeAddressLine } from "../lib/site";
+import { site, officeAddressLine, reviewMode } from "../lib/site";
 
 const updated = "October 6, 2026";
 ---
@@ -14,7 +14,7 @@ const updated = "October 6, 2026";
 >
   <section class="section">
     <div class="wrap prose">
-      <p class="placeholder">[VERIFY – draft privacy policy. Needs review by an attorney or the broker-in-charge before launch.]</p>
+      {reviewMode && <p class="placeholder">[VERIFY – draft privacy policy. Needs review by an attorney or the broker-in-charge before launch.]</p>}
 
       <h1>Privacy policy</h1>
       <p class="small">Last updated {updated}</p>
@@ -49,7 +49,7 @@ const updated = "October 6, 2026";
       <h2>How long I keep it</h2>
       <p>
         I keep it as long as we're working together and for as long as real estate record-keeping rules require after that.
-        [VERIFY retention period with broker-in-charge]
+        {reviewMode && "[VERIFY retention period with broker-in-charge]"}
       </p>
 
       <h2>Analytics and cookies</h2>

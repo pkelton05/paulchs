@@ -1,0 +1,60 @@
+---
+// SITE-CONTENT.md §6. Brand-site selling page – not the direct-to-seller
+// acquisition page (CLAUDE.md §6). Agency disclosure language is required on
+// seller-facing pages; it renders from data/site.json once the broker confirms it.
+import PageLayout from "../layouts/PageLayout.astro";
+import CtaBlock from "../components/CtaBlock.astro";
+import ReviewOnly from "../components/ReviewOnly.astro";
+import { site } from "../lib/site";
+
+const agency = (site as Record<string, unknown>).agency_disclosure as string | null;
+---
+
+<PageLayout
+  title="Sell Your Charleston Duplex or Apartment Building | Paul Kelton"
+  description="Selling a duplex, small multifamily, or rental in Charleston? Pricing based on real income, and investor buyers who are active right now."
+  h1="Sell your building to the right buyer, at a price the numbers support."
+  lead="Investment property sells on income. I price your building the way a buyer's lender will look at it – rents, expenses, and condition – so there are no surprises after the appraisal. And because I work with investors every day, I usually know who's buying before we list."
+>
+  <section aria-labelledby="price">
+    <h2 id="price">How I price a building</h2>
+    <p>
+      I start with your rent roll and the last twelve months of income and expenses. Then I look at condition, recent trades
+      nearby, and what buyers are paying per door in your part of Charleston. You get a price you can defend, not a number
+      picked to win the listing.
+    </p>
+  </section>
+
+  <section aria-labelledby="market">
+    <h2 id="market">How I market it</h2>
+    <p>
+      Two ways, and you choose. We can list it on the MLS with full investor packaging – rent roll, expenses, and the numbers a
+      buyer needs to say yes. Or we can take it quietly to my buyer list first and only go public if we need to.
+    </p>
+  </section>
+
+  <section aria-labelledby="tenants">
+    <h2 id="tenants">Your tenants</h2>
+    <p>
+      Showings are scheduled with proper notice, and we keep them to a minimum. Your tenants are treated with respect, and your
+      rent keeps coming in while the building is on the market.
+    </p>
+  </section>
+
+  <section aria-labelledby="need">
+    <h2 id="need">What I'll need from you</h2>
+    <ul class="points">
+      <li>A rent roll and copies of the current leases</li>
+      <li>The last twelve months of income and expenses</li>
+      <li>A list of recent repairs and the age of the roof, HVAC, and water heaters</li>
+    </ul>
+  </section>
+
+  {agency && <p class="small">{agency}</p>}
+  <ReviewOnly kind="need">
+    [NEED from broker-in-charge: agency disclosure language for seller-facing pages (CLAUDE.md §6). Set
+    data/site.json → agency_disclosure. Also from Paul: recent sales to show, with client permission.]
+  </ReviewOnly>
+
+  <CtaBlock slot="after" heading="Thinking about selling? Send me the address." withCall where="selling" />
+</PageLayout>

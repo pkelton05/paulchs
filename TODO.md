@@ -30,9 +30,18 @@ Working through it in its build order. Priority 0 so far:
 - [ ] P0 #6 End-to-end form test – needs `ZAPIER_WEBHOOK_URL` set in Vercel first.
 - [ ] P0 #7 SMS consent on the form – NEED: confirm Paul texts leads back, and the consent wording his texting provider requires for A2P 10DLC.
 
+Week 1 build (2026-10-07):
+- [x] Nav now reads Investing · Buying · Selling · Charleston areas · GRID, with Call / Text / Send me the deal. About is in the footer. Header switches to the menu button below about 1100px (the sticky Call / Text / Send bar stays up to that width).
+- [x] New pages from SITE-CONTENT drafts: `/investing`, `/buying`, `/selling`, `/about`, `/grid`. Homepage "How I help" cards and the GRID section now link to them. `/first-building` 301s to `/buying` (vercel.json); CLAUDE.md and SITE-CONTENT updated to `/buying`.
+- [x] Unconfirmed facts and [NEED] notes sit in `<ReviewOnly>` blocks: visible on preview builds, left out of production. On these pages: rent underwriting stance (investing), FHA 3.5% / conventional 5% minimums and the 4% vs. 6% detail (buying), BiggerPockets Elite Agent (about).
+- [x] Default share image `public/og/default.png` (type only: wordmark, headline, 200+ deals, 300+ doors) on every page. Source in `scripts/og-default.html`. Replace with a version using Paul's photo when it exists.
+- [ ] Social links: NEED Paul's LinkedIn and YouTube URLs (and BiggerPockets, GRID podcast) – set them in `data/site.json → social` and they appear in the footer and about-page schema automatically. Instagram/Threads URLs are still guessed from the handle.
+- [ ] `/selling` must not launch without the broker-approved agency disclosure (CLAUDE.md §6) – set `data/site.json → agency_disclosure`.
+- [ ] `/about` needs Paul's story and photo; `/grid` needs the next event, RSVP link, podcast feed, and episodes.
+
 Decisions for Paul (plan vs. CLAUDE.md):
 - [ ] Deal analyzer gating: the plan says gate the full breakdown behind email; CLAUDE.md §7 says "No email gate." Which wins?
-- [ ] Nav: the plan says `/buying`; CLAUDE.md and SITE-CONTENT use `/first-building`. Rename, or keep `/first-building` labeled "Buying"?
+- [x] Nav: went with the plan – the page is `/buying`; `/first-building` redirects.
 - [ ] Analyzer defaults: the plan wants Tide-informed expense ranges by area – NEED the numbers from Paul (CLAUDE.md §7 [VERIFY]).
 
 ## Open VERIFY items

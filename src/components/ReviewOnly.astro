@@ -1,0 +1,33 @@
+---
+// Content that isn't confirmed yet. Renders only in review mode (local and
+// Vercel preview builds), never in production – so an unconfirmed fact or a
+// [NEED] note can sit in the page for Paul without reaching the public site.
+//   kind="verify": real copy waiting on Paul's OK – shown with a VERIFY tag.
+//   kind="need":   a placeholder for content only Paul can supply.
+import { reviewMode } from "../lib/site";
+
+interface Props {
+  kind?: "verify" | "need";
+  /** Render inline (inside a paragraph) instead of as a block. */
+  inline?: boolean;
+}
+const { kind = "verify", inline = false } = Astro.props;
+---
+
+{
+  reviewMode &&
+    (kind === "need" ? (
+      inline ? <span class="placeholder inline"><slot /></span> : <div class="placeholder"><slot /></div>
+    ) : inline ? (
+      <span class="review"><slot /> <span class="verify">VERIFY</span></span>
+    ) : (
+      <div class="review"><slot /> <span class="verify">VERIFY</span></div>
+    ))
+}
+
+<style>
+  .placeholder.inline {
+    display: inline;
+    padding: 0 0.25rem;
+  }
+</style>

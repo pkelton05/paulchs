@@ -24,6 +24,11 @@
       ],
       "destination": "https://paulchs.com/",
       "statusCode": 301
+    },
+    {
+      "source": "/first-building",
+      "destination": "/buying",
+      "statusCode": 301
     }
   ],
   "headers": [

@@ -115,7 +115,12 @@ const current = Astro.url.pathname.replace(/\.html$/, "");
     color: var(--pluff);
   }
 
-  @media (min-width: 60rem) {
+  .nav-desktop a,
+  .actions a {
+    white-space: nowrap;
+  }
+  /* Five nav items plus Call / Text / the button need about 1100px. */
+  @media (min-width: 69rem) {
     .nav-desktop,
     .actions { display: flex; }
     .nav-mobile { display: none; }

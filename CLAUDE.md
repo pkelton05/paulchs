@@ -59,7 +59,7 @@ All page-level content lives in `docs/`, not in this file, so this file stays sh
 Dan's site is a structural reference only. Never copy its text, headings, or stats.
 
 ### Phase 1
-Homepage, `/investing`, `/first-building`, `/selling`, `/about`, `/send-the-deal`, `/charleston` index, Tier A area pages (AREAS.md), Phase 1 question pages (SITE-CONTENT.md section 12), `/links`, `/privacy`.
+Homepage, `/investing`, `/buying` (was `/first-building`, which now 301s), `/selling`, `/about`, `/send-the-deal`, `/charleston` index, Tier A area pages (AREAS.md), Phase 1 question pages (SITE-CONTENT.md section 12), `/links`, `/privacy`.
 
 ### Phase 2
 `/deal-analyzer`, `/grid`, Tier B area pages, Tier A neighborhood sub-pages, Phase 2 question pages.

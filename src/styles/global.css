@@ -22,7 +22,7 @@ body {
   padding-bottom: calc(var(--sticky-bar-h) + env(safe-area-inset-bottom));
 }
 
-@media (min-width: 60rem) {
+@media (min-width: 69rem) {
   body {
     padding-bottom: 0;
   }

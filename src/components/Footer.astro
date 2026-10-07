@@ -3,7 +3,7 @@
 // Paul or the broker-in-charge must confirm before launch (see TODO.md).
 import Wordmark from "./Wordmark.astro";
 import { site, telHref, officeAddressLine, placeholder } from "../lib/site";
-import { mainNav, footerQuestions, privacyLink, live } from "../lib/nav";
+import { footerNav, footerQuestions, privacyLink, live } from "../lib/nav";
 
 interface Props {
   /** Set on any page that mentions or links to Tide Property Management. */
@@ -11,7 +11,7 @@ interface Props {
 }
 
 const year = new Date().getFullYear();
-const nav = live(mainNav);
+const nav = live(footerNav);
 const questions = live(footerQuestions);
 const socials = Object.entries({
   Instagram: site.social.instagram,

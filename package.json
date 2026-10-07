@@ -8,11 +8,17 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "seed:data": "node scripts/seed-data.mjs",
-    "check:emdash": "! grep -rn \"—\" src/",
-    "check:links": "node scripts/check-links.mjs"
+    "compute:areas": "node scripts/compute-areas.mjs",
+    "compute:neighborhoods": "node scripts/compute-neighborhoods.mjs",
+    "check:emdash": "! grep -rn \"\u2014\" src/",
+    "check:links": "node scripts/check-links.mjs",
+    "check:copy": "node scripts/check-copy.mjs",
+    "check:launch": "SITE_MODE=production astro build && node scripts/check-launch.mjs",
+    "verify": "npm run build && npm run check:links && npm run check:emdash && npm run check:copy && npm run check:launch"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
+    "@astrojs/vercel": "^11.0.12",
     "astro": "^7.3.6"
   },
   "devDependencies": {

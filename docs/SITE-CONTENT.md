@@ -16,7 +16,7 @@ Conventions in this file:
 |---|---|---|---|
 | `/` | Positioning, proof, story, three paths, team | `/` | 1 |
 | `/investing` | Investor landing page, philosophy, FAQ links, client stories | `/investing` | 1 |
-| `/buying` | First home or 2-flat you live in (house hack) | `/first-building` | 1 |
+| `/buying` | First home or 2-flat you live in (house hack) | `/buying` (was `/first-building`; 301s) | 1 |
 | `/selling` | Seller page | `/selling` | 1 |
 | `/neighborhoods` | Index of 150 neighborhood guides by region | `/charleston` (index by county, then MLS area) | 1 |
 | `/[neighborhood]` (e.g. avondale) | Neighborhood guide with sale price and rent data | `/charleston/[area]` hubs (AREAS.md) and one page per neighborhood in Paul's closed sales at `/charleston/[area]/[neighborhood]` (NEIGHBORHOODS.md) – about 75 to start | 1–3 |
@@ -50,7 +50,7 @@ The last eight rows are Charleston-specific pages Dan has no equivalent for. The
 
 ### Header
 - Wordmark: **paul_charleston** with "Paul Kelton · Charleston" beneath it. Final treatment is set in the design pass.
-- Nav: Investing · First building · Selling · Charleston areas · About
+- Nav: Investing · Buying · Selling · Charleston areas · GRID (About in the footer) – per Paul's engagement plan, 2026-10-07
 - Right side: `Call` · `Text` · **Send me the deal** (button)
 
 ### Event strip (above the header, only when an event is scheduled)
@@ -86,7 +86,7 @@ Driven by `data/site.json → next_event`. Pattern:
 **Proof strip** (three stats from site.json)
 - {{site.stat_deals}} investor deals [VERIFY]
 - {{site.stat_doors}} doors managed through Tide [VERIFY]
-- {{site.stat_rank}} – e.g. "Top 5 multifamily agent in Charleston" [VERIFY source]
+- {{site.stat_rank}} – #1 in 2–4 unit sales among individual Charleston agents, each of the last 3 years (confirmed by Paul 2026-10-06)
 
 **Client words** – three short testimonials, real names or initials, with deal type. [NEED from Paul]
 
@@ -99,7 +99,7 @@ Driven by `data/site.json → next_event`. Pattern:
 
 **Three ways I help**
 - **Investing** – Duplexes to 49-unit buildings. I underwrite like an owner, because I see owner-level numbers every day. → `/investing`
-- **Your first building** – Live in one unit, rent the rest. The most common first step I see, and the one I'd take again. → `/first-building`
+- **Your first building** – Live in one unit, rent the rest. The most common first step I see, and the one I'd take again. → `/buying`
 - **Selling** – I know who's buying Charleston income property right now and what they'll pay for it. → `/selling`
 
 **Areas teaser**
@@ -145,7 +145,7 @@ Driven by `data/site.json → next_event`. Pattern:
 
 ---
 
-## 5. Your first building `/first-building`
+## 5. Your first building `/buying` (moved from `/first-building`, Paul's engagement plan 2026-10-07)
 
 Dan's `/buying` page targets first-time buyers house hacking a 2-flat. This is the Charleston version.
 
@@ -289,7 +289,7 @@ Format for every question page: H1 is the question or search phrase; 5–9 H2 qu
 > Yes. Link to `/buying-charleston-rental-property-from-out-of-state`.
 
 **How little can I put down?**
-> If you'll live in one unit, owner-occupant loans can get you into a 2–4 unit building with a small down payment. Link to `/first-building`. [VERIFY loan minimums]
+> If you'll live in one unit, owner-occupant loans can get you into a 2–4 unit building with a small down payment. Link to `/buying`. [VERIFY loan minimums]
 
 - CTA: You don't need a budget, a lender, or a building picked out yet. Send me the deal.
 

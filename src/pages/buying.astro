@@ -1,0 +1,68 @@
+---
+// SITE-CONTENT.md §5 ("Your first building"). Lives at /buying per Paul's
+// engagement plan; /first-building 301s here (vercel.json).
+import PageLayout from "../layouts/PageLayout.astro";
+import CtaBlock from "../components/CtaBlock.astro";
+import ReviewOnly from "../components/ReviewOnly.astro";
+import { pageLinks } from "../lib/nav";
+---
+
+<PageLayout
+  title="House Hacking Your First Duplex in Charleston | Paul Kelton"
+  description="Live in one unit and rent the other. What happens when you reach out, how much you need to get started, and how South Carolina's owner tax rate changes the math."
+  h1="Live in one unit. Let the rent help pay the mortgage."
+  lead="Buying a duplex or fourplex and living in one of the units is the most common way I see people start investing in Charleston. You get owner-occupant financing, and in South Carolina you may also get a lower property tax rate on the part you live in."
+>
+  <section aria-labelledby="steps">
+    <h2 id="steps">What happens when you reach out</h2>
+    <ol class="steps">
+      <li>You tell me what you're thinking, even if it's just a budget and a part of town.</li>
+      <li>I show you what that budget buys in Charleston right now, with real rents next to every building.</li>
+      <li>We tour, run the numbers on each one, and only write offers on the buildings that work.</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="money">
+    <h2 id="money">How much money you need</h2>
+    <p>
+      Owner-occupant loans can get you into a 2–4 unit building with a small down payment. The exact rules depend on the loan
+      and the lender, and they change, so talk to a lender early. I can introduce you to lenders who do this every week.
+    </p>
+    <ReviewOnly>
+      <p>FHA loans can go as low as 3.5% down, and some conventional loans allow 5% down on a 2–4 unit building you live in.</p>
+    </ReviewOnly>
+  </section>
+
+  <section aria-labelledby="tax">
+    <h2 id="tax">The South Carolina tax advantage</h2>
+    <p>
+      South Carolina taxes the home you live in at a lower rate than a rental. When you live in one unit of a small building,
+      that lower rate can apply to your part of it, which changes the math in your favor. Ask me to run it on a real building.
+    </p>
+    <ReviewOnly>
+      <p>
+        Your primary residence is assessed at 4% of its value and a rental at 6%. On a duplex you live in, the 4% rate may
+        apply to your unit if you apply with the county. Not legal or tax advice – confirm with your attorney or CPA.
+      </p>
+    </ReviewOnly>
+  </section>
+
+  <section aria-labelledby="where">
+    <h2 id="where">Which part of town</h2>
+    <p>
+      Duplexes trade often in some parts of Charleston and almost never in others. The area pages show where small buildings
+      actually sell, what they go for, and what each bedroom count rents for.
+    </p>
+    {pageLinks.areas.live && <p><a href={pageLinks.areas.href}>Compare the Charleston areas</a></p>}
+  </section>
+
+  <ReviewOnly kind="need">[NEED from Paul: 2–3 testimonials from first-time buyers or a house-hack client story.]</ReviewOnly>
+
+  <CtaBlock
+    slot="after"
+    heading="Thinking about your first building? Start with a text."
+    line="You don't need a lender, a budget, or a building picked out yet. Tell me what you're thinking and I'll show you what it buys."
+    withCall
+    where="buying"
+  />
+</PageLayout>

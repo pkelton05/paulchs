@@ -16,6 +16,8 @@ const readJson = async (p, fallback) => {
     return fallback;
   }
 };
+const omit = (obj, keys) => Object.fromEntries(Object.entries(obj).filter(([k]) => !keys.includes(k)));
+const IDENTITY_KEYS = ["name", "slug", "area_slug", "mls_area", "mls_subdivisions", "mls_also", "county", "city", "tier", "paul_closings"];
 const write = (p, obj) => writeFile(new URL(p, root), JSON.stringify(obj, null, 2) + "\n");
 
 // ---------- Areas ----------
@@ -119,15 +121,19 @@ const CITY_BY_AREA = {
   71: "Hanahan",
 };
 
+// Shape written by scripts/compute-neighborhoods.mjs.
 const emptyNeighborhoodNumbers = () => ({
   page_type: null,
-  sfr: { median_price: null, p25: null, p75: null, sales_24mo: null, median_dom: null, change_1yr_pct: null },
-  mf: { median_price: null, p25: null, p75: null, price_per_door: null, sales_24mo: null, median_dom: null },
-  rents: { "1br": null, "2br": null, "3br": null, "4br_plus": null, source_by_bed: {}, lease_sample: null },
+  page_type_basis: null,
+  res: { median_price: null, p25: null, p75: null, window_months: null, n: 0, sales_24mo: null, sales_12mo: null, prior_year_sales: null, median_dom: null, change_1yr_pct: null },
+  mf: { median_price: null, p25: null, p75: null, price_per_door: null, median_dom: null, window_months: 24, n: 0, sales_24mo: null, unit_range: "2–4 units", excluded: null },
+  rents: { "1br": null, "2br": null, "3br": null, "4br_plus": null },
   property_mix: null,
   typical_year_built: null,
+  hoa_share_pct: null,
   zips: [],
   as_of: null,
+  window: null,
   sources: [],
 });
 
@@ -140,9 +146,8 @@ async function main() {
   const prevAreaBySlug = new Map((prevAreas.areas || []).map((a) => [a.slug, a]));
   const areasOut = areas.map((a) => {
     const prev = prevAreaBySlug.get(a.slug) || {};
-    const numbers = emptyAreaNumbers();
-    for (const k of Object.keys(numbers)) if (k in prev) numbers[k] = prev[k];
-    return { ...a, ...numbers };
+    // Keep everything the data pull wrote (numbers, samples, sources); refresh identity fields from the doc.
+    return { ...a, ...emptyAreaNumbers(), ...omit(prev, Object.keys(a)) };
   });
   await write("data/areas.json", {
     _comment:
@@ -159,8 +164,19 @@ async function main() {
     return m ? m.into : sub;
   };
 
+  // Cross-area merges: one community split by an MLS area line becomes one page in
+  // the `into` area; the other area's (mls_area, subdivision) pairs go in mls_also.
+  const crossArea = (aliases.cross_area_merges || []).filter((m) => m.status === "approved");
+  const crossFor = (mls, sub) => crossArea.find((m) => m.into.mls_area !== mls && m.from.some((f) => f.mls_area === mls && f.subdivision === sub));
+
   const groups = new Map();
   for (const row of seed) {
+    const cross = crossFor(row.mls_area, row.subdivision);
+    const also = cross ? { mls_area: row.mls_area, subdivision: row.subdivision } : null;
+    if (cross) {
+      row.mls_area = cross.into.mls_area;
+      row.subdivision = cross.into.name;
+    }
     const area = byMls.get(row.mls_area);
     if (!area) {
       console.warn(`Skipping row outside the tri-county area list: ${row.mls_area} / ${row.subdivision}`);
@@ -176,8 +192,10 @@ async function main() {
       types: {},
       first_close: row.first_close,
       last_close: row.last_close,
+      mls_also: [],
     };
-    g.mls_subdivisions.push(row.subdivision);
+    if (also) g.mls_also.push(also);
+    else g.mls_subdivisions.push(row.subdivision);
     g.closed += Number(row.closed_listings);
     for (const [t, n] of Object.entries(parseTypes(row.property_types))) g.types[t] = (g.types[t] || 0) + n;
     if (row.first_close < g.first_close) g.first_close = row.first_close;
@@ -197,14 +215,14 @@ async function main() {
       if (seen.has(key)) throw new Error(`Duplicate neighborhood slug in area: ${key}`);
       seen.add(key);
       const prev = prevHoodByKey.get(key) || {};
-      const numbers = emptyNeighborhoodNumbers();
-      for (const k of Object.keys(numbers)) if (k in prev) numbers[k] = prev[k];
+      const numbers = { ...emptyNeighborhoodNumbers(), ...omit(prev, IDENTITY_KEYS) };
       return {
         name: g.name,
         slug,
         area_slug: g.area.slug,
         mls_area: g.area.mls_area,
         mls_subdivisions: g.mls_subdivisions,
+        ...(g.mls_also.length ? { mls_also: g.mls_also } : {}),
         county: g.area.county,
         city: prev.city ?? CITY_BY_AREA[g.area.area_number] ?? null,
         tier: g.area.tier,

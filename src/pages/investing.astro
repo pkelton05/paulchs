@@ -1,0 +1,74 @@
+---
+// SITE-CONTENT.md §4. Engagement plan: podcast episodes, story cards, and the
+// analyzer button join this page as they exist.
+import PageLayout from "../layouts/PageLayout.astro";
+import CtaBlock from "../components/CtaBlock.astro";
+import ReviewOnly from "../components/ReviewOnly.astro";
+import { site, reviewMode } from "../lib/site";
+import { footerQuestions, live, pageLinks } from "../lib/nav";
+
+const doors = site.stats.stat_doors.value;
+const questions = live(footerQuestions);
+---
+
+<PageLayout
+  title="Charleston Small Multifamily and Rental Property | Paul Kelton"
+  description={`Duplexes, fourplexes, and buildings up to 49 units in Charleston, SC. Underwritten with real operating numbers from ${doors} managed doors.`}
+  h1="Numbers that survive the first year."
+  lead="Most deals look good on the listing. The question is what they look like after a full year of insurance renewals, turnovers, and a roof that's older than the disclosure said. I underwrite every building using what similar Charleston buildings actually cost to run, because my management company runs them."
+>
+  <section aria-labelledby="buy">
+    <h2 id="buy">What I help investors buy</h2>
+    <ul class="points">
+      <li><strong>Duplexes, triplexes, and fourplexes.</strong> The easiest way in, and you can finance them with residential loans.</li>
+      <li><strong>Buildings with 5 to 49 units.</strong> Small commercial loans, real cap rates, and far less competition from big funds.</li>
+      <li><strong>Single-family and townhome rentals</strong> in the parts of Charleston where small multifamily is scarce.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="underwrite">
+    <h2 id="underwrite">How I underwrite a building</h2>
+    <ul class="points">
+      {/* Paul to confirm this is his stance (TODO.md) – review builds only until then. */}
+      {reviewMode && (
+        <li class="review"><strong>Rents:</strong> what the unit rents for today after a light refresh, not what the current tenant pays. <span class="verify">VERIFY</span></li>
+      )}
+      <li>
+        <strong>Expenses:</strong> insurance, property tax at the rate a rental actually pays, management, maintenance, and money
+        set aside for big repairs. I base them on real buildings, not a rule of thumb.
+      </li>
+      <li><strong>The building:</strong> roof, HVAC, water heaters, wiring, and whether each unit has its own meters.</li>
+      <li><strong>The exit:</strong> who buys this building from you in five years, and what they'll pay.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="where">
+    <h2 id="where">Where in Charleston</h2>
+    <p>
+      Every part of the tri-county works differently. A duplex on the peninsula, a fourplex in North Charleston, and a
+      townhome in Summerville are three different businesses. I keep a page for each MLS area with prices, rents, and price
+      per door, so you can compare them side by side.
+    </p>
+    {pageLinks.areas.live && <p><a href={pageLinks.areas.href}>See the Charleston areas</a></p>}
+  </section>
+
+  {
+    questions.length > 0 && (
+      <section aria-labelledby="questions">
+        <h2 id="questions">Questions I get a lot</h2>
+        <ul class="points">
+          {questions.map((q) => (
+            <li><a href={q.href}>{q.label}</a></li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  <ReviewOnly kind="need">
+    [NEED from Paul: three GRID podcast episodes with one-line descriptions for a "Listen" section, and 2–3 investor
+    testimonials or story cards (engagement plan #3 and #4).]
+  </ReviewOnly>
+
+  <CtaBlock slot="after" heading="Have a building in mind? Send me the deal." withCall where="investing" />
+</PageLayout>

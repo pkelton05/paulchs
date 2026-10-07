@@ -1,33 +1,128 @@
 ---
+import Wordmark from "./Wordmark.astro";
 import { site, telHref, smsHref } from "../lib/site";
 import { mainNav, sendTheDeal, live } from "../lib/nav";
 
 const nav = live(mainNav);
+const current = Astro.url.pathname.replace(/\.html$/, "");
 ---
 
-<header>
-  <a href="/" aria-label={`${site.name}, Charleston – home`}>
-    <strong>{site.handle}</strong>
-    <span>{site.name} · Charleston</span>
-  </a>
+<header class="site-header">
+  <div class="wrap bar">
+    <Wordmark />
 
-  {
-    nav.length > 0 && (
-      <nav aria-label="Main">
-        <ul>
-          {nav.map((item) => (
-            <li>
-              <a href={item.href}>{item.label}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    )
+    {
+      nav.length > 0 && (
+        <nav aria-label="Main" class="nav-desktop">
+          <ul role="list">
+            {nav.map((item) => (
+              <li>
+                <a href={item.href} aria-current={current === item.href ? "page" : undefined}>
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )
+    }
+
+    <ul role="list" class="actions" aria-label="Contact Paul">
+      <li><a href={telHref} data-event="call_tap" data-where="header">Call</a></li>
+      <li><a href={smsHref} data-event="text_tap" data-where="header">Text</a></li>
+      {sendTheDeal.live && current !== sendTheDeal.href && (
+        <li><a class="btn" href={sendTheDeal.href}>{sendTheDeal.label}</a></li>
+      )}
+    </ul>
+
+    {
+      nav.length > 0 && (
+        <details class="nav-mobile">
+          <summary>Menu</summary>
+          <nav aria-label="Main">
+            <ul role="list">
+              {nav.map((item) => (
+                <li><a href={item.href}>{item.label}</a></li>
+              ))}
+              <li><a href={`mailto:${site.email}`}>Email Paul</a></li>
+            </ul>
+          </nav>
+        </details>
+      )
+    }
+  </div>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--rule);
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    padding-block: var(--space-2);
+  }
+  .nav-desktop,
+  .actions {
+    display: none;
+  }
+  .nav-desktop ul,
+  .actions {
+    align-items: center;
+    gap: var(--space-3);
+  }
+  .nav-desktop ul {
+    display: flex;
+  }
+  .nav-desktop a,
+  .actions a:not(.btn) {
+    color: var(--pluff);
+    text-decoration: none;
+    font-size: 1.0625rem;
+  }
+  .nav-desktop a:hover,
+  .actions a:not(.btn):hover,
+  .nav-desktop a[aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-color: var(--spartina);
+    text-decoration-thickness: 3px;
   }
 
-  <ul aria-label="Contact Paul">
-    <li><a href={telHref} data-event="call_tap">Call</a></li>
-    <li><a href={smsHref} data-event="text_tap">Text</a></li>
-    {sendTheDeal.live && <li><a href={sendTheDeal.href}>{sendTheDeal.label}</a></li>}
-  </ul>
-</header>
+  .nav-mobile summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--pluff);
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  .nav-mobile summary::-webkit-details-marker { display: none; }
+  .nav-mobile[open] nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: var(--oyster);
+    border-bottom: 1px solid var(--rule);
+    padding: var(--space-2) var(--gutter) var(--space-3);
+    z-index: 20;
+  }
+  .nav-mobile li a {
+    display: block;
+    padding: 0.6rem 0;
+    font-size: 1.25rem;
+    color: var(--pluff);
+  }
+
+  .nav-desktop a,
+  .actions a {
+    white-space: nowrap;
+  }
+  /* Five nav items plus Call / Text / the button need about 1100px. */
+  @media (min-width: 69rem) {
+    .nav-desktop,
+    .actions { display: flex; }
+    .nav-mobile { display: none; }
+  }
+</style>

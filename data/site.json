@@ -24,21 +24,23 @@
   "stats": {
     "stat_deals": { "value": "200+", "label": "investor deals" },
     "stat_doors": { "value": "300+", "label": "doors managed through Tide" },
-    "stat_rank": { "value": null, "label": "Top 5 multifamily agent in Charleston" }
+    "stat_rank": { "value": "#1", "label": "in 2–4 unit sales among individual Charleston agents, each of the last 3 years" }
   },
 
   "next_event": null,
   "response_time": "one business day",
 
-  "mls_attribution": "[PLACEHOLDER – exact attribution line required by CTAR / Charleston Trident MLS]",
+  "mls_attribution": "Source: Charleston Trident MLS. Information deemed reliable but not guaranteed.",
   "mls_display": {
-    "aggregates_approved": false,
+    "aggregates_approved": true,
     "individual_listings_approved": false,
     "paul_closing_counts_approved": true,
-    "paul_closing_counts_scope": "counts only – never addresses or prices of Paul's sales"
+    "paul_closing_counts_scope": "counts only – never addresses or prices of Paul's sales",
+    "neighborhood_pages_approved": false
   },
 
-  "tide_disclosure": "[PLACEHOLDER – affiliated business disclosure: Paul Kelton has an ownership interest in Tide Property Management. Exact wording to be confirmed.]",
+  "agency_disclosure": null,
+  "tide_disclosure": "Affiliated business disclosure: Paul Kelton has an ownership interest in Tide Property Management.",
 
   "social": {
     "instagram": "https://www.instagram.com/paul_charleston",
@@ -59,13 +61,13 @@
     "brokerage_line": "VERIFY exact wording and format with broker-in-charge",
     "brokerage_phone": "CONFIRMED by Paul 2026-10-06 (same as Paul's number); VERIFY with broker-in-charge that this satisfies the brokerage phone requirement",
     "license_line": "VERIFY with broker-in-charge",
-    "stats.stat_deals": "VERIFY wording before launch",
-    "stats.stat_doors": "VERIFY current door count",
-    "stats.stat_rank": "VERIFY source and basis to cite",
+    "stats.stat_deals": "CONFIRMED by Paul 2026-10-06",
+    "stats.stat_doors": "CONFIRMED by Paul 2026-10-06",
+    "stats.stat_rank": "CONFIRMED by Paul 2026-10-06: sells more 2–4 unit properties than any other single agent in Charleston every year for the last 3 years. Keep the MLS report that backs it on file.",
     "response_time": "VERIFY the response time Paul wants to promise",
-    "mls_attribution": "VERIFY with CTAR / Charleston Trident MLS",
-    "mls_display.aggregates_approved": "VERIFY with CTAR before any MLS number is published",
-    "tide_disclosure": "VERIFY wording",
+    "mls_attribution": "VERIFY exact wording with CTAR (standard line used until confirmed)",
+    "mls_display.aggregates_approved": "CONFIRMED by Paul 2026-10-06: aggregated MLS statistics may be published. Individual sold/leased listings still not approved.",
+    "tide_disclosure": "VERIFY wording – interim text states only the ownership interest (CLAUDE.md §9); replace with broker-approved wording",
     "social": "NEED LinkedIn, YouTube, BiggerPockets, GRID podcast links; VERIFY Instagram and Threads URLs",
     "analytics.provider": "NEED – Plausible or GA4"
   }

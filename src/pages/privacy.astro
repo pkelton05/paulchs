@@ -1,0 +1,98 @@
+---
+// [VERIFY] Draft for legal review before launch. Describes the site exactly as
+// built: a contact form forwarded through Zapier, Vercel hosting, no analytics
+// yet. Update the analytics section the day a provider is added.
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site, officeAddressLine, reviewMode } from "../lib/site";
+
+const updated = "October 6, 2026";
+---
+
+<BaseLayout
+  title="Privacy Policy | Paul Kelton, Charleston"
+  description="How paulchs.com handles what you send through the contact form, and what the site does and doesn't track."
+>
+  <section class="section">
+    <div class="wrap prose">
+      {reviewMode && <p class="placeholder">[VERIFY – draft privacy policy. Needs review by an attorney or the broker-in-charge before launch.]</p>}
+
+      <h1>Privacy policy</h1>
+      <p class="small">Last updated {updated}</p>
+
+      <p>
+        This is the website of {site.name}, a real estate agent in Charleston, SC ({site.brokerage_line}). This page explains
+        what happens to the information you share here. The short version: I use it to get back to you, and I don't sell it.
+      </p>
+
+      <h2>What you send me</h2>
+      <p>
+        When you use the "Send me the deal" form, you can give me your name, a phone number or email, a property address or
+        area, a unit count, a note, and up to three photos. I only ask for what I need to reply to you about a property.
+      </p>
+
+      <h2>How I use it</h2>
+      <p>
+        I use it to contact you about the property or question you sent, and to keep a record of our conversation. I don't
+        sell it, rent it, or share it with anyone for their own marketing.
+      </p>
+
+      <h2>Where it goes</h2>
+      <p>
+        The form sends your information through Zapier, a service that passes it to the tools I use to manage client
+        conversations and to notify me by text or email. Those services store it on my behalf.
+      </p>
+      <p>
+        If you ask me to, I may share details with people working on your deal, like a lender, inspector, closing attorney,
+        or my brokerage. I'll tell you before I do.
+      </p>
+
+      <h2>How long I keep it</h2>
+      <p>
+        I keep it as long as we're working together and for as long as real estate record-keeping rules require after that.
+        {reviewMode && "[VERIFY retention period with broker-in-charge]"}
+      </p>
+
+      <h2>Analytics and cookies</h2>
+      <p>
+        Right now this site doesn't use analytics, advertising trackers, or cookies. If I add a tool to count visits or see
+        which buttons get used, I'll name it here first and say what it collects.
+      </p>
+
+      <h2>Hosting</h2>
+      <p>
+        The site is hosted by Vercel. Like any web host, Vercel's servers briefly log technical details such as IP addresses
+        to keep the site running and secure.
+      </p>
+
+      <h2>Your choices</h2>
+      <p>
+        You can ask me what I have from you, ask me to correct it, or ask me to delete it. Email
+        {site.email ? <a href={`mailto:${site.email}`}>{site.email}</a> : "[NEED: email]"} or call {site.phone}. I may need to
+        keep some records where the law or my brokerage requires it.
+      </p>
+
+      <h2>Children</h2>
+      <p>This site is for adults. I don't knowingly collect information from anyone under 18.</p>
+
+      <h2>Changes</h2>
+      <p>If this policy changes, I'll update this page and the date at the top.</p>
+
+      <h2>Contact</h2>
+      <p>
+        {site.name}<br />
+        {officeAddressLine}<br />
+        {site.phone}{site.email && <><br />{site.email}</>}
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose h2 {
+    margin-top: var(--space-4);
+    font-size: 1.5rem;
+  }
+  .prose .placeholder {
+    margin-bottom: var(--space-3);
+  }
+</style>

@@ -3,7 +3,10 @@
   "merges": [
     {
       "mls_area": "12 - West of the Ashley Outside I-526",
-      "from": ["Asheford Place at Canterbury Place", "Asheford Place at Canterbury Woods"],
+      "from": [
+        "Asheford Place at Canterbury Place",
+        "Asheford Place at Canterbury Woods"
+      ],
       "into": "Asheford Place",
       "status": "approved",
       "decided": "2026-10-06",
@@ -11,7 +14,10 @@
     },
     {
       "mls_area": "61 - N. Chas/Summerville/Ladson-Dor",
-      "from": ["Appian Landing", "Appian Landing III"],
+      "from": [
+        "Appian Landing",
+        "Appian Landing III"
+      ],
       "into": "Appian Landing",
       "status": "approved",
       "decided": "2026-10-06",
@@ -19,20 +25,36 @@
     },
     {
       "mls_area": "51 - Peninsula Charleston Inside of Crosstown",
-      "from": ["Cannonborough", "Cannonborough-Elliotborough"],
+      "from": [
+        "Cannonborough",
+        "Cannonborough-Elliotborough"
+      ],
       "into": "Cannonborough-Elliotborough",
       "status": "approved",
       "decided": "2026-10-06",
       "note": "Paul chose Cannonborough-Elliotborough as the page name."
     }
   ],
-  "kept_separate": [
+  "kept_separate": [],
+  "cross_area_merges": [
     {
-      "name": "Tanner Plantation",
-      "mls_areas": ["71 - Hanahan", "72 - G.Cr/M. Cor. Hwy 52-Oakley-Cooper River"],
+      "into": {
+        "mls_area": "71 - Hanahan",
+        "name": "Tanner Plantation"
+      },
+      "from": [
+        {
+          "mls_area": "71 - Hanahan",
+          "subdivision": "Tanner Plantation"
+        },
+        {
+          "mls_area": "72 - G.Cr/M. Cor. Hwy 52-Oakley-Cooper River",
+          "subdivision": "Tanner Plantation"
+        }
+      ],
       "status": "approved",
       "decided": "2026-10-06",
-      "note": "Two pages for now. Revisit if it turns out to be one community split by an MLS area line."
+      "note": "One community split by the MLS area line (Area 72 sales show City Hanahan, ZIP 29410). One page under Hanahan (Paul, 2026-10-06)."
     }
   ]
 }

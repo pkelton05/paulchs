@@ -3,11 +3,13 @@
 What Claude Code needs from Paul, grouped by who resolves it. Updated at the end of every session.
 **VERIFY** = Paul (or the person named) confirms before publishing. **NEED** = Paul supplies it.
 
-Last updated: 2026-10-06 (Session 1)
+Last updated: 2026-10-07 (Session 5 – engagement plan, Priority 0 started)
 
 ---
 
 ## Hosting status (Vercel)
+
+- `npm audit` reports 3 high-severity advisories inside `@astrojs/vercel` (via `@vercel/routing-utils`), used at build time only. Recheck when a new adapter release is out; don't `audit fix --force`.
 
 - Project `paulchs` on team `paul-chs`, linked to `pkelton05/paulchs`. Every push to `main` deploys to production. Other branches get preview links.
 - **paulchs.com** – live. DNS is on Vercel nameservers. `www.paulchs.com` 301s to `paulchs.com`.
@@ -16,6 +18,31 @@ Last updated: 2026-10-06 (Session 1)
 - [x] Vercel team upgraded to Pro (2026-10-06).
 - [x] Vercel token pasted in chat deleted (2026-10-06). The Vercel connector is used instead.
 - [ ] Later, no rush: set the GitHub repo's default branch to `main` (GitHub → Settings → General → Default branch). Vercel already deploys from `main` regardless.
+
+## Engagement plan (Paul, 2026-10-07) – `docs/ENGAGEMENT-PLAN.md`
+
+Working through it in its build order. Priority 0 so far:
+- [x] P0 #1 VERIFY tags no longer render on the production site. Review mode (`src/lib/site.ts → reviewMode`) keeps them on local and Vercel preview builds so Paul still sees what needs checking; production builds (`VERCEL_ENV=production`) drop them. The flags stay in source.
+- [x] P0 #2 Placeholders hidden in production: hero photo slot (hero goes full width), origin-story note, the testimonials section, privacy-policy review notes. `npm run check:launch` (now part of `npm run verify`) builds in production mode and fails if any VERIFY tag or bracketed placeholder would render.
+- [x] P0 #3 Tide disclosure now in the shared footer on every page. Interim text states only the ownership interest ("Affiliated business disclosure: Paul Kelton has an ownership interest in Tide Property Management.") – [VERIFY: replace with broker-approved wording in `data/site.json → tide_disclosure`].
+- [ ] P0 #4 Source line under the #1 claim – NEED from Paul: data source, years, and how "individual agent" is defined.
+- [ ] P0 #5 Brokerage phone – broker-in-charge to confirm.
+- [ ] P0 #6 End-to-end form test – needs `ZAPIER_WEBHOOK_URL` set in Vercel first.
+- [ ] P0 #7 SMS consent on the form – NEED: confirm Paul texts leads back, and the consent wording his texting provider requires for A2P 10DLC.
+
+Week 1 build (2026-10-07):
+- [x] Nav now reads Investing · Buying · Selling · Charleston areas · GRID, with Call / Text / Send me the deal. About is in the footer. Header switches to the menu button below about 1100px (the sticky Call / Text / Send bar stays up to that width).
+- [x] New pages from SITE-CONTENT drafts: `/investing`, `/buying`, `/selling`, `/about`, `/grid`. Homepage "How I help" cards and the GRID section now link to them. `/first-building` 301s to `/buying` (vercel.json); CLAUDE.md and SITE-CONTENT updated to `/buying`.
+- [x] Unconfirmed facts and [NEED] notes sit in `<ReviewOnly>` blocks: visible on preview builds, left out of production. On these pages: rent underwriting stance (investing), FHA 3.5% / conventional 5% minimums and the 4% vs. 6% detail (buying), BiggerPockets Elite Agent (about).
+- [x] Default share image `public/og/default.png` (type only: wordmark, headline, 200+ deals, 300+ doors) on every page. Source in `scripts/og-default.html`. Replace with a version using Paul's photo when it exists.
+- [ ] Social links: NEED Paul's LinkedIn and YouTube URLs (and BiggerPockets, GRID podcast) – set them in `data/site.json → social` and they appear in the footer and about-page schema automatically. Instagram/Threads URLs are still guessed from the handle.
+- [ ] `/selling` must not launch without the broker-approved agency disclosure (CLAUDE.md §6) – set `data/site.json → agency_disclosure`.
+- [ ] `/about` needs Paul's story and photo; `/grid` needs the next event, RSVP link, podcast feed, and episodes.
+
+Decisions for Paul (plan vs. CLAUDE.md):
+- [ ] Deal analyzer gating: the plan says gate the full breakdown behind email; CLAUDE.md §7 says "No email gate." Which wins?
+- [x] Nav: went with the plan – the page is `/buying`; `/first-building` redirects.
+- [ ] Analyzer defaults: the plan wants Tide-informed expense ranges by area – NEED the numbers from Paul (CLAUDE.md §7 [VERIFY]).
 
 ## Open VERIFY items
 
@@ -28,18 +55,16 @@ Last updated: 2026-10-06 (Session 1)
 - [ ] Affiliated business disclosure wording for Tide (Paul has an ownership interest). Placeholder in `data/site.json → tide_disclosure`.
 
 ### CTAR / Charleston Trident MLS
-- [ ] **Blocking for area and neighborhood pages:** may aggregated statistics (medians, counts, ranges) from closed sales and leases be published on an agent website? Until yes, `data/site.json → mls_display.aggregates_approved` stays `false`, and any page showing MLS numbers is kept out of the sitemap.
-- [ ] Exact required attribution line (placeholder in `data/site.json → mls_attribution`).
+- [x] Aggregated MLS statistics (medians, counts, ranges) may be published – confirmed by Paul 2026-10-06. `mls_display.aggregates_approved` is now `true`.
+- [ ] Exact required attribution line. Using the standard "Source: Charleston Trident MLS. Information deemed reliable but not guaranteed." until CTAR gives other wording.
 - [ ] Rules for showing individual sold or leased listings (default: never shown).
 - [ ] Any disclaimer or refresh-frequency requirements.
 
 ### Paul
-- [ ] "200+ investor deals" – wording (CLAUDE.md §2).
-- [ ] "300+ doors" under management at Tide – current count.
-- [ ] "Top five for multifamily sales in Charleston" – source/basis to cite. `stats.stat_rank.value` is null until then.
+- [x] "200+ investor deals" and "300+ doors" confirmed by Paul 2026-10-06.
+- [ ] #1 in 2–4 unit sales among individual Charleston agents, each of the last 3 years (confirmed by Paul 2026-10-06). Keep the MLS report behind it on file; consider naming the years (e.g. 2023–2025) so the claim doesn't go stale, and confirm with broker-in-charge that the wording meets SC advertising rules.
 - [ ] BiggerPockets Elite Agent – current status.
 - [ ] Response time to promise on the form ("one business day" for now).
-- [ ] "I've closed N listings here" wording on neighborhood pages (NEIGHBORHOODS.md §6).
 - [ ] Underwriting stance: rent at today's market after a light refresh, not current tenant rent (SITE-CONTENT §4).
 - [ ] Deal analyzer default expenses from aggregated Tide data (Phase 2).
 - [ ] Recommended 2–4 unit groupings on `/which-charleston-area-should-i-buy-in` (Phase 2).
@@ -68,6 +93,7 @@ Last updated: 2026-10-06 (Session 1)
 - [ ] Area 72 tier: its AREAS.md entry says Tier B, but the build-priority list puts it in Tier C. `data/areas.json` uses B.
 
 ### Attorney or CPA (all question-page facts are VERIFY by default – CLAUDE.md §5)
+- [ ] `/privacy` draft (Session 2): form data, Zapier routing, Vercel hosting logs, no analytics yet, deletion requests, record retention period. Needs legal review before launch. Update the analytics section the day a provider is added.
 - [ ] SC 4% vs. 6% assessment ratios, legal residence definition, school operating millage exemption, how it applies to an owner-occupied 2–4 unit building, how and when to apply (Charleston, Dorchester, Berkeley assessors).
 - [ ] Worked property tax example checked against a current Charleston County bill.
 - [ ] Millage source per tax district (deal analyzer).
@@ -80,6 +106,22 @@ Last updated: 2026-10-06 (Session 1)
 - [ ] How lenders treat a dependency / carriage house unit (Phase 2).
 
 ### Area and neighborhood watch-outs (check per page as each is built)
+- [ ] **Tier A batch (11 pages, drafted 2026-10-06)** – every watch-out on each page is tagged VERIFY. Highlights to check:
+  - Downtown (51): City of Charleston STR rules on the peninsula; BAR review; flood zones on the low edges; insurance on older frame buildings. Card claims: employers (hospitals, medical university, College of Charleston, hotels, King and Meeting Street offices).
+  - West Ashley inside 526 (11): flood zones near Church Creek and the Ashley; older sewer laterals; HOA rules; city vs. county.
+  - West Ashley outside 526 (12): HOA rental caps and minimum lease terms; Church Creek basin flooding; city vs. county.
+  - James Island (21): Town of James Island / City of Charleston / county split; flood zones near the marsh; STR rules by jurisdiction.
+  - Johns Island (23): road projects; flood zones; well and septic; HOA leasing rules; City of Charleston vs. county.
+  - Mount Pleasant south (42): Town rules on new multifamily and adding units; Town STR rules; flood zones near Shem Creek and the harbor; HOA rules. Card claim: Wando terminal nearby.
+  - North Charleston outside 526 (32): HOA rental caps; city vs. county; flood zones near creeks; rental registration.
+  - North Charleston, Dorchester County (61): Dorchester County millage and rental assessment; HOA leasing rules; North Charleston / Summerville / county jurisdiction.
+  - Summerville (62): Town zoning for adding units; Sawmill Branch flood zones; HOA rules; addresses with a Summerville mailing address outside town limits.
+  - Hanahan (71): HOA leasing limits; flood zones near the Goose Creek reservoir; Berkeley County millage and city limits.
+  - Goose Creek / Moncks Corner (73): HOA leasing rules; Goose Creek / Moncks Corner / county jurisdiction; Berkeley County millage. Card claim: Moncks Corner "county seat and nearby industrial sites".
+- [ ] Six Tier A areas had fewer than 5 small multifamily sales in 12 months (12, 23, 32, 42, 71, 73). Their pages say small multifamily rarely trades there and lead with single-family prices and rents. AREAS.md's "Paul's angle" for Area 73 (duplexes are most of the stock) and Area 71 (some duplexes) is not supported by MLS sales – Paul to confirm the pages' framing.
+- [ ] Data to eyeball before publishing: Downtown single-family median up about 30% in a year (234 sales; likely mix of high-end sales); Downtown 3BR and 4BR+ and Mount Pleasant south 4BR+ rent medians are high (probably include furnished or by-the-room leases).
+- [ ] **Upper Peninsula (Area 52) page:** rent drivers (downtown jobs, the hospitals and medical university on the lower peninsula, I-26 and Morrison Drive to North Charleston employers); watch-outs: flood exposure near the marsh and tidal creeks, City of Charleston STR rules, zoning for adding a unit and whether BAR applies, insurance on older frame buildings.
+- [ ] **North Charleston inside I-526 (Area 31) page:** rent drivers (port terminals, Boeing, old Navy Base redevelopment, I-26); watch-outs: North Charleston rental registration or inspection rules, flood zones near the Ashley River and Filbin Creek, City of North Charleston vs. unincorporated county parcels, older-building systems.
 - [ ] Every "Watch-outs" line in AREAS.md is VERIFY: STR rules by jurisdiction (City of Charleston, Mount Pleasant, Folly Beach, Isle of Palms, James Island, county), Board of Architectural Review, flood zones, HOA leasing restrictions, rental registration in North Charleston, zoning for added units, well/septic, resort rental program terms, county millage.
 - [ ] Mount Pleasant "slowed new multifamily approvals" claim (SITE-CONTENT §12.6).
 - [ ] Any employer or growth statistic on `/is-charleston-a-good-place-to-buy-rental-property`.
@@ -88,19 +130,31 @@ Last updated: 2026-10-06 (Session 1)
 
 ## Open NEED items from Paul
 
-- [ ] Analytics choice: Plausible or GA4 (later – Session 2 builds the call, text, and form events so either can be plugged in).
-- [ ] Later: Zapier (or other) webhook for the contact form – set as `ZAPIER_WEBHOOK_URL` in the host's environment variables, never in the repo (Session 2).
+- [ ] Later: analytics choice, Plausible (simpler, no cookies, about $9/month – recommended) or GA4 (free, uses cookies). Events are already tagged; set `data/site.json → analytics.provider` and update `/privacy`.
+- [ ] Later: Zapier webhook for the contact form. In Zapier, create a Zap with "Webhooks by Zapier → Catch Hook", copy the URL, and add it in Vercel → Project → Settings → Environment Variables as `ZAPIER_WEBHOOK_URL` (Production). Then redeploy. Fields sent: name, contact, contact_type, address_or_area, units, notes, source, submitted_at, photo_1..3. [VERIFY that photos arrive as files in Zapier on the first real test]
 - [ ] Social links: LinkedIn, YouTube, BiggerPockets profile, GRID podcast.
 - [ ] Next GRID event details (`data/site.json → next_event`) and event sign-up platform.
-- [ ] Photos: headshot, Paul on a property, any GRID podcast clip.
+- [ ] Photos: headshot, Paul on a property, any GRID podcast still (homepage hero placeholder is waiting for one).
 - [ ] Origin story for the homepage and `/about` (how you started, first deal, building Tide, starting GRID, why investors).
 - [ ] 6–10 client testimonials with permission, tagged by type (investor buyer, first building, seller, out-of-state).
 - [ ] 3–6 recent deals to feature (area, unit count, what happened – no client names without permission).
-- [ ] RentCast API key: needed for Session 3. In this cloud setup, add it as an environment secret (`RENTCAST_API_KEY`), not a committed file.
+- [ ] Later (Paul chose to wait): RentCast API key. Until then, rents come from MLS lease comps only; bedroom counts with fewer than 3 leases show "not enough data". In this cloud setup, add it as an environment secret (`RENTCAST_API_KEY`), not a committed file.
 - [ ] Optional: export of buyer-side closings to `data/raw/buyer-side-closed.csv` to add more neighborhoods (NEIGHBORHOODS.md §3).
 - [ ] Optional: notes on neighborhoods you know well in `data/paul-notes.json` (see README).
 
 ---
+
+## Done in Session 2 (2026-10-06) – design, homepage, send the deal
+
+- Design system approved and built: "haint blue means a number". Tokens in `src/styles/tokens.css` (Oyster, Pluff mud, Haint blue, Marsh, Piling, Spartina). Atkinson Hyperlegible Next + Mono, self-hosted, 3 files, about 35 KB.
+- Shared components: header (desktop nav + no-JS mobile menu), footer (compliance, Piling), sticky mobile bar (Call / Text / Send me the deal), event strip (hidden while `next_event` is null), number block + proof strip, testimonial, CTA block, breadcrumb (with BreadcrumbList schema), analytics hook.
+- Homepage from SITE-CONTENT §3 with visible placeholders for photo, origin story, testimonials, and the ranking stat. Proof stats show a VERIFY marker until confirmed.
+- `/send-the-deal`: 5 fields + up to 3 photos, honeypot, server-side validation (`src/lib/lead.ts`), serverless endpoint `/api/send-the-deal` forwarding multipart to `ZAPIER_WEBHOOK_URL`. With no webhook set, visitors are told to call or text instead of losing their message. Tested: valid, with photo, honeypot, bad contact, missing name, bad unit count, non-image file, GET, and no-webhook.
+- `/send-the-deal/sent` confirmation (noindex, out of sitemap) fires the `form_submit` event.
+- Call taps, text taps, and form submits are tagged (`data-event`) and ready for Plausible or GA4 – set `data/site.json → analytics.provider`.
+- `/privacy` draft (VERIFY for legal review).
+- Checks: build passes; internal link check passes (54 links); no em dashes in `src/`; axe accessibility scan 0 violations on every page at 390px and 1440px; no horizontal scroll on mobile; Lighthouse mobile 100/100/100/100 on `/`, `/send-the-deal`, `/privacy`.
+- Pushed to the working branch only (Vercel preview). The live site still shows the coming-soon page until Paul says publish.
 
 ## Done this session (Session 1 – 2026-10-06)
 
@@ -120,7 +174,68 @@ Last updated: 2026-10-06 (Session 1)
 - `vercel.json` with 301 redirects: paulkelton.com → homepage, charlestoninvestoragent.com → `/investor-friendly-agent-charleston`.
 - Checks: build passes, internal link check passes, no em dashes in `src/`.
 
-## Next session (Session 2 – design, homepage, send the deal)
+## Session 4 progress (2026-10-06) – neighborhood data
+
+- Step 1 done: whole-MLS data pulled for all 72 neighborhoods (24 months, 2024-10-06 to 2026-10-05), MLS lease comps only (RentCast skipped). Raw files in `data/raw/nbhd-*.json`, numbers and page types computed by `scripts/compute-neighborhoods.mjs` into `data/neighborhoods.json`. 48 full pages, 24 short. Rents under 3 neighborhood leases per bedroom fall back to the MLS area's 12-month rent, labeled area-level.
+- Area data also pulled and computed for the 7 non-Tier-A areas that have neighborhoods (22, 41, 45, 63, 72, 74, 77) so their neighborhoods have an area-level fallback. Those area pages are not built yet.
+- Data checks: 138 random rows looked up in FlexMLS by ListingId (price, close date, subdivision) – all matched; total_entries re-checked on 9 pulls including all ranks-mode medians – all matched.
+- The first pull ran on Haiku and produced invented rows (fake ListingIds), one neighborhood filled with another's sales, and skipped pulls. All Haiku files were discarded and every neighborhood re-pulled on Sonnet. `.claude/agents/neighborhood-indexer.md` now defaults to Sonnet. [Paul: CLAUDE.md §12 still says Haiku for this agent – OK to update it?]
+- Compute rules added: lease rows under $500 dropped as errors; a building listed as both residential and multifamily (same price and close date) counted once, as multifamily; sale medians use the last 12 months when there are 10+ sales, otherwise 24 months (labeled).
+- Paul decided (2026-10-06): Tanner Plantation is one page under Hanahan (Areas 71 + 72 merged via `cross_area_merges` in `data/neighborhood-aliases.json`; 71 pages now). Neighborhoods with no MLS sales or leases show no numbers, just a "no comps" note (Red Top, Pavilion Watch, Pt Dowling Tract, Rose Hill).
+- Step 2 done: `src/layouts/NeighborhoodLayout.astro`, `src/lib/neighborhoods.ts`, route `/charleston/[area]/[neighborhood]`. All neighborhood pages are noindex and out of the sitemap until `data/site.json → mls_display.neighborhood_pages_approved` is true (Paul to flip after confirming the MLS display rules). Number blocks now shrink big figures to fit instead of wrapping (also fixes the area pages).
+- Step 3: Area 52 drafted (Westside, North Central, Wagener Terrace, Garden Hill – `draft: true`). Facts in the copy checked against the data; copy check, links, build pass. The Upper Peninsula hub now links all four.
+- Area 52 approved by Paul and published (draft: false) 2026-10-06 – still noindex and out of the sitemap until `neighborhood_pages_approved`.
+- Step 4, Area 31 drafted (6 pages, draft: true): Dorchester Terrace, Waylyn, Russelldale, Accabee, Buckfield, Admiral Apartments. Claims checked against the data; copy check passes. Buckfield and Admiral Apartments have no city in the MLS (H1 shows just the name + SC).
+- Area 51 drafted (4 pages, draft: true): Ansonborough, Cannonborough-Elliotborough, Eastside, Wraggborough. Claims checked against the data.
+- The 1-year price change on neighborhood pages now compares detached homes only (same basis as the area pages). Mixing houses and townhomes made Ansonborough read -28% and Dunes West +29%. This changed three figures on the approved Area 52 pages, so their copy was updated: North Central "detached-home prices dipped" (was "barely moved"), Westside "detached-home prices fell" (was "slipped"), Wagener Terrace now compares with both dipping. [Paul: please re-read those three sentences.]
+- Area 11 drafted (5 pages, draft: true): Concord West of The Ashley, Maryville, Orange Grove Estates, Parkwood Estates, West Glow. Claims checked against the data.
+- Area 12 drafted (8 pages, draft: true): Asheford Place, Ashleytowne Village, Carolina Cove, Castlewood, Parsonage Point, Red Top (no comps), Shadowmoss, Springfield. Claims checked against the data.
+- Area 21 drafted (5 pages, draft: true): Crosscreek, Lynwood Villas, Mira Vista, Oakcrest, Regatta On James Island. Claims checked against the data.
+- Area 23 drafted (2 pages, draft: true): Kiawah River, Oakfield. Claims checked against the data.
+- Area 32 drafted (4 pages, draft: true): Brookdale, Buckshire, Fetteressa, Pt Dowling Tract (no comps). Claims checked against the data. [Paul: Buckshire sales show City Summerville, ZIP 29485 – which may be Dorchester County, while the page breadcrumb says Charleston County (from the MLS area). Confirm.]
+- Area 42 drafted (3 pages, draft: true): Belle Hall, Snee Farm, Marsh Grass Condominiums. Claims checked against the data.
+- Area 61 drafted (4 pages, draft: true): Appian Landing, Pepperidge, Stratton Capers, Woodington. Claims checked against the data.
+- Area 62 drafted (3 pages, draft: true): Bridges of Summerville, Millbrook, Shady Oaks. Claims checked against the data.
+- Area 71 drafted (4 pages, draft: true): Belvedere Estates, Bowen, Otranto, Tanner Plantation (Areas 71 + 72 combined). Claims checked against the data.
+- Area 73 drafted (2 pages, draft: true): Persimmon Hill Townhouses, Berkeley Commons Townhomes. Claims checked against the data. All Tier A areas done.
+- Area 41 drafted (4 pages, draft: true): Crown Pointe, Dunes West, Hamlin Plantation, The Meridian. No Area 41 hub page yet (Tier B), so the breadcrumb shows the area name without a link.
+- Area 63 drafted (3 pages, draft: true): Summers Corner, White Gables, Rose Hill (no comps). Typical year built is now left blank for the three ranks-mode neighborhoods (Summers Corner, Dunes West, Daniel Island) – it came from a biased 25-sale sample; Dunes West copy updated.
+- Area 72 drafted (3 pages, draft: true): Carlton Place, Liberty Hall Plantation, Strawberry Station. [Paul: Carlton Place sales show a Hanahan address though it sits in MLS Area 72 – confirm the jurisdiction.]
+- Area 74 drafted (2 pages, draft: true): Briddleford Ridge, College Park (MLS city Ladson for both).
+- Area 77 drafted (2 pages, draft: true): Daniel Island (the MLS subdivision of that name, not the whole island), Center Park.
+- Area 22 drafted (1 page, draft: true): Pavilion Watch (no comps).
+- Area 45 drafted (2 pages, draft: true): Beachwood, Wild Dunes Yacht Harbor (no lease comps anywhere in the area).
+- **All 71 neighborhood pages exist.** Final batch check: build, 1,841 internal links, copy check (84 files: no repeated sentences or 8-word runs, no fair-housing words, no em dashes), no neighborhood URLs in the sitemap.
+- Paul approved all 71 pages 2026-10-06; all are `draft: false`.
+- Next: Paul sets `neighborhood_pages_approved: true` in `data/site.json` once the MLS display rules are confirmed (pages then join the sitemap and drop noindex). Area hub pages for 22, 41, 45, 63, 72, 74, 77 don't exist yet – their neighborhoods show the area name without a link until they do.
+
+### Neighborhood data – for Paul to look at
+- [ ] Wild Dunes area (45) has no MLS lease comps at all, so Beachwood and Wild Dunes Yacht Harbor will show no rents. All 9 Yacht Harbor sales are sub-type "Other" (likely marina condos).
+- [ ] Russelldale is "full" only because of 3 multifamily sales (rule: 3+ multifamily); there are not enough sales for a neighborhood median, so its page will lean on area numbers anyway.
+- [x] CLAUDE.md §12 updated: neighborhood-indexer runs on Sonnet (Paul, 2026-10-06).
+- [ ] Rent oddities from small samples: North Central 2BR ($3,225, n=10) above 3BR ($3,000, n=7); Cannonborough-Elliotborough 4BR+ ($3,900, n=5) below 3BR; Wagener Terrace 4BR+ $6,500 (n=7); Dunes West 4BR+ $5,500 (n=13). Folly Beach area 3BR ($5,300) rests on 4 leases incl. $7,500 and $9,000; Daniel Island area 4BR+ $6,975.
+- [x] Area 52 approved by Paul 2026-10-06. Notes from the review: the copy compares the neighborhoods to each other; North Central and Westside rent oddities (2BR above 3BR, 4BR+ on 3 leases) are called out as thin; "late 1940s" / "mid-1930s" come from the median year built of homes sold. Every watch-out is VERIFY (HOA rental language, flood zones, zoning for a second unit, City of Charleston STR rules).
+- [x] Closings line wording: "I've closed listings in this neighborhood." – no counts anywhere, including area pages (Paul, 2026-10-06).
+- [ ] City still unknown (no MLS sales rows) for Red Top, Admiral Apartments, Buckfield, Fetteressa, Pt Dowling Tract, Millbrook, Rose Hill.
+
+## Session 3 progress (2026-10-06)
+
+- Pilot data for Areas 52 and 31 pulled from FlexMLS (MLS only, no RentCast), checked against raw rows, approved by Paul. Change figures hide when either window has under 10 sales (Paul, 2026-10-06).
+- Area page layout (`src/layouts/AreaLayout.astro`), `/charleston` index, and `src/lib/areas.ts` (token filling, formatting, sample rules). Build fails if copy references missing data or types a number into the body.
+- Draft pages for Upper Peninsula and North Charleston inside I-526 (`draft: true` – noindex, out of sitemap) waiting for Paul's review.
+- Paul approved the two pilot pages; they are published (draft: false).
+- Data pulled for the other 11 Tier A areas with a rewritten area-data-puller (stable paging, rank-lookup medians, raw files in data/raw/) and computed with scripts/compute-areas.mjs; spot checks against FlexMLS matched.
+- 11 Tier A pages drafted (draft: true), reviewed for repetition, fair housing, invented claims, and em dashes. `npm run verify` (build, links, em dash, copy check) passes. Approved by Paul and published (draft: false) 2026-10-06.
+- Next: Tier B areas, or Session 4 (neighborhoods).
+
+## Next session (Session 3 – area hub pages, Tier A pilot)
+
+- Before starting: `RENTCAST_API_KEY` as an environment secret, and `api.rentcast.io` allowed under Network access.
+- Pilot Areas 52 and 31 with area-data-puller, review numbers, then area-page-writer.
+- Use `NumberBlock` for every data block, `Breadcrumb` for the area breadcrumb.
+- Flip `pageLinks.areas` and the Charleston areas nav item to `live: true` once `/charleston` exists.
+
+## Carried over from Session 1 notes
 
 - Design plan first (palette, type, wireframes) for Paul's approval.
 - Add the Vercel adapter for the form endpoint (`/send-the-deal` posts to a serverless function that forwards to `ZAPIER_WEBHOOK_URL`).

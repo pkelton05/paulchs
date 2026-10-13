@@ -1,0 +1,72 @@
+/* Design tokens – paulchs.com
+   Concept: haint blue means a number. Haint blue is used ONLY behind real
+   data (number blocks, proof stats). Nothing else on the site uses it. */
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  src: url("/fonts/atkinson-hyperlegible-next-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  src: url("/fonts/atkinson-hyperlegible-next-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible Mono";
+  src: url("/fonts/atkinson-hyperlegible-mono-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Palette – the working Lowcountry */
+  --oyster: #eef0eb;   /* page background: oyster shell / tabby, cool not cream */
+  --pluff: #2b2420;    /* text: pluff mud. 13.3:1 on oyster */
+  --haint: #bfe0da;    /* number panels ONLY. pluff on haint 10.8:1 */
+  --marsh: #3d5a2c;    /* links, primary button. 6.8:1 on oyster, white on marsh 7.8:1 */
+  --piling: #1e3640;   /* footer, sticky bar, event strip. oyster on piling 11.0:1 */
+  --spartina: #c9a24a; /* rules and ticks ONLY – 2.1:1 on oyster, never text on light */
+
+  /* Derived */
+  --pluff-soft: #4a423c; /* secondary text, 9.3:1 on oyster */
+  --rule: #c9cdc4;       /* hairlines on oyster (decorative) */
+  --white: #ffffff;
+
+  /* Type */
+  --font-sans: "Atkinson Hyperlegible Next", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-num: "Atkinson Hyperlegible Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --text-body: 1.1875rem;   /* 19px mobile */
+  --text-small: 0.9375rem;  /* 15px – source lines, footer */
+  --text-h1: clamp(2.125rem, 1.4rem + 3.2vw, 3.5rem);
+  --text-h2: clamp(1.625rem, 1.25rem + 1.6vw, 2.25rem);
+  --text-h3: 1.3125rem;
+  --text-num: clamp(3rem, 2.2rem + 4vw, 5rem); /* 48–80px hero numbers */
+  --leading: 1.6;
+
+  /* Space and layout */
+  --gutter: 1.25rem;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --max: 70rem;      /* ~1120px */
+  --measure: 38rem;  /* ~65 characters */
+  --sticky-bar-h: 4rem;
+
+  --focus: 3px solid var(--marsh);
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --text-body: 1.25rem; /* 20px desktop */
+    --gutter: 2rem;
+  }
+}

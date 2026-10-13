@@ -1,0 +1,41 @@
+---
+// Shows only when data/site.json → next_event is set:
+// { "date": "Thursday, Oct 23", "title": "Small multifamily in North Charleston", "url": "https://..." }
+import { site } from "../lib/site";
+
+type NextEvent = { date: string; title: string; url?: string | null } | null;
+const event = site.next_event as NextEvent;
+---
+
+{
+  event && (
+    <aside class="event-strip" aria-label="Next GRID Charleston event">
+      <div class="wrap">
+        <span>GRID Charleston · {event.date} · {event.title}</span>
+        {event.url && (
+          <a href={event.url} data-event="event_click">Save your seat</a>
+        )}
+      </div>
+    </aside>
+  )
+}
+
+<style>
+  .event-strip {
+    background: var(--piling);
+    color: var(--oyster);
+    font-size: var(--text-small);
+  }
+  .event-strip .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    justify-content: center;
+    padding-block: 0.6rem;
+  }
+  .event-strip a {
+    color: var(--oyster);
+    font-weight: 700;
+    text-decoration-color: var(--spartina);
+  }
+</style>

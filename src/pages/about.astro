@@ -1,0 +1,67 @@
+---
+// SITE-CONTENT.md §11. Biography only from what Paul has confirmed; his own
+// story goes in when he sends it.
+import PageLayout from "../layouts/PageLayout.astro";
+import ProofStrip from "../components/ProofStrip.astro";
+import CtaBlock from "../components/CtaBlock.astro";
+import ReviewOnly from "../components/ReviewOnly.astro";
+import { site } from "../lib/site";
+import { pageLinks } from "../lib/nav";
+
+const doors = site.stats.stat_doors.value;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  name: site.name,
+  url: new URL("/about", site.url).href,
+  telephone: site.phone_e164,
+  ...(site.email ? { email: site.email } : {}),
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: site.office_address.street,
+    addressLocality: site.office_address.city,
+    addressRegion: site.office_address.state,
+    postalCode: site.office_address.zip,
+    addressCountry: "US",
+  },
+  areaServed: "Charleston, SC",
+  sameAs: Object.values(site.social).filter(Boolean),
+};
+---
+
+<PageLayout
+  title="About Paul Kelton | Charleston Investment Property Agent"
+  description={`Paul Kelton is a Charleston investment property agent, founder of Tide Property Management (${doors} doors), and host of GRID Charleston.`}
+  h1="I'm Paul."
+  lead={`I'm a real estate agent in Charleston, and almost everyone I work with is an investor – people buying, selling, and holding duplexes, small multifamily, and rental property across the tri-county.`}
+  jsonLd={jsonLd}
+>
+  <section aria-labelledby="work">
+    <h2 id="work">What I do</h2>
+    <p>
+      I founded Tide Property Management, which manages {doors} doors in Charleston. That's where my numbers come from. When I
+      tell you what insurance, turnovers, or repairs cost on a building like yours, it's because we pay those bills every month.
+    </p>
+    <p>
+      I also host GRID Charleston, a monthly meetup and podcast for local investors.
+      {pageLinks.grid.live && <> <a href={pageLinks.grid.href}>More about GRID</a>.</>}
+    </p>
+    <ReviewOnly><p>I'm a BiggerPockets Elite Agent for Charleston.</p></ReviewOnly>
+  </section>
+
+  <ReviewOnly kind="need">
+    [NEED from Paul: your story in your own words – how you started, your first deal, building Tide, starting GRID, why
+    investors. 5–10 sentences, a voice memo is fine. Plus a real photo.]
+  </ReviewOnly>
+
+  <section aria-labelledby="license">
+    <h2 id="license">License and brokerage</h2>
+    <p>I'm a licensed South Carolina real estate agent. {site.brokerage_line}.</p>
+  </section>
+
+  <Fragment slot="after">
+    <ProofStrip />
+    <CtaBlock heading="Want to talk through a building? Send me the deal." withCall where="about" />
+  </Fragment>
+</PageLayout>

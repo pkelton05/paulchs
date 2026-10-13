@@ -1,0 +1,83 @@
+---
+import { reviewMode } from "../lib/site";
+// The site's signature element. Haint blue = a real number from the data.
+// Never pass a typed-in number: values come from data/*.json.
+interface Props {
+  value: string | null;
+  label: string;
+  /** e.g. "Charleston Trident MLS lease comps · 23 leases · Data as of Sep 2026" */
+  source?: string;
+  /** Shows a VERIFY marker until Paul confirms the figure. */
+  verify?: boolean;
+  /** Shown instead of the number when value is null. */
+  missing?: string;
+  size?: "hero" | "compact";
+}
+
+const { value, label, source, verify = false, missing = "Not enough data yet", size = "hero" } = Astro.props;
+---
+
+<div class:list={["number-block", size]}>
+  <p class="figure">
+    {value ? <span class="value">{value}</span> : <span class="missing">{missing}</span>}
+    <span class="label">{label}{verify && reviewMode && <> <span class="verify">VERIFY</span></>}</span>
+  </p>
+  {source && <p class="source">{source}</p>}
+</div>
+
+<style>
+  .number-block {
+    background: var(--haint);
+    color: var(--pluff);
+    padding: 1.75rem var(--space-3) var(--space-3);
+    position: relative;
+    /* Lets the figure shrink to fit narrow boxes instead of wrapping mid-number. */
+    container-type: inline-size;
+  }
+  /* tide-gauge tick ruler */
+  .number-block::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 10px;
+    background:
+      repeating-linear-gradient(90deg, var(--spartina) 0 2px, transparent 2px 14px) top left / 100% 6px no-repeat,
+      repeating-linear-gradient(90deg, var(--spartina) 0 2px, transparent 2px 70px) top left / 100% 10px no-repeat;
+  }
+  .figure {
+    margin: 0;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .value {
+    font-family: var(--font-num);
+    font-weight: 600;
+    font-size: min(var(--text-num), 13cqi);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+  }
+  .compact .value {
+    font-size: min(clamp(2.25rem, 1.8rem + 2vw, 3rem), 13cqi);
+  }
+  .missing {
+    font-weight: 700;
+    font-size: 1.375rem;
+    line-height: 1.2;
+  }
+  .label {
+    font-size: 1.0625rem;
+    line-height: 1.35;
+  }
+  .source {
+    margin: var(--space-2) 0 0;
+    padding-top: 0.6rem;
+    border-top: 1px solid rgba(43, 36, 32, 0.25);
+    font-size: var(--text-small);
+    line-height: 1.4;
+    max-width: none;
+  }
+</style>

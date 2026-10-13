@@ -1,0 +1,38 @@
+---
+import { smsHref, telHref } from "../lib/site";
+import { sendTheDeal } from "../lib/nav";
+
+interface Props {
+  heading: string;
+  line?: string;
+  /** Show "Call Paul" as well as "Text Paul". */
+  withCall?: boolean;
+  where?: string;
+}
+const { heading, line, withCall = false, where = "cta" } = Astro.props;
+---
+
+<section class="cta">
+  <div class="wrap">
+    <h2>{heading}</h2>
+    {line && <p>{line}</p>}
+    <div class="buttons">
+      {sendTheDeal.live && <a class="btn" href={sendTheDeal.href}>{sendTheDeal.label}</a>}
+      <a class="btn btn--quiet" href={smsHref} data-event="text_tap" data-where={where}>Text Paul</a>
+      {withCall && <a class="btn btn--quiet" href={telHref} data-event="call_tap" data-where={where}>Call Paul</a>}
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta {
+    padding-block: var(--space-5);
+    border-top: 1px solid var(--rule);
+  }
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+  }
+</style>

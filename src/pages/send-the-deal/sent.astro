@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { site, smsHref } from "../../lib/site";
+---
+
+<BaseLayout
+  title="Got it | Paul Kelton, Charleston Investor Agent"
+  description="Your deal was sent to Paul Kelton."
+  noindex
+>
+  <section class="section">
+    <div class="wrap">
+      <h1>Got it. I'll be in touch within {site.response_time}.</h1>
+      <p class="lead">If it's time-sensitive, text me and mention you sent the form.</p>
+      <p><a class="btn btn--quiet" href={smsHref} data-event="text_tap" data-where="sent">Text Paul</a></p>
+      <p><a href="/">Back to the homepage</a></p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script is:inline>
+  window.addEventListener("load", function () {
+    if (window.paulTrack) window.paulTrack("form_submit", { form: "send_the_deal" });
+  });
+</script>

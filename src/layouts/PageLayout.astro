@@ -1,0 +1,65 @@
+---
+// Plain content page (investing, buying, selling, about, GRID): an H1 and lead,
+// then readable sections. Wraps BaseLayout.
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  h1: string;
+  lead?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+const { title, description, h1, lead, jsonLd } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article>
+    <header class="wrap page-head">
+      <h1>{h1}</h1>
+      {lead && <p class="lead">{lead}</p>}
+      <slot name="head" />
+    </header>
+    <div class="wrap page-body">
+      <slot />
+    </div>
+  </article>
+  <slot name="after" />
+</BaseLayout>
+
+<style>
+  .page-head {
+    padding-block: var(--space-4) var(--space-3);
+  }
+  .page-head .lead {
+    max-width: 44rem;
+  }
+  .page-body {
+    padding-bottom: var(--space-4);
+  }
+  .page-body :global(section) {
+    max-width: 46rem;
+    margin-top: var(--space-4);
+  }
+  .page-body :global(section:first-child) {
+    margin-top: 0;
+  }
+  .page-body :global(ul.points li + li),
+  .page-body :global(ol.steps li + li) {
+    margin-top: 0.75rem;
+  }
+  .page-body :global(ul.points),
+  .page-body :global(ol.steps) {
+    padding-left: 1.25rem;
+  }
+  .page-body :global(ul.points) {
+    list-style: disc;
+  }
+  .page-body :global(ol.steps) {
+    list-style: decimal;
+  }
+  .page-body :global(.review) {
+    border-left: 3px dashed var(--pluff-soft);
+    padding-left: var(--space-2);
+  }
+</style>

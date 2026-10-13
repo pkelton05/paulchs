@@ -1,0 +1,31 @@
+---
+import { site } from "../lib/site";
+interface Props { tone?: "dark" | "light" }
+const { tone = "dark" } = Astro.props;
+---
+
+<a href="/" class:list={["wordmark", tone]}>
+  <span class="handle">{site.handle}</span>
+  <span class="sub">{site.name} · Charleston</span>
+</a>
+
+<style>
+  .wordmark {
+    display: inline-flex;
+    flex-direction: column;
+    text-decoration: none;
+    line-height: 1.1;
+    color: var(--pluff);
+  }
+  .wordmark.light { color: var(--oyster); }
+  .handle {
+    font-family: var(--font-num);
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+  }
+  .sub {
+    font-size: 0.9375rem;
+    margin-top: 0.2rem;
+  }
+</style>

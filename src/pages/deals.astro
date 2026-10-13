@@ -1,0 +1,397 @@
+---
+// Members page: this week's Charleston deals. Rendered on demand so Clerk can
+// check the session. Signed out → teaser + free account. Signed in → address,
+// rents and full numbers. Data: lib/deals (Edge Config "paulchs-deals").
+import BaseLayout from "../layouts/BaseLayout.astro";
+import DealsSignup from "../components/DealsSignup.astro";
+import { site, smsHref, reviewMode } from "../lib/site";
+import { clerkReady, portalUrl } from "../lib/clerk";
+import {
+  getDigest,
+  dealsVisible,
+  dealsApproved,
+  isCurrent,
+  money,
+  moneyK,
+  pct,
+  ratio,
+  unitsLabel,
+  weekLabel,
+  ratingLabel,
+} from "../lib/deals";
+
+export const prerender = false;
+
+const ready = clerkReady();
+const auth = ready && Astro.locals.auth ? Astro.locals.auth() : null;
+const signedIn = Boolean(auth?.userId);
+const user = signedIn ? await Astro.locals.currentUser() : null;
+const memberEmail = user?.primaryEmailAddress?.emailAddress ?? "";
+
+const here = new URL("/deals", Astro.url).toString();
+const signUpUrl = portalUrl("sign-up", here);
+const signInUrl = portalUrl("sign-in", here);
+const accountUrl = portalUrl("user", here);
+
+const digest = dealsVisible ? await getDigest() : null;
+const deals = digest?.deals ?? [];
+
+Astro.response.headers.set("Cache-Control", "private, no-store");
+
+const textAbout = (address: string) =>
+  `${smsHref}?&body=${encodeURIComponent(`Hi Paul, I saw ${address} in your deals. Can we talk about it?`)}`;
+---
+
+<BaseLayout
+  title="This Week's Charleston Deals | Paul Kelton"
+  description="The few Charleston-area rentals worth a look each week, with the numbers. Free members page from Paul Kelton, Charleston investment property agent."
+  noindex
+>
+  <section class="section head">
+    <div class="wrap">
+      <h1>This week's Charleston deals</h1>
+      {
+        !dealsVisible ? (
+          <p class="lead">
+            Coming soon: the few Charleston rentals I'd actually look at each week, with the numbers. Until then, text me
+            what you're looking for and I'll send you what fits.
+          </p>
+        ) : digest ? (
+          <>
+            <p class="week">
+              Week of {weekLabel(digest.week_of)}
+              {!isCurrent(digest) && " · this week's list isn't up yet"}
+            </p>
+            <p class="lead">{digest.intro}</p>
+          </>
+        ) : (
+          <p class="lead">This week's list isn't up yet. Check back Tuesday morning.</p>
+        )
+      }
+
+      {
+        dealsVisible && reviewMode && (
+          <div class="placeholder">
+            Preview only. {!dealsApproved && "Hidden on the live site until MLS display is approved (data/site.json → mls_display.deals_digest_approved). "}
+            {!ready && "Clerk keys aren't connected to this project yet, so sign-in is off – the full view is shown for review."}
+          </div>
+        )
+      }
+
+      {
+        dealsVisible && signedIn && (
+          <div class="member small">
+            Signed in as {memberEmail || "a member"}
+            {accountUrl && (
+              <>
+                {" "}
+                · <a href={accountUrl}>Your account</a>
+              </>
+            )}
+            <form method="post" action="/api/sign-out" class="inline">
+              <button type="submit" class="linklike">Sign out</button>
+            </form>
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  {
+    dealsVisible && deals.length > 0 && (
+      <section class="deals" aria-label="Deals">
+        <div class="wrap">
+          {signedIn || (!ready && reviewMode) ? (
+            <ol class="deal-list" role="list">
+              {deals.map((d) => (
+                <li class="deal" id={d.id}>
+                  <p class="kicker">
+                    {d.submarket} · {d.property_type} · {unitsLabel(d.units)}
+                    {d.year_built && ` · built ${d.year_built}`}
+                  </p>
+                  <h2>
+                    {d.address}, {d.city} {d.zip}
+                  </h2>
+                  <p class="price">
+                    <span class="num">{money(d.price)}</span>
+                    {d.units > 1 && <span class="per">{moneyK(d.price_per_unit)} a door</span>}
+                  </p>
+                  <p>{d.headline}</p>
+
+                  <dl class="metrics">
+                    <div>
+                      <dt>Cap rate</dt>
+                      <dd>{pct(d.cap_rate)}</dd>
+                    </div>
+                    <div>
+                      <dt>Cash-on-cash</dt>
+                      <dd>{pct(d.cash_on_cash)}</dd>
+                    </div>
+                    <div>
+                      <dt>Cash flow / yr</dt>
+                      <dd>{money(d.cash_flow)}</dd>
+                    </div>
+                    <div>
+                      <dt>DSCR</dt>
+                      <dd>{ratio(d.dscr)}</dd>
+                    </div>
+                    <div>
+                      <dt>NOI</dt>
+                      <dd>{money(d.noi)}</dd>
+                    </div>
+                    <div>
+                      <dt>Rents / mo ({d.rents_basis})</dt>
+                      <dd>{money(d.rents_monthly)}</dd>
+                    </div>
+                  </dl>
+
+                  <dl class="notes">
+                    <div>
+                      <dt>What it is</dt>
+                      <dd>{d.unit_mix}</dd>
+                    </div>
+                    {d.upside && (
+                      <div>
+                        <dt>Upside</dt>
+                        <dd>{d.upside}</dd>
+                      </div>
+                    )}
+                    {d.watch && (
+                      <div>
+                        <dt>Watch out for</dt>
+                        <dd>{d.watch}</dd>
+                      </div>
+                    )}
+                  </dl>
+
+                  <p class="meta small">
+                    {ratingLabel[d.rating]}
+                    {d.mls_number && ` · MLS ${d.mls_number}`}
+                    {d.listing_office && ` · Listed by ${d.listing_office}`}
+                    {d.listing_url && (
+                      <>
+                        {" "}
+                        · <a href={d.listing_url} rel="noopener" target="_blank">See the listing</a>
+                      </>
+                    )}
+                  </p>
+                  <p class="actions">
+                    <a class="btn btn--quiet" href={textAbout(d.address)} data-event="text_tap" data-where="deals">
+                      Text Paul about this one
+                    </a>
+                  </p>
+                </li>
+              ))}
+            </ol>
+          ) : (
+            <>
+              <ol class="deal-list teaser" role="list">
+                {deals.map((d) => (
+                  <li class="deal" id={d.id}>
+                    <p class="kicker">
+                      {d.submarket} · {d.property_type} · {unitsLabel(d.units)}
+                    </p>
+                    <p>{d.headline}</p>
+                    <p class="locked small">Address, price, rents and the full numbers are on the members view.</p>
+                  </li>
+                ))}
+              </ol>
+              <div class="gate">
+                <h2>See the full numbers – free</h2>
+                <p>
+                  Make an account once and you'll see every deal here with the address, rents and my underwriting. No
+                  credit card, nothing to buy.
+                </p>
+                {signUpUrl && signInUrl ? (
+                  <div class="buttons">
+                    <a class="btn" href={signUpUrl} data-event="deals_signup_account">
+                      Make a free account
+                    </a>
+                    <a class="btn btn--quiet" href={signInUrl}>
+                      Sign in
+                    </a>
+                  </div>
+                ) : (
+                  <p>Member sign-up opens soon. Join the email list below and you'll be first in.</p>
+                )}
+              </div>
+            </>
+          )}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    dealsVisible && digest && (
+      <section class="fine">
+        <div class="wrap small">
+          <p>
+            Numbers are my estimates for screening, not an appraisal and not financial advice. No return is guaranteed.
+            Check rents, condition, taxes, insurance and flood zone before you offer. {digest.assumptions}
+          </p>
+          <p>{site.mls_attribution}</p>
+        </div>
+      </section>
+    )
+  }
+
+  <DealsSignup
+    returnTo="/deals"
+    email={memberEmail}
+    where="deals"
+    heading={signedIn ? "Get these by email each Tuesday" : "Get the week's Charleston deals"}
+  />
+</BaseLayout>
+
+<style>
+  .head {
+    padding-bottom: var(--space-3);
+  }
+  .week {
+    color: var(--pluff-soft);
+    margin-bottom: var(--space-1);
+  }
+  .head .placeholder {
+    margin-top: var(--space-3);
+  }
+  .member {
+    margin-top: var(--space-2);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.5rem;
+    align-items: baseline;
+  }
+  .inline {
+    display: inline;
+  }
+  .linklike {
+    font: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    color: var(--marsh);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .linklike::before {
+    content: "· ";
+    color: var(--pluff-soft);
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 0.25rem;
+  }
+  .deal-list {
+    border-top: 1px solid var(--rule);
+  }
+  .deal {
+    padding-block: var(--space-4);
+    border-bottom: 1px solid var(--rule);
+    scroll-margin-top: var(--space-4);
+  }
+  .deal > p {
+    max-width: var(--measure);
+  }
+  .kicker {
+    color: var(--pluff-soft);
+    font-size: var(--text-small);
+    margin: 0 0 0.35rem;
+  }
+  .deal h2 {
+    font-size: var(--text-h3);
+    margin: 0 0 var(--space-1);
+  }
+  .price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 0.75rem;
+    margin: 0 0 var(--space-2);
+  }
+  .price .num {
+    font-family: var(--font-num);
+    font-weight: 600;
+    font-size: clamp(2rem, 1.6rem + 2vw, 2.75rem);
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.1;
+  }
+  .price .per {
+    color: var(--pluff-soft);
+  }
+  /* Haint blue = real numbers */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2px;
+    margin: var(--space-3) 0;
+    max-width: 46rem;
+  }
+  @media (min-width: 40rem) {
+    .metrics {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .metrics div {
+    background: var(--haint);
+    padding: 0.85rem 1rem;
+  }
+  .metrics dd {
+    margin: 0;
+    font-family: var(--font-num);
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.2;
+  }
+  .metrics dt {
+    font-size: var(--text-small);
+  }
+  .metrics div {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .notes {
+    max-width: var(--measure);
+    margin: 0;
+  }
+  .notes div + div {
+    margin-top: 0.75rem;
+  }
+  .notes dt {
+    font-weight: 700;
+  }
+  .notes dd {
+    margin: 0;
+  }
+  .meta {
+    margin-top: var(--space-2);
+    color: var(--pluff-soft);
+  }
+  .actions {
+    margin-top: var(--space-2);
+  }
+  .teaser .deal {
+    padding-block: var(--space-3);
+  }
+  .locked {
+    color: var(--pluff-soft);
+  }
+  .gate {
+    margin-top: var(--space-4);
+    max-width: 40rem;
+  }
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+  }
+  .fine {
+    padding-block: var(--space-3) var(--space-4);
+    color: var(--pluff-soft);
+  }
+  .fine p {
+    max-width: 46rem;
+  }
+</style>

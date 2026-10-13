@@ -3,7 +3,7 @@
 What Claude Code needs from Paul, grouped by who resolves it. Updated at the end of every session.
 **VERIFY** = Paul (or the person named) confirms before publishing. **NEED** = Paul supplies it.
 
-Last updated: 2026-10-07 (Session 5 – engagement plan, Priority 0 started)
+Last updated: 2026-10-12 (Session 6 – members deals page and weekly digest)
 
 ---
 
@@ -18,6 +18,22 @@ Last updated: 2026-10-07 (Session 5 – engagement plan, Priority 0 started)
 - [x] Vercel team upgraded to Pro (2026-10-06).
 - [x] Vercel token pasted in chat deleted (2026-10-06). The Vercel connector is used instead.
 - [ ] Later, no rush: set the GitHub repo's default branch to `main` (GitHub → Settings → General → Default branch). Vercel already deploys from `main` regardless.
+
+## Weekly deals digest + members page (2026-10-12)
+
+How it works: the "Deals Digest" scheduled task in Claude (Mondays) reads the week's Deal Intake Screener logs, keeps MLS-listed STRONG BUY / GOOD BUY / CONDITIONAL deals (never off-market), and writes them to the Vercel Edge Config store `paulchs-deals` (key `deals_digest`). Tuesday 7am ET a Vercel cron hits `/api/digest/preview`, which emails Paul a preview with a "Send to the list" button. The button (signed, one send per week, only for the version previewed) sends a Resend broadcast to the "Charleston deals" segment.
+
+- `/deals` – on-demand page. Signed out: teaser (submarket, type, units, one line) + free account. Signed in (Clerk): address, price, rents, full numbers. Sign-in/sign-up use Clerk's hosted pages; no Clerk script on the rest of the site.
+- `DealsSignup` on the homepage, `/investing` and `/deals` → `/api/subscribe` (Resend contact + segment, welcome email).
+- Code: `src/lib/deals.ts`, `src/lib/resend.ts`, `src/lib/digest-email.ts`, `src/lib/digest-auth.ts`, `src/lib/clerk.ts`, `src/middleware.ts`, `src/pages/deals.astro`, `src/pages/api/{subscribe,sign-out}.ts`, `src/pages/api/digest/{preview,approve}.ts`, cron in `vercel.json`.
+- Vercel env (set): `EDGE_CONFIG`, `DIGEST_SECRET`, `CRON_SECRET`, `RESEND_API_KEY`, `RESEND_EMAIL_DOMAIN`.
+
+Open:
+- [ ] **Paul:** connect the Clerk integration to the `paulchs` project (Vercel → Integrations → Clerk → Connect Project) so `CLERK_SECRET_KEY` and the publishable key land in the project.
+- [ ] **Paul:** confirm the Resend sending domain is verified (Resend → Domains) – the digest sends from deals@ that domain.
+- [ ] **VERIFY (broker-in-charge + CTAR):** may other brokerages' active listings appear on `/deals` and in the public weekly email, with "Listed by" attribution? Until `data/site.json → mls_display.deals_digest_approved` is true, both are preview-only and the send button refuses.
+- [ ] Production only gets the cron once this branch is merged to `main`.
+- [ ] Later: switch Clerk to a production instance on paulchs.com (accounts.paulchs.com) before launch – dev instances show a "Development mode" badge.
 
 ## Engagement plan (Paul, 2026-10-07) – `docs/ENGAGEMENT-PLAN.md`
 

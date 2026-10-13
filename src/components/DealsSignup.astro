@@ -1,0 +1,148 @@
+---
+// "Get the week's Charleston deals" – joins the Resend list. Works on static
+// pages (a plain form POST; a tiny script shows the result from ?joined=).
+// Hidden in production until Paul approves the digest (lib/deals → dealsVisible).
+import { dealsVisible } from "../lib/deals";
+
+interface Props {
+  /** Page path to come back to after signing up. */
+  returnTo: string;
+  /** Prefill for signed-in members. */
+  email?: string;
+  heading?: string;
+  line?: string;
+  where?: string;
+}
+const {
+  returnTo,
+  email = "",
+  heading = "Get the week's Charleston deals",
+  line = "Every Tuesday I send the few rentals I'd actually look at, with the numbers. Some weeks that's five. Some weeks it's none.",
+  where = "signup",
+} = Astro.props;
+
+const messages = {
+  "1": "You're on the list. Check your inbox for a short note from me.",
+  email: "That email doesn't look right. Mind checking it?",
+  offline: "The list isn't switched on yet. Text me and I'll add you myself.",
+  error: "Something went wrong on my end. Please try again in a minute.",
+};
+---
+
+{
+  dealsVisible && (
+    <section class="signup" id="join" aria-labelledby={`join-${where}`} data-signup>
+      <div class="wrap">
+        <h2 id={`join-${where}`}>{heading}</h2>
+        <p>{line}</p>
+        <p class="note" role="status" aria-live="polite" hidden />
+        <form method="post" action="/api/subscribe">
+          <input type="hidden" name="return_to" value={returnTo} />
+          <div class="hp" aria-hidden="true">
+            <label>
+              Company <input type="text" name="company" tabindex="-1" autocomplete="off" />
+            </label>
+          </div>
+          <div class="fields">
+            <div class="field">
+              <label for={`email-${where}`}>Email</label>
+              <input id={`email-${where}`} name="email" type="email" autocomplete="email" required maxlength="200" value={email} />
+            </div>
+            <div class="field">
+              <label for={`fn-${where}`}>
+                First name <span class="opt">(optional)</span>
+              </label>
+              <input id={`fn-${where}`} name="first_name" type="text" autocomplete="given-name" maxlength="60" />
+            </div>
+            <button class="btn" type="submit" data-event="deals_signup" data-where={where}>
+              Send me the deals
+            </button>
+          </div>
+          <p class="small">One email a week. Unsubscribe anytime.</p>
+        </form>
+      </div>
+    </section>
+  )
+}
+
+<script is:inline define:vars={{ messages }}>
+  (function () {
+    var code = new URLSearchParams(location.search).get("joined");
+    if (!code) return;
+    document.querySelectorAll("[data-signup] .note").forEach(function (el) {
+      el.textContent = messages[code] || messages.error;
+      el.hidden = false;
+      if (code === "1") el.classList.add("ok");
+    });
+  })();
+</script>
+
+<style>
+  .signup {
+    padding-block: var(--space-5);
+    border-top: 1px solid var(--rule);
+  }
+  .signup p {
+    max-width: var(--measure);
+  }
+  .fields {
+    display: grid;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+    max-width: 46rem;
+  }
+  @media (min-width: 48rem) {
+    .fields {
+      grid-template-columns: 1.4fr 1fr auto;
+      align-items: end;
+    }
+  }
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  label {
+    font-weight: 700;
+  }
+  .opt {
+    font-weight: 400;
+    color: var(--pluff-soft);
+  }
+  input[type="email"],
+  input[type="text"] {
+    font: inherit;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid var(--pluff-soft);
+    border-radius: 4px;
+    background: var(--white);
+    color: var(--pluff);
+    min-height: 3rem;
+  }
+  input:focus-visible {
+    outline: var(--focus);
+    outline-offset: 2px;
+  }
+  .btn {
+    min-height: 3rem;
+  }
+  .small {
+    margin-top: var(--space-1);
+  }
+  .note {
+    margin-top: var(--space-2);
+    padding: 0.75rem 1rem;
+    border-left: 4px solid var(--pluff-soft);
+    background: var(--white);
+  }
+  .note.ok {
+    border-left-color: var(--marsh);
+  }
+  .hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+</style>

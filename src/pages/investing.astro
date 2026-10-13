@@ -3,6 +3,7 @@
 // analyzer button join this page as they exist.
 import PageLayout from "../layouts/PageLayout.astro";
 import CtaBlock from "../components/CtaBlock.astro";
+import DealsSignup from "../components/DealsSignup.astro";
 import ReviewOnly from "../components/ReviewOnly.astro";
 import { site, reviewMode } from "../lib/site";
 import { footerQuestions, live, pageLinks } from "../lib/nav";
@@ -70,5 +71,6 @@ const questions = live(footerQuestions);
     testimonials or story cards (engagement plan #3 and #4).]
   </ReviewOnly>
 
+  <DealsSignup slot="after" returnTo="/investing" where="investing" />
   <CtaBlock slot="after" heading="Have a building in mind? Send me the deal." withCall where="investing" />
 </PageLayout>

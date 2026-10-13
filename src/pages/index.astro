@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ProofStrip from "../components/ProofStrip.astro";
 import Testimonial from "../components/Testimonial.astro";
 import CtaBlock from "../components/CtaBlock.astro";
+import DealsSignup from "../components/DealsSignup.astro";
 import { site, smsHref, reviewMode } from "../lib/site";
 import { sendTheDeal, pageLinks } from "../lib/nav";
 
@@ -142,6 +143,8 @@ const ways = [
       </div>
     </div>
   </section>
+
+  <DealsSignup returnTo="/" where="home" />
 
   <CtaBlock
     heading="Not sure where to start?"

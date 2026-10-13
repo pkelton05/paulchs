@@ -15,11 +15,18 @@ export function checkApproval(week: string, fingerprint: string, sig: string): b
   return a.length === b.length && timingSafeEqual(a, b);
 }
 
-/** Vercel Cron sends "Authorization: Bearer <CRON_SECRET>". */
+/**
+ * Vercel Cron sends "Authorization: Bearer <CRON_SECRET>". A manual run can pass
+ * ?key=<CRON_SECRET> instead – it only ever emails Paul a preview, never the list.
+ */
 export function isCron(request: Request): boolean {
   const s = process.env.CRON_SECRET;
   if (!s) return false;
-  const got = Buffer.from(request.headers.get("authorization") || "");
-  const want = Buffer.from(`Bearer ${s}`);
-  return got.length === want.length && timingSafeEqual(got, want);
+  const same = (a: string, b: string) => {
+    const x = Buffer.from(a);
+    const y = Buffer.from(b);
+    return x.length === y.length && timingSafeEqual(x, y);
+  };
+  const key = new URL(request.url).searchParams.get("key") || "";
+  return same(request.headers.get("authorization") || "", `Bearer ${s}`) || (key !== "" && same(key, s));
 }

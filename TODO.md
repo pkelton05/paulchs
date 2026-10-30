@@ -7,6 +7,14 @@ Last updated: 2026-10-06 (Session 1)
 
 ---
 
+## Charleston Market Monday sign-up (2026-10-30)
+
+- [x] `/market-monday` sign-up page (GRID-branded, newspaper style) + `/market-monday/thanks`. Short links `/mm` and `/marketmonday`.
+- [x] `api/market-monday.js` (Vercel function): with `KIT_API_KEY`, creates the Kit subscriber and tags "Charleston Market Monday" (tag 25121747); without it, posts to the Kit "Newsletter site" form (8033319) so nothing is lost, but untagged.
+- [ ] **Paul:** add `KIT_API_KEY` (Kit → Settings → Developer → v4 API key) in Vercel → paulchs → Settings → Environment Variables, Production + Preview, then redeploy.
+- [ ] Do one real test sign-up after it's live and confirm the subscriber shows up in Kit with the tag.
+- [ ] When the full site (PR #1) merges, check `/market-monday` still uses its own layout and footer.
+
 ## Hosting status (Vercel)
 
 - Project `paulchs` on team `paul-chs`, linked to `pkelton05/paulchs`. Every push to `main` deploys to production. Other branches get preview links.

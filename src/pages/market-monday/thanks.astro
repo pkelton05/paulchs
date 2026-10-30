@@ -1,0 +1,41 @@
+---
+import MarketMondayLayout from "../../layouts/MarketMondayLayout.astro";
+import { site } from "../../lib/site";
+const smsHref = `sms:${site.phone_e164}`;
+---
+
+<MarketMondayLayout
+  title="You're in – Charleston Market Monday"
+  description="You're signed up for Charleston Market Monday."
+  noindex
+>
+  <section class="wrap">
+    <p class="kicker">Charleston Market Monday</p>
+    <h1>You're in.</h1>
+    <p class="lead">Your first Market Monday shows up next Monday morning. If you don't see it, check your promotions or spam folder and move it to your inbox.</p>
+    <p>Have a building or a question in the meantime? <a href={smsHref}>Text me at {site.phone}</a>.</p>
+    <p><a href="/market-monday">Back to Market Monday</a></p>
+  </section>
+</MarketMondayLayout>
+
+<style>
+  .wrap {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 1rem;
+  }
+  .kicker {
+    margin: 0;
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: var(--red);
+  }
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 1.5rem + 4vw, 4rem);
+    margin: 0.4rem 0 1rem;
+    border-bottom: 4px double var(--rule);
+    padding-bottom: 0.75rem;
+  }
+</style>

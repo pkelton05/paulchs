@@ -1,0 +1,392 @@
+---
+// Charleston Market Monday sign-up. Posts to /api/market-monday (root api/
+// folder, a Vercel function), which adds the person to Kit and tags them
+// "Charleston Market Monday". Works without JavaScript.
+import MarketMondayLayout from "../layouts/MarketMondayLayout.astro";
+import { site } from "../lib/site";
+import { privacyLink } from "../lib/nav";
+
+const segments = [
+  { name: "Rates", text: "Where mortgage rates and the financial markets moved, and what it means for buyers." },
+  { name: "Single-family", text: "Sales, prices and inventory across Charleston, Berkeley and Dorchester counties." },
+  { name: "Rents", text: "What apartments and rental houses are leasing for right now." },
+  { name: "Small multifamily", text: "What's for sale in the 2–49 unit range – typical asking price and unit count." },
+  { name: "Apartment closings", text: "Buildings under 150 units that traded in the Charleston area." },
+  { name: "Foreclosures and handyman specials", text: "How many hit the market and what they're trading at." },
+  { name: "Development news", text: "What's being built, approved and talked about around town." },
+  { name: "GRID events", text: "The next GRID Charleston meetup and how to get in the room." },
+];
+
+const errors: Record<string, string> = {
+  email: "Please add a valid email address.",
+  name: "That name is a little long. A first name is plenty.",
+  send: `Something went wrong signing you up. Please try again, or text me at ${site.phone}.`,
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Charleston Market Monday",
+  description: "A free weekly video and email on the Charleston real estate market, hosted by Paul Kelton of GRID Charleston.",
+  url: `${site.url}/market-monday`,
+  author: { "@type": "Person", name: site.name },
+};
+---
+
+<MarketMondayLayout
+  title="Charleston Market Monday – Free Weekly Charleston Real Estate Market Update"
+  description="A 15-minute video and short email every Monday on the Charleston market: rates, home sales, rents, small multifamily, apartment closings, foreclosures and development news. Free."
+  jsonLd={jsonLd}
+>
+  <header class="masthead">
+    <div class="wrap">
+      <p class="kicker">GRID Charleston presents</p>
+      <h1>Charleston Market Monday</h1>
+      <p class="dateline">
+        <span>Every Monday</span>
+        <span>Charleston · Berkeley · Dorchester</span>
+        <span>Free</span>
+      </p>
+    </div>
+  </header>
+
+  <section class="hero wrap" aria-labelledby="pitch">
+    <div class="pitch">
+      <h2 id="pitch">The Charleston market in <mark>15 minutes</mark> a week.</h2>
+      <p class="lead">
+        Every Monday morning you get a short video and a two-minute email on what moved in Charleston real estate – rates,
+        sales, rents, and the small apartment deals most people never see.
+      </p>
+      <p class="lead">Plain numbers, no hype. Built for investors, owners and anyone thinking about buying or selling here.</p>
+    </div>
+
+    <form id="signup" class="card" method="post" action="/api/market-monday" novalidate>
+      <p class="card-title">Get it in your inbox</p>
+      <div class="alert" role="alert" aria-live="assertive" hidden></div>
+
+      <div class="field">
+        <label for="first_name">First name <span class="opt">(optional)</span></label>
+        <input id="first_name" name="first_name" type="text" autocomplete="given-name" maxlength="60" />
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required maxlength="160" />
+      </div>
+
+      <div class="honey" aria-hidden="true">
+        <label for="company">Company</label>
+        <input id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
+      </div>
+
+      <button class="btn" type="submit">Send me Market Monday</button>
+      <p class="fine">
+        One email a week. Unsubscribe anytime.
+        {privacyLink.live && <a href={privacyLink.href}>Privacy</a>}
+      </p>
+    </form>
+  </section>
+
+  <section class="wrap segments" aria-labelledby="inside">
+    <h2 id="inside" class="section-head">What's in each episode</h2>
+    <ul>
+      {
+        segments.map((s) => (
+          <li>
+            <h3>{s.name}</h3>
+            <p>{s.text}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="wrap how" aria-labelledby="how">
+    <h2 id="how" class="section-head">How it works</h2>
+    <div class="cols">
+      <div>
+        <h3>Watch</h3>
+        <p>A 10–15 minute video, recorded each week. Watch it with your coffee.</p>
+      </div>
+      <div>
+        <h3>Skim</h3>
+        <p>The email has the main points in a few bullets, so you can read it in two minutes.</p>
+      </div>
+      <div>
+        <h3>Ask</h3>
+        <p>See something you want to dig into? Reply to the email or text me. I read every one.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap host" aria-labelledby="host">
+    <h2 id="host" class="section-head">Your host</h2>
+    <p>
+      I'm {site.name}, a Charleston investment property agent with <strong>200+ investor deals</strong> and the host of
+      GRID Charleston, a monthly meetup and podcast for local real estate investors. Market Monday is the same conversation
+      we have in that room, every week, in your inbox.
+    </p>
+    <p><a class="btn btn--line" href="#signup">Sign up – it's free</a></p>
+  </section>
+</MarketMondayLayout>
+
+<script is:inline define:vars={{ errors }}>
+  (function () {
+    var form = document.getElementById("signup");
+    var box = form.querySelector(".alert");
+    function show(msg, id) {
+      box.textContent = msg;
+      box.hidden = false;
+      var el = id && document.getElementById(id);
+      if (el) {
+        el.setAttribute("aria-invalid", "true");
+        el.focus();
+      }
+    }
+    var code = new URLSearchParams(location.search).get("error");
+    if (code) show(errors[code] || errors.send, code === "email" ? "email" : code === "name" ? "first_name" : null);
+
+    form.addEventListener("submit", function (e) {
+      var email = document.getElementById("email").value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+        e.preventDefault();
+        show(errors.email, "email");
+        return;
+      }
+      var btn = form.querySelector("button");
+      btn.disabled = true;
+      btn.textContent = "Signing you up…";
+    });
+  })();
+</script>
+
+<style>
+  .wrap {
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding-inline: 1.25rem;
+  }
+
+  /* Masthead – newspaper nameplate */
+  .masthead {
+    border-bottom: 4px double var(--rule);
+    text-align: center;
+    padding-top: 1.75rem;
+  }
+  .kicker {
+    margin: 0;
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: var(--red);
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(2.25rem, 1.2rem + 5.2vw, 5rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin: 0.4rem 0 0.9rem;
+  }
+  .dateline {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+    margin: 0;
+    padding: 0.5rem 0;
+    border-top: 1px solid var(--rule);
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  /* Hero */
+  .hero {
+    display: grid;
+    gap: 2rem;
+    padding-block: 2.5rem 1rem;
+  }
+  @media (min-width: 52rem) {
+    .hero {
+      grid-template-columns: 1.25fr 1fr;
+      align-items: start;
+      gap: 3rem;
+    }
+  }
+  .pitch h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.75rem, 1.2rem + 2.2vw, 2.75rem);
+    line-height: 1.12;
+    margin: 0 0 1rem;
+  }
+  mark {
+    background: none;
+    color: var(--red);
+  }
+  .lead {
+    margin: 0 0 0.9rem;
+    max-width: 36rem;
+  }
+
+  /* Form card */
+  .card {
+    border: 2px solid var(--ink);
+    padding: 1.5rem;
+    background: var(--paper);
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+  .card-title {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+  }
+  .field {
+    margin-bottom: 1rem;
+  }
+  label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+  .opt {
+    font-weight: 400;
+    color: var(--ink-soft);
+  }
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    font: inherit;
+    color: var(--ink);
+    background: var(--paper);
+    border: 2px solid var(--ink-soft);
+    border-radius: 0;
+    padding: 0.7rem 0.8rem;
+    min-height: 3rem;
+  }
+  [aria-invalid="true"] {
+    border-color: var(--red) !important;
+  }
+  .honey {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .btn {
+    display: inline-block;
+    width: 100%;
+    font: inherit;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    color: var(--paper);
+    background: var(--red);
+    border: 2px solid var(--red);
+    padding: 0.8rem 1.25rem;
+    min-height: 3rem;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background: #8f0e15;
+    border-color: #8f0e15;
+  }
+  .btn:disabled {
+    opacity: 0.75;
+    cursor: progress;
+  }
+  .btn--line {
+    width: auto;
+    background: var(--paper);
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+  .btn--line:hover {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+  .fine {
+    font-size: 0.875rem;
+    color: var(--ink-soft);
+    margin: 0.75rem 0 0;
+  }
+  .alert {
+    border-left: 4px solid var(--red);
+    background: var(--newsprint);
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  /* Sections */
+  .section-head {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+    border-top: 3px solid var(--rule);
+    padding-top: 0.6rem;
+    margin: 3rem 0 1.25rem;
+  }
+  h3 {
+    font-size: 1.125rem;
+    margin: 0 0 0.25rem;
+  }
+  .segments ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0;
+  }
+  @media (min-width: 40rem) {
+    .segments ul {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 2.5rem;
+    }
+  }
+  .segments li {
+    border-bottom: 1px solid #cccccc;
+    padding-block: 0.9rem;
+  }
+  .segments li::before {
+    content: "";
+    display: inline-block;
+    width: 0.55rem;
+    height: 0.55rem;
+    background: var(--red);
+    margin-right: 0.5rem;
+    vertical-align: 0.1rem;
+  }
+  .segments h3 {
+    display: inline;
+  }
+  .segments p {
+    margin: 0.25rem 0 0;
+    color: var(--ink-soft);
+  }
+  .cols {
+    display: grid;
+    gap: 1.5rem;
+  }
+  @media (min-width: 48rem) {
+    .cols {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .cols > div {
+      padding-inline: 1.5rem;
+      border-left: 1px solid #cccccc;
+    }
+    .cols > div:first-child {
+      padding-left: 0;
+      border-left: 0;
+    }
+  }
+  .cols p {
+    margin: 0;
+  }
+  .host p {
+    max-width: 42rem;
+  }
+</style>

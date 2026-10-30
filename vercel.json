@@ -5,14 +5,34 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "(www\\.)?charlestoninvestoragent\\.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?charlestoninvestoragent\\.com"
+        }
+      ],
       "destination": "https://paulchs.com/investor-friendly-agent-charleston",
       "statusCode": 301
     },
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "(www\\.)?paulkelton\\.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?paulkelton\\.com"
+        }
+      ],
       "destination": "https://paulchs.com/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mm",
+      "destination": "/market-monday",
+      "statusCode": 301
+    },
+    {
+      "source": "/marketmonday",
+      "destination": "/market-monday",
       "statusCode": 301
     }
   ]

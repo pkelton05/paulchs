@@ -4,6 +4,8 @@ import sitemap from "@astrojs/sitemap";
 import { sitemapExclusions } from "./src/lib/sitemap-gate.mjs";
 
 const exclusions = await sitemapExclusions();
+// Utility pages that should never be indexed.
+exclusions.add("/market-monday/thanks");
 
 export default defineConfig({
   site: "https://paulchs.com",

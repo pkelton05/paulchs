@@ -23,7 +23,7 @@ const links: Item[] = [
     href: "https://www.gridinvestor.com/groups/grid-charleston",
     external: true,
   },
-  { label: "Let's talk deals", sub: "Book a call with me", href: "https://calendar.app.google/PeJusDq4kwcmC7AY9", external: true },
+  { label: "Let's talk deals", sub: "Book a call with me", href: "https://calendar.app.google/Pr3TdPMiTENajpEC8", external: true },
   { label: "Save my contact card", href: "/paul-kelton.vcf", download: true },
   { label: "About Paul Kelton", href: "https://www.mattoneillrealestate.com/agents/paul-kelton/", external: true },
   { label: "BiggerPockets", sub: "Elite Agent", href: "https://www.biggerpockets.com/co/more-commercial", external: true },
@@ -58,6 +58,8 @@ const mail = `mailto:${site.email}`;
           <li><a href={sms}>Text</a></li>
           <li><a href={mail}>Email</a></li>
           {site.social.instagram && <li><a href={site.social.instagram} rel="me noopener">Instagram</a></li>}
+          {site.social.linkedin && <li><a href={site.social.linkedin} rel="me noopener">LinkedIn</a></li>}
+          {site.social.youtube && <li><a href={site.social.youtube} rel="me noopener">YouTube</a></li>}
         </ul>
       </header>
 

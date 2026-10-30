@@ -1,0 +1,300 @@
+---
+// Shared shell for the link-in-bio lead forms (/off-market, /property-value).
+// Self-contained, mobile-first, with the compliance lines in the footer.
+// The form handler for each page lives in the root api/ folder.
+import Seo from "../components/Seo.astro";
+import { site, officeAddressLine } from "../lib/site";
+
+interface Props {
+  title: string;
+  description: string;
+  h1: string;
+  lead: string;
+  noindex?: boolean;
+}
+const { title, description, h1, lead, noindex = false } = Astro.props;
+const sms = `sms:${site.phone_e164}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1e3640" />
+    <Seo title={title} description={description} noindex={noindex} />
+  </head>
+  <body>
+    <main>
+      <header class="top">
+        <p class="kicker"><a href="/links">Paul Kelton · Charleston</a></p>
+        <h1>{h1}</h1>
+        <p class="lead">{lead}</p>
+      </header>
+
+      <slot />
+
+      <p class="talk">Rather talk it through? <a href={sms}>Text me at {site.phone}</a>.</p>
+
+      <footer>
+        <slot name="disclosure" />
+        <p>{site.name}, {site.designation} · {site.brokerage_line}</p>
+        <p>{officeAddressLine} · {site.brokerage_phone}</p>
+        <p>Equal Housing Opportunity · <a href="/links">More links</a></p>
+      </footer>
+    </main>
+
+    <script is:inline>
+      // Shared client-side checks. Each form declares its own messages in
+      // data-errors and required rules via data-required on fields.
+      (function () {
+        var form = document.querySelector("form.lead-form");
+        if (!form) return;
+        var errors = JSON.parse(form.getAttribute("data-errors") || "{}");
+        var focusFor = JSON.parse(form.getAttribute("data-focus") || "{}");
+        var box = form.querySelector(".alert");
+        function show(code) {
+          box.textContent = errors[code] || errors.send;
+          box.hidden = false;
+          var el = focusFor[code] && document.getElementById(focusFor[code]);
+          if (el) {
+            el.setAttribute("aria-invalid", "true");
+            el.focus();
+          }
+          box.scrollIntoView({ block: "center" });
+        }
+        var code = new URLSearchParams(location.search).get("error");
+        if (code) show(code);
+
+        form.addEventListener("submit", function (e) {
+          var checks = form.querySelectorAll("[data-check]");
+          for (var i = 0; i < checks.length; i++) {
+            var el = checks[i];
+            var kind = el.getAttribute("data-check");
+            var bad = false;
+            if (kind === "text") bad = !el.value.trim();
+            if (kind === "email") bad = !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(el.value.trim());
+            if (kind === "group") bad = !form.querySelector('input[name="' + el.getAttribute("data-name") + '"]:checked');
+            if (bad) {
+              e.preventDefault();
+              return show(el.getAttribute("data-error"));
+            }
+          }
+          var btn = form.querySelector("button[type=submit]");
+          btn.disabled = true;
+          btn.textContent = "Sending…";
+        });
+      })();
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --oyster: #eef0eb;
+    --pluff: #2b2420;
+    --pluff-soft: #4a423c;
+    --marsh: #3d5a2c;
+    --piling: #1e3640;
+    --spartina: #c9a24a;
+    --white: #ffffff;
+    --error: #8a1c1c;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background: var(--oyster);
+    color: var(--pluff);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.5;
+  }
+  :focus-visible {
+    outline: 3px solid var(--spartina);
+    outline-offset: 2px;
+  }
+  main {
+    max-width: 38rem;
+    margin: 0 auto;
+    padding: 0 1.25rem 2.5rem;
+  }
+  .top {
+    background: var(--piling);
+    color: var(--oyster);
+    margin: 0 -1.25rem 1.75rem;
+    padding: 2rem 1.5rem 1.75rem;
+    border-bottom: 4px solid var(--spartina);
+  }
+  @media (min-width: 38rem) {
+    .top {
+      margin: 1.5rem 0 1.75rem;
+    }
+  }
+  .top .kicker {
+    margin: 0 0 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 700;
+  }
+  .top .kicker a {
+    color: var(--spartina);
+    text-decoration: none;
+  }
+  .top h1 {
+    margin: 0 0 0.6rem;
+    font-size: clamp(1.875rem, 1.4rem + 2vw, 2.5rem);
+    line-height: 1.15;
+  }
+  .top .lead {
+    margin: 0;
+  }
+
+  .lead-form .row {
+    display: grid;
+    gap: 0 1rem;
+  }
+  @media (min-width: 34rem) {
+    .lead-form .row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .lead-form .field {
+    margin: 0 0 1.1rem;
+  }
+  .lead-form fieldset.field {
+    border: 0;
+    padding: 0;
+    min-width: 0;
+  }
+  .lead-form label,
+  .lead-form legend {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+    padding: 0;
+  }
+  .lead-form .opt {
+    font-weight: 400;
+    color: var(--pluff-soft);
+  }
+  .lead-form input[type="text"],
+  .lead-form input[type="email"],
+  .lead-form input[type="tel"],
+  .lead-form select,
+  .lead-form textarea {
+    width: 100%;
+    font: inherit;
+    color: var(--pluff);
+    background: var(--white);
+    border: 2px solid var(--pluff-soft);
+    border-radius: 4px;
+    padding: 0.65rem 0.75rem;
+    min-height: 3rem;
+  }
+  .lead-form ::placeholder {
+    color: #7a726b;
+  }
+  .lead-form .checks {
+    display: grid;
+    gap: 0.5rem;
+  }
+  @media (min-width: 34rem) {
+    .lead-form .checks {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .lead-form .check {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 400;
+    background: var(--white);
+    border: 2px solid var(--pluff-soft);
+    border-radius: 4px;
+    padding: 0.6rem 0.75rem;
+    margin: 0;
+    cursor: pointer;
+    min-height: 3rem;
+  }
+  .lead-form .check input {
+    width: 1.25rem;
+    height: 1.25rem;
+    accent-color: var(--marsh);
+    flex: none;
+  }
+  .lead-form .check:has(input:checked) {
+    border-color: var(--marsh);
+    box-shadow: inset 0 0 0 1px var(--marsh);
+  }
+  .lead-form [aria-invalid="true"] {
+    border-color: var(--error) !important;
+  }
+  .lead-form .honey {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .lead-form .btn {
+    width: 100%;
+    font: inherit;
+    font-weight: 700;
+    color: var(--white);
+    background: var(--marsh);
+    border: 2px solid var(--marsh);
+    border-radius: 6px;
+    padding: 0.85rem 1.25rem;
+    min-height: 3.25rem;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 var(--piling);
+  }
+  .lead-form .btn:disabled {
+    opacity: 0.75;
+    cursor: progress;
+  }
+  .lead-form .fine {
+    font-size: 0.875rem;
+    color: var(--pluff-soft);
+    margin: 0.9rem 0 0;
+  }
+  .lead-form .alert {
+    border-left: 4px solid var(--error);
+    background: var(--white);
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.1rem;
+    font-weight: 700;
+  }
+  .talk {
+    margin: 1.75rem 0 0;
+    text-align: center;
+  }
+  .talk a {
+    color: var(--marsh);
+    font-weight: 700;
+  }
+  footer {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.8125rem;
+    color: var(--pluff-soft);
+  }
+  footer p {
+    margin: 0.2rem 0;
+  }
+  footer a {
+    color: var(--pluff-soft);
+  }
+
+  /* Thank-you pages */
+  .done p {
+    margin: 0 0 1rem;
+  }
+  .done a {
+    color: var(--marsh);
+    font-weight: 700;
+  }
+</style>

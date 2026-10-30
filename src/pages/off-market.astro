@@ -1,0 +1,118 @@
+---
+// Off-market buyer list. Posts to /api/off-market, which forwards to the
+// Zapier → Follow Up Boss leads workflow (tag "Off-Market Buyer").
+import LeadLayout from "../layouts/LeadLayout.astro";
+import { site } from "../lib/site";
+import { BUY_TYPES, BUDGETS, FUNDING, TIMELINES } from "../lib/leads";
+
+const errors = {
+  name: "Please add your name.",
+  email: "Please add a valid email address.",
+  phone: "That phone number doesn't look right. Leave it blank if you'd rather.",
+  type: "Please pick what you're looking to buy.",
+  offline: `The form isn't connected right now. Text me at ${site.phone} and I'll add you.`,
+  send: `Something went wrong sending that. Please try again, or text me at ${site.phone}.`,
+};
+const focus = { name: "first_name", email: "email", phone: "phone", type: "type-0" };
+---
+
+<LeadLayout
+  title="Off-Market Charleston Investment Property | Paul Kelton"
+  description="Get on Paul Kelton's off-market buyer list. Tell me what you're buying in Charleston and I'll send you deals that fit, often before they hit the MLS."
+  h1="Get off-market deals"
+  lead="Some of the best Charleston deals never hit the MLS. Tell me what you're buying and I'll send you the ones that fit – duplexes up to 49 units, rentals and fixers."
+>
+  <form
+    id="buyer"
+    class="lead-form"
+    method="post"
+    action="/api/off-market"
+    novalidate
+    data-errors={JSON.stringify(errors)}
+    data-focus={JSON.stringify(focus)}
+  >
+    <div class="alert" role="alert" aria-live="assertive" hidden></div>
+
+    <div class="row">
+      <div class="field">
+        <label for="first_name">First name</label>
+        <input id="first_name" name="first_name" type="text" autocomplete="given-name" required maxlength="60" data-check="text" data-error="name" />
+      </div>
+      <div class="field">
+        <label for="last_name">Last name</label>
+        <input id="last_name" name="last_name" type="text" autocomplete="family-name" maxlength="60" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" autocomplete="email" required maxlength="160" data-check="email" data-error="email" />
+    </div>
+
+    <div class="field">
+      <label for="phone">Phone <span class="opt">(optional)</span></label>
+      <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="30" />
+    </div>
+
+    <fieldset class="field" data-check="group" data-name="type" data-error="type">
+      <legend>What are you looking to buy?</legend>
+      <div class="checks">
+        {
+          BUY_TYPES.map((t, i) => (
+            <label class="check" for={`type-${i}`}>
+              <input id={`type-${i}`} type="checkbox" name="type" value={t} />
+              <span>{t}</span>
+            </label>
+          ))
+        }
+      </div>
+    </fieldset>
+
+    <div class="row">
+      <div class="field">
+        <label for="budget">Price range</label>
+        <select id="budget" name="budget">
+          <option value="">Choose one</option>
+          {BUDGETS.map((b) => <option value={b}>{b}</option>)}
+        </select>
+      </div>
+      <div class="field">
+        <label for="funding">How are you buying?</label>
+        <select id="funding" name="funding">
+          <option value="">Choose one</option>
+          {FUNDING.map((f) => <option value={f}>{f}</option>)}
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label for="areas">Areas <span class="opt">(optional)</span></label>
+        <input id="areas" name="areas" type="text" maxlength="200" placeholder="e.g. North Charleston, West Ashley" />
+      </div>
+      <div class="field">
+        <label for="timeline">When do you want to buy?</label>
+        <select id="timeline" name="timeline">
+          <option value="">Choose one</option>
+          {TIMELINES.map((t) => <option value={t}>{t}</option>)}
+        </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="notes">Anything else about your buy box? <span class="opt">(optional)</span></label>
+      <textarea id="notes" name="notes" rows="4" maxlength="1500" placeholder="Target cap rate, unit mix, condition, 1031 deadline…"></textarea>
+    </div>
+
+    <div class="honey" aria-hidden="true">
+      <label for="company">Company</label>
+      <input id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <button class="btn" type="submit">Send me off-market deals</button>
+    <p class="fine">
+      I'll only use this to send you deals and follow up about them. Some off-market sellers ask for a signed buyer
+      agreement before I can share full financials.
+    </p>
+  </form>
+</LeadLayout>

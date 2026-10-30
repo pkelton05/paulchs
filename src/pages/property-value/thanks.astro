@@ -1,0 +1,18 @@
+---
+import LeadLayout from "../../layouts/LeadLayout.astro";
+import { site } from "../../lib/site";
+const sms = `sms:${site.phone_e164}`;
+---
+
+<LeadLayout
+  title="Got it | Paul Kelton"
+  description="Your valuation request was sent to Paul Kelton."
+  h1="Got it."
+  lead="I'll pull recent sales and current rents for your property and get back to you with a value range."
+  noindex
+>
+  <div class="done">
+    <p>Have a rent roll or recent updates to share? <a href={sms}>Text me at {site.phone}</a> – it helps me tighten the number.</p>
+    <p><a href="/market-monday">Get Charleston Market Monday</a> – the Charleston market in 15 minutes a week.</p>
+  </div>
+</LeadLayout>

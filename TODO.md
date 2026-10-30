@@ -7,6 +7,15 @@ Last updated: 2026-10-06 (Session 1)
 
 ---
 
+## Link-in-bio and lead forms (2026-10-30)
+
+- [x] `/links` replaces linktr.ee/pk_chs (same links + Market Monday, off-market, valuation). `/link`, `/bio` redirect. Contact card at `/paul-kelton.vcf`.
+- [x] `/off-market` buyer list and `/property-value` free valuation (shared `LeadLayout`). Handlers `api/off-market.js`, `api/property-value.js`, shared `api/_lib/leads.js` (choice lists also used by the pages via `src/lib/leads.ts`).
+- [x] Leads go to `LEADS_WEBHOOK_URL` → Zapier workflow "paulchs website leads → Follow Up Boss" (https://zapier.com/workflow/01a18dc4-f0db-7039-97bf-90b92821bca7): FUB website inquiry, tags "Off-Market Buyer" or "Valuation Request" + "paulchs.com", buy box / property details in the message.
+- [ ] Do one real submission of each form and confirm the lead looks right in Follow Up Boss.
+- [ ] `/property-value` is seller-facing: add broker-approved agency disclosure when `data/site.json → agency_disclosure` is set (CLAUDE.md §6).
+- [ ] `/links` NEED: headshot (monogram for now), video blog / X / LinkedIn URLs, link for current listings.
+
 ## Charleston Market Monday sign-up (2026-10-30)
 
 - [x] `/market-monday` sign-up page (GRID-branded, newspaper style) + `/market-monday/thanks`. Short links `/mm` and `/marketmonday`.

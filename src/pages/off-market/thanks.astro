@@ -1,0 +1,18 @@
+---
+import LeadLayout from "../../layouts/LeadLayout.astro";
+import { site } from "../../lib/site";
+const sms = `sms:${site.phone_e164}`;
+---
+
+<LeadLayout
+  title="You're on the list | Paul Kelton"
+  description="You're on Paul Kelton's off-market buyer list."
+  h1="You're on the list."
+  lead="When a deal comes in that fits what you told me, I'll send it straight to you."
+  noindex
+>
+  <div class="done">
+    <p>Want to move faster? <a href={sms}>Text me at {site.phone}</a> and we'll talk through your buy box.</p>
+    <p><a href="/market-monday">Get Charleston Market Monday</a> – the Charleston market in 15 minutes a week.</p>
+  </div>
+</LeadLayout>

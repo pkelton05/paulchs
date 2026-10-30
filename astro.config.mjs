@@ -5,7 +5,7 @@ import { sitemapExclusions } from "./src/lib/sitemap-gate.mjs";
 
 const exclusions = await sitemapExclusions();
 // Utility pages that should never be indexed.
-exclusions.add("/market-monday/thanks");
+for (const p of ["/market-monday/thanks", "/off-market/thanks", "/property-value/thanks"]) exclusions.add(p);
 
 export default defineConfig({
   site: "https://paulchs.com",

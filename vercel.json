@@ -44,6 +44,16 @@
       "source": "/bio",
       "destination": "/links",
       "statusCode": 301
+    },
+    {
+      "source": "/offmarket",
+      "destination": "/off-market",
+      "statusCode": 301
+    },
+    {
+      "source": "/value",
+      "destination": "/property-value",
+      "statusCode": 301
     }
   ],
   "headers": [

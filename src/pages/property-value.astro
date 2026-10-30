@@ -1,0 +1,113 @@
+---
+// Free investment property valuation request. Posts to /api/property-value,
+// which forwards to the Zapier → Follow Up Boss leads workflow
+// (tag "Valuation Request").
+import LeadLayout from "../layouts/LeadLayout.astro";
+import { site } from "../lib/site";
+import { PROPERTY_TYPES, UNIT_COUNTS, OCCUPANCY, SELL_TIMELINES } from "../lib/leads";
+
+const errors = {
+  name: "Please add your name.",
+  email: "Please add a valid email address.",
+  phone: "That phone number doesn't look right. Leave it blank if you'd rather.",
+  address: "Please add the property address.",
+  offline: `The form isn't connected right now. Text me the address at ${site.phone} instead.`,
+  send: `Something went wrong sending that. Please try again, or text me at ${site.phone}.`,
+};
+const focus = { name: "first_name", email: "email", phone: "phone", address: "address" };
+---
+
+<LeadLayout
+  title="Free Charleston Investment Property Valuation | Paul Kelton"
+  description="What's your Charleston rental or apartment building worth? Send Paul Kelton the address and get a free value range based on real sales and rents."
+  h1="What's your investment property worth?"
+  lead="Send me the address and a few details. I'll put together a free value range for your Charleston rental or small apartment building, based on recent sales and current rents."
+>
+  <form
+    id="value"
+    class="lead-form"
+    method="post"
+    action="/api/property-value"
+    novalidate
+    data-errors={JSON.stringify(errors)}
+    data-focus={JSON.stringify(focus)}
+  >
+    <div class="alert" role="alert" aria-live="assertive" hidden></div>
+
+    <div class="field">
+      <label for="address">Property address</label>
+      <input id="address" name="address" type="text" autocomplete="street-address" required maxlength="200" data-check="text" data-error="address" />
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label for="property_type">Property type</label>
+        <select id="property_type" name="property_type">
+          <option value="">Choose one</option>
+          {PROPERTY_TYPES.map((t) => <option value={t}>{t}</option>)}
+        </select>
+      </div>
+      <div class="field">
+        <label for="units">Number of units</label>
+        <select id="units" name="units">
+          <option value="">Choose one</option>
+          {UNIT_COUNTS.map((u) => <option value={u}>{u}</option>)}
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label for="occupancy">Is it rented right now?</label>
+        <select id="occupancy" name="occupancy">
+          <option value="">Choose one</option>
+          {OCCUPANCY.map((o) => <option value={o}>{o}</option>)}
+        </select>
+      </div>
+      <div class="field">
+        <label for="timeline">Thinking about selling?</label>
+        <select id="timeline" name="timeline">
+          <option value="">Choose one</option>
+          {SELL_TIMELINES.map((t) => <option value={t}>{t}</option>)}
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label for="first_name">First name</label>
+        <input id="first_name" name="first_name" type="text" autocomplete="given-name" required maxlength="60" data-check="text" data-error="name" />
+      </div>
+      <div class="field">
+        <label for="last_name">Last name</label>
+        <input id="last_name" name="last_name" type="text" autocomplete="family-name" maxlength="60" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" autocomplete="email" required maxlength="160" data-check="email" data-error="email" />
+    </div>
+
+    <div class="field">
+      <label for="phone">Phone <span class="opt">(optional)</span></label>
+      <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="30" />
+    </div>
+
+    <div class="field">
+      <label for="notes">Anything I should know? <span class="opt">(optional)</span></label>
+      <textarea id="notes" name="notes" rows="4" maxlength="1500" placeholder="Current rents, recent updates, condition, why you're asking…"></textarea>
+    </div>
+
+    <div class="honey" aria-hidden="true">
+      <label for="company">Company</label>
+      <input id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <button class="btn" type="submit">Get my free value range</button>
+    <p class="fine">
+      No obligation to sell. This is a broker's opinion of value based on market data – not an appraisal. I'll only use
+      your details to follow up about this property.
+    </p>
+  </form>
+</LeadLayout>

@@ -34,6 +34,31 @@
       "source": "/marketmonday",
       "destination": "/market-monday",
       "statusCode": 301
+    },
+    {
+      "source": "/link",
+      "destination": "/links",
+      "statusCode": 301
+    },
+    {
+      "source": "/bio",
+      "destination": "/links",
+      "statusCode": 301
+    }
+  ],
+  "headers": [
+    {
+      "source": "/paul-kelton.vcf",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/vcard; charset=utf-8"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=\"paul-kelton.vcf\""
+        }
+      ]
     }
   ]
 }

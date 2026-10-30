@@ -1,6 +1,11 @@
 // Charleston Market Monday sign-up (Vercel function, POST /api/market-monday).
 //
-// With KIT_API_KEY set (Kit → Settings → Developer → v4 API key, added in
+// Primary path: MARKET_MONDAY_WEBHOOK_URL (set in Vercel) is a Zapier catch
+// hook. The Zapier workflow "paulchs Market Monday sign-up → Kit" adds the
+// person to Kit with the "Charleston Market Monday" tag via Paul's Kit
+// connection in Zapier, so no Kit API key lives in Vercel.
+//
+// Fallbacks: with KIT_API_KEY set (Kit → Settings → Developer → v4 API key, added in
 // Vercel → Settings → Environment Variables): creates the subscriber in Kit
 // and tags them "Charleston Market Monday".
 // Without it: falls back to Kit's public form endpoint for the existing
@@ -14,6 +19,21 @@ const back = (request, path) =>
   new Response(null, { status: 303, headers: { Location: new URL(path, request.url).toString() } });
 
 const clean = (v) => (typeof v === "string" ? v.trim() : "");
+
+async function viaWebhook(url, email, firstName) {
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      email,
+      first_name: firstName,
+      source: "paulchs.com/market-monday",
+      submitted_at: new Date().toISOString(),
+    }),
+    signal: AbortSignal.timeout(8000),
+  });
+  if (!res.ok) throw new Error(`Webhook ${res.status}`);
+}
 
 async function viaApi(key, email, firstName) {
   const headers = { "Content-Type": "application/json", Accept: "application/json", "X-Kit-Api-Key": key };
@@ -63,8 +83,10 @@ export async function POST(request) {
   if (firstName.length > 60) return back(request, "/market-monday?error=name#signup");
 
   try {
+    const hook = process.env.MARKET_MONDAY_WEBHOOK_URL;
     const key = process.env.KIT_API_KEY;
-    if (key) await viaApi(key, email, firstName);
+    if (hook) await viaWebhook(hook, email, firstName);
+    else if (key) await viaApi(key, email, firstName);
     else await viaPublicForm(email, firstName);
   } catch (err) {
     console.error("market-monday: sign-up failed", err instanceof Error ? err.message : err);

@@ -10,9 +10,8 @@ Last updated: 2026-10-06 (Session 1)
 ## Charleston Market Monday sign-up (2026-10-30)
 
 - [x] `/market-monday` sign-up page (GRID-branded, newspaper style) + `/market-monday/thanks`. Short links `/mm` and `/marketmonday`.
-- [x] `api/market-monday.js` (Vercel function): with `KIT_API_KEY`, creates the Kit subscriber and tags "Charleston Market Monday" (tag 25121747); without it, posts to the Kit "Newsletter site" form (8033319) so nothing is lost, but untagged.
-- [ ] **Paul:** add `KIT_API_KEY` (Kit → Settings → Developer → v4 API key) in Vercel → paulchs → Settings → Environment Variables, Production + Preview, then redeploy.
-- [ ] Do one real test sign-up after it's live and confirm the subscriber shows up in Kit with the tag.
+- [x] `api/market-monday.js` (Vercel function) posts each sign-up to `MARKET_MONDAY_WEBHOOK_URL` (set in Vercel, Production + Preview) – a Zapier catch hook for the private Zapier workflow "paulchs Market Monday sign-up → Kit" (https://zapier.com/workflow/01a18c73-6ceb-7970-ba79-cc791421780b), which adds the person to Kit with the "Charleston Market Monday" tag (25121747). Tested 2026-10-30 with Paul's own email. Fallbacks if the env var is removed: `KIT_API_KEY` (v4 API), else the Kit "Newsletter site" form (untagged).
+- [ ] Do one real sign-up through the live page and confirm it shows up in Kit with the tag.
 - [ ] When the full site (PR #1) merges, check `/market-monday` still uses its own layout and footer.
 
 ## Hosting status (Vercel)

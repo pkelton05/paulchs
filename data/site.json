@@ -38,6 +38,12 @@
     "paul_closing_counts_scope": "counts only – never addresses or prices of Paul's sales"
   },
 
+  "agency_disclosure": {
+    "text": "South Carolina law requires me to explain the brokerage relationships Matt O'Neill Real Estate offers. Until you sign a written agency agreement with the firm, you are a customer, not a client – the firm won't act as your agent, but I will still be fair and honest, present all offers, and disclose material adverse facts I know about. Commissions are negotiable and not set by law.",
+    "form_title": "SC Disclosure of Real Estate Brokerage Relationships",
+    "form_url": "https://www.llr.sc.gov/re/recpdf/Doc170%20SC_Disclosure_of_Real_Estate_Brokerage_Relationships.pdf",
+    "form_source": "SC Real Estate Commission (LLR), rev. 12/18/2024"
+  },
   "tide_disclosure": "[PLACEHOLDER – affiliated business disclosure: Paul Kelton has an ownership interest in Tide Property Management. Exact wording to be confirmed.]",
 
   "social": {

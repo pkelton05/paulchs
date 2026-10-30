@@ -14,6 +14,8 @@ interface Props {
 }
 const { title, description, h1, lead, noindex = false } = Astro.props;
 const sms = `sms:${site.phone_e164}`;
+type Agency = { text: string; form_title: string; form_url: string; form_source: string } | null;
+const agency = site.agency_disclosure as Agency;
 ---
 
 <!doctype html>
@@ -33,6 +35,18 @@ const sms = `sms:${site.phone_e164}`;
       </header>
 
       <slot />
+
+      {
+        agency && (
+          <section class="agency" aria-labelledby="agency-h">
+            <h2 id="agency-h">How I work with you</h2>
+            <p>{agency.text}</p>
+            <p>
+              <a href={agency.form_url} rel="noopener">Read the {agency.form_title}</a> ({agency.form_source}).
+            </p>
+          </section>
+        )
+      }
 
       <p class="talk">Rather talk it through? <a href={sms}>Text me at {site.phone}</a>.</p>
 
@@ -287,6 +301,30 @@ const sms = `sms:${site.phone_e164}`;
   }
   footer a {
     color: var(--pluff-soft);
+  }
+
+  .agency {
+    margin-top: 2rem;
+    padding: 1rem 1.1rem;
+    background: var(--white);
+    border-left: 4px solid var(--spartina);
+    font-size: 0.9375rem;
+    color: var(--pluff-soft);
+  }
+  .agency h2 {
+    font-size: 1rem;
+    margin: 0 0 0.4rem;
+    color: var(--pluff);
+  }
+  .agency p {
+    margin: 0 0 0.5rem;
+  }
+  .agency p:last-child {
+    margin-bottom: 0;
+  }
+  .agency a {
+    color: var(--marsh);
+    font-weight: 700;
   }
 
   /* Thank-you pages */

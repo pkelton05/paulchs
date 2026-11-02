@@ -1,0 +1,19 @@
+---
+import { getCollection, render } from "astro:content";
+import NeighborhoodLayout from "../../../layouts/NeighborhoodLayout.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("neighborhoods");
+  return entries.map((entry) => {
+    const [area, hood] = entry.id.split("/");
+    return { params: { area, hood }, props: { entry } };
+  });
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<NeighborhoodLayout entry={entry}>
+  <Content />
+</NeighborhoodLayout>

@@ -1,0 +1,37 @@
+---
+// Three proof stats from data/site.json → stats. All VERIFY until Paul confirms.
+import NumberBlock from "./NumberBlock.astro";
+import { site } from "../lib/site";
+
+const { stat_deals, stat_doors, stat_rank } = site.stats;
+const status = site._status as Record<string, string>;
+const needsVerify = (key: string) => (status[key] ?? "").startsWith("VERIFY");
+---
+
+<section class="proof" aria-label="By the numbers">
+  <div class="wrap grid">
+    <NumberBlock value={stat_deals.value} label={stat_deals.label} verify={needsVerify("stats.stat_deals")} />
+    <NumberBlock value={stat_doors.value} label={stat_doors.label} verify={needsVerify("stats.stat_doors")} />
+    <NumberBlock
+      value={stat_rank.value}
+      label={stat_rank.label}
+      verify={needsVerify("stats.stat_rank")}
+      missing="[Ranking – need source from Paul]"
+    />
+  </div>
+</section>
+
+<style>
+  .proof {
+    padding-block: var(--space-4);
+  }
+  .grid {
+    display: grid;
+    gap: 2px;
+  }
+  @media (min-width: 48rem) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

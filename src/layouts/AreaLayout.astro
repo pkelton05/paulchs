@@ -1,0 +1,334 @@
+---
+// Area hub page – docs/AREAS.md "Area page template", items 1–10.
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import NumberBlock from "../components/NumberBlock.astro";
+import CtaBlock from "../components/CtaBlock.astro";
+import { reviewMode } from "../lib/site";
+import {
+  areaBySlug,
+  hoodsInArea,
+  fill,
+  fmt,
+  leadLine,
+  sourceLine,
+  changeShown,
+  countySlug,
+  attribution,
+  MIN_CHANGE_SAMPLE,
+} from "../lib/areas";
+
+interface Props {
+  entry: CollectionEntry<"areas">;
+}
+
+const { entry } = Astro.props;
+const d = entry.data;
+const area = areaBySlug(entry.id);
+if (!area) throw new Error(`No data/areas.json record for content file areas/${entry.id}.md`);
+if (area.mls_area !== d.mls_area) throw new Error(`areas/${entry.id}.md mls_area does not match data/areas.json`);
+if (/\{\{/.test(entry.body ?? "")) throw new Error(`areas/${entry.id}.md: tokens are not allowed in the body (Paul's take). Move numbers to cards.numbers.`);
+if (/\$\s?\d|\d+%|\b\d{1,3}(,\d{3})+\b/.test(entry.body ?? "")) {
+  throw new Error(`areas/${entry.id}.md: a number is typed into the body. Numbers come from data only.`);
+}
+
+const where = `areas/${entry.id}.md`;
+const description = fill(d.description, area, where);
+const cards = {
+  buildings: fill(d.cards.buildings, area, where),
+  rent_drivers: fill(d.cards.rent_drivers, area, where),
+  numbers: fill(d.cards.numbers, area, where),
+};
+const lead = leadLine(area, d.name, d.place_phrase);
+
+const mf: Record<string, any> = area.mf ?? {};
+const sfr: Record<string, any> = area.sfr ?? {};
+const rents: Record<string, any> = area.rents ?? {};
+const n = (v: unknown) => (typeof v === "number" ? v : null);
+const money = (v: unknown) => (typeof v === "number" ? fmt.money(v) : null);
+const period = "last 12 months";
+
+const mfSource = sourceLine(area, `MLS closed sales of 2–4 unit buildings, ${period} · ${mf.sales_12mo ?? 0} sales`);
+const sfrSource = sourceLine(area, `MLS closed sales of single-family detached homes, ${period} · ${sfr.sales_12mo ?? 0} sales`);
+const rentBeds = [
+  ["1br", "1-bedroom"],
+  ["2br", "2-bedroom"],
+  ["3br", "3-bedroom"],
+  ["4br_plus", "4+ bedroom"],
+] as const;
+const rentSourceFor = (key: string) => {
+  const s = rents.source_by_bed?.[key];
+  return sourceLine(area, s ? `MLS lease comps, ${period} · ${s.n} leases` : "MLS lease comps · fewer than 3 leases");
+};
+
+const changes = [
+  { label: "2–4 unit median price, 1-year change", v: changeShown(area, "mf", "1yr"), n: mf.sample?.prior_year_sales },
+  { label: "2–4 unit median price, 5-year change", v: changeShown(area, "mf", "5yr"), n: mf.sample?.five_years_ago_sales },
+  { label: "Single-family median price, 1-year change", v: changeShown(area, "sfr", "1yr"), n: sfr.sample?.prior_year_sales },
+  { label: "Single-family median price, 5-year change", v: changeShown(area, "sfr", "5yr"), n: sfr.sample?.five_years_ago_sales },
+];
+
+const allAreas = await getCollection("areas");
+const built = new Set(allAreas.map((a) => a.id));
+const nearby = d.nearby.map((slug) => ({ slug, entry: allAreas.find((a) => a.id === slug), data: areaBySlug(slug) }));
+const allHoods = await getCollection("neighborhoods");
+const hoodPages = new Set(allHoods.map((h) => h.id));
+const hoods = hoodsInArea(entry.id);
+---
+
+<BaseLayout title={d.title} description={description} noindex={d.draft}>
+  <article>
+    <header class="wrap area-head">
+      <Breadcrumb
+        items={[
+          { label: "Charleston", href: "/charleston" },
+          { label: `${d.county} County`, href: `/charleston#${countySlug(d.county)}` },
+          { label: d.name },
+        ]}
+      />
+      <h1>{d.name} – investment property guide</h1>
+      {lead && <p class="lead">{lead}</p>}
+    </header>
+
+    <section class="wrap cards" aria-label={`${d.name} at a glance`}>
+      <div class="card">
+        <h2>The buildings</h2>
+        <p>{cards.buildings}</p>
+      </div>
+      <div class="card">
+        <h2>What drives rent</h2>
+        <p>{cards.rent_drivers}</p>
+      </div>
+      <div class="card">
+        <h2>The numbers</h2>
+        <p>{cards.numbers}</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="take">
+      <div class="wrap take">
+        <h2 id="take">My take on {d.name}</h2>
+        <slot />
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="numbers">
+      <div class="wrap">
+        <h2 id="numbers">{d.name} by the numbers</h2>
+
+        <h3>2–4 unit buildings</h3>
+        <div class="grid grid-3">
+          <NumberBlock
+            value={(mf.sales_12mo ?? 0) >= 5 ? money(mf.median_price) : null}
+            label="median sale price"
+            missing="Rarely trades here"
+            source={mfSource}
+          />
+          <NumberBlock
+            value={(mf.sales_12mo ?? 0) >= 5 ? money(mf.price_per_door) : null}
+            label="median price per door"
+            missing="Not enough sales"
+            source={mfSource}
+          />
+          <NumberBlock
+            value={(mf.sales_12mo ?? 0) >= 5 && n(mf.p25) && n(mf.p75) ? `${money(mf.p25)}–\u200b${money(mf.p75)}` : null}
+            label="middle half of sales"
+            missing="Not enough sales"
+            size="compact"
+            source={mfSource}
+          />
+        </div>
+
+        <h3>Single-family homes</h3>
+        <div class="grid grid-2">
+          <NumberBlock value={money(sfr.median_price)} label="median sale price, single-family detached" source={sfrSource} />
+          <NumberBlock value={n(sfr.median_dom)?.toString() ?? null} label="median days on market, single-family" size="compact" source={sfrSource} />
+        </div>
+
+        <h3>Rent by bedroom count</h3>
+        <div class="grid grid-4">
+          {
+            rentBeds.map(([key, label]) => (
+              <NumberBlock
+                value={money(rents[key])}
+                label={`${label}, per month`}
+                missing="Too few leases"
+                size="compact"
+                source={rentSourceFor(key)}
+              />
+            ))
+          }
+        </div>
+
+        <h3>How fast it moves</h3>
+        <div class="grid grid-2">
+          <NumberBlock
+            value={(mf.sales_12mo ?? 0) >= 5 ? (n(mf.median_dom)?.toString() ?? null) : null}
+            label="median days on market, 2–4 unit buildings"
+            missing="Not enough sales"
+            size="compact"
+            source={mfSource}
+          />
+          <NumberBlock
+            value={typeof area.months_inventory === "number" ? area.months_inventory.toFixed(1) : null}
+            label="months of inventory, 2–4 unit buildings"
+            missing={(mf.sales_12mo ?? 0) >= 5 && area.inventory_detail?.active_2_4_unit === 0 ? "None listed right now" : "Not enough sales"}
+            size="compact"
+            source={sourceLine(area, `Active 2–4 unit listings divided by monthly sales · ${area.inventory_detail?.active_2_4_unit ?? "–"} active`)}
+          />
+        </div>
+
+        <h3>Price change</h3>
+        <div class="grid grid-4">
+          {
+            changes.map((c) => (
+              <NumberBlock
+                value={c.v === null ? null : fmt.pct(c.v)}
+                label={c.label}
+                missing={`Too few sales to compare (under ${MIN_CHANGE_SAMPLE})`}
+                size="compact"
+                source={c.v === null ? undefined : sourceLine(area, `Median vs. the same 12 months ${c.label.includes("5-year") ? "five years earlier" : "a year earlier"} · ${c.n} sales then`)}
+              />
+            ))
+          }
+        </div>
+        <p class="block-source">{attribution} Medians of closed MLS sales and leases. Changes compare the same 12-month window a year and five years earlier, shown only when both periods have {MIN_CHANGE_SAMPLE} or more sales.</p>
+      </div>
+    </section>
+
+    {
+      d.watch_outs.length > 0 && (
+        <section class="section" aria-labelledby="watch">
+          <div class="wrap narrow">
+            <h2 id="watch">What to check before you buy here</h2>
+            <ul class="watch">
+              {d.watch_outs.map((w) => (
+                <li>
+                  {w.text}
+                  {w.verify && reviewMode && <> <span class="verify">VERIFY</span></>}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )
+    }
+
+    {
+      hoods.length > 0 && (
+        <section class="section" aria-labelledby="hoods">
+          <div class="wrap narrow">
+            <h2 id="hoods">Neighborhoods in {d.name} where I've closed listings</h2>
+            <ul class="hoods" role="list">
+              {hoods.map((h) => {
+                const id = `${h.area_slug}/${h.slug}`;
+                return (
+                  <li>
+                    {hoodPages.has(id) ? <a href={`/charleston/${id}`}>{h.name}</a> : <span>{h.name}</span>}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </section>
+      )
+    }
+
+    {
+      nearby.length > 0 && (
+        <section class="section" aria-labelledby="nearby">
+          <div class="wrap narrow">
+            <h2 id="nearby">Nearby areas</h2>
+            <ul class="nearby" role="list">
+              {nearby.map((x) => (
+                <li>
+                  {x.entry && built.has(x.slug) ? (
+                    <a href={`/charleston/${x.slug}`}>{x.entry.data.name}</a>
+                  ) : (
+                    <span>{x.data?.name ?? x.slug}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )
+    }
+  </article>
+
+  <CtaBlock heading={`Looking at a building in ${d.name}? Send me the deal.`} withCall where={`area_${entry.id}`} />
+</BaseLayout>
+
+<style>
+  .area-head {
+    padding-block: var(--space-4) var(--space-3);
+  }
+  .area-head .lead {
+    max-width: 44rem;
+  }
+  .cards {
+    display: grid;
+    gap: var(--space-3);
+    padding-bottom: var(--space-4);
+  }
+  @media (min-width: 60rem) {
+    .cards {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+    }
+  }
+  .card {
+    border-top: 3px solid var(--pluff);
+    padding-top: var(--space-2);
+  }
+  .card h2 {
+    font-size: var(--text-h3);
+    margin-bottom: 0.5rem;
+  }
+  .card p {
+    margin: 0;
+  }
+  .take :global(p) {
+    max-width: var(--measure);
+  }
+  .narrow {
+    max-width: 48rem;
+  }
+  h3 {
+    margin-top: var(--space-4);
+  }
+  .grid {
+    display: grid;
+    gap: 2px;
+  }
+  .grid > :global(*) {
+    min-width: 0;
+  }
+  @media (min-width: 48rem) {
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (min-width: 60rem) {
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+  .block-source {
+    font-size: var(--text-small);
+    color: var(--pluff-soft);
+    margin-top: var(--space-2);
+    max-width: none;
+  }
+  .watch li + li {
+    margin-top: 0.6rem;
+  }
+  .hoods li,
+  .nearby li {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-2);
+    padding-block: 0.6rem;
+    border-bottom: 1px solid var(--rule);
+  }
+</style>

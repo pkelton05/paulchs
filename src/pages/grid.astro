@@ -1,0 +1,71 @@
+---
+// SITE-CONTENT.md §10, engagement plan #2. The next event comes from
+// data/site.json → next_event (the same data as the event strip), and the
+// podcast link from site.social.grid_podcast.
+import PageLayout from "../layouts/PageLayout.astro";
+import ReviewOnly from "../components/ReviewOnly.astro";
+import { site, smsHref } from "../lib/site";
+
+type NextEvent = { date: string; title: string; url?: string | null } | null;
+const event = site.next_event as NextEvent;
+const podcast = site.social.grid_podcast;
+---
+
+<PageLayout
+  title="GRID Charleston – Monthly Investor Meetup and Podcast | Paul Kelton"
+  description="GRID Charleston is a monthly meetup and podcast for Charleston real estate investors. Real deals, real numbers, no gurus."
+  h1="GRID Charleston"
+  lead="A monthly meetup and podcast for Charleston real estate investors. Real deals, real numbers, no gurus, no pitch."
+>
+  <section aria-labelledby="next">
+    <h2 id="next">Next GRID</h2>
+    {
+      event ? (
+        <>
+          <p class="event">
+            <strong>{event.date}</strong> · {event.title}
+          </p>
+          {event.url && (
+            <p>
+              <a class="btn" href={event.url} data-event="event_click" data-where="grid">Save your seat</a>
+            </p>
+          )}
+        </>
+      ) : (
+        <>
+          <p>The next date isn't posted yet. Text me and I'll send it to you as soon as it's set.</p>
+          <p>
+            <a class="btn btn--quiet" href={smsHref} data-event="text_tap" data-where="grid">Text Paul</a>
+          </p>
+        </>
+      )
+    }
+  </section>
+
+  <section aria-labelledby="what">
+    <h2 id="what">What it is</h2>
+    <p>
+      Once a month, a room full of local investors talks through real deals. Bring your questions and your numbers.
+    </p>
+  </section>
+
+  {
+    podcast && (
+      <section aria-labelledby="listen">
+        <h2 id="listen">Listen to the podcast</h2>
+        <p><a href={podcast} rel="noopener">GRID Charleston podcast</a></p>
+      </section>
+    )
+  }
+
+  <ReviewOnly kind="need">
+    [NEED from Paul: next event date and RSVP link (data/site.json → next_event), podcast feed URL (site.social.grid_podcast),
+    3 recent episodes, past events, and photos from the room.]
+  </ReviewOnly>
+</PageLayout>
+
+<style>
+  .event {
+    font-size: 1.25rem;
+  }
+</style>

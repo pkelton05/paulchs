@@ -1,12 +1,17 @@
 ---
+// Homepage. Section order follows peterlohmann.com's layout (structure only –
+// none of his copy): hero with name, bio, stat line and a "new" banner; the
+// three businesses; about; resources; work with me; GRID feature; featured
+// in; let's connect. Palette, type and voice are Paul's (CLAUDE.md §3, §10).
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ProofStrip from "../components/ProofStrip.astro";
-import Testimonial from "../components/Testimonial.astro";
 import CtaBlock from "../components/CtaBlock.astro";
+import ReviewOnly from "../components/ReviewOnly.astro";
 import { site, smsHref, reviewMode } from "../lib/site";
 import { sendTheDeal, pageLinks } from "../lib/nav";
 
-const doors = site.stats.stat_doors.value;
+const { stat_deals, stat_doors, stat_rank } = site.stats;
+const bookCall = "https://calendar.app.google/Pr3TdPMiTENajpEC8";
+const gridRsvp = "https://www.meetup.com/grid-charleston/";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -24,69 +29,146 @@ const jsonLd = {
     addressCountry: "US",
   },
   areaServed: "Charleston, SC",
-  sameAs: [site.social.instagram, site.social.threads].filter(Boolean),
+  sameAs: [site.social.instagram, site.social.threads, site.social.linkedin].filter(Boolean),
 };
 
-const ways = [
+const socials = [
+  { label: "Instagram", href: site.social.instagram },
+  { label: "LinkedIn", href: site.social.linkedin },
+  { label: "Threads", href: site.social.threads },
+  { label: "YouTube", href: site.social.youtube },
+].filter((s) => s.href);
+
+type Biz = { name: string; what: string; num: string; numLabel: string; href?: string; external?: boolean; cta?: string };
+const businesses: Biz[] = [
   {
-    link: pageLinks.investing,
-    title: "Investing",
-    body: "Duplexes up to 49-unit buildings. I underwrite like an owner, because I see owner-level numbers every day.",
+    name: "MORE Commercial",
+    what: "My brokerage team for 2–49 unit buildings at Matt O'Neill Real Estate. Small multifamily is our whole focus.",
+    num: stat_deals.value,
+    numLabel: stat_deals.label,
+    href: pageLinks.investing.href,
+    cta: "How I work with investors",
   },
   {
-    link: pageLinks.firstBuilding,
-    title: "Your first building",
-    body: "Live in one unit and rent the rest. It's the most common first step I see, and the one I'd take again.",
+    name: "Tide Property Management",
+    what: "The management company I founded. It's why the operating costs I quote come from real Charleston buildings, not guesses.",
+    num: stat_doors.value,
+    numLabel: "doors under management",
   },
   {
-    link: pageLinks.selling,
-    title: "Selling",
-    body: "I know who's buying Charleston income property right now and what they'll pay for it.",
+    name: "GRID Charleston",
+    what: "A monthly room full of local investors talking about real deals, plus a podcast. No gurus, no pitch.",
+    num: "Monthly",
+    numLabel: "investor meetups",
+    href: pageLinks.grid.href,
+    cta: "About GRID",
   },
+];
+
+type Res = { title: string; body: string; href: string; cta: string; external?: boolean };
+const resources: Res[] = [
+  { title: "Charleston Market Monday", body: "A free weekly update on what's selling, what's sitting, and what rents are doing.", href: "/market-monday", cta: "Get it free" },
+  { title: "Charleston areas", body: "Prices, rents, and price per door for each MLS area, from downtown to Moncks Corner.", href: pageLinks.areas.href, cta: "See the areas" },
+  { title: "Off-market buyer list", body: "Tell me what you buy. I'll send you deals that fit, often before they hit the MLS.", href: "/off-market", cta: "Join the list" },
+  { title: "What's my building worth?", body: "A free valuation of your investment property, priced the way buyers underwrite it.", href: "/property-value", cta: "Get a valuation" },
+  { title: "GRID Charleston events", body: "Meet the people buying and building in Charleston, once a month.", href: gridRsvp, cta: "RSVP", external: true },
+];
+
+type Work = { title: string; body: string; href: string; cta: string; external?: boolean };
+const work: Work[] = [
+  { title: "Buy your first building", body: "Live in one unit and rent the rest. I'll walk you through it from first showing to first lease.", href: pageLinks.firstBuilding.href, cta: "Start here" },
+  { title: "Grow a portfolio", body: "Duplexes up to 49 units. I underwrite like an owner, because I see owner-level numbers every day.", href: pageLinks.investing.href, cta: "Investing with me" },
+  { title: "Sell your building", body: "I know who's buying Charleston income property right now and what they'll pay for it.", href: pageLinks.selling.href, cta: "Selling with me" },
 ];
 ---
 
 <BaseLayout
   title="Paul Kelton | Investor-Friendly Agent in Charleston, SC"
-  description={`Charleston investment property agent for duplexes, small multifamily, and rentals. Real MLS comps, plus operating costs from ${doors} doors I manage. Send me the deal.`}
+  description={`Charleston investment property agent for duplexes, small multifamily, and rentals. Real MLS comps, plus operating costs from ${stat_doors.value} doors I manage. Send me the deal.`}
   jsonLd={jsonLd}
   mentionsTide
 >
+  {/* 1. Hero */}
   <section class="hero">
-    <div class:list={["wrap", "hero-grid", { "has-media": reviewMode }]}>
-      <div>
-        <h1>Charleston investment property, with real numbers.</h1>
-        <p class="lead">I help investors buy, sell, and hold duplexes, small multifamily, and rental property across the tri-county.</p>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker">{site.positioning_line}</p>
+        <h1>Paul Kelton</h1>
+        <p class="lead">
+          I'm an investor-friendly agent in Charleston, SC. I help people buy, sell, and hold duplexes, small
+          multifamily, and rental property – and my company manages {stat_doors.value} doors here, so I know what these
+          buildings really cost to run.
+        </p>
         <div class="hero-buttons">
-          {sendTheDeal.live && <a class="btn" href={sendTheDeal.href}>{sendTheDeal.label}</a>}
-          {
-            pageLinks.areas.live ? (
-              <a class="btn btn--quiet" href={pageLinks.areas.href}>{pageLinks.areas.label}</a>
-            ) : (
-              <a class="btn btn--quiet" href={smsHref} data-event="text_tap" data-where="hero">Text Paul</a>
-            )
-          }
+          <a class="btn" href={sendTheDeal.href}>{sendTheDeal.label}</a>
+          <a class="btn btn--quiet" href="/market-monday">Get Market Monday</a>
         </div>
+        {
+          socials.length > 0 && (
+            <ul role="list" class="socials" aria-label="Paul on social media">
+              {socials.map((s) => (
+                <li><a href={s.href} rel="me noopener">{s.label}</a></li>
+              ))}
+            </ul>
+          )
+        }
       </div>
-      {
-        reviewMode && (
-          <div class="hero-media">
-            <span class="placeholder">[PHOTO – need from Paul: Paul on a property, or a GRID podcast still. Real photo, no stock.]</span>
-          </div>
-        )
-      }
+      <div class="hero-photo">
+        {
+          reviewMode ? (
+            <span class="placeholder">[PHOTO – need from Paul: headshot, ideally a cut-out or plain background. Real photo, no stock.]</span>
+          ) : (
+            <div class="monogram" aria-hidden="true">PK</div>
+          )
+        }
+      </div>
+    </div>
+
+    <div class="wrap">
+      <dl class="statline">
+        <div><dt>{stat_deals.label}</dt><dd>{stat_deals.value}</dd></div>
+        <div><dt>{stat_doors.label}</dt><dd>{stat_doors.value}</dd></div>
+        <div><dt>{stat_rank.label}</dt><dd>{stat_rank.value}</dd></div>
+      </dl>
+
+      <a class="banner" href="/market-monday">
+        <span class="banner-tag">New</span>
+        <span>Charleston Market Monday – a free weekly market update in your inbox</span>
+      </a>
     </div>
   </section>
 
-  <ProofStrip />
+  {/* 2. The three businesses */}
+  <section class="section" aria-labelledby="biz">
+    <div class="wrap">
+      <h2 id="biz">The three businesses I run</h2>
+      <ul role="list" class="biz">
+        {
+          businesses.map((b) => (
+            <li>
+              <div class="biz-num">
+                <span class="num">{b.num}</span>
+                <span class="num-label">{b.numLabel}</span>
+              </div>
+              <h3>{b.name}</h3>
+              <p>{b.what}</p>
+              {b.href && <a href={b.href}>{b.cta}</a>}
+            </li>
+          ))
+        }
+      </ul>
+      <ReviewOnly kind="need">[NEED from Paul: Tide's website URL to link the Tide card, and a GRID audience number (podcast downloads, members) if you want one on that card.]</ReviewOnly>
+    </div>
+  </section>
 
-  <section class="section" aria-labelledby="story">
-    <div class="wrap story-grid">
+  {/* 3. About */}
+  <section class="section" aria-labelledby="about">
+    <div class="wrap about-grid">
+      <h2 id="about">About me</h2>
       <div>
-        <h2 id="story">I work inside these buildings every day</h2>
+        <p class="lead">I got into real estate through rental property, and I still spend most of my days inside it.</p>
         <p>
-          I got into real estate through rental property, and I still spend most of my days inside it. My property
-          management company, Tide, takes care of {doors} doors across Charleston. So when I tell you what the
+          Through Tide, my team takes care of {stat_doors.value} doors across Charleston. So when I tell you what the
           insurance runs, what a turnover costs, or what an old roof will do to your first year, I'm not guessing. I see
           it on buildings we run every month.
         </p>
@@ -94,63 +176,95 @@ const ways = [
           The rents and prices on this site come straight from MLS comps, not from my own buildings, so you can check
           my math.
         </p>
-        <p>That's how I work with investors. Plain talk, real numbers, and no pressure to buy anything that doesn't pencil.</p>
-        {reviewMode && <p class="placeholder">[NEED from Paul: your own origin story – how you started, your first deal – to replace or extend the first sentence.]</p>}
-      </div>
-
-      <div>
-        <h2 id="ways">How I help</h2>
-        <ul role="list" class="ways" aria-labelledby="ways">
-          {
-            ways.map((w) => (
-              <li>
-                <h3>{w.link.live ? <a href={w.link.href}>{w.title}</a> : w.title}</h3>
-                <p>{w.body}</p>
-              </li>
-            ))
-          }
-        </ul>
+        <ReviewOnly kind="need">[NEED from Paul: one or two lines on your start and life outside work (family, Johns Island, running) – only what you want public.]</ReviewOnly>
+        <p><a href={pageLinks.about.href}>More about me</a></p>
       </div>
     </div>
   </section>
 
-  {/* No real testimonials yet: the section shows placeholders in review mode and is left out of production. */}
-  {reviewMode && (
-  <section class="section" aria-labelledby="words">
+  {/* 4. Resources */}
+  <section class="section" aria-labelledby="res">
     <div class="wrap">
-      <h2 id="words">In their words</h2>
-      <div class="quotes">
-        <Testimonial />
-        <Testimonial />
-        <Testimonial />
-      </div>
+      <h2 id="res">Free resources for Charleston investors</h2>
+      <ul role="list" class="res">
+        {
+          resources.map((r) => (
+            <li>
+              <a href={r.href} {...(r.external ? { rel: "noopener" } : {})}>
+                <h3>{r.title}</h3>
+                <p>{r.body}</p>
+                <span class="res-cta">{r.cta}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </section>
-  )}
 
-  <section class="section" aria-labelledby="areas">
-    <div class="wrap split">
-      <div>
-        <h2 id="areas">Every corner of the tri-county, with the numbers</h2>
-        <p>Prices, rents, and price per door for each MLS area, from downtown to Moncks Corner. Updated monthly.</p>
-        {pageLinks.areas.live && <p><a href={pageLinks.areas.href}>See all Charleston areas</a></p>}
-      </div>
+  {/* 5. GRID feature */}
+  <section class="grid-feature" aria-labelledby="grid">
+    <div class="wrap grid-feature-inner">
       <div>
         <h2 id="grid">GRID Charleston</h2>
-        <p>A monthly room full of local investors talking about real deals. No gurus, no pitch.</p>
-        {pageLinks.grid.live && <p><a href={pageLinks.grid.href}>{pageLinks.grid.label}</a></p>}
+        <p>
+          Once a month, local investors get in a room and talk about real deals – what they paid, what went wrong, and
+          what they'd do again. Come once and see if it's for you.
+        </p>
+      </div>
+      <div class="grid-buttons">
+        <a class="btn btn--light" href={gridRsvp} rel="noopener">RSVP to the next event</a>
+        <a class="link-light" href={pageLinks.grid.href}>About GRID</a>
       </div>
     </div>
   </section>
 
+  {/* 6. Work with me */}
+  <section class="section" aria-labelledby="work">
+    <div class="wrap">
+      <h2 id="work">Work with me</h2>
+      <ul role="list" class="work">
+        {
+          work.map((w) => (
+            <li>
+              <h3>{w.title}</h3>
+              <p>{w.body}</p>
+              <a href={w.href}>{w.cta}</a>
+            </li>
+          ))
+        }
+        <li class="work-call">
+          <h3>Talk it through</h3>
+          <p>Not sure which one you are? Grab a time on my calendar and we'll figure it out.</p>
+          <a href={bookCall} rel="noopener">Book a call</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  {/* 7. Featured in – no list from Paul yet, so review builds only */}
+  {
+    reviewMode && (
+      <section class="section" aria-labelledby="featured">
+        <div class="wrap">
+          <h2 id="featured">Featured and published</h2>
+          <ReviewOnly kind="need">[NEED from Paul: podcasts you've been a guest on, stages you've spoken on, and any press. This section stays off the live site until there's a list.]</ReviewOnly>
+        </div>
+      </section>
+    )
+  }
+
+  {/* 8. Let's connect */}
   <CtaBlock
-    heading="Not sure where to start?"
+    heading="Let's connect"
     line="Send me what you've got – an address, a question, or just a budget. Most people who reach out are months from buying, and that's the right time to talk."
     where="home_closing"
+    withCall
   />
 </BaseLayout>
 
 <style>
+  /* Hero */
   .hero {
     padding-block: var(--space-4) var(--space-3);
   }
@@ -158,6 +272,16 @@ const ways = [
     display: grid;
     gap: var(--space-4);
     align-items: center;
+  }
+  .kicker {
+    font-weight: 700;
+    color: var(--marsh);
+    margin-bottom: var(--space-1);
+  }
+  .hero h1 {
+    font-size: clamp(2.75rem, 1.6rem + 5vw, 5rem);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-3);
   }
   .hero-buttons {
     display: flex;
@@ -168,12 +292,35 @@ const ways = [
   .hero-buttons .btn {
     flex: 1 1 12rem;
   }
-  .hero-media .placeholder {
-    aspect-ratio: 4 / 3;
+  .socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-3);
+    margin-top: var(--space-3);
+    font-size: var(--text-small);
+    font-weight: 700;
+  }
+  .hero-photo .placeholder,
+  .monogram {
+    aspect-ratio: 1;
+    max-width: 24rem;
+    margin-inline: auto;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+  }
+  .hero-photo .placeholder {
+    padding: var(--space-4);
+  }
+  .monogram {
+    width: 100%;
+    background: var(--piling);
+    color: var(--oyster);
+    font-family: var(--font-num);
+    font-size: clamp(4rem, 3rem + 6vw, 8rem);
+    box-shadow: inset 0 0 0 10px var(--piling), inset 0 0 0 12px var(--spartina);
   }
   @media (min-width: 48rem) {
     .hero-buttons .btn {
@@ -184,48 +331,234 @@ const ways = [
     .hero {
       padding-block: var(--space-5) var(--space-4);
     }
-    .hero-grid.has-media {
+    .hero-grid {
       grid-template-columns: 3fr 2fr;
+      gap: var(--space-5);
     }
   }
 
-  .story-grid,
-  .split {
+  /* Stat line – haint blue means a number */
+  .statline {
+    display: grid;
+    gap: 2px;
+    margin: var(--space-4) 0 var(--space-3);
+  }
+  .statline div {
+    display: flex;
+    flex-direction: column-reverse;
+    background: var(--haint);
+    padding: var(--space-3);
+  }
+  .statline dd {
+    margin: 0;
+    font-family: var(--font-num);
+    font-size: clamp(2.5rem, 2rem + 2.5vw, 3.75rem);
+    line-height: 1;
+    margin-bottom: var(--space-1);
+  }
+  .statline dt {
+    font-size: var(--text-small);
+    line-height: 1.4;
+    max-width: 22rem;
+  }
+  @media (min-width: 48rem) {
+    .statline {
+      grid-template-columns: 1fr 1fr 1.4fr;
+    }
+  }
+
+  .banner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--spartina);
+    background: var(--white);
+    color: var(--pluff);
+    text-decoration: none;
+    font-size: var(--text-small);
+    font-weight: 700;
+  }
+  .banner:hover {
+    border-color: var(--marsh);
+    border-left-color: var(--spartina);
+  }
+  .banner-tag {
+    flex: none;
+    background: var(--piling);
+    color: var(--oyster);
+    padding: 0.15em 0.6em;
+    border-radius: 2px;
+  }
+
+  /* Businesses */
+  .biz {
     display: grid;
     gap: var(--space-4);
+    margin-top: var(--space-3);
+  }
+  .biz li {
+    border-top: 3px solid var(--pluff);
+    padding-top: var(--space-2);
+  }
+  .biz-num {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-1);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-2);
+  }
+  .biz-num .num {
+    font-family: var(--font-num);
+    font-size: 2.25rem;
+    line-height: 1;
+    background: var(--haint);
+    padding: 0.15em 0.3em;
+  }
+  .biz-num .num-label {
+    font-size: var(--text-small);
+    color: var(--pluff-soft);
+  }
+  .biz p {
+    margin-bottom: var(--space-1);
+  }
+  .biz a {
+    font-weight: 700;
   }
   @media (min-width: 60rem) {
-    .story-grid {
+    .biz {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* About */
+  .about-grid {
+    display: grid;
+    gap: var(--space-2);
+  }
+  @media (min-width: 60rem) {
+    .about-grid {
+      grid-template-columns: 1fr 2fr;
+      gap: var(--space-5);
+    }
+  }
+
+  /* Resources */
+  .res {
+    display: grid;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+  }
+  .res a {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: var(--space-3);
+    background: var(--white);
+    border: 1px solid var(--rule);
+    color: var(--pluff);
+    text-decoration: none;
+  }
+  .res a:hover {
+    border-color: var(--marsh);
+  }
+  .res h3 {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-1);
+  }
+  .res p {
+    font-size: var(--text-small);
+    color: var(--pluff-soft);
+    flex: 1;
+  }
+  .res-cta {
+    font-weight: 700;
+    color: var(--marsh);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+  @media (min-width: 40rem) {
+    .res {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 60rem) {
+    .res {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .res li:first-child {
+      grid-column: span 2;
+    }
+  }
+
+  /* GRID feature band */
+  .grid-feature {
+    background: var(--piling);
+    color: var(--oyster);
+    padding-block: var(--space-5);
+  }
+  .grid-feature-inner {
+    display: grid;
+    gap: var(--space-3);
+    align-items: center;
+  }
+  .grid-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3);
+  }
+  .btn--light {
+    background: var(--oyster);
+    border-color: var(--oyster);
+    color: var(--piling);
+  }
+  .btn--light:hover {
+    background: var(--white);
+    border-color: var(--white);
+  }
+  .link-light {
+    color: var(--oyster);
+    font-weight: 700;
+  }
+  .grid-feature :focus-visible {
+    outline-color: var(--oyster);
+  }
+  @media (min-width: 60rem) {
+    .grid-feature-inner {
       grid-template-columns: 3fr 2fr;
       gap: var(--space-5);
     }
-    .split {
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-5);
+    .grid-buttons {
+      justify-content: flex-end;
     }
   }
 
-  .ways li {
-    padding-block: var(--space-2);
-    border-top: 1px solid var(--rule);
-  }
-  .ways li:last-child {
-    border-bottom: 1px solid var(--rule);
-  }
-  .ways h3 {
-    margin-bottom: 0.35rem;
-  }
-  .ways p {
-    margin: 0;
-  }
-
-  .quotes {
+  /* Work with me */
+  .work {
     display: grid;
-    gap: var(--space-3);
+    gap: var(--space-2);
+    margin-top: var(--space-3);
   }
-  @media (min-width: 60rem) {
-    .quotes {
-      grid-template-columns: repeat(3, 1fr);
+  .work li {
+    padding: var(--space-3);
+    border: 1px solid var(--rule);
+  }
+  .work li.work-call {
+    border: 2px solid var(--marsh);
+  }
+  .work a {
+    font-weight: 700;
+  }
+  @media (min-width: 48rem) {
+    .work {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 69rem) {
+    .work {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 </style>
